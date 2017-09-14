@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FFF9C4">
+
+
+    <LinearLayout
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:orientation="vertical"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/linearLayout2">
+        <ImageView
+            android:layout_width="400px"
+            android:layout_height="350px"
+            android:layout_gravity="center"
+            android:src="@drawable/logo" />
+        <EditText
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:hint="USER ID"
+            android:id="@+id/et_username"
+            android:inputType="textCapWords" />
+        <EditText
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:hint="PASSWORD"
+            android:layout_marginTop="10dp"
+            android:id="@+id/et_password"
+            android:inputType="textPassword"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_marginLeft="110dp"
+        android:layout_width="150dp"
+        android:layout_height="75dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:foregroundGravity="bottom"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/linearLayout">
+
+
+        <Button
+            class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored"
+            android:layout_width="150dp"
+            android:layout_height="60dp"
+            android:text="Login"
+            android:layout_gravity="center"
+            android:layout_weight="50"
+            android:id="@+id/btn_Login"
+            android:backgroundTint="@color/button"
+            android:layout_above="@+id/linearLayout"
+            android:layout_centerHorizontal="true" />
+    </LinearLayout>
+
+    <ProgressBar
+        style="?android:attr/progressBarStyleLargeInverse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/pbbar"
+        android:layout_above="@+id/linearLayout2"
+        android:layout_centerHorizontal="true"
+        />
+
+
+</RelativeLayout>
+
