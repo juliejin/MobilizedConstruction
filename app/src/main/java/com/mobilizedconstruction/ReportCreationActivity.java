@@ -36,12 +36,23 @@ public class ReportCreationActivity extends Activity {
             }
 
         });
-
+        final Button createdReportButton = (Button) findViewById(R.id.CreatedReportButton);
+        createdReportButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                navigateToReportCreatedPage();
+            }
+        });
     }
+
     void navigateToPage(){
         this.startActivity(new Intent(this, ReportInfoUpload.class)
                 .setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
+    }
 
+    void navigateToReportCreatedPage(){
+        this.startActivity(new Intent(this, CreatedReportDisplayActivity.class)
+                .setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
     }
 
 }

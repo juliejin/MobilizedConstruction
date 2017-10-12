@@ -51,10 +51,10 @@ public final class R {
         public static final int user_pool_sign_in_view_id = 0x7f0d001a;
     }
     public static final class layout {
-        public static final int activity_forgot_password = 0x7f04001c;
-        public static final int activity_mfa = 0x7f04001e;
-        public static final int activity_sign_up = 0x7f040023;
-        public static final int activity_sign_up_confirm = 0x7f040024;
+        public static final int activity_forgot_password = 0x7f04001d;
+        public static final int activity_mfa = 0x7f04001f;
+        public static final int activity_sign_up = 0x7f040024;
+        public static final int activity_sign_up_confirm = 0x7f040025;
     }
     public static final class string {
         public static final int email_address_text = 0x7f08004f;

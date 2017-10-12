@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml:13:1-68:12
+ADDED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml:13:1-69:12
 	package
 		ADDED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml:14:5-40
 		INJECTED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml
@@ -37,7 +37,7 @@ ADDED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/Andro
 	android:name
 		ADDED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml:20:22-77
 application
-ADDED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml:22:5-66:19
+ADDED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml:22:5-67:19
 MERGED from [com.android.support:appcompat-v7:26.0.0-alpha1] /Users/Michelle_Yu/.android/build-cache/fdad6d79036fe830024c5bdcb5533fb0396f327d/output/AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:animated-vector-drawable:26.0.0-alpha1] /Users/Michelle_Yu/.android/build-cache/db15f9a374a0ef6a16b6a30df660f171cb510386/output/AndroidManifest.xml:26:5-20
 MERGED from [com.android.support:support-vector-drawable:26.0.0-alpha1] /Users/Michelle_Yu/.android/build-cache/4860cf0c1498129529e194ef600f6b7588174ac9/output/AndroidManifest.xml:26:5-20
@@ -116,9 +116,13 @@ ADDED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/Andro
 	android:name
 		ADDED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml:64:19-55
 activity#com.mobilizedconstruction.AddCommentActivity
-ADDED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml:65:9-65
+ADDED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml:65:9-56
 	android:name
 		ADDED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml:65:19-53
+activity#com.mobilizedconstruction.CreatedReportDisplayActivity
+ADDED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml:66:9-75
+	android:name
+		ADDED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml:66:19-63
 uses-sdk
 INJECTED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [com.android.support:appcompat-v7:26.0.0-alpha1] /Users/Michelle_Yu/.android/build-cache/fdad6d79036fe830024c5bdcb5533fb0396f327d/output/AndroidManifest.xml:21:5-23:78
@@ -155,9 +159,9 @@ MERGED from [com.android.support:support-compat:26.0.0-alpha1] /Users/Michelle_Y
 	android:name
 		ADDED from [com.android.support:appcompat-v7:26.0.0-alpha1] /Users/Michelle_Yu/.android/build-cache/fdad6d79036fe830024c5bdcb5533fb0396f327d/output/AndroidManifest.xml:26:9-47
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-IMPLIED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml:13:1-68:12 reason: com.amazonaws.mobile.auth.core has a targetSdkVersion < 4
+IMPLIED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml:13:1-69:12 reason: com.amazonaws.mobile.auth.core has a targetSdkVersion < 4
 uses-permission#android.permission.READ_PHONE_STATE
-IMPLIED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml:13:1-68:12 reason: com.amazonaws.mobile.auth.core has a targetSdkVersion < 4
+IMPLIED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml:13:1-69:12 reason: com.amazonaws.mobile.auth.core has a targetSdkVersion < 4
 uses-permission#com.google.android.c2dm.permission.RECEIVE
 ADDED from [com.amazonaws:aws-android-sdk-auth-ui:2.6.0] /Users/Michelle_Yu/.android/build-cache/4789b67a148043b6f5e0417a355365b77e82829d/output/AndroidManifest.xml:4:5-81
 	android:name

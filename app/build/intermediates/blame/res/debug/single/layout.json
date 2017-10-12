@@ -16,12 +16,12 @@
         "source": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/res/layout/activity_add_comment.xml"
     },
     {
-        "merged": "/Users/Michelle_Yu/Downloads/MobilizedConstruction-aws-integration-2/app/build/intermediates/res/merged/debug/layout/fragment_demo_cloudlogic_api_chooser.xml",
-        "source": "/Users/Michelle_Yu/Downloads/MobilizedConstruction-aws-integration-2/app/src/main/res/layout/fragment_demo_cloudlogic_api_chooser.xml"
-    },
-    {
         "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/fragment_demo_user_files_browser.xml",
         "source": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/res/layout/fragment_demo_user_files_browser.xml"
+    },
+    {
+        "merged": "/Users/Michelle_Yu/Downloads/MobilizedConstruction-aws-integration-2/app/build/intermediates/res/merged/debug/layout/fragment_demo_cloudlogic_api_chooser.xml",
+        "source": "/Users/Michelle_Yu/Downloads/MobilizedConstruction-aws-integration-2/app/src/main/res/layout/fragment_demo_cloudlogic_api_chooser.xml"
     },
     {
         "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/select_dialog_singlechoice_material.xml",
@@ -354,6 +354,10 @@
     {
         "merged": "/Users/Michelle_Yu/Downloads/MobilizedConstruction-aws-integration-2/app/build/intermediates/res/merged/debug/layout/horizontal_sign_in_divider.xml",
         "source": "/Users/Michelle_Yu/.android/build-cache/4789b67a148043b6f5e0417a355365b77e82829d/output/res/layout/horizontal_sign_in_divider.xml"
+    },
+    {
+        "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/activity_created_report_display.xml",
+        "source": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/res/layout/activity_created_report_display.xml"
     },
     {
         "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/abc_expanded_menu_layout.xml",

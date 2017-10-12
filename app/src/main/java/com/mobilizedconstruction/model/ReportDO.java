@@ -1,8 +1,5 @@
 package com.mobilizedconstruction.model;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-
 import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBAttribute;
 import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBHashKey;
 import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBIndexHashKey;
@@ -11,14 +8,11 @@ import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBRangeKey
 import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBTable;
 
 import java.io.Serializable;
-import java.util.Collection;
-import java.util.List;
-import java.util.Map;
 import java.util.Set;
 
 @DynamoDBTable(tableName = "mobilizedconstructio-mobilehub-516637937-Report")
 
-public class ReportDO implements Parcelable{
+public class ReportDO implements Serializable{
     private Integer _reportID;
     private Set<Integer> _dateCreated;
     private Integer _imageCount;
@@ -26,8 +20,15 @@ public class ReportDO implements Parcelable{
     private Integer _severity;
     private String _userID;
 
-    public ReportDO(){
+    public ReportDO(){}
 
+    public ReportDO(Integer reportID, Set<Integer> dateCreated, Integer imageCount,Integer roadDirection, Integer severity, String userID ){
+        _reportID = reportID;
+        _dateCreated = dateCreated;
+        _imageCount = imageCount;
+        _roadDirection = roadDirection;
+        _severity = severity;
+        _userID = userID;
     }
 
     @DynamoDBHashKey(attributeName = "Report ID")
@@ -80,7 +81,7 @@ public class ReportDO implements Parcelable{
         this._userID = _userID;
     }
 
-    public static final Parcelable.Creator CREATOR = new Parcelable.Creator() {
+    /*public static final Parcelable.Creator CREATOR = new Parcelable.Creator() {
         public Object createFromParcel(Parcel in) {
             return new ReportDO(in);
         }
@@ -110,17 +111,14 @@ public class ReportDO implements Parcelable{
         _severity = in.readInt();
         _reportID = in.readInt();
         _userID = in.readString();
-        ClassLoader loader = new ClassLoader() {
-            @Override
-            public Class<?> loadClass(String name) throws ClassNotFoundException {
-                return super.loadClass(name);
-            }
-        };
-        //_dateCreated = in.readArray(loader);
+        _dateCreated = new HashSet<Integer>();
+        for(int i=0;i<3;i++){
+            _dateCreated.add(in.readInt());
+        }
     }
 
     private ReportDO(Parcel in){
         readFromParcel(in);
     }
-
+    */
 }

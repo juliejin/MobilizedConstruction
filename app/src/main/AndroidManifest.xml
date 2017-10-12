@@ -62,7 +62,8 @@
         <activity android:name=".ReportInfoUpload" />
         <activity android:name=".CommentActivity" />
         <activity android:name=".RoadFeaturesActivity" />
-        <activity android:name=".AddCommentActivity"></activity>
+        <activity android:name=".AddCommentActivity" />
+        <activity android:name=".CreatedReportDisplayActivity"></activity>
     </application>
 
 </manifest>
