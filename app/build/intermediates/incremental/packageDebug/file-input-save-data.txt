@@ -1,5 +1,9 @@
 #Internal package file, do not edit.
+<<<<<<< Updated upstream
 #Fri Oct 13 11:07:39 PDT 2017
+=======
+#Thu Oct 12 18:07:05 PDT 2017
+>>>>>>> Stashed changes
 210.set=ANDROID_RESOURCE
 282.file=/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/resources-debug.ap_/res/anim/abc_fade_out.xml
 14.set=ANDROID_RESOURCE
