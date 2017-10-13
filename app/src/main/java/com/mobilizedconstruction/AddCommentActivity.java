@@ -26,7 +26,6 @@ public class AddCommentActivity extends AppCompatActivity {
         });
         Intent intent = getIntent();
         report = (ReportDO)intent.getSerializableExtra("new_report");
-
     }
 
     protected void navigateToNextPage(){
