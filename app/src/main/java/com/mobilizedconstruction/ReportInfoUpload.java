@@ -14,7 +14,9 @@ import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
 import com.mobilizedconstruction.model.ReportDO;
 import com.amazonaws.AmazonClientException;
 import android.util.Log;
-import java.util.Arrays;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -41,10 +43,6 @@ public class ReportInfoUpload extends AppCompatActivity {
             @Override
             public void run() {
                 try {
-                    Set<Integer> date =  new HashSet<Integer>();
-                    date.add(2017);
-                    date.add(10);
-                    date.add(4);
                     AmazonDynamoDBClient client =
                             new AmazonDynamoDBClient(IdentityManager.getDefaultIdentityManager()
                                     .getCredentialsProvider(), new ClientConfiguration());
@@ -57,7 +55,9 @@ public class ReportInfoUpload extends AppCompatActivity {
                     if(identityManager!=null) {
                         user = identityManager.getCachedUserID();
                     }
-                    final ReportDO report = new ReportDO(id,"",date,0,0,0,user);
+                    Date currentDate = new Date();
+                    SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+                    final ReportDO report = new ReportDO(id,"",formatter.format(currentDate).toString(),0,0,0,user);
                     mapper.save(report);
                     intent.putExtra("new_report",report);
                     startActivity(intent);

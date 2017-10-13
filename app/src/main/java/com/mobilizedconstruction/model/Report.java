@@ -43,11 +43,7 @@ public class Report implements Serializable{
         firstItem.setRoadDirection(1);
         firstItem.setUserID(IdentityManager.getDefaultIdentityManager().getCachedUserID());
         firstItem.setSeverity(1);
-        Set<Integer> date =  new HashSet<Integer>();
-        date.add(2017);
-        date.add(10);
-        date.add(4);
-        firstItem.setDateCreated(date);
+
 
         new Thread(new Runnable() {
             @Override
