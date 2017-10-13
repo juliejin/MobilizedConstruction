@@ -55,9 +55,9 @@ public class ReportInfoUpload extends AppCompatActivity {
                     String user = " ";
                     IdentityManager identityManager = IdentityManager.getDefaultIdentityManager();
                     if(identityManager!=null) {
-                        user = identityManager.getCurrentIdentityProvider().getDisplayName();
+                        user = identityManager.getCachedUserID();
                     }
-                    final ReportDO report = new ReportDO(id,date,0,0,0,user);
+                    final ReportDO report = new ReportDO(id,"",date,0,0,0,user);
                     mapper.save(report);
                     intent.putExtra("new_report",report);
                     startActivity(intent);
@@ -68,11 +68,5 @@ public class ReportInfoUpload extends AppCompatActivity {
         }).start();
     }
 
-    void navigateToComment(){
-        Intent intent = new Intent(this, AddCommentActivity.class);
-        intent.putExtra("report", report);
-        this.startActivity(intent);
-
-    }
 
 }

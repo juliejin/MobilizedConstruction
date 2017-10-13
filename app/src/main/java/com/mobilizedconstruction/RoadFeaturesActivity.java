@@ -1,15 +1,26 @@
 package com.mobilizedconstruction;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
+import com.amazonaws.AmazonClientException;
+import com.amazonaws.ClientConfiguration;
+import com.amazonaws.mobile.auth.core.IdentityManager;
+import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBMapper;
+import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient;
 import com.mobilizedconstruction.R;
+import com.mobilizedconstruction.model.ReportDO;
 
 public class RoadFeaturesActivity extends AppCompatActivity {
+    private static final String LOG_TAG = RoadFeaturesActivity.class.getSimpleName();
     protected int severity = -1;
     protected int direction = -1;
+    ReportDO report;
+    DynamoDBMapper mapper;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_road_features);
@@ -74,12 +85,17 @@ public class RoadFeaturesActivity extends AppCompatActivity {
                 direction = 2;
             }
         });
+
+        Intent intent = getIntent();
+        report = (ReportDO)intent.getSerializableExtra("new_report");
         nextButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                if (severity != -1 && direction != -1)
+                if (severity != -1 || direction != -1)
                 {
-
+                    report.setRoadDirection(direction);
+                    report.setSeverity(severity);
+                    UpdateReport();
                 }
                 else
                 {
@@ -88,4 +104,29 @@ public class RoadFeaturesActivity extends AppCompatActivity {
             }
         });
     }
+
+    public void UpdateReport(){
+        AmazonDynamoDBClient dynamoDBClient =
+                new AmazonDynamoDBClient(IdentityManager.getDefaultIdentityManager()
+                        .getCredentialsProvider(), new ClientConfiguration());
+        mapper = DynamoDBMapper.builder()
+                .dynamoDBClient(dynamoDBClient)
+                .awsConfiguration(Application.awsConfiguration)
+                .build();
+        final Intent intent = new Intent(this, ReportCreationActivity.class);
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    mapper.save(report);
+                    Log.d(LOG_TAG, "Successfullt updated");
+                    startActivity(intent);
+                } catch (final AmazonClientException ex) {
+                    Log.e(LOG_TAG, "Failed updateing item : " + ex.getMessage(), ex);
+                }
+            }
+        }).start();
+
+    }
+
 }

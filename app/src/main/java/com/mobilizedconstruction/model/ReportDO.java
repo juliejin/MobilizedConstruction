@@ -14,6 +14,7 @@ import java.util.Set;
 
 public class ReportDO implements Serializable{
     private Integer _reportID;
+    private String _comment;
     private Set<Integer> _dateCreated;
     private Integer _imageCount;
     private Integer _roadDirection;
@@ -22,8 +23,9 @@ public class ReportDO implements Serializable{
 
     public ReportDO(){}
 
-    public ReportDO(Integer reportID, Set<Integer> dateCreated, Integer imageCount,Integer roadDirection, Integer severity, String userID ){
+    public ReportDO(Integer reportID, String comment, Set<Integer> dateCreated, Integer imageCount,Integer roadDirection, Integer severity, String userID ){
         _reportID = reportID;
+        _comment = comment;
         _dateCreated = dateCreated;
         _imageCount = imageCount;
         _roadDirection = roadDirection;
@@ -39,6 +41,14 @@ public class ReportDO implements Serializable{
 
     public void setReportID(final Integer _reportID) {
         this._reportID = _reportID;
+    }
+    @DynamoDBAttribute(attributeName = "Comment")
+    public String getComment() {
+        return _comment;
+    }
+
+    public void setComment(final String _comment) {
+        this._comment = _comment;
     }
     @DynamoDBAttribute(attributeName = "Date Created")
     public Set<Integer> getDateCreated() {

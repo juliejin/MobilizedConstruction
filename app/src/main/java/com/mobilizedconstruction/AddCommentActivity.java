@@ -5,6 +5,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+
 import com.mobilizedconstruction.R;
 import com.mobilizedconstruction.model.ReportDO;
 
@@ -28,7 +30,10 @@ public class AddCommentActivity extends AppCompatActivity {
     }
 
     protected void navigateToNextPage(){
-        this.startActivity(new Intent(this, RoadFeaturesActivity.class)
-                .setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
+        Intent intent = new Intent(this, RoadFeaturesActivity.class);
+        EditText comment = (EditText) findViewById(R.id.commitText);
+        report.setComment(comment.getText().toString());
+        intent.putExtra("new_report", report);
+        startActivity(intent);
     }
 }
