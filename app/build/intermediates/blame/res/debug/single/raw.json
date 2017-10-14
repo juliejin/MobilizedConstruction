@@ -2,13 +2,5 @@
     {
         "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/raw/awsconfiguration.json",
         "source": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/res/raw/awsconfiguration.json"
-    },
-    {
-        "merged": "/Users/Michelle_Yu/Downloads/MobilizedConstruction-aws-integration-2/app/build/intermediates/res/merged/debug/raw/awsconfiguration.json",
-        "source": "/Users/Michelle_Yu/Downloads/MobilizedConstruction-aws-integration-2/app/src/main/res/raw/awsconfiguration.json"
-    },
-    {
-        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/raw/awsconfiguration.json",
-        "source": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/res/raw/awsconfiguration.json"
     }
 ]

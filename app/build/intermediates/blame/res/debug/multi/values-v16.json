@@ -1,53 +1,5 @@
 [
     {
-        "outputFile": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v16/values-v16.xml",
-        "map": [
-            {
-                "to": {
-                    "startLine": 2,
-                    "startColumn": 4,
-                    "startOffset": 55,
-                    "endColumn": 65,
-                    "endOffset": 116
-                },
-                "from": {
-                    "file": "/Users/apple/.android/build-cache/951289952ba7c5659736b04851cb8c6d1a7dada8/output/res/values-v16/values-v16.xml",
-                    "position": {
-                        "startLine": 2,
-                        "startColumn": 4,
-                        "startOffset": 55,
-                        "endColumn": 65,
-                        "endOffset": 116
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "outputFile": "/Users/Michelle_Yu/Downloads/MobilizedConstruction-aws-integration-2/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v16/values-v16.xml",
-        "map": [
-            {
-                "to": {
-                    "startLine": 2,
-                    "startColumn": 4,
-                    "startOffset": 55,
-                    "endColumn": 65,
-                    "endOffset": 116
-                },
-                "from": {
-                    "file": "/Users/Michelle_Yu/.android/build-cache/fdad6d79036fe830024c5bdcb5533fb0396f327d/output/res/values-v16/values-v16.xml",
-                    "position": {
-                        "startLine": 2,
-                        "startColumn": 4,
-                        "startOffset": 55,
-                        "endColumn": 65,
-                        "endOffset": 116
-                    }
-                }
-            }
-        ]
-    },
-    {
         "outputFile": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v16/values-v16.xml",
         "map": [
             {

@@ -119,7 +119,7 @@ public class RoadFeaturesActivity extends AppCompatActivity {
             public void run() {
                 try {
                     mapper.save(report);
-                    Log.d(LOG_TAG, "Successfullt updated");
+                    Log.d(LOG_TAG, "Successfully updated");
                     startActivity(intent);
                 } catch (final AmazonClientException ex) {
                     Log.e(LOG_TAG, "Failed updateing item : " + ex.getMessage(), ex);

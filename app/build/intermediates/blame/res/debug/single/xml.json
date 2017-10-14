@@ -1,14 +1,6 @@
 [
     {
-        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/xml/content_delivery_paths.xml",
-        "source": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/res/xml/content_delivery_paths.xml"
-    },
-    {
         "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/xml/content_delivery_paths.xml",
         "source": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/res/xml/content_delivery_paths.xml"
-    },
-    {
-        "merged": "/Users/Michelle_Yu/Downloads/MobilizedConstruction-aws-integration-2/app/build/intermediates/res/merged/debug/xml/content_delivery_paths.xml",
-        "source": "/Users/Michelle_Yu/Downloads/MobilizedConstruction-aws-integration-2/app/src/main/res/xml/content_delivery_paths.xml"
     }
 ]

@@ -1,8 +1,23 @@
 package com.mobilizedconstruction;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.EditText;
+import android.support.v7.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Context;
+import android.widget.TableLayout;
+import android.widget.TableRow;
+import android.widget.Button;
+import android.widget.TableRow.LayoutParams;
+import android.view.View;
+import android.widget.TextView;
+
+import java.util.Map;
+import java.util.HashMap;
+import java.util.Vector;
 
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.ClientConfiguration;
@@ -11,38 +26,106 @@ import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBMapper;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient;
 import com.amazonaws.services.dynamodbv2.model.ScanRequest;
 import com.amazonaws.services.dynamodbv2.model.ScanResult;
+import com.amazonaws.services.dynamodbv2.model.AttributeValue;
 import com.mobilizedconstruction.R;
+import com.mobilizedconstruction.model.ReportDO;
+
+import static android.widget.TableLayout.*;
 
 public class CreatedReportDisplayActivity extends AppCompatActivity {
     IdentityManager identityManager;
     private static final String LOG_TAG = CreatedReportDisplayActivity.class.getSimpleName();
+    private Vector<ReportDO> createdReport;
+    final Context context = this;
+    TableLayout tableLayout;
+    Vector<TableRow> tableRows;
+    LayoutParams layoutParams = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_created_report_display);
-
+        createdReport = new Vector<ReportDO>();
+        tableLayout = (TableLayout) findViewById(R.id.CreatedReportTable);
+        tableRows = new Vector<TableRow>();
         scanTable();
     }
 
     private void scanTable(){
+
         new Thread(new Runnable() {
             @Override
             public void run() {
                 try {
-        identityManager = IdentityManager.getDefaultIdentityManager();
-        identityManager.getCachedUserID();
+                    identityManager = IdentityManager.getDefaultIdentityManager();
+                    String userID = identityManager.getCachedUserID();
+                    AmazonDynamoDBClient client =
+                            new AmazonDynamoDBClient(IdentityManager.getDefaultIdentityManager()
+                                    .getCredentialsProvider(), new ClientConfiguration());
+                    //ScanRequest scanRequest = new ScanRequest()
+                      //      .withTableName("mobilizedconstructio-mobilehub-516637937-Report");
+                    Map<String, String> attributeNames = new HashMap<String, String >();
+                    attributeNames.put("#userID", "User ID");
+                    Map<String, AttributeValue> expressionAttributeValues =
+                            new HashMap<String, AttributeValue>();
+                    expressionAttributeValues.put(":userID", new AttributeValue().withS(userID));
+                    ScanRequest scanRequest = new ScanRequest()
+                            .withTableName("mobilizedconstructio-mobilehub-516637937-Report")
+                            .withExpressionAttributeNames(attributeNames)
+                            .withExpressionAttributeValues(expressionAttributeValues)
+                            .withFilterExpression("#userID = :userID");
+                    ScanResult result = client.scan(scanRequest);
 
-        AmazonDynamoDBClient client =
-                new AmazonDynamoDBClient(IdentityManager.getDefaultIdentityManager()
-                        .getCredentialsProvider(), new ClientConfiguration());
-        ScanRequest scanRequest = new ScanRequest()
-                .withTableName("mobilizedconstructio-mobilehub-516637937-Report");
-        //ScanResult result = client.scan(scanRequest);
+                    for (Map<String, AttributeValue> item : result.getItems()) {
+                        String comment = item.get("Comment").getS();
+                        Integer image_count = Integer.valueOf(item.get("Image Count").getN());
+                        Integer report_ID = Integer.valueOf(item.get("Report ID").getN());
+                        Integer severity = Integer.valueOf(item.get("Severity").getN());
+                        String date_created = item.get("Date Created").getS();
+                        Integer road_direction = Integer.valueOf(item.get("Road Direction").getN());
+                        createdReport.add(new ReportDO(report_ID, comment, date_created, image_count,
+                                road_direction, severity, userID));
+                    }
+                    if (createdReport.size() == 0) {
+                        showDialog();
+                    }
+                    else
+                    {
+                        createTableRows(createdReport.size());
+                        for (int i = 0; i < createdReport.size(); i++)
+                        {
+                            addNewRow(i);
+                        }
+                    }
                 } catch (final AmazonClientException ex) {
                     Log.e(LOG_TAG, "Failed fetching reports : " + ex.getMessage(), ex);
                 }
+
             }
         }).start();
     }
+    protected void navigate(){
+        Intent intent = new Intent(this, ReportCreationActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
+    }
 
+    protected void showDialog() {
+
+    }
+
+    protected void createTableRows(int num_rows){
+        for( int j = 0; j < createdReport.size(); j++)
+        {
+            TableRow tableRow = new TableRow(this);
+            tableRows.add(tableRow);
+        }
+    }
+
+    protected void addNewRow(int row_index){
+        tableRows.elementAt(row_index).setLayoutParams(layoutParams);
+        tableRows.elementAt(row_index).setVisibility(View.VISIBLE);
+        tableLayout.addView(tableRows.elementAt(row_index), new TableLayout.LayoutParams(
+                TableLayout.LayoutParams.WRAP_CONTENT,
+                TableLayout.LayoutParams.WRAP_CONTENT));
+    }
 }
