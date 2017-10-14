@@ -23,7 +23,8 @@ public class ReportDO implements Serializable{
 
     public ReportDO(){}
 
-    public ReportDO(Integer reportID, String comment, String dateCreated, Integer imageCount,Integer roadDirection, Integer severity, String userID ){
+    public ReportDO(Integer reportID, String comment, String dateCreated, Integer imageCount,
+                    Integer roadDirection, Integer severity, String userID ){
         _reportID = reportID;
         _comment = comment;
         _dateCreated = dateCreated;

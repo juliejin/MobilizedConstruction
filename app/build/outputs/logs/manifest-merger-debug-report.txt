@@ -1,228 +1,228 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:13:1-69:12
+ADDED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml:13:1-69:12
 	package
-		ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:14:5-40
-		INJECTED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml
-		INJECTED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml
+		ADDED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml:14:5-40
+		INJECTED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml
 	android:versionName
-		INJECTED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml
-		INJECTED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml
 	xmlns:android
-		ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:13:11-69
+		ADDED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml:13:11-69
 	android:versionCode
-		INJECTED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml
-		INJECTED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml
 uses-permission#android.permission.INTERNET
-ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:16:5-67
-MERGED from [com.amazonaws:aws-android-sdk-auth-userpools:2.6.0] /Users/apple/.android/build-cache/1f063a444381dcd41efed7d46f794d43e7a40165/output/AndroidManifest.xml:4:5-66
+ADDED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml:16:5-67
+MERGED from [com.amazonaws:aws-android-sdk-auth-userpools:2.6.0] /Users/Michelle_Yu/.android/build-cache/60df9a77700fd4feb6ead4d1765817b253071dd1/output/AndroidManifest.xml:4:5-66
 	android:name
-		ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:16:22-64
+		ADDED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml:16:22-64
 uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:17:5-79
-MERGED from [com.amazonaws:aws-android-sdk-auth-userpools:2.6.0] /Users/apple/.android/build-cache/1f063a444381dcd41efed7d46f794d43e7a40165/output/AndroidManifest.xml:5:5-78
+ADDED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml:17:5-79
+MERGED from [com.amazonaws:aws-android-sdk-auth-userpools:2.6.0] /Users/Michelle_Yu/.android/build-cache/60df9a77700fd4feb6ead4d1765817b253071dd1/output/AndroidManifest.xml:5:5-78
 	android:name
-		ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:17:22-76
+		ADDED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml:17:22-76
 uses-permission#android.permission.ACCESS_WIFI_STATE
-ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:18:5-76
-MERGED from [com.amazonaws:aws-android-sdk-auth-userpools:2.6.0] /Users/apple/.android/build-cache/1f063a444381dcd41efed7d46f794d43e7a40165/output/AndroidManifest.xml:6:5-75
+ADDED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml:18:5-76
+MERGED from [com.amazonaws:aws-android-sdk-auth-userpools:2.6.0] /Users/Michelle_Yu/.android/build-cache/60df9a77700fd4feb6ead4d1765817b253071dd1/output/AndroidManifest.xml:6:5-75
 	android:name
-		ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:18:22-73
+		ADDED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml:18:22-73
 uses-permission#android.permission.WAKE_LOCK
-ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:19:5-68
+ADDED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml:19:5-68
 	android:name
-		ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:19:22-65
+		ADDED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml:19:22-65
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
-ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:20:5-80
+ADDED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml:20:5-80
 	android:name
-		ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:20:22-77
+		ADDED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml:20:22-77
 application
-ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:22:5-67:19
-MERGED from [com.android.support:appcompat-v7:26.0.0-alpha1] /Users/apple/.android/build-cache/951289952ba7c5659736b04851cb8c6d1a7dada8/output/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:animated-vector-drawable:26.0.0-alpha1] /Users/apple/.android/build-cache/912b6507251c157c513ca0e51c81eff0eca98a1f/output/AndroidManifest.xml:26:5-20
-MERGED from [com.android.support:support-vector-drawable:26.0.0-alpha1] /Users/apple/.android/build-cache/37c2065b9d05d18417871829328b35ba1152394f/output/AndroidManifest.xml:26:5-20
-MERGED from [com.amazonaws:aws-android-sdk-auth-core:2.6.0] /Users/apple/.android/build-cache/09172d6ccbf113262659bb4b0a03621338355bf2/output/AndroidManifest.xml:4:6-47
-MERGED from [com.amazonaws:aws-android-sdk-auth-ui:2.6.0] /Users/apple/.android/build-cache/e6dd5b95ac4271f36f40b3774bdfa2c6dae1a53c/output/AndroidManifest.xml:8:5-10:19
-MERGED from [com.amazonaws:aws-android-sdk-auth-userpools:2.6.0] /Users/apple/.android/build-cache/1f063a444381dcd41efed7d46f794d43e7a40165/output/AndroidManifest.xml:8:6-20:20
-MERGED from [com.android.support:support-v4:26.0.0-alpha1] /Users/apple/.android/build-cache/bbb1dcfae17ed392afe7d74f20ee7d0f7ed9010d/output/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-media-compat:26.0.0-alpha1] /Users/apple/.android/build-cache/b0871c1b5cf615e7c1c5c3ea29acfde55585583e/output/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-fragment:26.0.0-alpha1] /Users/apple/.android/build-cache/db31d5cc7363cde4737b363e3b71302065471e5e/output/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-core-ui:26.0.0-alpha1] /Users/apple/.android/build-cache/a44caf4ac8266413e0543ade27ad41a22a9bf5cb/output/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-core-utils:26.0.0-alpha1] /Users/apple/.android/build-cache/e6880f74536d5cd5de250494827410443c5ce3dc/output/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-compat:26.0.0-alpha1] /Users/apple/.android/build-cache/d9f1ee92a3d3ed17a57afe4ddaaa9e4eb7e83df5/output/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/apple/.android/build-cache/b02da7614066d1f962c140ed408bbab5194cd915/output/AndroidManifest.xml:9:5-20
+ADDED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml:22:5-67:19
+MERGED from [com.android.support:appcompat-v7:26.0.0-alpha1] /Users/Michelle_Yu/.android/build-cache/fdad6d79036fe830024c5bdcb5533fb0396f327d/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:animated-vector-drawable:26.0.0-alpha1] /Users/Michelle_Yu/.android/build-cache/db15f9a374a0ef6a16b6a30df660f171cb510386/output/AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:support-vector-drawable:26.0.0-alpha1] /Users/Michelle_Yu/.android/build-cache/4860cf0c1498129529e194ef600f6b7588174ac9/output/AndroidManifest.xml:26:5-20
+MERGED from [com.amazonaws:aws-android-sdk-auth-core:2.6.0] /Users/Michelle_Yu/.android/build-cache/98bacd41b9f53d1e8bd081375b3543a52df57d2b/output/AndroidManifest.xml:4:6-47
+MERGED from [com.amazonaws:aws-android-sdk-auth-ui:2.6.0] /Users/Michelle_Yu/.android/build-cache/4789b67a148043b6f5e0417a355365b77e82829d/output/AndroidManifest.xml:8:5-10:19
+MERGED from [com.amazonaws:aws-android-sdk-auth-userpools:2.6.0] /Users/Michelle_Yu/.android/build-cache/60df9a77700fd4feb6ead4d1765817b253071dd1/output/AndroidManifest.xml:8:6-20:20
+MERGED from [com.android.support:support-v4:26.0.0-alpha1] /Users/Michelle_Yu/.android/build-cache/bb89ce152e3cfc7325ca5e911b993048226c00b3/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-media-compat:26.0.0-alpha1] /Users/Michelle_Yu/.android/build-cache/0198e4ffcb74ebf187b83c18866bb55b76bc3033/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-fragment:26.0.0-alpha1] /Users/Michelle_Yu/.android/build-cache/f59d9a30db9c09abd4154749bc37d6d61ecc79cf/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-ui:26.0.0-alpha1] /Users/Michelle_Yu/.android/build-cache/b51af2645e943fee4294badf8aeefff36656e5dd/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-utils:26.0.0-alpha1] /Users/Michelle_Yu/.android/build-cache/1bb248c019e885395327c4740949d0b659ab32fb/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-compat:26.0.0-alpha1] /Users/Michelle_Yu/.android/build-cache/79354abaf35a248978c80ed497fa4c4d47c794bf/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/Michelle_Yu/.android/build-cache/1d8d17392365cf569290276f83455059f4266018/output/AndroidManifest.xml:9:5-20
 	android:label
-		ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:26:9-47
+		ADDED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml:26:9-47
 	android:supportsRtl
-		ADDED from [com.amazonaws:aws-android-sdk-auth-ui:2.6.0] /Users/apple/.android/build-cache/e6dd5b95ac4271f36f40b3774bdfa2c6dae1a53c/output/AndroidManifest.xml:8:45-71
+		ADDED from [com.amazonaws:aws-android-sdk-auth-ui:2.6.0] /Users/Michelle_Yu/.android/build-cache/4789b67a148043b6f5e0417a355365b77e82829d/output/AndroidManifest.xml:8:45-71
 	android:allowBackup
-		ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:24:9-35
+		ADDED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml:24:9-35
 	android:icon
-		ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:25:9-43
+		ADDED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml:25:9-43
 	android:theme
-		ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:27:9-40
+		ADDED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml:27:9-40
 	android:name
-		ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:23:9-36
+		ADDED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml:23:9-36
 activity#com.mobilizedconstruction.SplashActivity
-ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:28:9-37:20
+ADDED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml:28:9-37:20
 	android:label
-		ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:31:13-51
+		ADDED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml:31:13-51
 	android:configChanges
-		ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:30:13-83
+		ADDED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml:30:13-83
 	android:name
-		ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:29:13-43
+		ADDED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml:29:13-43
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:32:13-36:29
+ADDED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml:32:13-36:29
 action#android.intent.action.MAIN
-ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:33:17-69
+ADDED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml:33:17-69
 	android:name
-		ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:33:25-66
+		ADDED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml:33:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:35:17-77
+ADDED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml:35:17-77
 	android:name
-		ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:35:27-74
+		ADDED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml:35:27-74
 activity#com.mobilizedconstruction.MainActivity
-ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:38:9-41:51
+ADDED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml:38:9-41:51
 	android:label
-		ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:40:13-50
+		ADDED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml:40:13-50
 	android:launchMode
-		ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:41:13-48
+		ADDED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml:41:13-48
 	android:name
-		ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:39:13-41
+		ADDED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml:39:13-41
 service#com.amazonaws.mobileconnectors.s3.transferutility.TransferService
-ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:54:9-56:38
+ADDED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml:54:9-56:38
 	android:enabled
-		ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:56:13-35
+		ADDED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml:56:13-35
 	android:name
-		ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:55:13-93
+		ADDED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml:55:13-93
 service#com.amazonaws.mobile.downloader.service.DownloadService
-ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:57:9-91
+ADDED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml:57:9-91
 	android:name
-		ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:57:18-88
+		ADDED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml:57:18-88
 activity#com.mobilizedconstruction.ReportCreationActivity
-ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:61:9-60
+ADDED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml:61:9-60
 	android:name
-		ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:61:19-57
+		ADDED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml:61:19-57
 activity#com.mobilizedconstruction.ReportInfoUpload
-ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:62:9-54
+ADDED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml:62:9-54
 	android:name
-		ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:62:19-51
+		ADDED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml:62:19-51
 activity#com.mobilizedconstruction.CommentActivity
-ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:63:9-53
+ADDED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml:63:9-53
 	android:name
-		ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:63:19-50
+		ADDED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml:63:19-50
 activity#com.mobilizedconstruction.RoadFeaturesActivity
-ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:64:9-58
+ADDED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml:64:9-58
 	android:name
-		ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:64:19-55
+		ADDED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml:64:19-55
 activity#com.mobilizedconstruction.AddCommentActivity
-ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:65:9-56
+ADDED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml:65:9-56
 	android:name
-		ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:65:19-53
+		ADDED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml:65:19-53
 activity#com.mobilizedconstruction.CreatedReportDisplayActivity
-ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:66:9-75
+ADDED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml:66:9-75
 	android:name
-		ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:66:19-63
+		ADDED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml:66:19-63
 uses-sdk
-INJECTED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
-MERGED from [com.android.support:appcompat-v7:26.0.0-alpha1] /Users/apple/.android/build-cache/951289952ba7c5659736b04851cb8c6d1a7dada8/output/AndroidManifest.xml:21:5-23:78
-MERGED from [com.android.support:animated-vector-drawable:26.0.0-alpha1] /Users/apple/.android/build-cache/912b6507251c157c513ca0e51c81eff0eca98a1f/output/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:26.0.0-alpha1] /Users/apple/.android/build-cache/37c2065b9d05d18417871829328b35ba1152394f/output/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:multidex:1.0.0] /Users/apple/.android/build-cache/decea8e97bf52bbc6866702e69e713eb1bc9ce4e/output/AndroidManifest.xml:18:5-42
-MERGED from [com.android.support:support-v4:26.0.0-alpha1] /Users/apple/.android/build-cache/bbb1dcfae17ed392afe7d74f20ee7d0f7ed9010d/output/AndroidManifest.xml:21:5-23:54
-MERGED from [com.android.support:support-media-compat:26.0.0-alpha1] /Users/apple/.android/build-cache/b0871c1b5cf615e7c1c5c3ea29acfde55585583e/output/AndroidManifest.xml:21:5-23:63
-MERGED from [com.android.support:support-fragment:26.0.0-alpha1] /Users/apple/.android/build-cache/db31d5cc7363cde4737b363e3b71302065471e5e/output/AndroidManifest.xml:21:5-23:60
-MERGED from [com.android.support:support-core-ui:26.0.0-alpha1] /Users/apple/.android/build-cache/a44caf4ac8266413e0543ade27ad41a22a9bf5cb/output/AndroidManifest.xml:21:5-23:58
-MERGED from [com.android.support:support-core-utils:26.0.0-alpha1] /Users/apple/.android/build-cache/e6880f74536d5cd5de250494827410443c5ce3dc/output/AndroidManifest.xml:21:5-23:61
-MERGED from [com.android.support:support-compat:26.0.0-alpha1] /Users/apple/.android/build-cache/d9f1ee92a3d3ed17a57afe4ddaaa9e4eb7e83df5/output/AndroidManifest.xml:21:5-23:58
-MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/apple/.android/build-cache/b02da7614066d1f962c140ed408bbab5194cd915/output/AndroidManifest.xml:5:5-7:41
+INJECTED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+MERGED from [com.android.support:appcompat-v7:26.0.0-alpha1] /Users/Michelle_Yu/.android/build-cache/fdad6d79036fe830024c5bdcb5533fb0396f327d/output/AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:animated-vector-drawable:26.0.0-alpha1] /Users/Michelle_Yu/.android/build-cache/db15f9a374a0ef6a16b6a30df660f171cb510386/output/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:26.0.0-alpha1] /Users/Michelle_Yu/.android/build-cache/4860cf0c1498129529e194ef600f6b7588174ac9/output/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:multidex:1.0.0] /Users/Michelle_Yu/.android/build-cache/2e0051fe49dff80296459f2c8b576826c9a70af9/output/AndroidManifest.xml:18:5-42
+MERGED from [com.android.support:support-v4:26.0.0-alpha1] /Users/Michelle_Yu/.android/build-cache/bb89ce152e3cfc7325ca5e911b993048226c00b3/output/AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-media-compat:26.0.0-alpha1] /Users/Michelle_Yu/.android/build-cache/0198e4ffcb74ebf187b83c18866bb55b76bc3033/output/AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-fragment:26.0.0-alpha1] /Users/Michelle_Yu/.android/build-cache/f59d9a30db9c09abd4154749bc37d6d61ecc79cf/output/AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-core-ui:26.0.0-alpha1] /Users/Michelle_Yu/.android/build-cache/b51af2645e943fee4294badf8aeefff36656e5dd/output/AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-utils:26.0.0-alpha1] /Users/Michelle_Yu/.android/build-cache/1bb248c019e885395327c4740949d0b659ab32fb/output/AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:support-compat:26.0.0-alpha1] /Users/Michelle_Yu/.android/build-cache/79354abaf35a248978c80ed497fa4c4d47c794bf/output/AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/Michelle_Yu/.android/build-cache/1d8d17392365cf569290276f83455059f4266018/output/AndroidManifest.xml:5:5-7:41
 	tools:overrideLibrary
-		ADDED from [com.android.support:appcompat-v7:26.0.0-alpha1] /Users/apple/.android/build-cache/951289952ba7c5659736b04851cb8c6d1a7dada8/output/AndroidManifest.xml:23:9-75
+		ADDED from [com.android.support:appcompat-v7:26.0.0-alpha1] /Users/Michelle_Yu/.android/build-cache/fdad6d79036fe830024c5bdcb5533fb0396f327d/output/AndroidManifest.xml:23:9-75
 	android:targetSdkVersion
-		INJECTED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml
-		INJECTED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml
-		INJECTED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml
 meta-data#android.support.VERSION
-ADDED from [com.android.support:appcompat-v7:26.0.0-alpha1] /Users/apple/.android/build-cache/951289952ba7c5659736b04851cb8c6d1a7dada8/output/AndroidManifest.xml:25:5-27:41
-MERGED from [com.android.support:animated-vector-drawable:26.0.0-alpha1] /Users/apple/.android/build-cache/912b6507251c157c513ca0e51c81eff0eca98a1f/output/AndroidManifest.xml:22:5-24:41
-MERGED from [com.android.support:support-vector-drawable:26.0.0-alpha1] /Users/apple/.android/build-cache/37c2065b9d05d18417871829328b35ba1152394f/output/AndroidManifest.xml:22:5-24:41
-MERGED from [com.android.support:support-v4:26.0.0-alpha1] /Users/apple/.android/build-cache/bbb1dcfae17ed392afe7d74f20ee7d0f7ed9010d/output/AndroidManifest.xml:25:5-27:41
-MERGED from [com.android.support:support-media-compat:26.0.0-alpha1] /Users/apple/.android/build-cache/b0871c1b5cf615e7c1c5c3ea29acfde55585583e/output/AndroidManifest.xml:25:5-27:41
-MERGED from [com.android.support:support-fragment:26.0.0-alpha1] /Users/apple/.android/build-cache/db31d5cc7363cde4737b363e3b71302065471e5e/output/AndroidManifest.xml:25:5-27:41
-MERGED from [com.android.support:support-core-ui:26.0.0-alpha1] /Users/apple/.android/build-cache/a44caf4ac8266413e0543ade27ad41a22a9bf5cb/output/AndroidManifest.xml:25:5-27:41
-MERGED from [com.android.support:support-core-utils:26.0.0-alpha1] /Users/apple/.android/build-cache/e6880f74536d5cd5de250494827410443c5ce3dc/output/AndroidManifest.xml:25:5-27:41
-MERGED from [com.android.support:support-compat:26.0.0-alpha1] /Users/apple/.android/build-cache/d9f1ee92a3d3ed17a57afe4ddaaa9e4eb7e83df5/output/AndroidManifest.xml:25:5-27:41
+ADDED from [com.android.support:appcompat-v7:26.0.0-alpha1] /Users/Michelle_Yu/.android/build-cache/fdad6d79036fe830024c5bdcb5533fb0396f327d/output/AndroidManifest.xml:25:5-27:41
+MERGED from [com.android.support:animated-vector-drawable:26.0.0-alpha1] /Users/Michelle_Yu/.android/build-cache/db15f9a374a0ef6a16b6a30df660f171cb510386/output/AndroidManifest.xml:22:5-24:41
+MERGED from [com.android.support:support-vector-drawable:26.0.0-alpha1] /Users/Michelle_Yu/.android/build-cache/4860cf0c1498129529e194ef600f6b7588174ac9/output/AndroidManifest.xml:22:5-24:41
+MERGED from [com.android.support:support-v4:26.0.0-alpha1] /Users/Michelle_Yu/.android/build-cache/bb89ce152e3cfc7325ca5e911b993048226c00b3/output/AndroidManifest.xml:25:5-27:41
+MERGED from [com.android.support:support-media-compat:26.0.0-alpha1] /Users/Michelle_Yu/.android/build-cache/0198e4ffcb74ebf187b83c18866bb55b76bc3033/output/AndroidManifest.xml:25:5-27:41
+MERGED from [com.android.support:support-fragment:26.0.0-alpha1] /Users/Michelle_Yu/.android/build-cache/f59d9a30db9c09abd4154749bc37d6d61ecc79cf/output/AndroidManifest.xml:25:5-27:41
+MERGED from [com.android.support:support-core-ui:26.0.0-alpha1] /Users/Michelle_Yu/.android/build-cache/b51af2645e943fee4294badf8aeefff36656e5dd/output/AndroidManifest.xml:25:5-27:41
+MERGED from [com.android.support:support-core-utils:26.0.0-alpha1] /Users/Michelle_Yu/.android/build-cache/1bb248c019e885395327c4740949d0b659ab32fb/output/AndroidManifest.xml:25:5-27:41
+MERGED from [com.android.support:support-compat:26.0.0-alpha1] /Users/Michelle_Yu/.android/build-cache/79354abaf35a248978c80ed497fa4c4d47c794bf/output/AndroidManifest.xml:25:5-27:41
 	android:value
-		ADDED from [com.android.support:appcompat-v7:26.0.0-alpha1] /Users/apple/.android/build-cache/951289952ba7c5659736b04851cb8c6d1a7dada8/output/AndroidManifest.xml:27:9-38
+		ADDED from [com.android.support:appcompat-v7:26.0.0-alpha1] /Users/Michelle_Yu/.android/build-cache/fdad6d79036fe830024c5bdcb5533fb0396f327d/output/AndroidManifest.xml:27:9-38
 	android:name
-		ADDED from [com.android.support:appcompat-v7:26.0.0-alpha1] /Users/apple/.android/build-cache/951289952ba7c5659736b04851cb8c6d1a7dada8/output/AndroidManifest.xml:26:9-47
+		ADDED from [com.android.support:appcompat-v7:26.0.0-alpha1] /Users/Michelle_Yu/.android/build-cache/fdad6d79036fe830024c5bdcb5533fb0396f327d/output/AndroidManifest.xml:26:9-47
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-IMPLIED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:13:1-69:12 reason: com.amazonaws.mobile.auth.core has a targetSdkVersion < 4
+IMPLIED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml:13:1-69:12 reason: com.amazonaws.mobile.auth.core has a targetSdkVersion < 4
 uses-permission#android.permission.READ_PHONE_STATE
-IMPLIED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:13:1-69:12 reason: com.amazonaws.mobile.auth.core has a targetSdkVersion < 4
+IMPLIED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml:13:1-69:12 reason: com.amazonaws.mobile.auth.core has a targetSdkVersion < 4
 uses-permission#com.google.android.c2dm.permission.RECEIVE
-ADDED from [com.amazonaws:aws-android-sdk-auth-ui:2.6.0] /Users/apple/.android/build-cache/e6dd5b95ac4271f36f40b3774bdfa2c6dae1a53c/output/AndroidManifest.xml:4:5-81
+ADDED from [com.amazonaws:aws-android-sdk-auth-ui:2.6.0] /Users/Michelle_Yu/.android/build-cache/4789b67a148043b6f5e0417a355365b77e82829d/output/AndroidManifest.xml:4:5-81
 	android:name
-		ADDED from [com.amazonaws:aws-android-sdk-auth-ui:2.6.0] /Users/apple/.android/build-cache/e6dd5b95ac4271f36f40b3774bdfa2c6dae1a53c/output/AndroidManifest.xml:4:22-79
+		ADDED from [com.amazonaws:aws-android-sdk-auth-ui:2.6.0] /Users/Michelle_Yu/.android/build-cache/4789b67a148043b6f5e0417a355365b77e82829d/output/AndroidManifest.xml:4:22-79
 permission#com.amazonaws.mobile.auth.ui.permission.C2D_MESSAGE
-ADDED from [com.amazonaws:aws-android-sdk-auth-ui:2.6.0] /Users/apple/.android/build-cache/e6dd5b95ac4271f36f40b3774bdfa2c6dae1a53c/output/AndroidManifest.xml:5:5-121
+ADDED from [com.amazonaws:aws-android-sdk-auth-ui:2.6.0] /Users/Michelle_Yu/.android/build-cache/4789b67a148043b6f5e0417a355365b77e82829d/output/AndroidManifest.xml:5:5-121
 	android:protectionLevel
-		ADDED from [com.amazonaws:aws-android-sdk-auth-ui:2.6.0] /Users/apple/.android/build-cache/e6dd5b95ac4271f36f40b3774bdfa2c6dae1a53c/output/AndroidManifest.xml:5:84-119
+		ADDED from [com.amazonaws:aws-android-sdk-auth-ui:2.6.0] /Users/Michelle_Yu/.android/build-cache/4789b67a148043b6f5e0417a355365b77e82829d/output/AndroidManifest.xml:5:84-119
 	android:name
-		ADDED from [com.amazonaws:aws-android-sdk-auth-ui:2.6.0] /Users/apple/.android/build-cache/e6dd5b95ac4271f36f40b3774bdfa2c6dae1a53c/output/AndroidManifest.xml:5:17-83
+		ADDED from [com.amazonaws:aws-android-sdk-auth-ui:2.6.0] /Users/Michelle_Yu/.android/build-cache/4789b67a148043b6f5e0417a355365b77e82829d/output/AndroidManifest.xml:5:17-83
 uses-permission#com.amazonaws.mobile.auth.ui.permission.C2D_MESSAGE
-ADDED from [com.amazonaws:aws-android-sdk-auth-ui:2.6.0] /Users/apple/.android/build-cache/e6dd5b95ac4271f36f40b3774bdfa2c6dae1a53c/output/AndroidManifest.xml:6:5-90
+ADDED from [com.amazonaws:aws-android-sdk-auth-ui:2.6.0] /Users/Michelle_Yu/.android/build-cache/4789b67a148043b6f5e0417a355365b77e82829d/output/AndroidManifest.xml:6:5-90
 	android:name
-		ADDED from [com.amazonaws:aws-android-sdk-auth-ui:2.6.0] /Users/apple/.android/build-cache/e6dd5b95ac4271f36f40b3774bdfa2c6dae1a53c/output/AndroidManifest.xml:6:22-88
+		ADDED from [com.amazonaws:aws-android-sdk-auth-ui:2.6.0] /Users/Michelle_Yu/.android/build-cache/4789b67a148043b6f5e0417a355365b77e82829d/output/AndroidManifest.xml:6:22-88
 activity#com.amazonaws.mobile.auth.ui.SignInActivity
-ADDED from [com.amazonaws:aws-android-sdk-auth-ui:2.6.0] /Users/apple/.android/build-cache/e6dd5b95ac4271f36f40b3774bdfa2c6dae1a53c/output/AndroidManifest.xml:9:9-234
+ADDED from [com.amazonaws:aws-android-sdk-auth-ui:2.6.0] /Users/Michelle_Yu/.android/build-cache/4789b67a148043b6f5e0417a355365b77e82829d/output/AndroidManifest.xml:9:9-234
 	android:screenOrientation
-		ADDED from [com.amazonaws:aws-android-sdk-auth-ui:2.6.0] /Users/apple/.android/build-cache/e6dd5b95ac4271f36f40b3774bdfa2c6dae1a53c/output/AndroidManifest.xml:9:196-232
+		ADDED from [com.amazonaws:aws-android-sdk-auth-ui:2.6.0] /Users/Michelle_Yu/.android/build-cache/4789b67a148043b6f5e0417a355365b77e82829d/output/AndroidManifest.xml:9:196-232
 	android:label
-		ADDED from [com.amazonaws:aws-android-sdk-auth-ui:2.6.0] /Users/apple/.android/build-cache/e6dd5b95ac4271f36f40b3774bdfa2c6dae1a53c/output/AndroidManifest.xml:9:90-136
+		ADDED from [com.amazonaws:aws-android-sdk-auth-ui:2.6.0] /Users/Michelle_Yu/.android/build-cache/4789b67a148043b6f5e0417a355365b77e82829d/output/AndroidManifest.xml:9:90-136
 	android:configChanges
-		ADDED from [com.amazonaws:aws-android-sdk-auth-ui:2.6.0] /Users/apple/.android/build-cache/e6dd5b95ac4271f36f40b3774bdfa2c6dae1a53c/output/AndroidManifest.xml:9:19-89
+		ADDED from [com.amazonaws:aws-android-sdk-auth-ui:2.6.0] /Users/Michelle_Yu/.android/build-cache/4789b67a148043b6f5e0417a355365b77e82829d/output/AndroidManifest.xml:9:19-89
 	android:name
-		ADDED from [com.amazonaws:aws-android-sdk-auth-ui:2.6.0] /Users/apple/.android/build-cache/e6dd5b95ac4271f36f40b3774bdfa2c6dae1a53c/output/AndroidManifest.xml:9:137-195
+		ADDED from [com.amazonaws:aws-android-sdk-auth-ui:2.6.0] /Users/Michelle_Yu/.android/build-cache/4789b67a148043b6f5e0417a355365b77e82829d/output/AndroidManifest.xml:9:137-195
 activity#com.amazonaws.mobile.auth.userpools.ForgotPasswordActivity
-ADDED from [com.amazonaws:aws-android-sdk-auth-userpools:2.6.0] /Users/apple/.android/build-cache/1f063a444381dcd41efed7d46f794d43e7a40165/output/AndroidManifest.xml:9:10-10:21
+ADDED from [com.amazonaws:aws-android-sdk-auth-userpools:2.6.0] /Users/Michelle_Yu/.android/build-cache/60df9a77700fd4feb6ead4d1765817b253071dd1/output/AndroidManifest.xml:9:10-10:21
 	android:screenOrientation
-		ADDED from [com.amazonaws:aws-android-sdk-auth-userpools:2.6.0] /Users/apple/.android/build-cache/1f063a444381dcd41efed7d46f794d43e7a40165/output/AndroidManifest.xml:9:220-256
+		ADDED from [com.amazonaws:aws-android-sdk-auth-userpools:2.6.0] /Users/Michelle_Yu/.android/build-cache/60df9a77700fd4feb6ead4d1765817b253071dd1/output/AndroidManifest.xml:9:220-256
 	android:label
-		ADDED from [com.amazonaws:aws-android-sdk-auth-userpools:2.6.0] /Users/apple/.android/build-cache/1f063a444381dcd41efed7d46f794d43e7a40165/output/AndroidManifest.xml:9:91-145
+		ADDED from [com.amazonaws:aws-android-sdk-auth-userpools:2.6.0] /Users/Michelle_Yu/.android/build-cache/60df9a77700fd4feb6ead4d1765817b253071dd1/output/AndroidManifest.xml:9:91-145
 	android:configChanges
-		ADDED from [com.amazonaws:aws-android-sdk-auth-userpools:2.6.0] /Users/apple/.android/build-cache/1f063a444381dcd41efed7d46f794d43e7a40165/output/AndroidManifest.xml:9:20-90
+		ADDED from [com.amazonaws:aws-android-sdk-auth-userpools:2.6.0] /Users/Michelle_Yu/.android/build-cache/60df9a77700fd4feb6ead4d1765817b253071dd1/output/AndroidManifest.xml:9:20-90
 	android:name
-		ADDED from [com.amazonaws:aws-android-sdk-auth-userpools:2.6.0] /Users/apple/.android/build-cache/1f063a444381dcd41efed7d46f794d43e7a40165/output/AndroidManifest.xml:9:146-219
+		ADDED from [com.amazonaws:aws-android-sdk-auth-userpools:2.6.0] /Users/Michelle_Yu/.android/build-cache/60df9a77700fd4feb6ead4d1765817b253071dd1/output/AndroidManifest.xml:9:146-219
 activity#com.amazonaws.mobile.auth.userpools.SignUpActivity
-ADDED from [com.amazonaws:aws-android-sdk-auth-userpools:2.6.0] /Users/apple/.android/build-cache/1f063a444381dcd41efed7d46f794d43e7a40165/output/AndroidManifest.xml:12:10-13:21
+ADDED from [com.amazonaws:aws-android-sdk-auth-userpools:2.6.0] /Users/Michelle_Yu/.android/build-cache/60df9a77700fd4feb6ead4d1765817b253071dd1/output/AndroidManifest.xml:12:10-13:21
 	android:screenOrientation
-		ADDED from [com.amazonaws:aws-android-sdk-auth-userpools:2.6.0] /Users/apple/.android/build-cache/1f063a444381dcd41efed7d46f794d43e7a40165/output/AndroidManifest.xml:12:204-240
+		ADDED from [com.amazonaws:aws-android-sdk-auth-userpools:2.6.0] /Users/Michelle_Yu/.android/build-cache/60df9a77700fd4feb6ead4d1765817b253071dd1/output/AndroidManifest.xml:12:204-240
 	android:label
-		ADDED from [com.amazonaws:aws-android-sdk-auth-userpools:2.6.0] /Users/apple/.android/build-cache/1f063a444381dcd41efed7d46f794d43e7a40165/output/AndroidManifest.xml:12:91-137
+		ADDED from [com.amazonaws:aws-android-sdk-auth-userpools:2.6.0] /Users/Michelle_Yu/.android/build-cache/60df9a77700fd4feb6ead4d1765817b253071dd1/output/AndroidManifest.xml:12:91-137
 	android:configChanges
-		ADDED from [com.amazonaws:aws-android-sdk-auth-userpools:2.6.0] /Users/apple/.android/build-cache/1f063a444381dcd41efed7d46f794d43e7a40165/output/AndroidManifest.xml:12:20-90
+		ADDED from [com.amazonaws:aws-android-sdk-auth-userpools:2.6.0] /Users/Michelle_Yu/.android/build-cache/60df9a77700fd4feb6ead4d1765817b253071dd1/output/AndroidManifest.xml:12:20-90
 	android:name
-		ADDED from [com.amazonaws:aws-android-sdk-auth-userpools:2.6.0] /Users/apple/.android/build-cache/1f063a444381dcd41efed7d46f794d43e7a40165/output/AndroidManifest.xml:12:138-203
+		ADDED from [com.amazonaws:aws-android-sdk-auth-userpools:2.6.0] /Users/Michelle_Yu/.android/build-cache/60df9a77700fd4feb6ead4d1765817b253071dd1/output/AndroidManifest.xml:12:138-203
 activity#com.amazonaws.mobile.auth.userpools.MFAActivity
-ADDED from [com.amazonaws:aws-android-sdk-auth-userpools:2.6.0] /Users/apple/.android/build-cache/1f063a444381dcd41efed7d46f794d43e7a40165/output/AndroidManifest.xml:15:10-16:21
+ADDED from [com.amazonaws:aws-android-sdk-auth-userpools:2.6.0] /Users/Michelle_Yu/.android/build-cache/60df9a77700fd4feb6ead4d1765817b253071dd1/output/AndroidManifest.xml:15:10-16:21
 	android:screenOrientation
-		ADDED from [com.amazonaws:aws-android-sdk-auth-userpools:2.6.0] /Users/apple/.android/build-cache/1f063a444381dcd41efed7d46f794d43e7a40165/output/AndroidManifest.xml:15:197-233
+		ADDED from [com.amazonaws:aws-android-sdk-auth-userpools:2.6.0] /Users/Michelle_Yu/.android/build-cache/60df9a77700fd4feb6ead4d1765817b253071dd1/output/AndroidManifest.xml:15:197-233
 	android:label
-		ADDED from [com.amazonaws:aws-android-sdk-auth-userpools:2.6.0] /Users/apple/.android/build-cache/1f063a444381dcd41efed7d46f794d43e7a40165/output/AndroidManifest.xml:15:91-133
+		ADDED from [com.amazonaws:aws-android-sdk-auth-userpools:2.6.0] /Users/Michelle_Yu/.android/build-cache/60df9a77700fd4feb6ead4d1765817b253071dd1/output/AndroidManifest.xml:15:91-133
 	android:configChanges
-		ADDED from [com.amazonaws:aws-android-sdk-auth-userpools:2.6.0] /Users/apple/.android/build-cache/1f063a444381dcd41efed7d46f794d43e7a40165/output/AndroidManifest.xml:15:20-90
+		ADDED from [com.amazonaws:aws-android-sdk-auth-userpools:2.6.0] /Users/Michelle_Yu/.android/build-cache/60df9a77700fd4feb6ead4d1765817b253071dd1/output/AndroidManifest.xml:15:20-90
 	android:name
-		ADDED from [com.amazonaws:aws-android-sdk-auth-userpools:2.6.0] /Users/apple/.android/build-cache/1f063a444381dcd41efed7d46f794d43e7a40165/output/AndroidManifest.xml:15:134-196
+		ADDED from [com.amazonaws:aws-android-sdk-auth-userpools:2.6.0] /Users/Michelle_Yu/.android/build-cache/60df9a77700fd4feb6ead4d1765817b253071dd1/output/AndroidManifest.xml:15:134-196
 activity#com.amazonaws.mobile.auth.userpools.SignUpConfirmActivity
-ADDED from [com.amazonaws:aws-android-sdk-auth-userpools:2.6.0] /Users/apple/.android/build-cache/1f063a444381dcd41efed7d46f794d43e7a40165/output/AndroidManifest.xml:18:10-19:21
+ADDED from [com.amazonaws:aws-android-sdk-auth-userpools:2.6.0] /Users/Michelle_Yu/.android/build-cache/60df9a77700fd4feb6ead4d1765817b253071dd1/output/AndroidManifest.xml:18:10-19:21
 	android:screenOrientation
-		ADDED from [com.amazonaws:aws-android-sdk-auth-userpools:2.6.0] /Users/apple/.android/build-cache/1f063a444381dcd41efed7d46f794d43e7a40165/output/AndroidManifest.xml:18:219-255
+		ADDED from [com.amazonaws:aws-android-sdk-auth-userpools:2.6.0] /Users/Michelle_Yu/.android/build-cache/60df9a77700fd4feb6ead4d1765817b253071dd1/output/AndroidManifest.xml:18:219-255
 	android:label
-		ADDED from [com.amazonaws:aws-android-sdk-auth-userpools:2.6.0] /Users/apple/.android/build-cache/1f063a444381dcd41efed7d46f794d43e7a40165/output/AndroidManifest.xml:18:91-145
+		ADDED from [com.amazonaws:aws-android-sdk-auth-userpools:2.6.0] /Users/Michelle_Yu/.android/build-cache/60df9a77700fd4feb6ead4d1765817b253071dd1/output/AndroidManifest.xml:18:91-145
 	android:configChanges
-		ADDED from [com.amazonaws:aws-android-sdk-auth-userpools:2.6.0] /Users/apple/.android/build-cache/1f063a444381dcd41efed7d46f794d43e7a40165/output/AndroidManifest.xml:18:20-90
+		ADDED from [com.amazonaws:aws-android-sdk-auth-userpools:2.6.0] /Users/Michelle_Yu/.android/build-cache/60df9a77700fd4feb6ead4d1765817b253071dd1/output/AndroidManifest.xml:18:20-90
 	android:name
-		ADDED from [com.amazonaws:aws-android-sdk-auth-userpools:2.6.0] /Users/apple/.android/build-cache/1f063a444381dcd41efed7d46f794d43e7a40165/output/AndroidManifest.xml:18:146-218
+		ADDED from [com.amazonaws:aws-android-sdk-auth-userpools:2.6.0] /Users/Michelle_Yu/.android/build-cache/60df9a77700fd4feb6ead4d1765817b253071dd1/output/AndroidManifest.xml:18:146-218
