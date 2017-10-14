@@ -1,5 +1,6 @@
 package com.mobilizedconstruction;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -15,14 +16,17 @@ import com.mobilizedconstruction.model.ReportDO;
 import com.amazonaws.AmazonClientException;
 import android.util.Log;
 
+import java.io.FileOutputStream;
+import java.io.ObjectOutputStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
+import static android.content.Context.*;
+
 
 public class ReportInfoUpload extends AppCompatActivity {
-    private Report report;
     private static final String LOG_TAG = ReportInfoUpload.class.getSimpleName();
     DynamoDBMapper mapper;
     Intent intent;
@@ -37,7 +41,6 @@ public class ReportInfoUpload extends AppCompatActivity {
                 .dynamoDBClient(dynamoDBClient)
                 .awsConfiguration(Application.awsConfiguration)
                 .build();
-
         intent = new Intent(this, AddCommentActivity.class);
         new Thread(new Runnable() {
             @Override
@@ -58,6 +61,15 @@ public class ReportInfoUpload extends AppCompatActivity {
                     Date currentDate = new Date();
                     SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
                     final ReportDO report = new ReportDO(id,"",formatter.format(currentDate).toString(),0,0,0,user);
+                    String FILENAME = "hello_file";
+                    ObjectOutputStream fos;
+                    try {
+                        fos = new ObjectOutputStream(openFileOutput(FILENAME, MODE_PRIVATE));
+                        fos.writeObject(report);
+                        fos.close();
+                    }catch(Exception ex){
+                        Log.e(LOG_TAG, "failed writing item : " + ex.getMessage(), ex);
+                    }
                     mapper.save(report);
                     intent.putExtra("new_report",report);
                     startActivity(intent);

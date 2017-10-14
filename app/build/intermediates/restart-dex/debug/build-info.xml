@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <instant-run
     abi="x86"
-    api-level="24"
+    api-level="26"
     build-mode="COLD"
     density="420dpi"
     format="10"
     plugin-version="2.3.3"
-    timestamp="1507928135507"
+    timestamp="1507963276429"
     token="2008785476519058255"
     verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
-        duration="951" />
+        duration="990" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="25" />
+        duration="48" />
     <task
         name="verifier"
-        duration="3" />
+        duration="25" />
 
     <artifact
         location="/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/split-apk/debug/slices/slice_7.apk"
@@ -29,34 +29,31 @@
 
     <build
         build-mode="FULL"
-        timestamp="1507918017222"
+        timestamp="1507961033255"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
-            location="/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/split-apk/debug/dep/dependencies.apk"
-            type="SPLIT" />
-        <artifact
-            location="/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/split-apk/debug/slices/slice_0.apk"
-            type="SPLIT" />
-        <artifact
-            location="/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/split-apk/debug/slices/slice_3.apk"
-            type="SPLIT" />
-        <artifact
-            location="/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/split-apk/debug/slices/slice_1.apk"
-            type="SPLIT" />
-        <artifact
-            location="/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/split-apk/debug/slices/slice_2.apk"
-            type="SPLIT" />
-        <artifact
-            location="/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/split-apk/debug/slices/slice_4.apk"
+            location="/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/split-apk/debug/slices/slice_7.apk"
             type="SPLIT" />
         <artifact
             location="/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/split-apk/debug/slices/slice_5.apk"
             type="SPLIT" />
         <artifact
-            location="/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/split-apk/debug/slices/slice_7.apk"
+            location="/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/split-apk/debug/slices/slice_0.apk"
             type="SPLIT" />
         <artifact
             location="/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/split-apk/debug/slices/slice_6.apk"
+            type="SPLIT" />
+        <artifact
+            location="/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/split-apk/debug/slices/slice_1.apk"
+            type="SPLIT" />
+        <artifact
+            location="/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/split-apk/debug/slices/slice_4.apk"
+            type="SPLIT" />
+        <artifact
+            location="/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/split-apk/debug/slices/slice_3.apk"
+            type="SPLIT" />
+        <artifact
+            location="/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/split-apk/debug/slices/slice_2.apk"
             type="SPLIT" />
         <artifact
             location="/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/split-apk/debug/slices/slice_8.apk"
@@ -65,20 +62,15 @@
             location="/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/split-apk/debug/slices/slice_9.apk"
             type="SPLIT" />
         <artifact
+            location="/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/split-apk/debug/dep/dependencies.apk"
+            type="SPLIT" />
+        <artifact
             location="/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/outputs/apk/app-debug.apk"
             type="SPLIT_MAIN" />
     </build>
     <build
         build-mode="COLD"
-        timestamp="1507927681492"
-        verifier="COLD_SWAP_REQUESTED" >
-        <artifact
-            location="/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/split-apk/debug/slices/slice_1.apk"
-            type="SPLIT" />
-    </build>
-    <build
-        build-mode="COLD"
-        timestamp="1507928135507"
+        timestamp="1507963276429"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
             location="/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/split-apk/debug/slices/slice_7.apk"

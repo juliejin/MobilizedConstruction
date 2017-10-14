@@ -1,8 +1,10 @@
 package com.mobilizedconstruction;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -10,7 +12,11 @@ import android.widget.EditText;
 import com.mobilizedconstruction.R;
 import com.mobilizedconstruction.model.ReportDO;
 
+import java.io.FileInputStream;
+import java.io.ObjectInputStream;
+
 public class AddCommentActivity extends AppCompatActivity {
+    private static final String LOG_TAG = AddCommentActivity.class.getSimpleName();
     ReportDO report;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +32,17 @@ public class AddCommentActivity extends AppCompatActivity {
         });
         Intent intent = getIntent();
         report = (ReportDO)intent.getSerializableExtra("new_report");
+        ReportDO report_test;
+        String FILENAME = "hello_file";
+        ObjectInputStream fis;
+        try{
+            fis = new ObjectInputStream(openFileInput(FILENAME));
+            report_test = (ReportDO) fis.readObject();
+            fis.close();
+            //submitButton.setText(report_test.getUserID());
+        }catch (Exception ex){
+            Log.e(LOG_TAG, "failed reading item : " + ex.getMessage(), ex);
+        }
     }
 
     protected void navigateToNextPage(){
