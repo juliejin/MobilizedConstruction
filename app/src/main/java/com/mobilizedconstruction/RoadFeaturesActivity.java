@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.ClientConfiguration;
@@ -95,7 +96,8 @@ public class RoadFeaturesActivity extends AppCompatActivity {
                 {
                     report.setRoadDirection(direction);
                     report.setSeverity(severity);
-                    UpdateReport();
+                    //UpdateReport();
+                    navigateToPreview();
                 }
                 else
                 {
@@ -104,6 +106,12 @@ public class RoadFeaturesActivity extends AppCompatActivity {
             }
         });
     }
+
+    public void navigateToPreview(){
+        Intent intent = new Intent(this, PreviewReportActivity.class);
+        startActivity(intent);
+    }
+
 
     public void UpdateReport(){
         AmazonDynamoDBClient dynamoDBClient =
