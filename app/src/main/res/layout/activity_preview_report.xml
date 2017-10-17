@@ -17,7 +17,7 @@
         android:layout_marginTop="16dp" />
 
     <TextView
-        android:id="@+id/LocationTextView"
+        android:id="@+id/FeaturesTextView"
         android:layout_width="196dp"
         android:layout_height="147dp"
         android:layout_marginRight="16dp"

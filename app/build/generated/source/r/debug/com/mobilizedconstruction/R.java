@@ -2408,21 +2408,17 @@ containing a value of this type.
         public static final int selector_button_theme4=0x7f020064;
     }
     public static final class id {
-
         public static final int CommentTextView=0x7f0d008c;
         public static final int CreateNewReportButton=0x7f0d0090;
         public static final int CreatedReportButton=0x7f0d0091;
-        public static final int CreatedReportTable=0x7f0d0074;
         public static final int DisPlayedUserName=0x7f0d0092;
         public static final int DisplayedUserImage=0x7f0d008f;
-        public static final int DraftList=0x7f0d0075;
         public static final int DraftedReportButton=0x7f0d0093;
-        public static final int LocationTextView=0x7f0d008b;
+        public static final int FeaturesTextView=0x7f0d008b;
         public static final int PublishButton=0x7f0d008d;
         public static final int SaveButton=0x7f0d008e;
         public static final int SignOut=0x7f0d0094;
         public static final int action0=0x7f0d010b;
-
         public static final int action_bar=0x7f0d0063;
         public static final int action_bar_activity_content=0x7f0d0000;
         public static final int action_bar_container=0x7f0d0062;
@@ -2562,25 +2558,25 @@ containing a value of this type.
         public static final int linearLayout_demoAnalytics_monetizationEvent=0x7f0d00c2;
         public static final int listMode=0x7f0d0024;
         public static final int list_item=0x7f0d0047;
-        public static final int list_item_cloudlogic_api_chooser_description=0x7f0d00fe;
-        public static final int list_item_cloudlogic_api_chooser_endpoint=0x7f0d00fd;
-        public static final int list_item_cloudlogic_api_chooser_title=0x7f0d00fc;
-        public static final int list_item_cloudlogic_method_chooser_method=0x7f0d00ff;
-        public static final int list_item_cloudlogic_method_chooser_path=0x7f0d0100;
-        public static final int list_item_cloudlogic_path_chooser=0x7f0d0101;
-        public static final int list_item_icon=0x7f0d0102;
-        public static final int list_item_subtitle=0x7f0d0104;
-        public static final int list_item_title=0x7f0d0103;
+        public static final int list_item_cloudlogic_api_chooser_description=0x7f0d00ff;
+        public static final int list_item_cloudlogic_api_chooser_endpoint=0x7f0d00fe;
+        public static final int list_item_cloudlogic_api_chooser_title=0x7f0d00fd;
+        public static final int list_item_cloudlogic_method_chooser_method=0x7f0d0100;
+        public static final int list_item_cloudlogic_method_chooser_path=0x7f0d0101;
+        public static final int list_item_cloudlogic_path_chooser=0x7f0d0102;
+        public static final int list_item_icon=0x7f0d0103;
+        public static final int list_item_subtitle=0x7f0d0105;
+        public static final int list_item_title=0x7f0d0104;
         public static final int ll=0x7f0d0074;
-        public static final int main_content_layout=0x7f0d007b;
-        public static final int main_fragment_container=0x7f0d007d;
-        public static final int media_actions=0x7f0d010d;
-        public static final int mfa_button=0x7f0d0088;
-        public static final int mfa_form=0x7f0d0087;
-        public static final int mfa_message=0x7f0d0086;
-        public static final int mfa_title=0x7f0d0085;
-        public static final int mfa_view=0x7f0d0084;
-
+        public static final int ll_draft=0x7f0d0075;
+        public static final int main_content_layout=0x7f0d007c;
+        public static final int main_fragment_container=0x7f0d007e;
+        public static final int media_actions=0x7f0d010e;
+        public static final int mfa_button=0x7f0d0089;
+        public static final int mfa_form=0x7f0d0088;
+        public static final int mfa_message=0x7f0d0087;
+        public static final int mfa_title=0x7f0d0086;
+        public static final int mfa_view=0x7f0d0085;
         public static final int middle=0x7f0d0036;
         public static final int multiply=0x7f0d002e;
         public static final int nav_drawer=0x7f0d007f;

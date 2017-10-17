@@ -8,13 +8,13 @@ import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.TableLayout;
+import android.widget.LinearLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 
 import com.mobilizedconstruction.R;
 import com.mobilizedconstruction.model.ReportDO;
-
+import android.widget.TableRow.LayoutParams;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -29,7 +29,7 @@ public class DraftedReport extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_drafted_report);
-        TableLayout draftedReports = (TableLayout) findViewById(R.id.DraftList);
+        LinearLayout draftedReports = (LinearLayout) findViewById(R.id.ll_draft);
 
         final Vector<ReportDO> savedReports = new Vector<ReportDO>();
         try{
@@ -47,11 +47,10 @@ public class DraftedReport extends AppCompatActivity {
 
         for(int i=0;i<savedReports.size();i++){
             final ReportDO report = savedReports.get(i);
-            TableRow row = new TableRow(this);
             //row.setLayoutParams(new TableLayout.LayoutParams());
             Button reportButton = new Button(this);
-            reportButton.setText("Report ID: " + report.getReportID().toString());
-            reportButton.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.MATCH_PARENT));
+            reportButton.setText("Date Created: " + report.getDateCreated());
+            reportButton.setLayoutParams(new LayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT)));
             final Intent intent = new Intent(this, PreviewReportActivity.class);
             reportButton.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -60,8 +59,7 @@ public class DraftedReport extends AppCompatActivity {
                     startActivity(intent);
                 }
             });
-            row.addView(reportButton);
-            draftedReports.addView(row,i);
+            draftedReports.addView(reportButton);
         }
     }
 }

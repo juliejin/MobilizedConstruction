@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.ClientConfiguration;
@@ -14,6 +15,8 @@ import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBMapper;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient;
 import com.mobilizedconstruction.R;
 import com.mobilizedconstruction.model.ReportDO;
+
+import org.w3c.dom.Text;
 
 import java.io.File;
 import java.io.ObjectOutputStream;
@@ -50,6 +53,19 @@ public class PreviewReportActivity extends AppCompatActivity {
             publishButton.setVisibility(View.INVISIBLE);
             saveButton.setVisibility(View.INVISIBLE);
         }
+        final TextView commentTextView = (TextView) findViewById(R.id.CommentTextView);
+        commentTextView.setText(report.getComment());
+        final TextView featuresTextView = (TextView) findViewById(R.id.FeaturesTextView);
+        String features = "Severity: " + report.getSeverity() +'\n';
+        String roadDirection = "";
+        if (report.getRoadDirection() == 0)
+            roadDirection = "Left";
+        else if (report.getRoadDirection() == 1)
+            roadDirection = "Right";
+        else if (report.getRoadDirection() == 2)
+            roadDirection = "Both";
+        features = features + "Road Direction: " + roadDirection;
+        featuresTextView.setText(features);
     }
 
     public void UpdateReport(){
