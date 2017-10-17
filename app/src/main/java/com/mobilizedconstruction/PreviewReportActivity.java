@@ -22,11 +22,13 @@ public class PreviewReportActivity extends AppCompatActivity {
     private static final String LOG_TAG = RoadFeaturesActivity.class.getSimpleName();
     ReportDO report;
     DynamoDBMapper mapper;
-    @Override
+    Boolean showButtons = true;
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_preview_report);
         Intent intent = getIntent();
+        showButtons = getIntent().getBooleanExtra("showButtons", true);
         report = (ReportDO)intent.getSerializableExtra("new_report");
         final Button publishButton = (Button)findViewById(R.id.PublishButton);
         publishButton.setOnClickListener(new View.OnClickListener() {
@@ -36,12 +38,18 @@ public class PreviewReportActivity extends AppCompatActivity {
             }
         });
         final Button saveButton = (Button)findViewById(R.id.SaveButton);
+
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 saveLocally();
             }
         });
+        if(showButtons == false)
+        {
+            publishButton.setVisibility(View.INVISIBLE);
+            saveButton.setVisibility(View.INVISIBLE);
+        }
     }
 
     public void UpdateReport(){
@@ -71,6 +79,7 @@ public class PreviewReportActivity extends AppCompatActivity {
 
     }
 
+
     public void saveLocally(){
         String FILENAME = report.getUserID()+"_"+report.getReportID();
         ObjectOutputStream fos;
@@ -86,3 +95,4 @@ public class PreviewReportActivity extends AppCompatActivity {
     }
 
 }
+
