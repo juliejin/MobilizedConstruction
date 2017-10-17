@@ -64,12 +64,12 @@
         "source": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/res/layout/list_item_cloudlogic_path_chooser.xml"
     },
     {
-        "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/notification_template_custom_big.xml",
-        "source": "/Users/Michelle_Yu/.android/build-cache/fdad6d79036fe830024c5bdcb5533fb0396f327d/output/res/layout/notification_template_custom_big.xml"
-    },
-    {
         "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/abc_screen_toolbar.xml",
         "source": "/Users/Michelle_Yu/.android/build-cache/fdad6d79036fe830024c5bdcb5533fb0396f327d/output/res/layout/abc_screen_toolbar.xml"
+    },
+    {
+        "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/notification_template_custom_big.xml",
+        "source": "/Users/Michelle_Yu/.android/build-cache/fdad6d79036fe830024c5bdcb5533fb0396f327d/output/res/layout/notification_template_custom_big.xml"
     },
     {
         "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/fragment_demo_nosql_select_table.xml",
@@ -136,12 +136,12 @@
         "source": "/Users/Michelle_Yu/.android/build-cache/fdad6d79036fe830024c5bdcb5533fb0396f327d/output/res/layout/abc_popup_menu_item_layout.xml"
     },
     {
-        "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/demo_nosql_select_operation_list_item.xml",
-        "source": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/res/layout/demo_nosql_select_operation_list_item.xml"
-    },
-    {
         "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/activity_preview_report.xml",
         "source": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/res/layout/activity_preview_report.xml"
+    },
+    {
+        "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/demo_nosql_select_operation_list_item.xml",
+        "source": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/res/layout/demo_nosql_select_operation_list_item.xml"
     },
     {
         "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/notification_template_part_chronometer.xml",

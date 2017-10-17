@@ -2411,7 +2411,6 @@ containing a value of this type.
         public static final int CommentTextView=0x7f0d008b;
         public static final int CreateNewReportButton=0x7f0d008f;
         public static final int CreatedReportButton=0x7f0d0090;
-        public static final int CreatedReportTable=0x7f0d0074;
         public static final int DisPlayedUserName=0x7f0d0091;
         public static final int DisplayedUserImage=0x7f0d008e;
         public static final int DraftedReportButton=0x7f0d0092;
@@ -2568,6 +2567,7 @@ containing a value of this type.
         public static final int list_item_icon=0x7f0d0102;
         public static final int list_item_subtitle=0x7f0d0104;
         public static final int list_item_title=0x7f0d0103;
+        public static final int ll=0x7f0d0074;
         public static final int main_content_layout=0x7f0d007b;
         public static final int main_fragment_container=0x7f0d007d;
         public static final int media_actions=0x7f0d010d;

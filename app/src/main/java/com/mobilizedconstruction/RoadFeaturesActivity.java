@@ -109,6 +109,7 @@ public class RoadFeaturesActivity extends AppCompatActivity {
 
     public void navigateToPreview(){
         Intent intent = new Intent(this, PreviewReportActivity.class);
+        intent.putExtra("new_report", report);
         startActivity(intent);
     }
 
