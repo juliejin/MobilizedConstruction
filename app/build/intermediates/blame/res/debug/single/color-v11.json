@@ -1,19 +1,10 @@
 [
     {
-<<<<<<< HEAD
         "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/color-v11/abc_background_cache_hint_selector_material_light.xml",
         "source": "/Users/Michelle_Yu/.android/build-cache/fdad6d79036fe830024c5bdcb5533fb0396f327d/output/res/color-v11/abc_background_cache_hint_selector_material_light.xml"
     },
     {
         "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/color-v11/abc_background_cache_hint_selector_material_dark.xml",
         "source": "/Users/Michelle_Yu/.android/build-cache/fdad6d79036fe830024c5bdcb5533fb0396f327d/output/res/color-v11/abc_background_cache_hint_selector_material_dark.xml"
-=======
-        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/color-v11/abc_background_cache_hint_selector_material_light.xml",
-        "source": "/Users/apple/.android/build-cache/951289952ba7c5659736b04851cb8c6d1a7dada8/output/res/color-v11/abc_background_cache_hint_selector_material_light.xml"
-    },
-    {
-        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/color-v11/abc_background_cache_hint_selector_material_dark.xml",
-        "source": "/Users/apple/.android/build-cache/951289952ba7c5659736b04851cb8c6d1a7dada8/output/res/color-v11/abc_background_cache_hint_selector_material_dark.xml"
->>>>>>> origin/master
     }
 ]

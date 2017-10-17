@@ -768,10 +768,7 @@ int id list_item_icon 0x7f0d0103
 int id list_item_subtitle 0x7f0d0105
 int id list_item_title 0x7f0d0104
 int id ll 0x7f0d0074
-<<<<<<< HEAD
 int id ll_draft 0x7f0d0075
-=======
->>>>>>> origin/master
 int id main_content_layout 0x7f0d007c
 int id main_fragment_container 0x7f0d007e
 int id media_actions 0x7f0d010e

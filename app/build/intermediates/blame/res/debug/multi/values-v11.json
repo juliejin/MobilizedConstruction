@@ -1,10 +1,6 @@
 [
     {
-<<<<<<< HEAD
         "outputFile": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v11/values-v11.xml",
-=======
-        "outputFile": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v11/values-v11.xml",
->>>>>>> origin/master
         "map": [
             {
                 "to": {
@@ -16,11 +12,7 @@
                     "endOffset": 469
                 },
                 "from": {
-<<<<<<< HEAD
                     "file": "/Users/Michelle_Yu/.android/build-cache/fdad6d79036fe830024c5bdcb5533fb0396f327d/output/res/values-v11/values-v11.xml",
-=======
-                    "file": "/Users/apple/.android/build-cache/951289952ba7c5659736b04851cb8c6d1a7dada8/output/res/values-v11/values-v11.xml",
->>>>>>> origin/master
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,
@@ -41,11 +33,7 @@
                     "endOffset": 894
                 },
                 "from": {
-<<<<<<< HEAD
                     "file": "/Users/Michelle_Yu/.android/build-cache/fdad6d79036fe830024c5bdcb5533fb0396f327d/output/res/values-v11/values-v11.xml",
-=======
-                    "file": "/Users/apple/.android/build-cache/951289952ba7c5659736b04851cb8c6d1a7dada8/output/res/values-v11/values-v11.xml",
->>>>>>> origin/master
                     "position": {
                         "startLine": 8,
                         "startColumn": 4,
@@ -66,11 +54,7 @@
                     "endOffset": 1322
                 },
                 "from": {
-<<<<<<< HEAD
                     "file": "/Users/Michelle_Yu/.android/build-cache/fdad6d79036fe830024c5bdcb5533fb0396f327d/output/res/values-v11/values-v11.xml",
-=======
-                    "file": "/Users/apple/.android/build-cache/951289952ba7c5659736b04851cb8c6d1a7dada8/output/res/values-v11/values-v11.xml",
->>>>>>> origin/master
                     "position": {
                         "startLine": 14,
                         "startColumn": 4,
@@ -91,11 +75,7 @@
                     "endOffset": 1748
                 },
                 "from": {
-<<<<<<< HEAD
                     "file": "/Users/Michelle_Yu/.android/build-cache/fdad6d79036fe830024c5bdcb5533fb0396f327d/output/res/values-v11/values-v11.xml",
-=======
-                    "file": "/Users/apple/.android/build-cache/951289952ba7c5659736b04851cb8c6d1a7dada8/output/res/values-v11/values-v11.xml",
->>>>>>> origin/master
                     "position": {
                         "startLine": 20,
                         "startColumn": 4,
@@ -116,11 +96,7 @@
                     "endOffset": 2175
                 },
                 "from": {
-<<<<<<< HEAD
                     "file": "/Users/Michelle_Yu/.android/build-cache/fdad6d79036fe830024c5bdcb5533fb0396f327d/output/res/values-v11/values-v11.xml",
-=======
-                    "file": "/Users/apple/.android/build-cache/951289952ba7c5659736b04851cb8c6d1a7dada8/output/res/values-v11/values-v11.xml",
->>>>>>> origin/master
                     "position": {
                         "startLine": 26,
                         "startColumn": 4,
@@ -141,11 +117,7 @@
                     "endOffset": 2600
                 },
                 "from": {
-<<<<<<< HEAD
                     "file": "/Users/Michelle_Yu/.android/build-cache/fdad6d79036fe830024c5bdcb5533fb0396f327d/output/res/values-v11/values-v11.xml",
-=======
-                    "file": "/Users/apple/.android/build-cache/951289952ba7c5659736b04851cb8c6d1a7dada8/output/res/values-v11/values-v11.xml",
->>>>>>> origin/master
                     "position": {
                         "startLine": 32,
                         "startColumn": 4,
@@ -165,11 +137,7 @@
                     "endOffset": 2689
                 },
                 "from": {
-<<<<<<< HEAD
                     "file": "/Users/Michelle_Yu/.android/build-cache/fdad6d79036fe830024c5bdcb5533fb0396f327d/output/res/values-v11/values-v11.xml",
-=======
-                    "file": "/Users/apple/.android/build-cache/951289952ba7c5659736b04851cb8c6d1a7dada8/output/res/values-v11/values-v11.xml",
->>>>>>> origin/master
                     "position": {
                         "startLine": 38,
                         "startColumn": 4,
@@ -189,11 +157,7 @@
                     "endOffset": 2935
                 },
                 "from": {
-<<<<<<< HEAD
                     "file": "/Users/Michelle_Yu/.android/build-cache/fdad6d79036fe830024c5bdcb5533fb0396f327d/output/res/values-v11/values-v11.xml",
-=======
-                    "file": "/Users/apple/.android/build-cache/951289952ba7c5659736b04851cb8c6d1a7dada8/output/res/values-v11/values-v11.xml",
->>>>>>> origin/master
                     "position": {
                         "startLine": 39,
                         "startColumn": 4,
@@ -214,11 +178,7 @@
                     "endOffset": 3184
                 },
                 "from": {
-<<<<<<< HEAD
                     "file": "/Users/Michelle_Yu/.android/build-cache/fdad6d79036fe830024c5bdcb5533fb0396f327d/output/res/values-v11/values-v11.xml",
-=======
-                    "file": "/Users/apple/.android/build-cache/951289952ba7c5659736b04851cb8c6d1a7dada8/output/res/values-v11/values-v11.xml",
->>>>>>> origin/master
                     "position": {
                         "startLine": 43,
                         "startColumn": 4,
@@ -238,11 +198,7 @@
                     "endOffset": 3285
                 },
                 "from": {
-<<<<<<< HEAD
                     "file": "/Users/Michelle_Yu/.android/build-cache/fdad6d79036fe830024c5bdcb5533fb0396f327d/output/res/values-v11/values-v11.xml",
-=======
-                    "file": "/Users/apple/.android/build-cache/951289952ba7c5659736b04851cb8c6d1a7dada8/output/res/values-v11/values-v11.xml",
->>>>>>> origin/master
                     "position": {
                         "startLine": 47,
                         "startColumn": 4,
@@ -262,11 +218,7 @@
                     "endOffset": 3537
                 },
                 "from": {
-<<<<<<< HEAD
                     "file": "/Users/Michelle_Yu/.android/build-cache/fdad6d79036fe830024c5bdcb5533fb0396f327d/output/res/values-v11/values-v11.xml",
-=======
-                    "file": "/Users/apple/.android/build-cache/951289952ba7c5659736b04851cb8c6d1a7dada8/output/res/values-v11/values-v11.xml",
->>>>>>> origin/master
                     "position": {
                         "startLine": 48,
                         "startColumn": 4,
@@ -287,11 +239,7 @@
                     "endOffset": 3792
                 },
                 "from": {
-<<<<<<< HEAD
                     "file": "/Users/Michelle_Yu/.android/build-cache/fdad6d79036fe830024c5bdcb5533fb0396f327d/output/res/values-v11/values-v11.xml",
-=======
-                    "file": "/Users/apple/.android/build-cache/951289952ba7c5659736b04851cb8c6d1a7dada8/output/res/values-v11/values-v11.xml",
->>>>>>> origin/master
                     "position": {
                         "startLine": 52,
                         "startColumn": 4,
@@ -311,11 +259,7 @@
                     "endOffset": 3895
                 },
                 "from": {
-<<<<<<< HEAD
                     "file": "/Users/Michelle_Yu/.android/build-cache/fdad6d79036fe830024c5bdcb5533fb0396f327d/output/res/values-v11/values-v11.xml",
-=======
-                    "file": "/Users/apple/.android/build-cache/951289952ba7c5659736b04851cb8c6d1a7dada8/output/res/values-v11/values-v11.xml",
->>>>>>> origin/master
                     "position": {
                         "startLine": 56,
                         "startColumn": 4,
@@ -335,11 +279,7 @@
                     "endOffset": 4148
                 },
                 "from": {
-<<<<<<< HEAD
                     "file": "/Users/Michelle_Yu/.android/build-cache/fdad6d79036fe830024c5bdcb5533fb0396f327d/output/res/values-v11/values-v11.xml",
-=======
-                    "file": "/Users/apple/.android/build-cache/951289952ba7c5659736b04851cb8c6d1a7dada8/output/res/values-v11/values-v11.xml",
->>>>>>> origin/master
                     "position": {
                         "startLine": 57,
                         "startColumn": 4,
@@ -360,11 +300,7 @@
                     "endOffset": 4556
                 },
                 "from": {
-<<<<<<< HEAD
                     "file": "/Users/Michelle_Yu/.android/build-cache/fdad6d79036fe830024c5bdcb5533fb0396f327d/output/res/values-v11/values-v11.xml",
-=======
-                    "file": "/Users/apple/.android/build-cache/951289952ba7c5659736b04851cb8c6d1a7dada8/output/res/values-v11/values-v11.xml",
->>>>>>> origin/master
                     "position": {
                         "startLine": 61,
                         "startColumn": 4,
@@ -385,11 +321,7 @@
                     "endOffset": 4976
                 },
                 "from": {
-<<<<<<< HEAD
                     "file": "/Users/Michelle_Yu/.android/build-cache/fdad6d79036fe830024c5bdcb5533fb0396f327d/output/res/values-v11/values-v11.xml",
-=======
-                    "file": "/Users/apple/.android/build-cache/951289952ba7c5659736b04851cb8c6d1a7dada8/output/res/values-v11/values-v11.xml",
->>>>>>> origin/master
                     "position": {
                         "startLine": 66,
                         "startColumn": 4,
@@ -410,11 +342,7 @@
                     "endOffset": 5398
                 },
                 "from": {
-<<<<<<< HEAD
                     "file": "/Users/Michelle_Yu/.android/build-cache/fdad6d79036fe830024c5bdcb5533fb0396f327d/output/res/values-v11/values-v11.xml",
-=======
-                    "file": "/Users/apple/.android/build-cache/951289952ba7c5659736b04851cb8c6d1a7dada8/output/res/values-v11/values-v11.xml",
->>>>>>> origin/master
                     "position": {
                         "startLine": 71,
                         "startColumn": 4,
@@ -435,11 +363,7 @@
                     "endOffset": 5505
                 },
                 "from": {
-<<<<<<< HEAD
                     "file": "/Users/Michelle_Yu/.android/build-cache/fdad6d79036fe830024c5bdcb5533fb0396f327d/output/res/values-v11/values-v11.xml",
-=======
-                    "file": "/Users/apple/.android/build-cache/951289952ba7c5659736b04851cb8c6d1a7dada8/output/res/values-v11/values-v11.xml",
->>>>>>> origin/master
                     "position": {
                         "startLine": 76,
                         "startColumn": 4,
@@ -460,11 +384,7 @@
                     "endOffset": 5634
                 },
                 "from": {
-<<<<<<< HEAD
                     "file": "/Users/Michelle_Yu/.android/build-cache/fdad6d79036fe830024c5bdcb5533fb0396f327d/output/res/values-v11/values-v11.xml",
-=======
-                    "file": "/Users/apple/.android/build-cache/951289952ba7c5659736b04851cb8c6d1a7dada8/output/res/values-v11/values-v11.xml",
->>>>>>> origin/master
                     "position": {
                         "startLine": 78,
                         "startColumn": 4,
@@ -484,11 +404,7 @@
                     "endOffset": 5705
                 },
                 "from": {
-<<<<<<< HEAD
                     "file": "/Users/Michelle_Yu/.android/build-cache/fdad6d79036fe830024c5bdcb5533fb0396f327d/output/res/values-v11/values-v11.xml",
-=======
-                    "file": "/Users/apple/.android/build-cache/951289952ba7c5659736b04851cb8c6d1a7dada8/output/res/values-v11/values-v11.xml",
->>>>>>> origin/master
                     "position": {
                         "startLine": 80,
                         "startColumn": 4,
@@ -507,11 +423,7 @@
                     "endOffset": 5788
                 },
                 "from": {
-<<<<<<< HEAD
                     "file": "/Users/Michelle_Yu/.android/build-cache/fdad6d79036fe830024c5bdcb5533fb0396f327d/output/res/values-v11/values-v11.xml",
-=======
-                    "file": "/Users/apple/.android/build-cache/951289952ba7c5659736b04851cb8c6d1a7dada8/output/res/values-v11/values-v11.xml",
->>>>>>> origin/master
                     "position": {
                         "startLine": 81,
                         "startColumn": 4,
@@ -531,11 +443,7 @@
                     "endOffset": 9813
                 },
                 "from": {
-<<<<<<< HEAD
                     "file": "/Users/Michelle_Yu/.android/build-cache/fdad6d79036fe830024c5bdcb5533fb0396f327d/output/res/values-v11/values-v11.xml",
-=======
-                    "file": "/Users/apple/.android/build-cache/951289952ba7c5659736b04851cb8c6d1a7dada8/output/res/values-v11/values-v11.xml",
->>>>>>> origin/master
                     "position": {
                         "startLine": 82,
                         "startColumn": 4,
@@ -556,11 +464,7 @@
                     "endOffset": 13981
                 },
                 "from": {
-<<<<<<< HEAD
                     "file": "/Users/Michelle_Yu/.android/build-cache/fdad6d79036fe830024c5bdcb5533fb0396f327d/output/res/values-v11/values-v11.xml",
-=======
-                    "file": "/Users/apple/.android/build-cache/951289952ba7c5659736b04851cb8c6d1a7dada8/output/res/values-v11/values-v11.xml",
->>>>>>> origin/master
                     "position": {
                         "startLine": 136,
                         "startColumn": 4,
@@ -580,11 +484,7 @@
                     "endOffset": 14072
                 },
                 "from": {
-<<<<<<< HEAD
                     "file": "/Users/Michelle_Yu/.android/build-cache/fdad6d79036fe830024c5bdcb5533fb0396f327d/output/res/values-v11/values-v11.xml",
-=======
-                    "file": "/Users/apple/.android/build-cache/951289952ba7c5659736b04851cb8c6d1a7dada8/output/res/values-v11/values-v11.xml",
->>>>>>> origin/master
                     "position": {
                         "startLine": 191,
                         "startColumn": 4,

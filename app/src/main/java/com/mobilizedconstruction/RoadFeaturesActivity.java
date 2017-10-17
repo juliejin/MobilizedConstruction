@@ -92,7 +92,7 @@ public class RoadFeaturesActivity extends AppCompatActivity {
         nextButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                if (severity != -1 || direction != -1)
+                if (severity != -1 && direction != -1)
                 {
                     report.setRoadDirection(direction);
                     report.setSeverity(severity);
@@ -131,7 +131,7 @@ public class RoadFeaturesActivity extends AppCompatActivity {
                     Log.d(LOG_TAG, "Successfully updated");
                     startActivity(intent);
                 } catch (final AmazonClientException ex) {
-                    Log.e(LOG_TAG, "Failed updateing item : " + ex.getMessage(), ex);
+                    Log.e(LOG_TAG, "Failed updating item : " + ex.getMessage(), ex);
                 }
             }
         }).start();
