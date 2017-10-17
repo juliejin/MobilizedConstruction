@@ -1,7 +1,14 @@
+<<<<<<< HEAD
 -injars /Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/transforms/jarMerging/debug/jars/1/1f/combined.jar
 -outjars /Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/multi-dex/debug/componentClasses.jar
 
 -libraryjars /Users/Michelle_Yu/Library/Android/sdk/build-tools/26.0.1/lib/shrinkedAndroid.jar
+=======
+-injars /Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/transforms/jarMerging/debug/jars/1/1f/combined.jar
+-outjars /Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/multi-dex/debug/componentClasses.jar
+
+-libraryjars /Users/apple/Library/Android/sdk/build-tools/26.0.1/lib/shrinkedAndroid.jar
+>>>>>>> origin/master
 
 -forceprocessing
 -dontoptimize
@@ -10,7 +17,11 @@
 -dontpreverify
 -dontnote **
 -dontwarn **
+<<<<<<< HEAD
 -printconfiguration /Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/multi-dex/debug/components.flags
+=======
+-printconfiguration /Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/multi-dex/debug/components.flags
+>>>>>>> origin/master
 
 
 # view AndroidManifest.xml #generated:44

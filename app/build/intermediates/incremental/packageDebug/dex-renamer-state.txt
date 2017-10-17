@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #Mon Oct 16 20:04:17 PDT 2017
 file.9=/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_6f1ae88c9aed2bc307a696051191f30a9e10caf2/classes.dex
 base.10=/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_a2a70707454ca7360d37ab00d996090d2644575f
@@ -80,3 +81,12 @@ base.14=/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediat
 base.13=/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_558e9f08b034eb356d4470ecd6ad6b9bf394df67
 base.12=/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/transforms/dex/debug/folders/1000/10/aws-android-sdk-cognitoidentityprovider-2.6.0_77cd23723d867e9f4525c6cb26b6b1e61b646567
 base.11=/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/transforms/dex/debug/folders/1000/10/aws-android-sdk-s3-2.6.0_594abc6dd80eabfff5d557df684e74218bfdd5f4
+=======
+#Mon Oct 16 19:53:39 PDT 2017
+base.0=/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_bdbd3972ebf803c569de656e4e99ac34ec102d7c
+renamed.1=classes2.dex
+renamed.0=classes.dex
+file.1=/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_3c84c5bf45b1a776e0d24f26e580e4083e4bbc81/classes.dex
+base.1=/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_3c84c5bf45b1a776e0d24f26e580e4083e4bbc81
+file.0=/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_bdbd3972ebf803c569de656e4e99ac34ec102d7c/classes.dex
+>>>>>>> origin/master

@@ -1,6 +1,10 @@
 [
     {
+<<<<<<< HEAD
         "outputFile": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v12/values-v12.xml",
+=======
+        "outputFile": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v12/values-v12.xml",
+>>>>>>> origin/master
         "map": [
             {
                 "to": {
@@ -12,7 +16,11 @@
                     "endOffset": 274
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "/Users/Michelle_Yu/.android/build-cache/fdad6d79036fe830024c5bdcb5533fb0396f327d/output/res/values-v12/values-v12.xml",
+=======
+                    "file": "/Users/apple/.android/build-cache/951289952ba7c5659736b04851cb8c6d1a7dada8/output/res/values-v12/values-v12.xml",
+>>>>>>> origin/master
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,
@@ -33,7 +41,11 @@
                     "endOffset": 474
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "/Users/Michelle_Yu/.android/build-cache/fdad6d79036fe830024c5bdcb5533fb0396f327d/output/res/values-v12/values-v12.xml",
+=======
+                    "file": "/Users/apple/.android/build-cache/951289952ba7c5659736b04851cb8c6d1a7dada8/output/res/values-v12/values-v12.xml",
+>>>>>>> origin/master
                     "position": {
                         "startLine": 5,
                         "startColumn": 4,
@@ -53,7 +65,11 @@
                     "endOffset": 593
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "/Users/Michelle_Yu/.android/build-cache/fdad6d79036fe830024c5bdcb5533fb0396f327d/output/res/values-v12/values-v12.xml",
+=======
+                    "file": "/Users/apple/.android/build-cache/951289952ba7c5659736b04851cb8c6d1a7dada8/output/res/values-v12/values-v12.xml",
+>>>>>>> origin/master
                     "position": {
                         "startLine": 8,
                         "startColumn": 4,
@@ -72,7 +88,11 @@
                     "endOffset": 688
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "/Users/Michelle_Yu/.android/build-cache/fdad6d79036fe830024c5bdcb5533fb0396f327d/output/res/values-v12/values-v12.xml",
+=======
+                    "file": "/Users/apple/.android/build-cache/951289952ba7c5659736b04851cb8c6d1a7dada8/output/res/values-v12/values-v12.xml",
+>>>>>>> origin/master
                     "position": {
                         "startLine": 9,
                         "startColumn": 4,

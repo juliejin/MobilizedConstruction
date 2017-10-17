@@ -1,5 +1,6 @@
 [
     {
+<<<<<<< HEAD
         "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/abc_action_bar_view_list_nav_layout.xml",
         "source": "/Users/Michelle_Yu/.android/build-cache/fdad6d79036fe830024c5bdcb5533fb0396f327d/output/res/layout/abc_action_bar_view_list_nav_layout.xml"
     },
@@ -94,30 +95,91 @@
     {
         "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/notification_action_tombstone.xml",
         "source": "/Users/Michelle_Yu/.android/build-cache/fdad6d79036fe830024c5bdcb5533fb0396f327d/output/res/layout/notification_action_tombstone.xml"
+=======
+        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/list_item_icon_text_with_subtitle.xml",
+        "source": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/res/layout/list_item_icon_text_with_subtitle.xml"
     },
     {
-        "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/abc_list_menu_item_layout.xml",
-        "source": "/Users/Michelle_Yu/.android/build-cache/fdad6d79036fe830024c5bdcb5533fb0396f327d/output/res/layout/abc_list_menu_item_layout.xml"
+        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/activity_main.xml",
+        "source": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/res/layout/activity_main.xml"
     },
     {
+        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/abc_expanded_menu_layout.xml",
+        "source": "/Users/apple/.android/build-cache/951289952ba7c5659736b04851cb8c6d1a7dada8/output/res/layout/abc_expanded_menu_layout.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/abc_screen_toolbar.xml",
+        "source": "/Users/apple/.android/build-cache/951289952ba7c5659736b04851cb8c6d1a7dada8/output/res/layout/abc_screen_toolbar.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/list_item_cloudlogic_method_chooser.xml",
+        "source": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/res/layout/list_item_cloudlogic_method_chooser.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/abc_popup_menu_item_layout.xml",
+        "source": "/Users/apple/.android/build-cache/951289952ba7c5659736b04851cb8c6d1a7dada8/output/res/layout/abc_popup_menu_item_layout.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/abc_action_mode_close_item_material.xml",
+        "source": "/Users/apple/.android/build-cache/951289952ba7c5659736b04851cb8c6d1a7dada8/output/res/layout/abc_action_mode_close_item_material.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/activity_forgot_password.xml",
+        "source": "/Users/apple/.android/build-cache/1f063a444381dcd41efed7d46f794d43e7a40165/output/res/layout/activity_forgot_password.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/support_simple_spinner_dropdown_item.xml",
+        "source": "/Users/apple/.android/build-cache/951289952ba7c5659736b04851cb8c6d1a7dada8/output/res/layout/support_simple_spinner_dropdown_item.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/abc_action_bar_up_container.xml",
+        "source": "/Users/apple/.android/build-cache/951289952ba7c5659736b04851cb8c6d1a7dada8/output/res/layout/abc_action_bar_up_container.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/activity_drafted_report.xml",
+        "source": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/res/layout/activity_drafted_report.xml"
+>>>>>>> origin/master
+    },
+    {
+        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/abc_alert_dialog_button_bar_material.xml",
+        "source": "/Users/apple/.android/build-cache/951289952ba7c5659736b04851cb8c6d1a7dada8/output/res/layout/abc_alert_dialog_button_bar_material.xml"
+    },
+    {
+<<<<<<< HEAD
         "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/activity_mfa.xml",
         "source": "/Users/Michelle_Yu/.android/build-cache/60df9a77700fd4feb6ead4d1765817b253071dd1/output/res/layout/activity_mfa.xml"
     },
     {
         "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/abc_action_bar_up_container.xml",
         "source": "/Users/Michelle_Yu/.android/build-cache/fdad6d79036fe830024c5bdcb5533fb0396f327d/output/res/layout/abc_action_bar_up_container.xml"
+=======
+        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/abc_search_dropdown_item_icons_2line.xml",
+        "source": "/Users/apple/.android/build-cache/951289952ba7c5659736b04851cb8c6d1a7dada8/output/res/layout/abc_search_dropdown_item_icons_2line.xml"
     },
     {
-        "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/activity_splash.xml",
-        "source": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/res/layout/activity_splash.xml"
+        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/notification_template_part_chronometer.xml",
+        "source": "/Users/apple/.android/build-cache/951289952ba7c5659736b04851cb8c6d1a7dada8/output/res/layout/notification_template_part_chronometer.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/demo_nosql_select_operation_list_header.xml",
+        "source": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/res/layout/demo_nosql_select_operation_list_header.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/abc_list_menu_item_layout.xml",
+        "source": "/Users/apple/.android/build-cache/951289952ba7c5659736b04851cb8c6d1a7dada8/output/res/layout/abc_list_menu_item_layout.xml"
+>>>>>>> origin/master
+    },
+    {
+        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/activity_sign_up_confirm.xml",
+        "source": "/Users/apple/.android/build-cache/1f063a444381dcd41efed7d46f794d43e7a40165/output/res/layout/activity_sign_up_confirm.xml"
     },
     {
         "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/fragment_demo_cloudlogic_api_chooser.xml",
         "source": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/res/layout/fragment_demo_cloudlogic_api_chooser.xml"
     },
     {
-        "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/fragment_demo_content_delivery.xml",
-        "source": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/res/layout/fragment_demo_content_delivery.xml"
+        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/fragment_demo_nosql_show_results.xml",
+        "source": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/res/layout/fragment_demo_nosql_show_results.xml"
     },
     {
         "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/activity_drafted_report.xml",
@@ -128,6 +190,7 @@
         "source": "/Users/Michelle_Yu/.android/build-cache/4789b67a148043b6f5e0417a355365b77e82829d/output/res/layout/activity_sign_in.xml"
     },
     {
+<<<<<<< HEAD
         "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/fragment_demo_user_settings.xml",
         "source": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/res/layout/fragment_demo_user_settings.xml"
     },
@@ -142,16 +205,29 @@
     {
         "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/activity_preview_report.xml",
         "source": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/res/layout/activity_preview_report.xml"
+=======
+        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/notification_template_media.xml",
+        "source": "/Users/apple/.android/build-cache/951289952ba7c5659736b04851cb8c6d1a7dada8/output/res/layout/notification_template_media.xml"
     },
     {
-        "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/demo_nosql_select_operation_list_item.xml",
-        "source": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/res/layout/demo_nosql_select_operation_list_item.xml"
+        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/activity_sign_in.xml",
+        "source": "/Users/apple/.android/build-cache/e6dd5b95ac4271f36f40b3774bdfa2c6dae1a53c/output/res/layout/activity_sign_in.xml"
     },
     {
-        "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/notification_template_part_chronometer.xml",
-        "source": "/Users/Michelle_Yu/.android/build-cache/fdad6d79036fe830024c5bdcb5533fb0396f327d/output/res/layout/notification_template_part_chronometer.xml"
+        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/activity_mfa.xml",
+        "source": "/Users/apple/.android/build-cache/1f063a444381dcd41efed7d46f794d43e7a40165/output/res/layout/activity_mfa.xml"
+>>>>>>> origin/master
     },
     {
+        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/abc_activity_chooser_view_list_item.xml",
+        "source": "/Users/apple/.android/build-cache/951289952ba7c5659736b04851cb8c6d1a7dada8/output/res/layout/abc_activity_chooser_view_list_item.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/fragment_demo_instruction.xml",
+        "source": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/res/layout/fragment_demo_instruction.xml"
+    },
+    {
+<<<<<<< HEAD
         "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/demo_content_list_item.xml",
         "source": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/res/layout/demo_content_list_item.xml"
     },
@@ -170,12 +246,93 @@
     {
         "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/activity_sign_up.xml",
         "source": "/Users/Michelle_Yu/.android/build-cache/60df9a77700fd4feb6ead4d1765817b253071dd1/output/res/layout/activity_sign_up.xml"
+=======
+        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/activity_road_features.xml",
+        "source": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/res/layout/activity_road_features.xml"
     },
     {
-        "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/abc_alert_dialog_button_bar_material.xml",
-        "source": "/Users/Michelle_Yu/.android/build-cache/fdad6d79036fe830024c5bdcb5533fb0396f327d/output/res/layout/abc_alert_dialog_button_bar_material.xml"
+        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/activity_sign_up.xml",
+        "source": "/Users/apple/.android/build-cache/1f063a444381dcd41efed7d46f794d43e7a40165/output/res/layout/activity_sign_up.xml"
     },
     {
+        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/abc_list_menu_item_radio.xml",
+        "source": "/Users/apple/.android/build-cache/951289952ba7c5659736b04851cb8c6d1a7dada8/output/res/layout/abc_list_menu_item_radio.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/abc_action_menu_layout.xml",
+        "source": "/Users/apple/.android/build-cache/951289952ba7c5659736b04851cb8c6d1a7dada8/output/res/layout/abc_action_menu_layout.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/horizontal_sign_in_divider.xml",
+        "source": "/Users/apple/.android/build-cache/e6dd5b95ac4271f36f40b3774bdfa2c6dae1a53c/output/res/layout/horizontal_sign_in_divider.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/abc_popup_menu_header_item_layout.xml",
+        "source": "/Users/apple/.android/build-cache/951289952ba7c5659736b04851cb8c6d1a7dada8/output/res/layout/abc_popup_menu_header_item_layout.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/abc_select_dialog_material.xml",
+        "source": "/Users/apple/.android/build-cache/951289952ba7c5659736b04851cb8c6d1a7dada8/output/res/layout/abc_select_dialog_material.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/select_dialog_item_material.xml",
+        "source": "/Users/apple/.android/build-cache/951289952ba7c5659736b04851cb8c6d1a7dada8/output/res/layout/select_dialog_item_material.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/demo_nosql_select_table_list_item.xml",
+        "source": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/res/layout/demo_nosql_select_table_list_item.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/fragment_demo_cloudlogic_path_chooser.xml",
+        "source": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/res/layout/fragment_demo_cloudlogic_path_chooser.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/demo_nosql_select_operation_list_item.xml",
+        "source": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/res/layout/demo_nosql_select_operation_list_item.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/abc_list_menu_item_checkbox.xml",
+        "source": "/Users/apple/.android/build-cache/951289952ba7c5659736b04851cb8c6d1a7dada8/output/res/layout/abc_list_menu_item_checkbox.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/notification_action_tombstone.xml",
+        "source": "/Users/apple/.android/build-cache/951289952ba7c5659736b04851cb8c6d1a7dada8/output/res/layout/notification_action_tombstone.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/notification_template_part_time.xml",
+        "source": "/Users/apple/.android/build-cache/951289952ba7c5659736b04851cb8c6d1a7dada8/output/res/layout/notification_template_part_time.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/activity_report_info_upload.xml",
+        "source": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/res/layout/activity_report_info_upload.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/list_item_demo_button_icon_text.xml",
+        "source": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/res/layout/list_item_demo_button_icon_text.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/fragment_demo_user_settings.xml",
+        "source": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/res/layout/fragment_demo_user_settings.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/demo_content_list_item.xml",
+        "source": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/res/layout/demo_content_list_item.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/abc_action_bar_view_list_nav_layout.xml",
+        "source": "/Users/apple/.android/build-cache/951289952ba7c5659736b04851cb8c6d1a7dada8/output/res/layout/abc_action_bar_view_list_nav_layout.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/list_item_cloudlogic_path_chooser.xml",
+        "source": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/res/layout/list_item_cloudlogic_path_chooser.xml"
+>>>>>>> origin/master
+    },
+    {
+        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/fragment_demo_user_files_browser.xml",
+        "source": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/res/layout/fragment_demo_user_files_browser.xml"
+    },
+    {
+<<<<<<< HEAD
         "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/demo_nosql_select_table_list_item.xml",
         "source": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/res/layout/demo_nosql_select_table_list_item.xml"
     },
@@ -186,12 +343,29 @@
     {
         "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/abc_action_bar_title_item.xml",
         "source": "/Users/Michelle_Yu/.android/build-cache/fdad6d79036fe830024c5bdcb5533fb0396f327d/output/res/layout/abc_action_bar_title_item.xml"
+=======
+        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/abc_screen_simple.xml",
+        "source": "/Users/apple/.android/build-cache/951289952ba7c5659736b04851cb8c6d1a7dada8/output/res/layout/abc_screen_simple.xml"
     },
     {
-        "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/abc_action_mode_close_item_material.xml",
-        "source": "/Users/Michelle_Yu/.android/build-cache/fdad6d79036fe830024c5bdcb5533fb0396f327d/output/res/layout/abc_action_mode_close_item_material.xml"
+        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/abc_search_view.xml",
+        "source": "/Users/apple/.android/build-cache/951289952ba7c5659736b04851cb8c6d1a7dada8/output/res/layout/abc_search_view.xml"
     },
     {
+        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/fragment_demo_cloudlogic_api_chooser.xml",
+        "source": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/res/layout/fragment_demo_cloudlogic_api_chooser.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/activity_add_comment.xml",
+        "source": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/res/layout/activity_add_comment.xml"
+>>>>>>> origin/master
+    },
+    {
+        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/activity_splash.xml",
+        "source": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/res/layout/activity_splash.xml"
+    },
+    {
+<<<<<<< HEAD
         "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/abc_alert_dialog_title_material.xml",
         "source": "/Users/Michelle_Yu/.android/build-cache/fdad6d79036fe830024c5bdcb5533fb0396f327d/output/res/layout/abc_alert_dialog_title_material.xml"
     },
@@ -206,28 +380,38 @@
     {
         "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/list_item_cloudlogic_method_chooser.xml",
         "source": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/res/layout/list_item_cloudlogic_method_chooser.xml"
+=======
+        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/abc_action_menu_item_layout.xml",
+        "source": "/Users/apple/.android/build-cache/951289952ba7c5659736b04851cb8c6d1a7dada8/output/res/layout/abc_action_menu_item_layout.xml"
+>>>>>>> origin/master
     },
     {
-        "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/fragment_demo_cloudlogic_path_chooser.xml",
-        "source": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/res/layout/fragment_demo_cloudlogic_path_chooser.xml"
+        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/notification_template_custom_big.xml",
+        "source": "/Users/apple/.android/build-cache/951289952ba7c5659736b04851cb8c6d1a7dada8/output/res/layout/notification_template_custom_big.xml"
     },
     {
-        "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/abc_action_menu_item_layout.xml",
-        "source": "/Users/Michelle_Yu/.android/build-cache/fdad6d79036fe830024c5bdcb5533fb0396f327d/output/res/layout/abc_action_menu_item_layout.xml"
+        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/abc_alert_dialog_title_material.xml",
+        "source": "/Users/apple/.android/build-cache/951289952ba7c5659736b04851cb8c6d1a7dada8/output/res/layout/abc_alert_dialog_title_material.xml"
     },
     {
+<<<<<<< HEAD
         "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/fragment_demo_identity.xml",
         "source": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/res/layout/fragment_demo_identity.xml"
     },
     {
         "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/activity_report_creation.xml",
         "source": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/res/layout/activity_report_creation.xml"
+=======
+        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/fragment_demo_nosql_select_table.xml",
+        "source": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/res/layout/fragment_demo_nosql_select_table.xml"
+>>>>>>> origin/master
     },
     {
         "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/abc_screen_content_include.xml",
         "source": "/Users/Michelle_Yu/.android/build-cache/fdad6d79036fe830024c5bdcb5533fb0396f327d/output/res/layout/abc_screen_content_include.xml"
     },
     {
+<<<<<<< HEAD
         "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/nav_drawer_item.xml",
         "source": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/res/layout/nav_drawer_item.xml"
     },
@@ -238,20 +422,25 @@
     {
         "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/fragment_demo_cloudlogic_invoker.xml",
         "source": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/res/layout/fragment_demo_cloudlogic_invoker.xml"
+=======
+        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/fragment_demo_cloudlogic_invoker.xml",
+        "source": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/res/layout/fragment_demo_cloudlogic_invoker.xml"
+>>>>>>> origin/master
     },
     {
-        "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/abc_popup_menu_header_item_layout.xml",
-        "source": "/Users/Michelle_Yu/.android/build-cache/fdad6d79036fe830024c5bdcb5533fb0396f327d/output/res/layout/abc_popup_menu_header_item_layout.xml"
+        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/abc_action_bar_title_item.xml",
+        "source": "/Users/apple/.android/build-cache/951289952ba7c5659736b04851cb8c6d1a7dada8/output/res/layout/abc_action_bar_title_item.xml"
     },
     {
-        "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/notification_template_media_custom.xml",
-        "source": "/Users/Michelle_Yu/.android/build-cache/fdad6d79036fe830024c5bdcb5533fb0396f327d/output/res/layout/notification_template_media_custom.xml"
+        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/fragment_demo_cloudlogic_method_chooser.xml",
+        "source": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/res/layout/fragment_demo_cloudlogic_method_chooser.xml"
     },
     {
-        "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/abc_action_menu_layout.xml",
-        "source": "/Users/Michelle_Yu/.android/build-cache/fdad6d79036fe830024c5bdcb5533fb0396f327d/output/res/layout/abc_action_menu_layout.xml"
+        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/list_item_cloudlogic_api_chooser.xml",
+        "source": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/res/layout/list_item_cloudlogic_api_chooser.xml"
     },
     {
+<<<<<<< HEAD
         "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/abc_list_menu_item_radio.xml",
         "source": "/Users/Michelle_Yu/.android/build-cache/fdad6d79036fe830024c5bdcb5533fb0396f327d/output/res/layout/abc_list_menu_item_radio.xml"
     },
@@ -266,10 +455,18 @@
     {
         "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/list_item_cloudlogic_api_chooser.xml",
         "source": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/res/layout/list_item_cloudlogic_api_chooser.xml"
+=======
+        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/abc_alert_dialog_material.xml",
+        "source": "/Users/apple/.android/build-cache/951289952ba7c5659736b04851cb8c6d1a7dada8/output/res/layout/abc_alert_dialog_material.xml"
     },
     {
-        "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/horizontal_or_sign_in_divider.xml",
-        "source": "/Users/Michelle_Yu/.android/build-cache/4789b67a148043b6f5e0417a355365b77e82829d/output/res/layout/horizontal_or_sign_in_divider.xml"
+        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/notification_template_lines_media.xml",
+        "source": "/Users/apple/.android/build-cache/951289952ba7c5659736b04851cb8c6d1a7dada8/output/res/layout/notification_template_lines_media.xml"
+>>>>>>> origin/master
+    },
+    {
+        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/abc_dialog_title_material.xml",
+        "source": "/Users/apple/.android/build-cache/951289952ba7c5659736b04851cb8c6d1a7dada8/output/res/layout/abc_dialog_title_material.xml"
     },
     {
         "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/notification_template_part_time.xml",
@@ -280,28 +477,46 @@
         "source": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/res/layout/demo_nosql_select_operation_list_header.xml"
     },
     {
-        "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/select_dialog_item_material.xml",
-        "source": "/Users/Michelle_Yu/.android/build-cache/fdad6d79036fe830024c5bdcb5533fb0396f327d/output/res/layout/select_dialog_item_material.xml"
+        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/activity_preview_report.xml",
+        "source": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/res/layout/activity_preview_report.xml"
     },
     {
-        "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/notification_action.xml",
-        "source": "/Users/Michelle_Yu/.android/build-cache/fdad6d79036fe830024c5bdcb5533fb0396f327d/output/res/layout/notification_action.xml"
+        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/abc_screen_content_include.xml",
+        "source": "/Users/apple/.android/build-cache/951289952ba7c5659736b04851cb8c6d1a7dada8/output/res/layout/abc_screen_content_include.xml"
     },
     {
+<<<<<<< HEAD
         "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/abc_select_dialog_material.xml",
         "source": "/Users/Michelle_Yu/.android/build-cache/fdad6d79036fe830024c5bdcb5533fb0396f327d/output/res/layout/abc_select_dialog_material.xml"
+=======
+        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/fragment_demo_content_delivery.xml",
+        "source": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/res/layout/fragment_demo_content_delivery.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/fragment_demo_nosql_select_operation.xml",
+        "source": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/res/layout/fragment_demo_nosql_select_operation.xml"
+>>>>>>> origin/master
     },
     {
         "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/fragment_demo_nosql_show_results.xml",
         "source": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/res/layout/fragment_demo_nosql_show_results.xml"
     },
     {
+<<<<<<< HEAD
         "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/fragment_demo_cloudlogic_method_chooser.xml",
         "source": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/res/layout/fragment_demo_cloudlogic_method_chooser.xml"
     },
     {
         "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/abc_activity_chooser_view.xml",
         "source": "/Users/Michelle_Yu/.android/build-cache/fdad6d79036fe830024c5bdcb5533fb0396f327d/output/res/layout/abc_activity_chooser_view.xml"
+=======
+        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/abc_screen_simple_overlay_action_mode.xml",
+        "source": "/Users/apple/.android/build-cache/951289952ba7c5659736b04851cb8c6d1a7dada8/output/res/layout/abc_screen_simple_overlay_action_mode.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/notification_template_icon_group.xml",
+        "source": "/Users/apple/.android/build-cache/951289952ba7c5659736b04851cb8c6d1a7dada8/output/res/layout/notification_template_icon_group.xml"
+>>>>>>> origin/master
     },
     {
         "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/horizontal_sign_in_divider.xml",
@@ -312,19 +527,49 @@
         "source": "/Users/Michelle_Yu/.android/build-cache/60df9a77700fd4feb6ead4d1765817b253071dd1/output/res/layout/activity_sign_up_confirm.xml"
     },
     {
+<<<<<<< HEAD
         "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/abc_screen_simple_overlay_action_mode.xml",
         "source": "/Users/Michelle_Yu/.android/build-cache/fdad6d79036fe830024c5bdcb5533fb0396f327d/output/res/layout/abc_screen_simple_overlay_action_mode.xml"
+=======
+        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/select_dialog_multichoice_material.xml",
+        "source": "/Users/apple/.android/build-cache/951289952ba7c5659736b04851cb8c6d1a7dada8/output/res/layout/select_dialog_multichoice_material.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/abc_list_menu_item_icon.xml",
+        "source": "/Users/apple/.android/build-cache/951289952ba7c5659736b04851cb8c6d1a7dada8/output/res/layout/abc_list_menu_item_icon.xml"
+>>>>>>> origin/master
     },
     {
         "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/list_item_icon_text_with_subtitle.xml",
         "source": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/res/layout/list_item_icon_text_with_subtitle.xml"
     },
     {
+<<<<<<< HEAD
         "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/fragment_demo_user_files.xml",
         "source": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/res/layout/fragment_demo_user_files.xml"
     },
     {
         "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/abc_activity_chooser_view_list_item.xml",
         "source": "/Users/Michelle_Yu/.android/build-cache/fdad6d79036fe830024c5bdcb5533fb0396f327d/output/res/layout/abc_activity_chooser_view_list_item.xml"
+=======
+        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/fragment_demo_app_analytics.xml",
+        "source": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/res/layout/fragment_demo_app_analytics.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/notification_template_media_custom.xml",
+        "source": "/Users/apple/.android/build-cache/951289952ba7c5659736b04851cb8c6d1a7dada8/output/res/layout/notification_template_media_custom.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/nav_drawer_item.xml",
+        "source": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/res/layout/nav_drawer_item.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/select_dialog_singlechoice_material.xml",
+        "source": "/Users/apple/.android/build-cache/951289952ba7c5659736b04851cb8c6d1a7dada8/output/res/layout/select_dialog_singlechoice_material.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout/abc_action_mode_bar.xml",
+        "source": "/Users/apple/.android/build-cache/951289952ba7c5659736b04851cb8c6d1a7dada8/output/res/layout/abc_action_mode_bar.xml"
+>>>>>>> origin/master
     }
 ]

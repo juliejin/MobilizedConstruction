@@ -2568,7 +2568,9 @@ containing a value of this type.
         public static final int list_item_subtitle=0x7f0d0105;
         public static final int list_item_title=0x7f0d0104;
         public static final int ll=0x7f0d0074;
+
         public static final int ll_draft=0x7f0d0075;
+
         public static final int main_content_layout=0x7f0d007c;
         public static final int main_fragment_container=0x7f0d007e;
         public static final int media_actions=0x7f0d010e;
