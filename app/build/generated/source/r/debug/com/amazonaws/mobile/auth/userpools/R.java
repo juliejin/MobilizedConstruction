@@ -25,36 +25,36 @@ public final class R {
         public static final int user_pools_sign_in_button_margin_top_bottom = 0x7f09006c;
     }
     public static final class id {
-        public static final int confirm_account_button = 0x7f0d00a9;
-        public static final int confirm_account_message1 = 0x7f0d00a6;
-        public static final int confirm_account_message2 = 0x7f0d00a7;
-        public static final int confirm_account_title = 0x7f0d00a5;
-        public static final int forgot_password_button = 0x7f0d0079;
-        public static final int forgot_password_form = 0x7f0d0078;
-        public static final int forgot_password_message = 0x7f0d0077;
-        public static final int forgot_password_title = 0x7f0d0076;
-        public static final int forgot_password_view = 0x7f0d0075;
+        public static final int confirm_account_button = 0x7f0d00aa;
+        public static final int confirm_account_message1 = 0x7f0d00a7;
+        public static final int confirm_account_message2 = 0x7f0d00a8;
+        public static final int confirm_account_title = 0x7f0d00a6;
+        public static final int forgot_password_button = 0x7f0d007a;
+        public static final int forgot_password_form = 0x7f0d0079;
+        public static final int forgot_password_message = 0x7f0d0078;
+        public static final int forgot_password_title = 0x7f0d0077;
+        public static final int forgot_password_view = 0x7f0d0076;
         public static final int large = 0x7f0d003c;
-        public static final int mfa_button = 0x7f0d0088;
-        public static final int mfa_form = 0x7f0d0087;
-        public static final int mfa_message = 0x7f0d0086;
-        public static final int mfa_title = 0x7f0d0085;
-        public static final int mfa_view = 0x7f0d0084;
-        public static final int signup_button = 0x7f0d00a3;
-        public static final int signup_confirm_form = 0x7f0d00a8;
-        public static final int signup_confirm_view = 0x7f0d00a4;
-        public static final int signup_form = 0x7f0d00a2;
-        public static final int signup_layout = 0x7f0d009f;
-        public static final int signup_message = 0x7f0d00a1;
-        public static final int signup_view = 0x7f0d00a0;
+        public static final int mfa_button = 0x7f0d0089;
+        public static final int mfa_form = 0x7f0d0088;
+        public static final int mfa_message = 0x7f0d0087;
+        public static final int mfa_title = 0x7f0d0086;
+        public static final int mfa_view = 0x7f0d0085;
+        public static final int signup_button = 0x7f0d00a4;
+        public static final int signup_confirm_form = 0x7f0d00a9;
+        public static final int signup_confirm_view = 0x7f0d00a5;
+        public static final int signup_form = 0x7f0d00a3;
+        public static final int signup_layout = 0x7f0d00a0;
+        public static final int signup_message = 0x7f0d00a2;
+        public static final int signup_view = 0x7f0d00a1;
         public static final int small = 0x7f0d003d;
         public static final int user_pool_sign_in_view_id = 0x7f0d001a;
     }
     public static final class layout {
-        public static final int activity_forgot_password = 0x7f04001d;
-        public static final int activity_mfa = 0x7f04001f;
-        public static final int activity_sign_up = 0x7f040025;
-        public static final int activity_sign_up_confirm = 0x7f040026;
+        public static final int activity_forgot_password = 0x7f04001e;
+        public static final int activity_mfa = 0x7f040020;
+        public static final int activity_sign_up = 0x7f040026;
+        public static final int activity_sign_up_confirm = 0x7f040027;
     }
     public static final class string {
         public static final int email_address_text = 0x7f08004f;

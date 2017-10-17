@@ -32,17 +32,7 @@ public class AddCommentActivity extends AppCompatActivity {
         });
         Intent intent = getIntent();
         report = (ReportDO)intent.getSerializableExtra("new_report");
-        ReportDO report_test;
-        String FILENAME = "hello_file";
-        ObjectInputStream fis;
-        try{
-            fis = new ObjectInputStream(openFileInput(FILENAME));
-            report_test = (ReportDO) fis.readObject();
-            fis.close();
-            //submitButton.setText(report_test.getUserID());
-        }catch (Exception ex){
-            Log.e(LOG_TAG, "failed reading item : " + ex.getMessage(), ex);
-        }
+
     }
 
     protected void navigateToNextPage(){

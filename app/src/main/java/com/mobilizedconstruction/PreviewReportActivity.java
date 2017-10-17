@@ -15,6 +15,9 @@ import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient;
 import com.mobilizedconstruction.R;
 import com.mobilizedconstruction.model.ReportDO;
 
+import java.io.File;
+import java.io.ObjectOutputStream;
+
 public class PreviewReportActivity extends AppCompatActivity {
     private static final String LOG_TAG = RoadFeaturesActivity.class.getSimpleName();
     ReportDO report;
@@ -33,6 +36,12 @@ public class PreviewReportActivity extends AppCompatActivity {
             }
         });
         final Button saveButton = (Button)findViewById(R.id.SaveButton);
+        saveButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                saveLocally();
+            }
+        });
     }
 
     public void UpdateReport(){
@@ -49,6 +58,9 @@ public class PreviewReportActivity extends AppCompatActivity {
             public void run() {
                 try {
                     mapper.save(report);
+                    File dir = getFilesDir();
+                    File file = new File(dir, report.getUserID()+"_"+report.getReportID());
+                    file.delete();
                     Log.d(LOG_TAG, "Successfully updated");
                     startActivity(intent);
                 } catch (final AmazonClientException ex) {
@@ -58,4 +70,19 @@ public class PreviewReportActivity extends AppCompatActivity {
         }).start();
 
     }
+
+    public void saveLocally(){
+        String FILENAME = report.getUserID()+"_"+report.getReportID();
+        ObjectOutputStream fos;
+        try {
+            fos = new ObjectOutputStream(openFileOutput(FILENAME, MODE_PRIVATE));
+            fos.writeObject(report);
+            fos.close();
+            startActivity(new Intent(this, ReportCreationActivity.class));
+        }catch(Exception ex){
+            Log.e(LOG_TAG, "failed writing item : " + ex.getMessage(), ex);
+        }
+
+    }
+
 }

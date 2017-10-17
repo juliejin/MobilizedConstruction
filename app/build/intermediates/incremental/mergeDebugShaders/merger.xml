@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet config="main"><source path="/Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/shaders"/></dataSet><dataSet config="debug"><source path="/Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/debug/shaders"/></dataSet></merger>
+<merger version="3"><dataSet config="main"><source path="/Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/shaders"/></dataSet><dataSet config="debug"><source path="/Users/apple/Documents/GitHub/MobilizedConstruction/app/src/debug/shaders"/></dataSet></merger>
