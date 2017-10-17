@@ -8,27 +8,11 @@
         "source": "/Users/apple/.android/build-cache/951289952ba7c5659736b04851cb8c6d1a7dada8/output/res/layout-v21/notification_template_custom_big.xml"
     },
     {
-        "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout-v21/notification_template_custom_big.xml",
-        "source": "/Users/Michelle_Yu/.android/build-cache/fdad6d79036fe830024c5bdcb5533fb0396f327d/output/res/layout-v21/notification_template_custom_big.xml"
-    },
-    {
-        "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout-v21/notification_action_tombstone.xml",
-        "source": "/Users/Michelle_Yu/.android/build-cache/fdad6d79036fe830024c5bdcb5533fb0396f327d/output/res/layout-v21/notification_action_tombstone.xml"
-    },
-    {
         "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout-v21/notification_action.xml",
         "source": "/Users/apple/.android/build-cache/951289952ba7c5659736b04851cb8c6d1a7dada8/output/res/layout-v21/notification_action.xml"
     },
     {
-        "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout-v21/notification_action.xml",
-        "source": "/Users/Michelle_Yu/.android/build-cache/fdad6d79036fe830024c5bdcb5533fb0396f327d/output/res/layout-v21/notification_action.xml"
-    },
-    {
         "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout-v21/notification_action_tombstone.xml",
         "source": "/Users/apple/.android/build-cache/951289952ba7c5659736b04851cb8c6d1a7dada8/output/res/layout-v21/notification_action_tombstone.xml"
-    },
-    {
-        "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout-v21/notification_template_icon_group.xml",
-        "source": "/Users/Michelle_Yu/.android/build-cache/fdad6d79036fe830024c5bdcb5533fb0396f327d/output/res/layout-v21/notification_template_icon_group.xml"
     }
 ]
