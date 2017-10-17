@@ -6,3 +6,10 @@
 .DS_Store
 /build
 /captures
+app/build/outputs/apk/app-debug.apk
+app/build/outputs/apk/app-debug.apk
+*.class
+*.txt
+app/build/intermediates/blame/res/debug/single/drawable-hdpi-v4.json
+app/build/intermediates/blame/res/debug/single/drawable-xxxhdpi-v4.json
+*.json

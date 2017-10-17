@@ -88,6 +88,7 @@
         <activity android:name="com.mobilizedconstruction.AddCommentActivity" />
         <activity android:name="com.mobilizedconstruction.CreatedReportDisplayActivity" />
         <activity android:name="com.mobilizedconstruction.PreviewReportActivity" />
+        <activity android:name="com.mobilizedconstruction.DraftedReport" />
         <activity
             android:name="com.amazonaws.mobile.auth.ui.SignInActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize"

@@ -2,5 +2,9 @@
     {
         "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/drawable-ldpi/default_sign_in_logo.png",
         "source": "/Users/Michelle_Yu/.android/build-cache/4789b67a148043b6f5e0417a355365b77e82829d/output/res/drawable-ldpi/default_sign_in_logo.png"
+    },
+    {
+        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/drawable-ldpi/default_sign_in_logo.png",
+        "source": "/Users/apple/.android/build-cache/e6dd5b95ac4271f36f40b3774bdfa2c6dae1a53c/output/res/drawable-ldpi/default_sign_in_logo.png"
     }
 ]
