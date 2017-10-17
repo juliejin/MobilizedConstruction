@@ -62,6 +62,13 @@ public class ReportCreationActivity extends Activity {
             }
         });
 
+        final Button drafted = (Button) findViewById(R.id.DraftedReportButton);
+        drafted.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                navigateToDraftedPage();
+            }
+        });
 
     }
 
@@ -74,6 +81,12 @@ public class ReportCreationActivity extends Activity {
         this.startActivity(new Intent(this, CreatedReportDisplayActivity.class)
                 .setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
     }
+
+    void navigateToDraftedPage(){
+        this.startActivity(new Intent(this, DraftedReport.class)
+                .setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
+    }
+
 
     void navigateToSignIn(){
         identityManager.signOut();

@@ -8,6 +8,9 @@ import android.widget.EditText;
 import android.support.v7.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Context;
+import android.widget.LinearLayout;
+import android.widget.ScrollView;
+import android.view.ViewGroup;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.Button;
@@ -37,16 +40,16 @@ public class CreatedReportDisplayActivity extends AppCompatActivity {
     private static final String LOG_TAG = CreatedReportDisplayActivity.class.getSimpleName();
     private Vector<ReportDO> createdReport;
     final Context context = this;
-    TableLayout tableLayout;
-    Vector<TableRow> tableRows;
-    LayoutParams layoutParams = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
+    LinearLayout linearLayout;
+    Vector<Button> tableButtons;
+    Boolean scanStopped = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_created_report_display);
+        linearLayout = (LinearLayout)findViewById(R.id.ll);
         createdReport = new Vector<ReportDO>();
-        tableLayout = (TableLayout) findViewById(R.id.CreatedReportTable);
-        tableRows = new Vector<TableRow>();
+        tableButtons = new Vector<Button>();
         scanTable();
     }
 
@@ -76,7 +79,10 @@ public class CreatedReportDisplayActivity extends AppCompatActivity {
                     ScanResult result = client.scan(scanRequest);
 
                     for (Map<String, AttributeValue> item : result.getItems()) {
-                        String comment = item.get("Comment").getS();
+                        String comment = "";
+                        if (item.get("Comment") != null) {
+                            comment = item.get("Comment").getS();
+                        }
                         Integer image_count = Integer.valueOf(item.get("Image Count").getN());
                         Integer report_ID = Integer.valueOf(item.get("Report ID").getN());
                         Integer severity = Integer.valueOf(item.get("Severity").getN());
@@ -85,47 +91,52 @@ public class CreatedReportDisplayActivity extends AppCompatActivity {
                         createdReport.add(new ReportDO(report_ID, comment, date_created, image_count,
                                 road_direction, severity, userID));
                     }
-                    if (createdReport.size() == 0) {
-                        showDialog();
-                    }
-                    else
-                    {
-                        createTableRows(createdReport.size());
-                        for (int i = 0; i < createdReport.size(); i++)
-                        {
-                            addNewRow(i);
-                        }
-                    }
                 } catch (final AmazonClientException ex) {
                     Log.e(LOG_TAG, "Failed fetching reports : " + ex.getMessage(), ex);
                 }
-
+                scanStopped = true;
             }
         }).start();
-    }
-    protected void navigate(){
-        Intent intent = new Intent(this, ReportCreationActivity.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        startActivity(intent);
+
+        while(!scanStopped)
+        {
+
+        }
+        if (createdReport.size() == 0) {
+            showDialog();
+        }
+        else
+        {
+            for (int i = 0; i < createdReport.size(); i++)
+            {
+                addNewButton(i);
+            }
+        }
     }
 
     protected void showDialog() {
 
     }
 
-    protected void createTableRows(int num_rows){
-        for( int j = 0; j < createdReport.size(); j++)
-        {
-            TableRow tableRow = new TableRow(this);
-            tableRows.add(tableRow);
-        }
+
+    protected void addNewButton(final int row_index){
+        Button reportButton = new Button(this);
+        reportButton.setText("Report created at " + createdReport.elementAt(row_index).getDateCreated());
+        reportButton.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+        reportButton.setId(row_index + 1);
+        reportButton.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                toPreview(row_index);
+            }
+        });
+        linearLayout.addView(reportButton);
     }
 
-    protected void addNewRow(int row_index){
-        tableRows.elementAt(row_index).setLayoutParams(layoutParams);
-        tableRows.elementAt(row_index).setVisibility(View.VISIBLE);
-        tableLayout.addView(tableRows.elementAt(row_index), new TableLayout.LayoutParams(
-                TableLayout.LayoutParams.WRAP_CONTENT,
-                TableLayout.LayoutParams.WRAP_CONTENT));
+    protected void toPreview(int index){
+        Intent intent = new Intent(this, PreviewReportActivity.class);
+        intent.putExtra("showButtons", false);
+        intent.putExtra("new_report", createdReport.elementAt(index));
+        startActivity(intent);
     }
 }

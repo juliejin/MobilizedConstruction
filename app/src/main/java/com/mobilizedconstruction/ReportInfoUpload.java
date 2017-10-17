@@ -61,16 +61,8 @@ public class ReportInfoUpload extends AppCompatActivity {
                     Date currentDate = new Date();
                     SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
                     final ReportDO report = new ReportDO(id,"",formatter.format(currentDate).toString(),0,0,0,user);
-                    String FILENAME = "hello_file";
-                    ObjectOutputStream fos;
-                    try {
-                        fos = new ObjectOutputStream(openFileOutput(FILENAME, MODE_PRIVATE));
-                        fos.writeObject(report);
-                        fos.close();
-                    }catch(Exception ex){
-                        Log.e(LOG_TAG, "failed writing item : " + ex.getMessage(), ex);
-                    }
-                    mapper.save(report);
+
+                    //mapper.save(report);
                     intent.putExtra("new_report",report);
                     startActivity(intent);
                 } catch (final AmazonClientException ex) {
