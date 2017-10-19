@@ -26,12 +26,12 @@
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <meta-data
         android:name="android.support.VERSION"
         android:value="26.0.0-alpha1" />
 
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
 
@@ -83,12 +83,12 @@
 
         <activity android:name="com.mobilizedconstruction.ReportCreationActivity" />
         <activity android:name="com.mobilizedconstruction.ReportInfoUpload" />
-        <activity android:name="com.mobilizedconstruction.CommentActivity" />
         <activity android:name="com.mobilizedconstruction.RoadFeaturesActivity" />
         <activity android:name="com.mobilizedconstruction.AddCommentActivity" />
         <activity android:name="com.mobilizedconstruction.CreatedReportDisplayActivity" />
         <activity android:name="com.mobilizedconstruction.PreviewReportActivity" />
         <activity android:name="com.mobilizedconstruction.DraftedReport" />
+        <activity android:name="com.mobilizedconstruction.ImageUploadActivity" />
         <activity
             android:name="com.amazonaws.mobile.auth.ui.SignInActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize"

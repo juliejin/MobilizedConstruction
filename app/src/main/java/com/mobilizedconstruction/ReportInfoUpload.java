@@ -41,7 +41,7 @@ public class ReportInfoUpload extends AppCompatActivity {
                 .dynamoDBClient(dynamoDBClient)
                 .awsConfiguration(Application.awsConfiguration)
                 .build();
-        intent = new Intent(this, AddCommentActivity.class);
+        intent = new Intent(this, ImageUploadActivity.class);
         new Thread(new Runnable() {
             @Override
             public void run() {
