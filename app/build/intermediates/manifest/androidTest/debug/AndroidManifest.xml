@@ -1,20 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.moilizedconstructionstaging.test" >
+    package="com.moilizedconstructionstaging.test">
 
-    <uses-sdk
-        android:minSdkVersion="15"
-        android:targetSdkVersion="26" />
-
-    <instrumentation
-        android:name="com.android.test.runner.MultiDexTestRunner"
-        android:functionalTest="false"
-        android:handleProfiling="false"
-        android:label="Tests for com.moilizedconstructionstaging"
-        android:targetPackage="com.moilizedconstructionstaging" />
+    <uses-sdk android:minSdkVersion="23" android:targetSdkVersion="26" />
 
     <application>
         <uses-library android:name="android.test.runner" />
     </application>
 
+    <instrumentation android:name="android.test.InstrumentationTestRunner"
+                     android:targetPackage="com.moilizedconstructionstaging"
+                     android:handleProfiling="false"
+                     android:functionalTest="false"
+                     android:label="Tests for com.moilizedconstructionstaging"/>
 </manifest>

@@ -4,7 +4,15 @@
         "source": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/res/mipmap-hdpi/splash_icon.png"
     },
     {
+        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/mipmap-hdpi/ic_launcher.png",
+        "source": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/res/mipmap-hdpi/ic_launcher.png"
+    },
+    {
         "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/mipmap-hdpi/ic_launcher.png",
         "source": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/res/mipmap-hdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/mipmap-hdpi/splash_icon.png",
+        "source": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/res/mipmap-hdpi/splash_icon.png"
     }
 ]
