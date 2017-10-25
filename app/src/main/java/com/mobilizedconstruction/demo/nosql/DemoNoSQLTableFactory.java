@@ -22,7 +22,6 @@ public class DemoNoSQLTableFactory {
     DemoNoSQLTableFactory(final Context context) {
         final List<DemoNoSQLTableBase> supportedTablesList = new ArrayList<>();
         supportedTablesList.add(new DemoNoSQLTableReport());
-        supportedTablesList.add(new DemoNoSQLTableImage());
         for (final DemoNoSQLTableBase table : supportedTablesList) {
             supportedTablesMap.put(table.getTableName(), table);
         }

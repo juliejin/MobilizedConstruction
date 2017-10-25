@@ -16,7 +16,6 @@ import com.amazonaws.mobile.auth.core.StartupAuthResult;
 import com.amazonaws.mobile.auth.core.StartupAuthResultHandler;
 import com.amazonaws.mobile.auth.core.signin.AuthException;
 import com.amazonaws.mobile.auth.ui.SignInActivity;
-import com.mobilizedconstruction.model.Report;
 
 import java.lang.ref.WeakReference;
 

@@ -1,4 +1,4 @@
-#Mon Oct 23 23:08:00 PDT 2017
+#Tue Oct 24 22:06:39 PDT 2017
 base.0=/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_bdbd3972ebf803c569de656e4e99ac34ec102d7c
 renamed.1=classes2.dex
 renamed.0=classes.dex

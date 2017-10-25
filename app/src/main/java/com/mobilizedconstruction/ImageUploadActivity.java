@@ -39,6 +39,7 @@ import com.amazonaws.services.s3.model.CannedAccessControlList;
 import com.amazonaws.services.s3.model.PutObjectRequest;
 import com.mobilizedconstruction.R;
 import com.mobilizedconstruction.demo.UserFilesDemoFragment;
+import com.mobilizedconstruction.model.Image;
 import com.mobilizedconstruction.model.ReportDO;
 
 import java.io.File;
@@ -133,7 +134,15 @@ public class ImageUploadActivity extends AppCompatActivity {
 
 
     protected void navigateToNextPage(){
-        uploadImageToAWS();
+
+        Intent intent = new Intent(context, AddCommentActivity.class);
+        intent.putExtra("new_report", report);
+        startActivity(intent);
+    }
+
+    private void insertImage(String filePath, File imageFile, int index, Double lng, Double lat, Integer reportID){
+        Image image = new Image(filePath, imageFile, index, lng, lat, reportID);
+        report.insertImage(image);
 
     }
 
@@ -176,9 +185,7 @@ public class ImageUploadActivity extends AppCompatActivity {
 
                         showUploadOk(R.string.user_files_demo_ok_message_upload_file,
                                 imageFile.getName());
-                        Intent intent = new Intent(context, AddCommentActivity.class);
-                        intent.putExtra("new_report", report);
-                        startActivity(intent);
+
                     }
 
                     @Override

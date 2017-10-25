@@ -7,12 +7,16 @@ import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBIndexRan
 import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBRangeKey;
 import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBTable;
 
+import java.io.File;
 import java.io.Serializable;
+import java.util.List;
+import java.util.Map;
 import java.util.Set;
+import java.util.Vector;
 
 @DynamoDBTable(tableName = "mobilizedconstructio-mobilehub-516637937-Report")
 
-public class ReportDO implements Serializable{
+public class ReportDO implements Serializable {
     private Integer _reportID;
     private String _comment;
     private String _dateCreated;
@@ -20,6 +24,7 @@ public class ReportDO implements Serializable{
     private Integer _roadDirection;
     private Integer _severity;
     private String _userID;
+    private Vector<Image> reportImages;
 
     public ReportDO(){}
 
@@ -32,6 +37,15 @@ public class ReportDO implements Serializable{
         _roadDirection = roadDirection;
         _severity = severity;
         _userID = userID;
+        reportImages = new Vector<Image>();
+    }
+
+    public void insertImage(Image image){
+        reportImages.add(image);
+    }
+
+    public Vector<Image> getImages(){
+        return reportImages;
     }
 
     @DynamoDBHashKey(attributeName = "Report ID")
@@ -92,44 +106,6 @@ public class ReportDO implements Serializable{
         this._userID = _userID;
     }
 
-    /*public static final Parcelable.Creator CREATOR = new Parcelable.Creator() {
-        public Object createFromParcel(Parcel in) {
-            return new ReportDO(in);
-        }
-
-        public ReportDO[] newArray(int size) {
-            return new ReportDO[size];
-        }
-    };
-
-    @Override
-    public int describeContents() {
-        return 0;
-    }
-
-    public void writeToParcel(Parcel dest, int flags) {
-        dest.writeInt(_imageCount);
-        dest.writeInt(_roadDirection);
-        dest.writeInt(_severity);
-        dest.writeInt(_reportID);
-        dest.writeString(_userID);
-        dest.writeArray(_dateCreated.toArray());
-    }
-
-    private void readFromParcel(Parcel in ) {
-        _imageCount = in.readInt();
-        _roadDirection = in.readInt();
-        _severity = in.readInt();
-        _reportID = in.readInt();
-        _userID = in.readString();
-        _dateCreated = new HashSet<Integer>();
-        for(int i=0;i<3;i++){
-            _dateCreated.add(in.readInt());
-        }
-    }
-
-    private ReportDO(Parcel in){
-        readFromParcel(in);
-    }
-    */
 }
+
+
