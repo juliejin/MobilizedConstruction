@@ -2436,7 +2436,7 @@ containing a value of this type.
         public static final int action_mode_bar_stub=0x7f0d005f;
         public static final int action_mode_close_button=0x7f0d0042;
         public static final int action_text=0x7f0d010e;
-        public static final int actions=0x7f0d011c;
+        public static final int actions=0x7f0d011b;
         public static final int activity_chooser_view_content=0x7f0d0043;
         public static final int add=0x7f0d002d;
         public static final int addImageButton=0x7f0d007e;
@@ -2543,7 +2543,7 @@ containing a value of this type.
         public static final int home=0x7f0d0010;
         public static final int homeAsUp=0x7f0d0028;
         public static final int icon=0x7f0d0048;
-        public static final int icon_group=0x7f0d011d;
+        public static final int icon_group=0x7f0d011c;
         public static final int ifRoom=0x7f0d0039;
         public static final int image=0x7f0d0045;
         public static final int imageButton_demoAnalytics_customEvent=0x7f0d00c4;
@@ -2603,7 +2603,7 @@ containing a value of this type.
         public static final int nosql_table_partition_label=0x7f0d00ba;
         public static final int nosql_table_sort_key=0x7f0d00bd;
         public static final int nosql_table_sort_label=0x7f0d00bc;
-        public static final int notification_background=0x7f0d011b;
+        public static final int notification_background=0x7f0d011a;
         public static final int notification_main_column=0x7f0d0115;
         public static final int notification_main_column_container=0x7f0d0114;
         public static final int packed=0x7f0d001e;
@@ -2613,7 +2613,7 @@ containing a value of this type.
         public static final int progress_horizontal=0x7f0d0014;
         public static final int radio=0x7f0d005c;
         public static final int rightDirectionButton=0x7f0d00a1;
-        public static final int right_icon=0x7f0d011a;
+        public static final int right_icon=0x7f0d011d;
         public static final int right_side=0x7f0d0116;
         public static final int salesforce_banner=0x7f0d00fc;
         public static final int screen=0x7f0d002f;

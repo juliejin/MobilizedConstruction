@@ -636,7 +636,7 @@ int id action_mode_bar 0x7f0d0060
 int id action_mode_bar_stub 0x7f0d005f
 int id action_mode_close_button 0x7f0d0042
 int id action_text 0x7f0d010e
-int id actions 0x7f0d011c
+int id actions 0x7f0d011b
 int id activity_chooser_view_content 0x7f0d0043
 int id add 0x7f0d002d
 int id addImageButton 0x7f0d007e
@@ -743,7 +743,7 @@ int id forgot_password_view 0x7f0d0076
 int id home 0x7f0d0010
 int id homeAsUp 0x7f0d0028
 int id icon 0x7f0d0048
-int id icon_group 0x7f0d011d
+int id icon_group 0x7f0d011c
 int id ifRoom 0x7f0d0039
 int id image 0x7f0d0045
 int id imageButton_demoAnalytics_customEvent 0x7f0d00c4
@@ -803,7 +803,7 @@ int id nosql_table_partition_key 0x7f0d00bb
 int id nosql_table_partition_label 0x7f0d00ba
 int id nosql_table_sort_key 0x7f0d00bd
 int id nosql_table_sort_label 0x7f0d00bc
-int id notification_background 0x7f0d011b
+int id notification_background 0x7f0d011a
 int id notification_main_column 0x7f0d0115
 int id notification_main_column_container 0x7f0d0114
 int id packed 0x7f0d001e
@@ -813,7 +813,7 @@ int id progress_circular 0x7f0d0013
 int id progress_horizontal 0x7f0d0014
 int id radio 0x7f0d005c
 int id rightDirectionButton 0x7f0d00a1
-int id right_icon 0x7f0d011a
+int id right_icon 0x7f0d011d
 int id right_side 0x7f0d0116
 int id salesforce_banner 0x7f0d00fc
 int id screen 0x7f0d002f

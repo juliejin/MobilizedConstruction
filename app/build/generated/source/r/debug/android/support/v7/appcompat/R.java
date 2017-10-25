@@ -558,7 +558,7 @@ public final class R {
         public static final int action_mode_bar_stub = 0x7f0d005f;
         public static final int action_mode_close_button = 0x7f0d0042;
         public static final int action_text = 0x7f0d010e;
-        public static final int actions = 0x7f0d011c;
+        public static final int actions = 0x7f0d011b;
         public static final int activity_chooser_view_content = 0x7f0d0043;
         public static final int add = 0x7f0d002d;
         public static final int alertTitle = 0x7f0d0057;
@@ -584,7 +584,7 @@ public final class R {
         public static final int home = 0x7f0d0010;
         public static final int homeAsUp = 0x7f0d0028;
         public static final int icon = 0x7f0d0048;
-        public static final int icon_group = 0x7f0d011d;
+        public static final int icon_group = 0x7f0d011c;
         public static final int ifRoom = 0x7f0d0039;
         public static final int image = 0x7f0d0045;
         public static final int info = 0x7f0d0119;
@@ -598,14 +598,14 @@ public final class R {
         public static final int never = 0x7f0d003a;
         public static final int none = 0x7f0d0023;
         public static final int normal = 0x7f0d0025;
-        public static final int notification_background = 0x7f0d011b;
+        public static final int notification_background = 0x7f0d011a;
         public static final int notification_main_column = 0x7f0d0115;
         public static final int notification_main_column_container = 0x7f0d0114;
         public static final int parentPanel = 0x7f0d004c;
         public static final int progress_circular = 0x7f0d0013;
         public static final int progress_horizontal = 0x7f0d0014;
         public static final int radio = 0x7f0d005c;
-        public static final int right_icon = 0x7f0d011a;
+        public static final int right_icon = 0x7f0d011d;
         public static final int right_side = 0x7f0d0116;
         public static final int screen = 0x7f0d002f;
         public static final int scrollIndicatorDown = 0x7f0d0052;
