@@ -54,10 +54,7 @@ public class ImageUploadActivity extends AppCompatActivity {
     Context context = this;
     private static final String LOG_TAG = ImageUploadActivity.class.getSimpleName();
     private UserFileManager userFileManager;
-    public static final String S3_PREFIX_PUBLIC = "public/";
-    public static final String S3_PREFIX_PRIVATE = "private/";
-    public static final String S3_PREFIX_PROTECTED = "protected/";
-    public static final String S3_PREFIX_UPLOADS = "uploads/";
+
     private final CountDownLatch userFileManagerCreatingLatch = new CountDownLatch(1);
 
     /**
@@ -147,64 +144,7 @@ public class ImageUploadActivity extends AppCompatActivity {
     }
 
 
-    private void uploadImageToAWS() {
-        final Context context = this.getApplicationContext();
-        new UserFileManager.Builder()
-                .withContext(context)
-                .withIdentityManager(IdentityManager.getDefaultIdentityManager())
-                .withAWSConfiguration(new AWSConfiguration(context))
-                .withS3ObjectDirPrefix(S3_PREFIX_UPLOADS)
-                .withLocalBasePath(context.getFilesDir().getAbsolutePath())
-                .build(new UserFileManager.BuilderResultHandler() {
-                    @Override
-                    public void onComplete(UserFileManager userFileManager) {
-                        ImageUploadActivity.this.userFileManager = userFileManager;
-                        userFileManagerCreatingLatch.countDown();
-                    }
-                });
 
-
-        if (ContextCompat.checkSelfPermission(context,
-                android.Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
-            requestPermissions(new String[]{android.Manifest.permission.READ_EXTERNAL_STORAGE},
-                    EXTERNAL_STORAGE_PERMISSION_REQUEST_CODE);
-
-        }
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    userFileManagerCreatingLatch.await();
-                } catch (final InterruptedException ex) {
-                    // This thread should never be interrupted.
-                    throw new RuntimeException(ex);
-                }
-                userFileManager.uploadContent(imageFile, imgDecodableString, new ContentProgressListener() {
-                    @Override
-                    public void onSuccess(final ContentItem contentItem) {
-
-                        showUploadOk(R.string.user_files_demo_ok_message_upload_file,
-                                imageFile.getName());
-
-                    }
-
-                    @Override
-                    public void onProgressUpdate(final String fileName, final boolean isWaiting,
-                                                 final long bytesCurrent, final long bytesTotal) {
-
-                    }
-
-                    @Override
-                    public void onError(final String fileName, final Exception ex) {
-
-                        showError(R.string.user_files_browser_error_message_upload_file,
-                                ex.getMessage());
-                    }
-                });
-            }
-        }).start();
-
-    }
 
 
     private void showError(final int resId, Object... args) {
