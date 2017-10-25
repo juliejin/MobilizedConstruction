@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.pm.PackageManager;
+import android.media.Image;
 import android.os.AsyncTask;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -12,6 +13,7 @@ import android.os.Bundle;
 import android.content.Intent;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.net.Uri;
 import android.database.Cursor;
@@ -19,8 +21,11 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.graphics.BitmapFactory;
 import android.provider.MediaStore;
+import android.widget.LinearLayout;
+import android.widget.TableRow;
 import android.widget.Toast;
 import android.graphics.Bitmap;
+import android.graphics.Matrix;
 
 import com.amazonaws.ClientConfiguration;
 import com.amazonaws.mobile.auth.core.IdentityManager;
@@ -44,12 +49,16 @@ import com.mobilizedconstruction.model.ReportDO;
 import java.io.File;
 import java.net.URI;
 import java.util.concurrent.CountDownLatch;
+import java.util.Vector;
 
 public class ImageUploadActivity extends AppCompatActivity {
     private static final int RESULT_LOAD_IMG = 1;
     ReportDO report;
     private String imgDecodableString;
     File imageFile;
+    private ImageButton addImageButton;
+    private int display_image = -1;
+    private Vector<ImageButton> imageButtonVector;
     Context context = this;
     private static final String LOG_TAG = ImageUploadActivity.class.getSimpleName();
     private UserFileManager userFileManager;
@@ -72,6 +81,7 @@ public class ImageUploadActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_image_upload);
+        imageButtonVector = new Vector<ImageButton>();
         Intent intent = getIntent();
         report = (ReportDO)intent.getSerializableExtra("new_report");
         final Button submitButton = (Button)findViewById(R.id.submitImageButton);
@@ -81,8 +91,8 @@ public class ImageUploadActivity extends AppCompatActivity {
                 navigateToNextPage();
             }
         });
-        final ImageButton imageButton = (ImageButton)findViewById(R.id.addImageButton);
-        imageButton.setOnClickListener(new View.OnClickListener() {
+        addImageButton = (ImageButton)findViewById(R.id.addImageButton);
+        addImageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 getImage();
@@ -115,10 +125,19 @@ public class ImageUploadActivity extends AppCompatActivity {
                 imgDecodableString = cursor.getString(columnIndex);
                 imageFile = new File(imgDecodableString);
                 cursor.close();
-                ImageView imgView = (ImageView) findViewById(R.id.imagePreview);
-                // Set the Image in ImageView after decoding the String
+                LinearLayout imgLL = (LinearLayout) findViewById(R.id.imageLL);
+                ImageButton imageButton = new ImageButton(context);
                 Bitmap myBitmap = BitmapFactory
                         .decodeFile(imgDecodableString);
+                myBitmap = Bitmap.createScaledBitmap(myBitmap, addImageButton.getWidth(), addImageButton.getWidth(), true);
+                Matrix matrix = new Matrix();
+                matrix.postRotate(90);
+                myBitmap = Bitmap.createBitmap(myBitmap , 0, 0, myBitmap .getWidth(), myBitmap .getHeight(), matrix, true);
+                imageButton.setImageBitmap(myBitmap);
+                imageButton.setLayoutParams(new TableRow.LayoutParams(addImageButton.getWidth(), addImageButton.getWidth()));
+                imgLL.addView(imageButton);
+                ImageView imgView = (ImageView) findViewById(R.id.imagePreview);
+                // Set the Image in ImageView after decoding the String
                 imgView.setImageBitmap(myBitmap);
                 //bitmapIntoImageView(imageView, bitmap, MainActivity.this
             } else {
@@ -159,7 +178,6 @@ public class ImageUploadActivity extends AppCompatActivity {
                 android.Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
             requestPermissions(new String[]{android.Manifest.permission.READ_EXTERNAL_STORAGE},
                     EXTERNAL_STORAGE_PERMISSION_REQUEST_CODE);
-
         }
         new Thread(new Runnable() {
             @Override
