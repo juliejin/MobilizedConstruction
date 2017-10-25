@@ -60,6 +60,9 @@
 
         <!-- END - APP CONTENT DELIVERY AND USER DATA STORAGE -->
 
+        <uses-feature android:name="android.hardware.camera"
+            android:required="true" />
+
         <activity android:name=".ReportCreationActivity" />
         <activity android:name=".ReportInfoUpload" />
         <activity android:name=".RoadFeaturesActivity" />

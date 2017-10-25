@@ -14,13 +14,14 @@ import com.amazonaws.mobile.auth.core.IdentityManager;
 import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBMapper;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient;
 import com.mobilizedconstruction.R;
+import com.mobilizedconstruction.model.Report;
 import com.mobilizedconstruction.model.ReportDO;
 
 public class RoadFeaturesActivity extends AppCompatActivity {
     private static final String LOG_TAG = RoadFeaturesActivity.class.getSimpleName();
     protected int severity = -1;
     protected int direction = -1;
-    ReportDO report;
+    Report report;
     DynamoDBMapper mapper;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -88,14 +89,14 @@ public class RoadFeaturesActivity extends AppCompatActivity {
         });
 
         Intent intent = getIntent();
-        report = (ReportDO)intent.getSerializableExtra("new_report");
+        report = (Report)intent.getSerializableExtra("new_report");
         nextButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
                 if (severity != -1 && direction != -1)
                 {
-                    report.setRoadDirection(direction);
-                    report.setSeverity(severity);
+                    report.reportDO.setRoadDirection(direction);
+                    report.reportDO.setSeverity(severity);
                     //UpdateReport();
                     navigateToPreview();
                 }

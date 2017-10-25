@@ -25,10 +25,10 @@ public final class R {
         public static final int user_pools_sign_in_button_margin_top_bottom = 0x7f09006c;
     }
     public static final class id {
-        public static final int confirm_account_button = 0x7f0d00ae;
-        public static final int confirm_account_message1 = 0x7f0d00ab;
-        public static final int confirm_account_message2 = 0x7f0d00ac;
-        public static final int confirm_account_title = 0x7f0d00aa;
+        public static final int confirm_account_button = 0x7f0d00af;
+        public static final int confirm_account_message1 = 0x7f0d00ac;
+        public static final int confirm_account_message2 = 0x7f0d00ad;
+        public static final int confirm_account_title = 0x7f0d00ab;
         public static final int forgot_password_button = 0x7f0d007a;
         public static final int forgot_password_form = 0x7f0d0079;
         public static final int forgot_password_message = 0x7f0d0078;
@@ -40,13 +40,13 @@ public final class R {
         public static final int mfa_message = 0x7f0d008b;
         public static final int mfa_title = 0x7f0d008a;
         public static final int mfa_view = 0x7f0d0089;
-        public static final int signup_button = 0x7f0d00a8;
-        public static final int signup_confirm_form = 0x7f0d00ad;
-        public static final int signup_confirm_view = 0x7f0d00a9;
-        public static final int signup_form = 0x7f0d00a7;
-        public static final int signup_layout = 0x7f0d00a4;
-        public static final int signup_message = 0x7f0d00a6;
-        public static final int signup_view = 0x7f0d00a5;
+        public static final int signup_button = 0x7f0d00a9;
+        public static final int signup_confirm_form = 0x7f0d00ae;
+        public static final int signup_confirm_view = 0x7f0d00aa;
+        public static final int signup_form = 0x7f0d00a8;
+        public static final int signup_layout = 0x7f0d00a5;
+        public static final int signup_message = 0x7f0d00a7;
+        public static final int signup_view = 0x7f0d00a6;
         public static final int small = 0x7f0d003d;
         public static final int user_pool_sign_in_view_id = 0x7f0d001a;
     }

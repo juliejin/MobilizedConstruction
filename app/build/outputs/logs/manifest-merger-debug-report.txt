@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml:13:1-73:12
+ADDED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml:13:1-76:12
 	package
 		ADDED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml:14:5-40
 		INJECTED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml
@@ -41,7 +41,7 @@ ADDED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/Andro
 	android:name
 		ADDED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml:21:22-78
 application
-ADDED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml:24:5-71:19
+ADDED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml:24:5-74:19
 MERGED from [com.android.support:appcompat-v7:26.0.0-alpha1] /Users/Michelle_Yu/.android/build-cache/fdad6d79036fe830024c5bdcb5533fb0396f327d/output/AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:animated-vector-drawable:26.0.0-alpha1] /Users/Michelle_Yu/.android/build-cache/db15f9a374a0ef6a16b6a30df660f171cb510386/output/AndroidManifest.xml:26:5-20
 MERGED from [com.android.support:support-vector-drawable:26.0.0-alpha1] /Users/Michelle_Yu/.android/build-cache/4860cf0c1498129529e194ef600f6b7588174ac9/output/AndroidManifest.xml:26:5-20
@@ -103,38 +103,44 @@ service#com.amazonaws.mobile.downloader.service.DownloadService
 ADDED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml:59:9-91
 	android:name
 		ADDED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml:59:18-88
+uses-feature#android.hardware.camera
+ADDED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml:63:9-64:39
+	android:required
+		ADDED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml:64:13-36
+	android:name
+		ADDED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml:63:23-61
 activity#com.mobilizedconstruction.ReportCreationActivity
-ADDED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml:63:9-60
+ADDED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml:66:9-60
 	android:name
-		ADDED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml:63:19-57
+		ADDED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml:66:19-57
 activity#com.mobilizedconstruction.ReportInfoUpload
-ADDED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml:64:9-54
+ADDED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml:67:9-54
 	android:name
-		ADDED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml:64:19-51
+		ADDED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml:67:19-51
 activity#com.mobilizedconstruction.RoadFeaturesActivity
-ADDED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml:65:9-58
+ADDED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml:68:9-58
 	android:name
-		ADDED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml:65:19-55
+		ADDED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml:68:19-55
 activity#com.mobilizedconstruction.AddCommentActivity
-ADDED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml:66:9-56
+ADDED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml:69:9-56
 	android:name
-		ADDED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml:66:19-53
+		ADDED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml:69:19-53
 activity#com.mobilizedconstruction.CreatedReportDisplayActivity
-ADDED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml:67:9-66
-	android:name
-		ADDED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml:67:19-63
-activity#com.mobilizedconstruction.PreviewReportActivity
-ADDED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml:68:9-59
-	android:name
-		ADDED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml:68:19-56
-activity#com.mobilizedconstruction.DraftedReport
-ADDED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml:69:9-51
-	android:name
-		ADDED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml:69:19-48
-activity#com.mobilizedconstruction.ImageUploadActivity
 ADDED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml:70:9-66
 	android:name
-		ADDED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml:70:19-54
+		ADDED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml:70:19-63
+activity#com.mobilizedconstruction.PreviewReportActivity
+ADDED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml:71:9-59
+	android:name
+		ADDED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml:71:19-56
+activity#com.mobilizedconstruction.DraftedReport
+ADDED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml:72:9-51
+	android:name
+		ADDED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml:72:19-48
+activity#com.mobilizedconstruction.ImageUploadActivity
+ADDED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml:73:9-66
+	android:name
+		ADDED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml:73:19-54
 uses-sdk
 INJECTED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [com.android.support:appcompat-v7:26.0.0-alpha1] /Users/Michelle_Yu/.android/build-cache/fdad6d79036fe830024c5bdcb5533fb0396f327d/output/AndroidManifest.xml:21:5-23:78
@@ -171,7 +177,7 @@ MERGED from [com.android.support:support-compat:26.0.0-alpha1] /Users/Michelle_Y
 	android:name
 		ADDED from [com.android.support:appcompat-v7:26.0.0-alpha1] /Users/Michelle_Yu/.android/build-cache/fdad6d79036fe830024c5bdcb5533fb0396f327d/output/AndroidManifest.xml:26:9-47
 uses-permission#android.permission.READ_PHONE_STATE
-IMPLIED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml:13:1-73:12 reason: com.amazonaws.mobile.auth.core has a targetSdkVersion < 4
+IMPLIED from /Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/AndroidManifest.xml:13:1-76:12 reason: com.amazonaws.mobile.auth.core has a targetSdkVersion < 4
 uses-permission#com.google.android.c2dm.permission.RECEIVE
 ADDED from [com.amazonaws:aws-android-sdk-auth-ui:2.6.0] /Users/Michelle_Yu/.android/build-cache/4789b67a148043b6f5e0417a355365b77e82829d/output/AndroidManifest.xml:4:5-81
 	android:name

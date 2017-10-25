@@ -81,6 +81,10 @@
 
         <!-- END - APP CONTENT DELIVERY AND USER DATA STORAGE -->
 
+        <uses-feature
+            android:name="android.hardware.camera"
+            android:required="true" />
+
         <activity android:name="com.mobilizedconstruction.ReportCreationActivity" />
         <activity android:name="com.mobilizedconstruction.ReportInfoUpload" />
         <activity android:name="com.mobilizedconstruction.RoadFeaturesActivity" />

@@ -3,7 +3,6 @@ package com.mobilizedconstruction.demo;
 import android.support.v4.app.Fragment;
 
 import com.mobilizedconstruction.R;
-import com.mobilizedconstruction.demo.nosql.NoSQLSelectTableDemoFragment;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -58,11 +57,11 @@ public class DemoConfiguration {
                 R.string.feature_cloud_logic_apis_description, R.string.feature_cloud_logic_apis_powered_by,
                 new DemoItem(R.string.main_fragment_title_cloud_logic, R.mipmap.cloud_logic_apis,
                         R.string.feature_cloud_logic_apis_demo_button, CloudLogicAPIChooserFragment.class));
-        addDemoFeature("nosql_database", R.mipmap.database, R.string.feature_nosql_database_title,
-                R.string.feature_nosql_database_subtitle, R.string.feature_nosql_database_overview,
-                R.string.feature_nosql_database_description, R.string.feature_nosql_database_powered_by,
-                new DemoItem(R.string.main_fragment_title_nosql_database, R.mipmap.database,
-                        R.string.feature_nosql_database_demo_button, NoSQLSelectTableDemoFragment.class));
+        //addDemoFeature("nosql_database", R.mipmap.database, R.string.feature_nosql_database_title,
+           //     R.string.feature_nosql_database_subtitle, R.string.feature_nosql_database_overview,
+           //     R.string.feature_nosql_database_description, R.string.feature_nosql_database_powered_by,
+              //  new DemoItem(R.string.main_fragment_title_nosql_database, R.mipmap.database,
+                      //  R.string.feature_nosql_database_demo_button, NoSQLSelectTableDemoFragment.class));
     }
 
     public static List<DemoFeature> getDemoFeatureList() {

@@ -13,6 +13,7 @@ import android.widget.TableRow;
 import android.widget.TextView;
 
 import com.mobilizedconstruction.R;
+import com.mobilizedconstruction.model.Report;
 import com.mobilizedconstruction.model.ReportDO;
 import android.widget.TableRow.LayoutParams;
 import java.io.File;
@@ -55,7 +56,8 @@ public class DraftedReport extends AppCompatActivity {
             reportButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    intent.putExtra("new_report",report);
+                    Report reportModel = new Report(report);
+                    intent.putExtra("new_report",reportModel);
                     startActivity(intent);
                 }
             });

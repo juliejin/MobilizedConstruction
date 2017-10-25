@@ -5,7 +5,6 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.pm.PackageManager;
-import android.media.Image;
 import android.os.AsyncTask;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -44,7 +43,9 @@ import com.amazonaws.services.s3.model.CannedAccessControlList;
 import com.amazonaws.services.s3.model.PutObjectRequest;
 import com.mobilizedconstruction.R;
 import com.mobilizedconstruction.demo.UserFilesDemoFragment;
+import com.mobilizedconstruction.model.Report;
 import com.mobilizedconstruction.model.ReportDO;
+import com.mobilizedconstruction.model.Image;
 
 import java.io.File;
 import java.net.URI;
@@ -53,7 +54,8 @@ import java.util.Vector;
 
 public class ImageUploadActivity extends AppCompatActivity {
     private static final int RESULT_LOAD_IMG = 1;
-    ReportDO report;
+    static final int REQUEST_IMAGE_CAPTURE = 2;
+    Report report;
     private String imgDecodableString;
     File imageFile;
     private ImageButton addImageButton;
@@ -83,7 +85,7 @@ public class ImageUploadActivity extends AppCompatActivity {
         setContentView(R.layout.activity_image_upload);
         imageButtonVector = new Vector<ImageButton>();
         Intent intent = getIntent();
-        report = (ReportDO)intent.getSerializableExtra("new_report");
+        report = (Report)intent.getSerializableExtra("new_report");
         final Button submitButton = (Button)findViewById(R.id.submitImageButton);
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -105,6 +107,19 @@ public class ImageUploadActivity extends AppCompatActivity {
         Intent galleryIntent = new Intent(Intent.ACTION_PICK,
                 android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
         startActivityForResult(galleryIntent, RESULT_LOAD_IMG);
+    }
+
+    private void insertImage(String filePath, File imageFile, int index, Double lng, Double lat, Integer reportID){
+        Image image = new Image(filePath, imageFile, index, lng, lat, reportID);
+        report.insertImage(image);
+
+    }
+
+    private void dispatchTakePictureIntent() {
+        Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
+            startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
+        }
     }
 
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -139,21 +154,32 @@ public class ImageUploadActivity extends AppCompatActivity {
                 ImageView imgView = (ImageView) findViewById(R.id.imagePreview);
                 // Set the Image in ImageView after decoding the String
                 imgView.setImageBitmap(myBitmap);
+                Image image = new Image(imgDecodableString, imageFile, imageButtonVector.size() - 1, 0.0, 0.0, report.reportDO.getReportID());
+                report.insertImage(image);
                 //bitmapIntoImageView(imageView, bitmap, MainActivity.this
             } else {
                 Toast.makeText(this, "You haven't picked Image",
                         Toast.LENGTH_LONG).show();
             }
         } catch (Exception e) {
-            Toast.makeText(this, "Something went wrong", Toast.LENGTH_LONG)
+            Toast.makeText(this, e.getMessage(), Toast.LENGTH_LONG)
                     .show();
+        }
+
+        if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
+            Bundle extras = data.getExtras();
+            Bitmap imageBitmap = (Bitmap) extras.get("data");
+            //mImageView.setImageBitmap(imageBitmap);
         }
     }
 
 
     protected void navigateToNextPage(){
-        uploadImageToAWS();
-
+        //uploadImageToAWS();
+        report.reportDO.setImageCount(imageButtonVector.size());
+        Intent intent = new Intent(this, AddCommentActivity.class);
+        intent.putExtra("new_report", report);
+        startActivity(intent);
     }
 
 
