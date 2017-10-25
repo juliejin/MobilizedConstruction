@@ -34,6 +34,7 @@ import com.mobilizedconstruction.R;
 import com.mobilizedconstruction.model.Report;
 import com.mobilizedconstruction.model.ReportDO;
 import com.mobilizedconstruction.model.Image;
+import com.mobilizedconstruction.model.ReportImageDO;
 
 import static android.widget.TableLayout.*;
 
@@ -138,16 +139,20 @@ public class CreatedReportDisplayActivity extends AppCompatActivity {
     }
 
     protected void toPreview(int index){
-       /* Intent intent = new Intent(this, PreviewReportActivity.class);
+        Intent intent = new Intent(this, PreviewReportActivity.class);
         intent.putExtra("showButtons", false);
         Report report = new Report(createdReport.elementAt(index).reportDO);
         for (int i = 0; i < report.reportDO.getImageCount(); i++)
         {
             Image image = new Image();
-            image.fetchFromDB(report.reportDO.getReportID(), i);
+            ReportImageDO imagedo = image.fetchFromDB(report.reportDO.getReportID(), i, this);
+            while(imagedo.getImageURL()== null){
+
+            }
+            image.SetReportImageDO(imagedo);
             report.insertImage(image);
         }
         intent.putExtra("new_report", report);
-        startActivity(intent);*/
+        startActivity(intent);
     }
 }

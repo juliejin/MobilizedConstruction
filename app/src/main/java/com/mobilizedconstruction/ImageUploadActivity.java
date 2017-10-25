@@ -49,6 +49,9 @@ import com.mobilizedconstruction.model.Image;
 
 import java.io.File;
 import java.net.URI;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.concurrent.CountDownLatch;
 import java.util.Vector;
 
@@ -59,8 +62,11 @@ public class ImageUploadActivity extends AppCompatActivity {
     private String imgDecodableString;
     File imageFile;
     private ImageButton addImageButton;
+    private ImageButton cameraButton;
     private int display_image = -1;
     private Vector<ImageButton> imageButtonVector;
+    private HashSet<String> decodableSet;
+    private HashMap<ImageButton, Bitmap> mapImagetoBitmap;
     Context context = this;
     private static final String LOG_TAG = ImageUploadActivity.class.getSimpleName();
     private UserFileManager userFileManager;
@@ -84,6 +90,8 @@ public class ImageUploadActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_image_upload);
         imageButtonVector = new Vector<ImageButton>();
+        decodableSet = new HashSet<String>();
+        mapImagetoBitmap = new HashMap<ImageButton, Bitmap>();
         Intent intent = getIntent();
         report = (Report)intent.getSerializableExtra("new_report");
         final Button submitButton = (Button)findViewById(R.id.submitImageButton);
@@ -100,7 +108,13 @@ public class ImageUploadActivity extends AppCompatActivity {
                 getImage();
             }
         });
-
+        cameraButton = (ImageButton)findViewById(R.id.cameraButton);
+        cameraButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dispatchTakePictureIntent();
+            }
+        });
     }
 
     protected void getImage(){
@@ -124,6 +138,8 @@ public class ImageUploadActivity extends AppCompatActivity {
 
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+        final ImageView imgView = (ImageView) findViewById(R.id.imagePreview);
+        final LinearLayout imgLL = (LinearLayout) findViewById(R.id.imageLL);
         try {
             // When an Image is picked
             if (requestCode == RESULT_LOAD_IMG && resultCode == RESULT_OK
@@ -138,26 +154,50 @@ public class ImageUploadActivity extends AppCompatActivity {
                 cursor.moveToFirst();
                 int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
                 imgDecodableString = cursor.getString(columnIndex);
-                imageFile = new File(imgDecodableString);
-                cursor.close();
-                LinearLayout imgLL = (LinearLayout) findViewById(R.id.imageLL);
+                if (!decodableSet.contains(imgDecodableString))
+                {
+                    decodableSet.add(imgDecodableString);
+                    imageFile = new File(imgDecodableString);
+                    cursor.close();
+                    Image image = new Image(imgDecodableString, imageFile, imageButtonVector.size(), 0.0, 0.0, report.reportDO.getReportID());
+                    report.insertImage(image);
+                    ImageButton imageButton = new ImageButton(context);
+                    Bitmap myBitmap = BitmapFactory
+                            .decodeFile(imgDecodableString);
+                    myBitmap = Bitmap.createScaledBitmap(myBitmap, 240, 240, true);
+                    Matrix matrix = new Matrix();
+                    matrix.postRotate(90);
+                    myBitmap = Bitmap.createBitmap(myBitmap , 0, 0, myBitmap .getWidth(), myBitmap .getHeight(), matrix, true);
+                    imageButton.setImageBitmap(myBitmap);
+                    imageButton.setLayoutParams(new TableRow.LayoutParams(240, 240));
+                    mapImagetoBitmap.put(imageButton, myBitmap);
+                    imgLL.addView(imageButton);
+                    imageButtonVector.add(imageButton);
+                    // Set the Image in ImageView after decoding the String
+                    imgView.setImageBitmap(myBitmap);
+                }
+                else
+                {
+                    Toast.makeText(this, "You have already added this file.",
+                            Toast.LENGTH_LONG).show();
+                }
+
+            }
+            else if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
+                Bundle extras = data.getExtras();
+                Bitmap myBitmap = (Bitmap) extras.get("data");
+                imgView.setImageBitmap(myBitmap);
                 ImageButton imageButton = new ImageButton(context);
-                Bitmap myBitmap = BitmapFactory
-                        .decodeFile(imgDecodableString);
-                myBitmap = Bitmap.createScaledBitmap(myBitmap, addImageButton.getWidth(), addImageButton.getWidth(), true);
-                Matrix matrix = new Matrix();
-                matrix.postRotate(90);
-                myBitmap = Bitmap.createBitmap(myBitmap , 0, 0, myBitmap .getWidth(), myBitmap .getHeight(), matrix, true);
+                myBitmap = Bitmap.createScaledBitmap(myBitmap, 240, 240, true);
                 imageButton.setImageBitmap(myBitmap);
-                imageButton.setLayoutParams(new TableRow.LayoutParams(addImageButton.getWidth(), addImageButton.getWidth()));
+                imageButton.setLayoutParams(new TableRow.LayoutParams(240, 240));
+                mapImagetoBitmap.put(imageButton, myBitmap);
                 imgLL.addView(imageButton);
-                ImageView imgView = (ImageView) findViewById(R.id.imagePreview);
+                imageButtonVector.add(imageButton);
                 // Set the Image in ImageView after decoding the String
                 imgView.setImageBitmap(myBitmap);
-                Image image = new Image(imgDecodableString, imageFile, imageButtonVector.size() - 1, 0.0, 0.0, report.reportDO.getReportID());
-                report.insertImage(image);
-                //bitmapIntoImageView(imageView, bitmap, MainActivity.this
-            } else {
+            }
+            else {
                 Toast.makeText(this, "You haven't picked Image",
                         Toast.LENGTH_LONG).show();
             }
@@ -165,11 +205,15 @@ public class ImageUploadActivity extends AppCompatActivity {
             Toast.makeText(this, e.getMessage(), Toast.LENGTH_LONG)
                     .show();
         }
-
-        if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
-            Bundle extras = data.getExtras();
-            Bitmap imageBitmap = (Bitmap) extras.get("data");
-            //mImageView.setImageBitmap(imageBitmap);
+        for (int i = 0; i < imageButtonVector.size(); i++)
+        {
+            imageButtonVector.elementAt(i).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    ImageButton imageButton = (ImageButton) view;
+                    imgView.setImageBitmap(mapImagetoBitmap.get(imageButton));
+                }
+            });
         }
     }
 

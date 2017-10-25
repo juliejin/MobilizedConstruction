@@ -47,13 +47,24 @@ public class Image implements Serializable{
     public static final String S3_PREFIX_UPLOADS = "uploads/";
     //transient private final CountDownLatch userFileManagerCreatingLatch = new CountDownLatch(1);
 
+    public Image(ReportImageDO image){
+        this.reportImage = image;
+        this.index = image.getIndex();
+        this.FilePath = image.getImageURL();
+
+    }
+
 
     /**
      * Permission Request Code (Must be < 256).
      */
     private static final int EXTERNAL_STORAGE_PERMISSION_REQUEST_CODE = 93;
 
+    public Image(){}
 
+    public void SetReportImageDO(ReportImageDO image){
+        this.reportImage = image;
+    }
 
     public Image(String filePath, File imageFile, Integer index, Double lng, Double lat, Integer reportID){
         this.index = index;
@@ -111,7 +122,9 @@ public class Image implements Serializable{
                     // This thread should never be interrupted.
                     throw new RuntimeException(ex);
                 }
-                userFileManager.uploadContent(imageFile, FilePath, new ContentProgressListener() {
+                SetImageUrl(FilePath);
+                mapper.save(reportImage);
+                /*userFileManager.uploadContent(imageFile, FilePath, new ContentProgressListener() {
                     @Override
                     public void onSuccess(final ContentItem contentItem) {
                         //URL _finalUrl = userFileManager.generatePresignedUrl(reportImage.getReportID().toString()+reportImage.getIndex());
@@ -129,7 +142,7 @@ public class Image implements Serializable{
                     public void onError(final String fileName, final Exception ex) {
 
                     }
-                });
+                });*/
             }
         }).start();
     }
@@ -155,12 +168,32 @@ public class Image implements Serializable{
         }).start();
     }
 
-    public ReportImageDO fetchFromDB(final Integer reportID,final int index) {
+    public ReportImageDO fetchFromDB(final Integer reportID,final int index, Context context) {
+        final CountDownLatch userFileManagerCreatingLatch = new CountDownLatch(1);
+        new UserFileManager.Builder()
+                .withContext(context)
+                .withIdentityManager(IdentityManager.getDefaultIdentityManager())
+                .withAWSConfiguration(new AWSConfiguration(context))
+                .withS3ObjectDirPrefix(S3_PREFIX_UPLOADS)
+                .withLocalBasePath(context.getFilesDir().getAbsolutePath())
+                .build(new UserFileManager.BuilderResultHandler() {
+                    @Override
+                    public void onComplete(UserFileManager userFileManager) {
+                        Image.this.userFileManager = userFileManager;
+                        userFileManagerCreatingLatch.countDown();
+                    }
+                });
         final ReportImageDO image = new ReportImageDO(reportID, index, 0.0,0.0);
         new Thread(new Runnable() {
             @Override
             public void run() {
                 try {
+                    try {
+                        userFileManagerCreatingLatch.await();
+                    } catch (final InterruptedException ex) {
+                        // This thread should never be interrupted.
+                        throw new RuntimeException(ex);
+                    }
                     AmazonDynamoDBClient client =
                             new AmazonDynamoDBClient(IdentityManager.getDefaultIdentityManager()
                                     .getCredentialsProvider(), new ClientConfiguration());
@@ -170,23 +203,24 @@ public class Image implements Serializable{
                             new HashMap<String, AttributeValue>();
                     expressionAttributeValues.put(":reportID", new AttributeValue().withN(reportID.toString()));
                     ScanRequest scanRequest = new ScanRequest()
-                            .withTableName("mobilizedconstructio-mobilehub-516637937-ReportImage")
-                            .withExpressionAttributeNames(attributeNames)
-                            .withExpressionAttributeValues(expressionAttributeValues)
-                            .withFilterExpression("#reportID = :reportID");
+                            .withTableName("mobilizedconstructio-mobilehub-516637937-ReportImage");
                     ScanResult result = client.scan(scanRequest);
                     for (Map<String, AttributeValue> item : result.getItems()) {
-                        if (item.get("imageURL") != null) {
-                            String url = item.get("imageURL").getS();
-                            userFileManager.getContent(FilePath, 0, ContentDownloadPolicy.DOWNLOAD_IF_NOT_CACHED, true, null);
+                        if (item.get("ImageURL") != null) {
+                            //userFileManager.getContent(url, 0, ContentDownloadPolicy.DOWNLOAD_IF_NOT_CACHED, true, null);
+                            String url = item.get("ImageURL").getS();
+                            userFileManager.getContent(url, 0, ContentDownloadPolicy.DOWNLOAD_IF_NOT_CACHED, true, null);
+                            image.setImageURL(url);
+                            imageFile = new File(url);
                         }
-                        if(item.get("longitude")!=null){
+                        if(item.get("Longitude")!=null){
                             image.setLongitude(Double.parseDouble(item.get("longitude").getS()));
                         }
-                        if(item.get("latitude")!=null){
+                        if(item.get("Latitude")!=null){
                             image.setLongitude(Double.parseDouble(item.get("latitude").getS()));
                         }
                     }
+
                 } catch (final AmazonClientException ex) {
                     // This thread should never be interrupted.
                     throw new RuntimeException(ex);
