@@ -7,13 +7,14 @@ import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBIndexRan
 import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBRangeKey;
 import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBTable;
 
+import java.io.Serializable;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
 @DynamoDBTable(tableName = "mobilizedconstructio-mobilehub-516637937-ReportImage")
 
-public class ReportImageDO {
+public class ReportImageDO implements Serializable{
     private Integer _reportID;
     private int _index;
     private String _imageURL;

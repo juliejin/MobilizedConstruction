@@ -2,19 +2,28 @@ package com.mobilizedconstruction.model;
 
 import android.app.AlertDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.support.v4.content.ContextCompat;
+import android.util.Log;
 
+import com.amazonaws.AmazonClientException;
+import com.amazonaws.ClientConfiguration;
 import com.amazonaws.mobile.auth.core.IdentityManager;
 import com.amazonaws.mobile.config.AWSConfiguration;
 import com.amazonaws.mobile.content.ContentItem;
 import com.amazonaws.mobile.content.ContentProgressListener;
 import com.amazonaws.mobile.content.UserFileManager;
+import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBMapper;
+import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient;
 import com.mobilizedconstruction.Application;
 import com.mobilizedconstruction.ImageUploadActivity;
 import com.mobilizedconstruction.R;
+import com.mobilizedconstruction.ReportCreationActivity;
 
 import java.io.File;
+import java.io.Serializable;
+import java.net.URL;
 import java.util.concurrent.CountDownLatch;
 
 import static android.provider.Settings.Global.getString;
@@ -23,7 +32,7 @@ import static android.provider.Settings.Global.getString;
  * Created by apple on 24/10/2017.
  */
 
-public class Image {
+public class Image implements Serializable{
     private String FilePath;
     private Integer index;
     private File imageFile;
@@ -31,6 +40,7 @@ public class Image {
     private UserFileManager userFileManager;
     public static final String S3_PREFIX_UPLOADS = "uploads/";
     private final CountDownLatch userFileManagerCreatingLatch = new CountDownLatch(1);
+    DynamoDBMapper mapper;
 
     /**
      * Permission Request Code (Must be < 256).
@@ -60,7 +70,7 @@ public class Image {
         return reportImage;
     }
 
-    private void uploadToAWS(Context context) {
+    private void uploadToS3(Context context) {
         new UserFileManager.Builder()
                 .withContext(context)
                 .withIdentityManager(IdentityManager.getDefaultIdentityManager())
@@ -75,14 +85,6 @@ public class Image {
                     }
                 });
 
-
-        /*if (ContextCompat.checkSelfPermission(context,
-                android.Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
-            requestPermissions(new String[]{android.Manifest.permission.READ_EXTERNAL_STORAGE},
-                    EXTERNAL_STORAGE_PERMISSION_REQUEST_CODE);
-
-        }*/
-
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -95,8 +97,8 @@ public class Image {
                 userFileManager.uploadContent(imageFile, FilePath, new ContentProgressListener() {
                     @Override
                     public void onSuccess(final ContentItem contentItem) {
-
-                        OnSuccess();
+                        URL _finalUrl = userFileManager.generatePresignedUrl(reportImage.getReportID().toString()+reportImage.getIndex());
+                        SetImageUrl(_finalUrl.toString());
 
                     }
 
@@ -108,20 +110,36 @@ public class Image {
 
                     @Override
                     public void onError(final String fileName, final Exception ex) {
-                        OnFailure();
+
                     }
                 });
             }
         }).start();
     }
 
-    private void OnSuccess() {
-        //To Implement Debug message or do any action if needed
+    private void uploadToDB(){
+        AmazonDynamoDBClient dynamoDBClient =
+                new AmazonDynamoDBClient(IdentityManager.getDefaultIdentityManager()
+                        .getCredentialsProvider(), new ClientConfiguration());
+        mapper = DynamoDBMapper.builder()
+                .dynamoDBClient(dynamoDBClient)
+                .awsConfiguration(Application.awsConfiguration)
+                .build();
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    mapper.save(reportImage);
+                } catch (final AmazonClientException ex) {
+
+                }
+            }
+        }).start();
     }
 
-    private void OnFailure() {
-        //To Implement Debug message or do any action if needed
-    }
+
+
 
 }
 
