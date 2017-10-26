@@ -25,6 +25,7 @@ import com.amazonaws.services.dynamodbv2.model.ScanRequest;
 import com.amazonaws.services.dynamodbv2.model.ScanResult;
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.AmazonS3Client;
+import com.amazonaws.services.s3.model.CannedAccessControlList;
 import com.amazonaws.services.s3.model.GetObjectRequest;
 import com.amazonaws.services.s3.model.PutObjectRequest;
 import com.amazonaws.services.s3.model.S3Object;
@@ -58,6 +59,7 @@ public class Image implements Serializable{
     private Integer index;
     private File imageFile;
     private ReportImageDO reportImage;
+    transient private Bitmap imageBitmap;
     transient private UserFileManager userFileManager;
     public static final String S3_PREFIX_UPLOADS = "uploads/";
     //transient private final CountDownLatch userFileManagerCreatingLatch = new CountDownLatch(1);
@@ -91,6 +93,10 @@ public class Image implements Serializable{
     public void SetImageUrl(String URL){
         this.reportImage.setImageURL(URL);
     }
+
+    public void SetImageFile(File file){this.imageFile = file;}
+
+    public void SetFilePath(String path){this.FilePath = path;}
 
     public void SetRoadHazard(Integer roadHazard){
         this.reportImage.setRoadHazard(roadHazard);
@@ -140,10 +146,14 @@ public class Image implements Serializable{
                 String key = S3_PREFIX_UPLOADS+imageFile.getName();
                 SetImageUrl(key);
                 mapper.save(reportImage);
-                AmazonS3 s3Client = new AmazonS3Client(IdentityManager.getDefaultIdentityManager()
-                        .getCredentialsProvider());
-                s3Client.putObject(
-                        new PutObjectRequest("mobilizedconstructio-userfiles-mobilehub-516637937",key, imageFile));
+                try {
+                    AmazonS3 s3Client = new AmazonS3Client(IdentityManager.getDefaultIdentityManager()
+                            .getCredentialsProvider());
+                    PutObjectRequest obj = new PutObjectRequest("mobilizedconstructio-userfiles-mobilehub-516637937", key, imageFile);
+                    s3Client.putObject(obj);
+                }catch (Exception e){
+                    System.out.println(e.getMessage());
+                }
                 /*userFileManager.uploadContent(imageFile, FilePath, new ContentProgressListener() {
                     @Override
                     public void onSuccess(final ContentItem contentItem) {
@@ -167,17 +177,10 @@ public class Image implements Serializable{
         }).start();
     }
 
-    public ReportImageDO fetchFromDB(final Integer reportID,final int index) {
-       final ReportImageDO image = new ReportImageDO(reportID, index, 0.0,0.0);
+    public void fetchFromDB(final Integer reportID,final int index) {
         new Thread(new Runnable() {
             @Override
             public void run() {
-               /* try {
-                    userFileManagerCreatingLatch.await();
-                } catch (final InterruptedException ex) {
-                    // This thread should never be interrupted.
-                    throw new RuntimeException(ex);
-                }*/
                     AmazonDynamoDBClient client =
                             new AmazonDynamoDBClient(IdentityManager.getDefaultIdentityManager()
                                     .getCredentialsProvider(), new ClientConfiguration());
@@ -198,30 +201,27 @@ public class Image implements Serializable{
                                     new GetObjectRequest("mobilizedconstructio-userfiles-mobilehub-516637937", url));
                             InputStream objectData = object.getObjectContent();
                             try {
-                                ObjectOutputStream outStream = new ObjectOutputStream(new FileOutputStream(url));
-                                Bitmap bitmap = BitmapFactory.decodeStream(objectData);
-                                bitmap.compress(Bitmap.CompressFormat.PNG, 1080, outStream);
-                                imageFile = new File(url);
+                                reportImage.setImageURL(url);
+                                imageBitmap = BitmapFactory.decodeStream(objectData);
                             }catch (Exception e){
-
+                                System.out.println(e.getMessage());
                             }
-                            image.setImageURL(url);
                         }
                         if(item.get("Longitude")!=null){
-                            image.setLongitude(Double.parseDouble(item.get("Longitude").getN()));
+                            reportImage.setLongitude(Double.parseDouble(item.get("Longitude").getN()));
                         }
                         if(item.get("Latitude")!=null){
-                            image.setLongitude(Double.parseDouble(item.get("Latitude").getN()));
+                            reportImage.setLongitude(Double.parseDouble(item.get("Latitude").getN()));
                         }
                     }
 
             }
         }).start();
-        return image;
+
     }
 
-    public File getImageFile(){
-        return imageFile;
+    public Bitmap getImageBitmap(){
+        return imageBitmap;
     }
 
 }

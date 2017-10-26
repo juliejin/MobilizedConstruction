@@ -1,6 +1,7 @@
 package com.mobilizedconstruction;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -18,6 +19,9 @@ import android.widget.TableRow.LayoutParams;
 import android.view.View;
 import android.widget.TextView;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.OutputStream;
 import java.util.Map;
 import java.util.HashMap;
 import java.util.Vector;
@@ -144,13 +148,28 @@ public class CreatedReportDisplayActivity extends AppCompatActivity {
         Report report = new Report(createdReport.elementAt(index).reportDO);
         for (int i = 0; i < report.reportDO.getImageCount(); i++)
         {
-            final ReportImageDO imaged = new ReportImageDO(report.reportDO.getReportID(), index, 0.0,0.0);
+            ReportImageDO imaged = new ReportImageDO(report.reportDO.getReportID(), index, 0.0,0.0);
             Image image = new Image(imaged);
-            ReportImageDO imagedo = image.fetchFromDB(report.reportDO.getReportID(), i-1);
-            while(image.getImageFile()== null){
-
+            image.fetchFromDB(report.reportDO.getReportID(), i-1);
+            Bitmap imagebit = image.getImageBitmap();
+            while(imagebit==null){
+               imagebit = image.getImageBitmap();
             }
-            image.SetReportImageDO(imagedo);
+            OutputStream os;
+            String filename = image.GetReportImage().getImageURL();
+            filename = filename.replace("uploads/","");
+            try {
+                File imageFile = new File(getFilesDir(), filename);
+                imageFile.createNewFile();
+                image.SetImageFile(imageFile);
+                image.SetFilePath(imageFile.getPath());
+                os = new FileOutputStream(imageFile);
+                imagebit.compress(Bitmap.CompressFormat.JPEG, 100, os);
+                os.flush();
+                os.close();
+            } catch (Exception e) {
+                Log.e(getClass().getSimpleName(), "Error writing bitmap", e);
+            }
             report.insertImage(image);
         }
         intent.putExtra("new_report", report);

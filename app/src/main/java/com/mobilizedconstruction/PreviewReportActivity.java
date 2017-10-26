@@ -84,14 +84,16 @@ public class PreviewReportActivity extends AppCompatActivity {
             ImageView imageView = new ImageView(this);
             int height = linearLayout.getHeight();
             imageView.setLayoutParams(new TableRow.LayoutParams(240, 240));
-            Bitmap myBitmap = BitmapFactory
-                    .decodeFile(report.reportImages.elementAt(i).getFilePath());
-            myBitmap = Bitmap.createScaledBitmap(myBitmap, 240,240, true);
-            Matrix matrix = new Matrix();
-            matrix.postRotate(90);
-            myBitmap = Bitmap.createBitmap(myBitmap , 0, 0, myBitmap .getWidth(), myBitmap .getHeight(), matrix, true);
-            imageView.setImageBitmap(myBitmap);
-            linearLayout.addView(imageView);
+
+                Bitmap myBitmap = BitmapFactory
+                        .decodeFile(report.reportImages.elementAt(i).getFilePath());
+                myBitmap = Bitmap.createScaledBitmap(myBitmap, 240, 240, true);
+                Matrix matrix = new Matrix();
+                matrix.postRotate(90);
+                myBitmap = Bitmap.createBitmap(myBitmap, 0, 0, myBitmap.getWidth(), myBitmap.getHeight(), matrix, true);
+                imageView.setImageBitmap(myBitmap);
+                linearLayout.addView(imageView);
+
         }
     }
 
