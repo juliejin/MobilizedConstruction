@@ -46,6 +46,7 @@ import com.mobilizedconstruction.demo.UserFilesDemoFragment;
 import com.mobilizedconstruction.model.Report;
 import com.mobilizedconstruction.model.ReportDO;
 import com.mobilizedconstruction.model.Image;
+import com.mobilizedconstruction.model.ReportImageDO;
 
 import java.io.File;
 import java.net.URI;
@@ -70,9 +71,6 @@ public class ImageUploadActivity extends AppCompatActivity {
     Context context = this;
     private static final String LOG_TAG = ImageUploadActivity.class.getSimpleName();
     private UserFileManager userFileManager;
-    public static final String S3_PREFIX_PUBLIC = "public/";
-    public static final String S3_PREFIX_PRIVATE = "private/";
-    public static final String S3_PREFIX_PROTECTED = "protected/";
     public static final String S3_PREFIX_UPLOADS = "uploads/";
     private final CountDownLatch userFileManagerCreatingLatch = new CountDownLatch(1);
 

@@ -144,9 +144,10 @@ public class CreatedReportDisplayActivity extends AppCompatActivity {
         Report report = new Report(createdReport.elementAt(index).reportDO);
         for (int i = 0; i < report.reportDO.getImageCount(); i++)
         {
-            Image image = new Image();
-            ReportImageDO imagedo = image.fetchFromDB(report.reportDO.getReportID(), i, this);
-            while(imagedo.getImageURL()== null){
+            final ReportImageDO imaged = new ReportImageDO(report.reportDO.getReportID(), index, 0.0,0.0);
+            Image image = new Image(imaged);
+            ReportImageDO imagedo = image.fetchFromDB(report.reportDO.getReportID(), i-1);
+            while(image.getImageFile()== null){
 
             }
             image.SetReportImageDO(imagedo);

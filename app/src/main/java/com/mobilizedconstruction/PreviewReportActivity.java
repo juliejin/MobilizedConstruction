@@ -107,6 +107,7 @@ public class PreviewReportActivity extends AppCompatActivity {
         for (int i = 0; i < report.reportImages.size(); i++)
         {
             report.reportImages.elementAt(i).uploadToS3(context);
+            //report.reportImages.elementAt(i).fetchFromDB(report.reportImages.elementAt(i).GetReportImage().getReportID(),report.reportImages.elementAt(i).GetReportImage().getIndex(),context);
         }
         final Intent intent = new Intent(this, ReportCreationActivity.class);
         new Thread(new Runnable() {
