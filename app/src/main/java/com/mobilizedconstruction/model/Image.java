@@ -181,6 +181,43 @@ public class Image implements Serializable{
         new Thread(new Runnable() {
             @Override
             public void run() {
+<<<<<<< HEAD
+=======
+                try {
+                    mapper.save(reportImage);
+                } catch (final AmazonClientException ex) {
+
+                }
+            }
+        }).start();
+    }
+
+    public ReportImageDO fetchFromDB(final Integer reportID,final int index, Context context) {
+        final CountDownLatch userFileManagerCreatingLatch = new CountDownLatch(1);
+        new UserFileManager.Builder()
+                .withContext(context)
+                .withIdentityManager(IdentityManager.getDefaultIdentityManager())
+                .withAWSConfiguration(new AWSConfiguration(context))
+                .withS3ObjectDirPrefix(S3_PREFIX_UPLOADS)
+                .withLocalBasePath(context.getFilesDir().getAbsolutePath())
+                .build(new UserFileManager.BuilderResultHandler() {
+                    @Override
+                    public void onComplete(UserFileManager userFileManager) {
+                        Image.this.userFileManager = userFileManager;
+                        userFileManagerCreatingLatch.countDown();
+                    }
+                });
+        final ReportImageDO image = new ReportImageDO(reportID, index, 0.0,0.0);
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                    try {
+                        userFileManagerCreatingLatch.await();
+                    } catch (final InterruptedException ex) {
+                        // This thread should never be interrupted.
+                        throw new RuntimeException(ex);
+                    }
+>>>>>>> 794a7151f10becea5a112321204224ab3a9f4850
                     AmazonDynamoDBClient client =
                             new AmazonDynamoDBClient(IdentityManager.getDefaultIdentityManager()
                                     .getCredentialsProvider(), new ClientConfiguration());
@@ -188,6 +225,7 @@ public class Image implements Serializable{
                     attributeNames.put("#reportID", "Report ID");
                     Map<String, AttributeValue> expressionAttributeValues =
                             new HashMap<String, AttributeValue>();
+                    String id = reportID.toString();
                     expressionAttributeValues.put(":reportID", new AttributeValue().withN(reportID.toString()));
                     ScanRequest scanRequest = new ScanRequest()
                             .withTableName("mobilizedconstructio-mobilehub-516637937-ReportImage");
@@ -215,6 +253,10 @@ public class Image implements Serializable{
                         }
                     }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 794a7151f10becea5a112321204224ab3a9f4850
             }
         }).start();
 

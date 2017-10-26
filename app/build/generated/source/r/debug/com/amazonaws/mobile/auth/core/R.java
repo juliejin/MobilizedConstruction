@@ -8,21 +8,24 @@ package com.amazonaws.mobile.auth.core;
 
 public final class R {
     public static final class attr {
-        public static final int button_style = 0x7f0100f6;
-        public static final int text = 0x7f0100f5;
+        public static final int button_style = 0x7f01017c;
+        public static final int text = 0x7f01017b;
     }
     public static final class id {
-        public static final int large = 0x7f0d003c;
-        public static final int small = 0x7f0d003d;
+        public static final int large = 0x7f0f007d;
+        public static final int small = 0x7f0f007e;
     }
     public static final class string {
-        public static final int sign_in_canceled_message_format = 0x7f0800e8;
-        public static final int sign_in_failure_dialog_title = 0x7f0800e9;
-        public static final int sign_in_failure_message_format = 0x7f0800ea;
+        public static final int sign_in_canceled_message_format = 0x7f090141;
+        public static final int sign_in_failure_dialog_title = 0x7f090142;
+        public static final int sign_in_failure_message_format = 0x7f090143;
     }
     public static final class styleable {
-        public static final int[] SignInButton = { 0x7f0100f5, 0x7f0100f6 };
-        public static final int SignInButton_button_style = 1;
-        public static final int SignInButton_text = 0;
+        public static final int[] SignInButton = { 0x7f010178, 0x7f010179, 0x7f01017a, 0x7f01017b, 0x7f01017c };
+        public static final int SignInButton_buttonSize = 0;
+        public static final int SignInButton_colorScheme = 1;
+        public static final int SignInButton_scopeUris = 2;
+        public static final int SignInButton_text = 3;
+        public static final int SignInButton_button_style = 4;
     }
 }

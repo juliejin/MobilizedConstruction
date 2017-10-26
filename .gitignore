@@ -23,3 +23,6 @@ app/build/intermediates/blame/res/debug/single/drawable-xxxhdpi-v4.json
 *.class
 
 *.dex
+*.json
+*.json
+*.class
