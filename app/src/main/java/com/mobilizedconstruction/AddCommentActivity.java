@@ -37,7 +37,7 @@ public class AddCommentActivity extends AppCompatActivity {
     }
 
     protected void navigateToNextPage(){
-        Intent intent = new Intent(this, RoadFeaturesActivity.class);
+        Intent intent = new Intent(this, SetRoadHazardActivity.class);
         EditText comment = (EditText) findViewById(R.id.commitText);
         report.reportDO.setComment(comment.getText().toString());
         intent.putExtra("new_report", report);

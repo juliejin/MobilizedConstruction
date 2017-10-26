@@ -66,23 +66,20 @@ public class PreviewReportActivity extends AppCompatActivity {
             publishButton.setVisibility(View.INVISIBLE);
             saveButton.setVisibility(View.INVISIBLE);
         }
-        else
+        LinearLayout linearLayout = (LinearLayout) findViewById(R.id.preview_LL);
+        HorizontalScrollView scrollView = (HorizontalScrollView) findViewById(R.id.preview_SV);
+        for (int i = 0; i < report.reportImages.size(); i++)
         {
-            LinearLayout linearLayout = (LinearLayout) findViewById(R.id.preview_LL);
-            HorizontalScrollView scrollView = (HorizontalScrollView) findViewById(R.id.preview_SV);
-            for (int i = 0; i < report.reportImages.size(); i++)
-            {
-                ImageView imageView = new ImageView(this);
-                imageView.setLayoutParams(new TableRow.LayoutParams(240, 240));
-                Bitmap myBitmap = BitmapFactory
-                        .decodeFile(report.reportImages.elementAt(i).getFilePath());
-                myBitmap = Bitmap.createScaledBitmap(myBitmap, 240,240, true);
-                Matrix matrix = new Matrix();
-                matrix.postRotate(90);
-                myBitmap = Bitmap.createBitmap(myBitmap , 0, 0, myBitmap .getWidth(), myBitmap .getHeight(), matrix, true);
-                imageView.setImageBitmap(myBitmap);
-                linearLayout.addView(imageView);
-            }
+            ImageView imageView = new ImageView(this);
+            imageView.setLayoutParams(new TableRow.LayoutParams(240, 240));
+            Bitmap myBitmap = BitmapFactory
+                    .decodeFile(report.reportImages.elementAt(i).getFilePath());
+            myBitmap = Bitmap.createScaledBitmap(myBitmap, 240,240, true);
+            Matrix matrix = new Matrix();
+            matrix.postRotate(90);
+            myBitmap = Bitmap.createBitmap(myBitmap , 0, 0, myBitmap .getWidth(), myBitmap .getHeight(), matrix, true);
+            imageView.setImageBitmap(myBitmap);
+            linearLayout.addView(imageView);
         }
         final TextView commentTextView = (TextView) findViewById(R.id.CommentTextView);
         commentTextView.setText(report.reportDO.getComment());
@@ -124,27 +121,6 @@ public class PreviewReportActivity extends AppCompatActivity {
             roadDirection = "Both";
         features = features + "Road Direction: " + roadDirection + '\n';
         featuresTextView.setText(features);
-<<<<<<< HEAD
-        LinearLayout linearLayout = (LinearLayout) findViewById(R.id.preview_LL);
-        HorizontalScrollView scrollView = (HorizontalScrollView) findViewById(R.id.preview_SV);
-        for (int i = 0; i < report.reportImages.size(); i++)
-        {
-            ImageView imageView = new ImageView(this);
-            int height = linearLayout.getHeight();
-            imageView.setLayoutParams(new TableRow.LayoutParams(240, 240));
-
-                Bitmap myBitmap = BitmapFactory
-                        .decodeFile(report.reportImages.elementAt(i).getFilePath());
-                myBitmap = Bitmap.createScaledBitmap(myBitmap, 240, 240, true);
-                Matrix matrix = new Matrix();
-                matrix.postRotate(90);
-                myBitmap = Bitmap.createBitmap(myBitmap, 0, 0, myBitmap.getWidth(), myBitmap.getHeight(), matrix, true);
-                imageView.setImageBitmap(myBitmap);
-                linearLayout.addView(imageView);
-
-        }
-=======
->>>>>>> 794a7151f10becea5a112321204224ab3a9f4850
     }
 
     public void UpdateReport(){

@@ -1,7 +1,0 @@
-#Wed Oct 25 20:45:14 PDT 2017
-base.0=/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_bdbd3972ebf803c569de656e4e99ac34ec102d7c
-renamed.1=classes2.dex
-renamed.0=classes.dex
-file.1=/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_3c84c5bf45b1a776e0d24f26e580e4083e4bbc81/classes.dex
-base.1=/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_3c84c5bf45b1a776e0d24f26e580e4083e4bbc81
-file.0=/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_bdbd3972ebf803c569de656e4e99ac34ec102d7c/classes.dex

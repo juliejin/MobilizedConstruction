@@ -154,25 +154,6 @@ public class Image implements Serializable{
                 }catch (Exception e){
                     System.out.println(e.getMessage());
                 }
-                /*userFileManager.uploadContent(imageFile, FilePath, new ContentProgressListener() {
-                    @Override
-                    public void onSuccess(final ContentItem contentItem) {
-                        //URL _finalUrl = userFileManager.generatePresignedUrl(reportImage.getReportID().toString()+reportImage.getIndex());
-                        SetImageUrl(FilePath);
-                        mapper.save(reportImage);
-                    }
-
-                    @Override
-                    public void onProgressUpdate(final String fileName, final boolean isWaiting,
-                                                 final long bytesCurrent, final long bytesTotal) {
-
-                    }
-
-                    @Override
-                    public void onError(final String fileName, final Exception ex) {
-
-                    }
-                });*/
             }
         }).start();
     }
@@ -181,43 +162,6 @@ public class Image implements Serializable{
         new Thread(new Runnable() {
             @Override
             public void run() {
-<<<<<<< HEAD
-=======
-                try {
-                    mapper.save(reportImage);
-                } catch (final AmazonClientException ex) {
-
-                }
-            }
-        }).start();
-    }
-
-    public ReportImageDO fetchFromDB(final Integer reportID,final int index, Context context) {
-        final CountDownLatch userFileManagerCreatingLatch = new CountDownLatch(1);
-        new UserFileManager.Builder()
-                .withContext(context)
-                .withIdentityManager(IdentityManager.getDefaultIdentityManager())
-                .withAWSConfiguration(new AWSConfiguration(context))
-                .withS3ObjectDirPrefix(S3_PREFIX_UPLOADS)
-                .withLocalBasePath(context.getFilesDir().getAbsolutePath())
-                .build(new UserFileManager.BuilderResultHandler() {
-                    @Override
-                    public void onComplete(UserFileManager userFileManager) {
-                        Image.this.userFileManager = userFileManager;
-                        userFileManagerCreatingLatch.countDown();
-                    }
-                });
-        final ReportImageDO image = new ReportImageDO(reportID, index, 0.0,0.0);
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                    try {
-                        userFileManagerCreatingLatch.await();
-                    } catch (final InterruptedException ex) {
-                        // This thread should never be interrupted.
-                        throw new RuntimeException(ex);
-                    }
->>>>>>> 794a7151f10becea5a112321204224ab3a9f4850
                     AmazonDynamoDBClient client =
                             new AmazonDynamoDBClient(IdentityManager.getDefaultIdentityManager()
                                     .getCredentialsProvider(), new ClientConfiguration());
@@ -231,6 +175,15 @@ public class Image implements Serializable{
                             .withTableName("mobilizedconstructio-mobilehub-516637937-ReportImage");
                     ScanResult result = client.scan(scanRequest);
                     for (Map<String, AttributeValue> item : result.getItems()) {
+                        if(item.get("Longitude")!=null){
+                            reportImage.setLongitude(Double.parseDouble(item.get("Longitude").getN()));
+                        }
+                        if(item.get("Latitude")!=null){
+                            reportImage.setLongitude(Double.parseDouble(item.get("Latitude").getN()));
+                        }
+                        if(item.get("Road Hazard")!=null){
+                            reportImage.setRoadHazard(Integer.parseInt(item.get("Road Hazard").getN()));
+                        }
                         if (item.get("ImageURL") != null) {
                             String url = item.get("ImageURL").getS();
                             AmazonS3 s3Client = new AmazonS3Client(IdentityManager.getDefaultIdentityManager()
@@ -245,18 +198,9 @@ public class Image implements Serializable{
                                 System.out.println(e.getMessage());
                             }
                         }
-                        if(item.get("Longitude")!=null){
-                            reportImage.setLongitude(Double.parseDouble(item.get("Longitude").getN()));
-                        }
-                        if(item.get("Latitude")!=null){
-                            reportImage.setLongitude(Double.parseDouble(item.get("Latitude").getN()));
-                        }
+
                     }
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 794a7151f10becea5a112321204224ab3a9f4850
             }
         }).start();
 
