@@ -16,6 +16,7 @@ import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.ImageView;
 import android.widget.HorizontalScrollView;
+import android.widget.Toast;
 
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.ClientConfiguration;
@@ -30,6 +31,7 @@ import org.w3c.dom.Text;
 
 import java.io.File;
 import java.io.ObjectOutputStream;
+import java.util.Vector;
 
 public class PreviewReportActivity extends AppCompatActivity {
     private static final String LOG_TAG = RoadFeaturesActivity.class.getSimpleName();
@@ -64,10 +66,55 @@ public class PreviewReportActivity extends AppCompatActivity {
             publishButton.setVisibility(View.INVISIBLE);
             saveButton.setVisibility(View.INVISIBLE);
         }
+        else
+        {
+            LinearLayout linearLayout = (LinearLayout) findViewById(R.id.preview_LL);
+            HorizontalScrollView scrollView = (HorizontalScrollView) findViewById(R.id.preview_SV);
+            for (int i = 0; i < report.reportImages.size(); i++)
+            {
+                ImageView imageView = new ImageView(this);
+                imageView.setLayoutParams(new TableRow.LayoutParams(240, 240));
+                Bitmap myBitmap = BitmapFactory
+                        .decodeFile(report.reportImages.elementAt(i).getFilePath());
+                myBitmap = Bitmap.createScaledBitmap(myBitmap, 240,240, true);
+                Matrix matrix = new Matrix();
+                matrix.postRotate(90);
+                myBitmap = Bitmap.createBitmap(myBitmap , 0, 0, myBitmap .getWidth(), myBitmap .getHeight(), matrix, true);
+                imageView.setImageBitmap(myBitmap);
+                linearLayout.addView(imageView);
+            }
+        }
         final TextView commentTextView = (TextView) findViewById(R.id.CommentTextView);
         commentTextView.setText(report.reportDO.getComment());
         final TextView featuresTextView = (TextView) findViewById(R.id.FeaturesTextView);
-        String features = "Severity: " + report.reportDO.getSeverity() +'\n';
+        String longitude = "N/A";
+        String latitude = "N/A";
+        String hazard = "N/A";
+        Vector<String> hazards = new Vector<String>();
+        hazards.add("Potholes");
+        hazards.add("Speed Bumps");
+        hazards.add("Drainage");
+        hazards.add("Road Debris");
+        hazards.add("Inclement Weather");
+        hazards.add("Accidents");
+        hazards.add("Street Signs");
+        hazards.add("Other");
+        if (report.reportImages.size() > 0)
+        {
+            hazard = hazards.elementAt(report.reportImages.elementAt(0).GetReportImage().getRoadHazard());
+            if (report.reportImages.elementAt(0).GetReportImage().getLatitude() != -1)
+            {
+                latitude = report.reportImages.elementAt(0).GetReportImage().getLatitude().toString();
+            }
+            if (report.reportImages.elementAt(0).GetReportImage().getLatitude() != -1)
+            {
+                longitude = report.reportImages.elementAt(0).GetReportImage().getLatitude().toString();
+            }
+        }
+        String features = "Longitude: " + longitude + '\n';
+        features = features + "Latitude: " + latitude + '\n';
+        features = features + "Road Hazard: " + hazard + '\n';
+        features = features + "Severity: " + report.reportDO.getSeverity() +'\n';
         String roadDirection = "";
         if (report.reportDO.getRoadDirection() == 0)
             roadDirection = "Left";
@@ -75,24 +122,8 @@ public class PreviewReportActivity extends AppCompatActivity {
             roadDirection = "Right";
         else if (report.reportDO.getRoadDirection() == 2)
             roadDirection = "Both";
-        features = features + "Road Direction: " + roadDirection;
+        features = features + "Road Direction: " + roadDirection + '\n';
         featuresTextView.setText(features);
-        LinearLayout linearLayout = (LinearLayout) findViewById(R.id.preview_LL);
-        HorizontalScrollView scrollView = (HorizontalScrollView) findViewById(R.id.preview_SV);
-        for (int i = 0; i < report.reportImages.size(); i++)
-        {
-            ImageView imageView = new ImageView(this);
-            int height = linearLayout.getHeight();
-            imageView.setLayoutParams(new TableRow.LayoutParams(240, 240));
-            Bitmap myBitmap = BitmapFactory
-                    .decodeFile(report.reportImages.elementAt(i).getFilePath());
-            myBitmap = Bitmap.createScaledBitmap(myBitmap, 240,240, true);
-            Matrix matrix = new Matrix();
-            matrix.postRotate(90);
-            myBitmap = Bitmap.createBitmap(myBitmap , 0, 0, myBitmap .getWidth(), myBitmap .getHeight(), matrix, true);
-            imageView.setImageBitmap(myBitmap);
-            linearLayout.addView(imageView);
-        }
     }
 
     public void UpdateReport(){
@@ -138,7 +169,8 @@ public class PreviewReportActivity extends AppCompatActivity {
             fos.close();
             startActivity(new Intent(this, ReportCreationActivity.class));
         }catch(Exception ex){
-            Log.e(LOG_TAG, "failed writing item : " + ex.getMessage(), ex);
+            Toast.makeText(this, ex.getMessage(),
+                    Toast.LENGTH_LONG).show();
         }
 
     }

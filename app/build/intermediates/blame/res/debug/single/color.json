@@ -1,46 +1,66 @@
 [
     {
         "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/color/abc_search_url_text.xml",
-        "source": "/Users/Michelle_Yu/.android/build-cache/fdad6d79036fe830024c5bdcb5533fb0396f327d/output/res/color/abc_search_url_text.xml"
+        "source": "/Users/Michelle_Yu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/c42f1724cfb1cdcc7ba9400462a3115c/res/color/abc_search_url_text.xml"
     },
     {
         "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/color/abc_hint_foreground_material_light.xml",
-        "source": "/Users/Michelle_Yu/.android/build-cache/fdad6d79036fe830024c5bdcb5533fb0396f327d/output/res/color/abc_hint_foreground_material_light.xml"
+        "source": "/Users/Michelle_Yu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/c42f1724cfb1cdcc7ba9400462a3115c/res/color/abc_hint_foreground_material_light.xml"
+    },
+    {
+        "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/color/common_google_signin_btn_text_dark.xml",
+        "source": "/Users/Michelle_Yu/.gradle/caches/transforms-1/files-1.1/play-services-base-11.4.2.aar/471a66b0754930fd0cebf8a0bb25abf0/res/color/common_google_signin_btn_text_dark.xml"
     },
     {
         "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/color/abc_primary_text_material_dark.xml",
-        "source": "/Users/Michelle_Yu/.android/build-cache/fdad6d79036fe830024c5bdcb5533fb0396f327d/output/res/color/abc_primary_text_material_dark.xml"
+        "source": "/Users/Michelle_Yu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/c42f1724cfb1cdcc7ba9400462a3115c/res/color/abc_primary_text_material_dark.xml"
+    },
+    {
+        "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/color/wallet_secondary_text_holo_dark.xml",
+        "source": "/Users/Michelle_Yu/.gradle/caches/transforms-1/files-1.1/play-services-wallet-11.4.2.aar/2b80374b1ec6bd057c1b809a1e58cb3e/res/color/wallet_secondary_text_holo_dark.xml"
     },
     {
         "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/color/abc_primary_text_disable_only_material_light.xml",
-        "source": "/Users/Michelle_Yu/.android/build-cache/fdad6d79036fe830024c5bdcb5533fb0396f327d/output/res/color/abc_primary_text_disable_only_material_light.xml"
+        "source": "/Users/Michelle_Yu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/c42f1724cfb1cdcc7ba9400462a3115c/res/color/abc_primary_text_disable_only_material_light.xml"
+    },
+    {
+        "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/color/common_google_signin_btn_tint.xml",
+        "source": "/Users/Michelle_Yu/.gradle/caches/transforms-1/files-1.1/play-services-base-11.4.2.aar/471a66b0754930fd0cebf8a0bb25abf0/res/color/common_google_signin_btn_tint.xml"
     },
     {
         "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/color/abc_hint_foreground_material_dark.xml",
-        "source": "/Users/Michelle_Yu/.android/build-cache/fdad6d79036fe830024c5bdcb5533fb0396f327d/output/res/color/abc_hint_foreground_material_dark.xml"
+        "source": "/Users/Michelle_Yu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/c42f1724cfb1cdcc7ba9400462a3115c/res/color/abc_hint_foreground_material_dark.xml"
+    },
+    {
+        "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/color/wallet_primary_text_holo_light.xml",
+        "source": "/Users/Michelle_Yu/.gradle/caches/transforms-1/files-1.1/play-services-wallet-11.4.2.aar/2b80374b1ec6bd057c1b809a1e58cb3e/res/color/wallet_primary_text_holo_light.xml"
     },
     {
         "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/color/switch_thumb_material_dark.xml",
-        "source": "/Users/Michelle_Yu/.android/build-cache/fdad6d79036fe830024c5bdcb5533fb0396f327d/output/res/color/switch_thumb_material_dark.xml"
+        "source": "/Users/Michelle_Yu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/c42f1724cfb1cdcc7ba9400462a3115c/res/color/switch_thumb_material_dark.xml"
     },
     {
         "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/color/abc_primary_text_disable_only_material_dark.xml",
-        "source": "/Users/Michelle_Yu/.android/build-cache/fdad6d79036fe830024c5bdcb5533fb0396f327d/output/res/color/abc_primary_text_disable_only_material_dark.xml"
+        "source": "/Users/Michelle_Yu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/c42f1724cfb1cdcc7ba9400462a3115c/res/color/abc_primary_text_disable_only_material_dark.xml"
     },
     {
         "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/color/abc_secondary_text_material_dark.xml",
-        "source": "/Users/Michelle_Yu/.android/build-cache/fdad6d79036fe830024c5bdcb5533fb0396f327d/output/res/color/abc_secondary_text_material_dark.xml"
+        "source": "/Users/Michelle_Yu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/c42f1724cfb1cdcc7ba9400462a3115c/res/color/abc_secondary_text_material_dark.xml"
     },
     {
         "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/color/switch_thumb_material_light.xml",
-        "source": "/Users/Michelle_Yu/.android/build-cache/fdad6d79036fe830024c5bdcb5533fb0396f327d/output/res/color/switch_thumb_material_light.xml"
+        "source": "/Users/Michelle_Yu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/c42f1724cfb1cdcc7ba9400462a3115c/res/color/switch_thumb_material_light.xml"
     },
     {
         "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/color/abc_secondary_text_material_light.xml",
-        "source": "/Users/Michelle_Yu/.android/build-cache/fdad6d79036fe830024c5bdcb5533fb0396f327d/output/res/color/abc_secondary_text_material_light.xml"
+        "source": "/Users/Michelle_Yu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/c42f1724cfb1cdcc7ba9400462a3115c/res/color/abc_secondary_text_material_light.xml"
     },
     {
         "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/color/abc_primary_text_material_light.xml",
-        "source": "/Users/Michelle_Yu/.android/build-cache/fdad6d79036fe830024c5bdcb5533fb0396f327d/output/res/color/abc_primary_text_material_light.xml"
+        "source": "/Users/Michelle_Yu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/c42f1724cfb1cdcc7ba9400462a3115c/res/color/abc_primary_text_material_light.xml"
+    },
+    {
+        "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/color/common_google_signin_btn_text_light.xml",
+        "source": "/Users/Michelle_Yu/.gradle/caches/transforms-1/files-1.1/play-services-base-11.4.2.aar/471a66b0754930fd0cebf8a0bb25abf0/res/color/common_google_signin_btn_text_light.xml"
     }
 ]

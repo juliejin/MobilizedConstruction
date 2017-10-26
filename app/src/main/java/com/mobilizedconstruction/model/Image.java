@@ -187,7 +187,6 @@ public class Image implements Serializable{
         new Thread(new Runnable() {
             @Override
             public void run() {
-                try {
                     try {
                         userFileManagerCreatingLatch.await();
                     } catch (final InterruptedException ex) {
@@ -201,6 +200,7 @@ public class Image implements Serializable{
                     attributeNames.put("#reportID", "Report ID");
                     Map<String, AttributeValue> expressionAttributeValues =
                             new HashMap<String, AttributeValue>();
+                    String id = reportID.toString();
                     expressionAttributeValues.put(":reportID", new AttributeValue().withN(reportID.toString()));
                     ScanRequest scanRequest = new ScanRequest()
                             .withTableName("mobilizedconstructio-mobilehub-516637937-ReportImage");
@@ -221,10 +221,7 @@ public class Image implements Serializable{
                         }
                     }
 
-                } catch (final AmazonClientException ex) {
-                    // This thread should never be interrupted.
-                    throw new RuntimeException(ex);
-                }
+
             }
         }).start();
         return image;

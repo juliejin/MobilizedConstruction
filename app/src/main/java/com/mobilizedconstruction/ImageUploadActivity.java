@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.pm.PackageManager;
+import android.media.ExifInterface;
 import android.os.AsyncTask;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -25,6 +26,7 @@ import android.widget.TableRow;
 import android.widget.Toast;
 import android.graphics.Bitmap;
 import android.graphics.Matrix;
+import android.os.Environment;
 
 import com.amazonaws.ClientConfiguration;
 import com.amazonaws.mobile.auth.core.IdentityManager;
@@ -54,6 +56,8 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.concurrent.CountDownLatch;
 import java.util.Vector;
+import java.util.Date;
+import java.text.SimpleDateFormat;
 
 public class ImageUploadActivity extends AppCompatActivity {
     private static final int RESULT_LOAD_IMG = 1;
@@ -98,7 +102,10 @@ public class ImageUploadActivity extends AppCompatActivity {
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                navigateToNextPage();
+                if (imageButtonVector.size() > 0)
+                {
+                    navigateToNextPage();
+                }
             }
         });
         addImageButton = (ImageButton)findViewById(R.id.addImageButton);
@@ -156,10 +163,28 @@ public class ImageUploadActivity extends AppCompatActivity {
                 imgDecodableString = cursor.getString(columnIndex);
                 if (!decodableSet.contains(imgDecodableString))
                 {
-                    decodableSet.add(imgDecodableString);
                     imageFile = new File(imgDecodableString);
                     cursor.close();
-                    Image image = new Image(imgDecodableString, imageFile, imageButtonVector.size(), 0.0, 0.0, report.reportDO.getReportID());
+                    ExifInterface exif = new ExifInterface(imgDecodableString);
+                    float[] latLong = new float[2];
+                    float latitude = 0;
+                    float longitude = 0;
+
+//Check if Latitude and Longitude can be retrieved
+                    if(exif.getLatLong(latLong))
+                    {
+                        latitude = latLong[0];
+                        longitude = latLong[1];
+                    }
+                    else
+                    {
+                        //Fallback
+                        latitude = -1;
+                        longitude = -1;
+                    }
+                    Double long_double = (double)longitude;
+                    Double lat_double = (double)latitude;
+                    Image image = new Image(imgDecodableString, imageFile, imageButtonVector.size(), long_double, lat_double, report.reportDO.getReportID());
                     report.insertImage(image);
                     ImageButton imageButton = new ImageButton(context);
                     Bitmap myBitmap = BitmapFactory
@@ -173,6 +198,7 @@ public class ImageUploadActivity extends AppCompatActivity {
                     mapImagetoBitmap.put(imageButton, myBitmap);
                     imgLL.addView(imageButton);
                     imageButtonVector.add(imageButton);
+                    decodableSet.add(imgDecodableString);
                     // Set the Image in ImageView after decoding the String
                     imgView.setImageBitmap(myBitmap);
                 }
@@ -186,6 +212,19 @@ public class ImageUploadActivity extends AppCompatActivity {
             else if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
                 Bundle extras = data.getExtras();
                 Bitmap myBitmap = (Bitmap) extras.get("data");
+                Uri selectedImage = data.getData();
+                String[] filePathColumn = { MediaStore.Images.Media.DATA };
+                // Get the cursor
+                Cursor cursor = getContentResolver().query(selectedImage,
+                        filePathColumn, null, null, null);
+                // Move to first row
+                cursor.moveToFirst();
+                int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
+                imgDecodableString = cursor.getString(columnIndex);
+                imageFile = new File(imgDecodableString);
+                Image image = new Image(imgDecodableString, imageFile, imageButtonVector.size(), 0.0, 0.0, report.reportDO.getReportID());
+                report.insertImage(image);
+
                 imgView.setImageBitmap(myBitmap);
                 ImageButton imageButton = new ImageButton(context);
                 myBitmap = Bitmap.createScaledBitmap(myBitmap, 240, 240, true);
@@ -194,15 +233,18 @@ public class ImageUploadActivity extends AppCompatActivity {
                 mapImagetoBitmap.put(imageButton, myBitmap);
                 imgLL.addView(imageButton);
                 imageButtonVector.add(imageButton);
+                decodableSet.add(imgDecodableString);
                 // Set the Image in ImageView after decoding the String
                 imgView.setImageBitmap(myBitmap);
+                //Image image = new Image(imgDecodableString, imageFile, imageButtonVector.size(), 0.0, 0.0, report.reportDO.getReportID());
+                //report.insertImage(image);
             }
             else {
                 Toast.makeText(this, "You haven't picked Image",
                         Toast.LENGTH_LONG).show();
             }
         } catch (Exception e) {
-            Toast.makeText(this, e.getMessage(), Toast.LENGTH_LONG)
+            Toast.makeText(this, "Something went wrong.", Toast.LENGTH_LONG)
                     .show();
         }
         for (int i = 0; i < imageButtonVector.size(); i++)

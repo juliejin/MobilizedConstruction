@@ -10,7 +10,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 26
-    buildToolsVersion '26.0.1'
+    buildToolsVersion '26.0.2'
     defaultConfig {
         applicationId 'com.moilizedconstructionstaging'
         minSdkVersion 23
@@ -38,6 +38,7 @@ android {
 }
 
 dependencies {
+    implementation 'com.google.android.gms:play-services-maps:11.4.2'
     compile fileTree(include: ['*.jar'], dir: 'libs')
     compile fileTree(include: ['*.jar'], dir: 'app/libs')
     compile 'com.android.support:appcompat-v7:26.+'
@@ -56,6 +57,7 @@ dependencies {
     compile 'com.google.code.gson:gson:2.7'
     compile 'com.android.support:support-v4:26.+'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile 'com.google.android.gms:play-services:11.4.2'
 }
 
 repositories {
