@@ -12,7 +12,7 @@ public class Report implements Serializable
 {
     public Vector<Image> reportImages;
     public ReportDO reportDO;
-
+    public String filePath;
     public Report(ReportDO reportdo) {
         reportImages = new Vector<Image>();
         reportDO = reportdo;

@@ -150,10 +150,10 @@ public class CreatedReportDisplayActivity extends AppCompatActivity {
         {
             ReportImageDO imaged = new ReportImageDO(report.reportDO.getReportID(), index, 0.0,0.0);
             Image image = new Image(imaged);
-            image.fetchFromDB(report.reportDO.getReportID(), i-1);
+            image.fetchFromDB(report.reportDO.getReportID(), i);
             Bitmap imagebit = image.getImageBitmap();
             while(imagebit==null){
-               imagebit = image.getImageBitmap();
+                imagebit = image.getImageBitmap();
             }
             OutputStream os;
             String filename = image.GetReportImage().getImageURL();

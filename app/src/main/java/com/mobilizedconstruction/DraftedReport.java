@@ -40,6 +40,7 @@ public class DraftedReport extends AppCompatActivity {
                 files[i].getParentFile().mkdirs();
                 ObjectInputStream ois = new ObjectInputStream(openFileInput(files[i].getName()));
                 Report new_report = (Report) ois.readObject();
+                new_report.filePath = files[i].getPath();
                 savedReports.addElement(new_report);
                 ois.close();
             }

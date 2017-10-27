@@ -174,24 +174,25 @@ public class Image implements Serializable{
                     ScanRequest scanRequest = new ScanRequest()
                             .withTableName("mobilizedconstructio-mobilehub-516637937-ReportImage");
                     ScanResult result = client.scan(scanRequest);
-                    for (Map<String, AttributeValue> item : result.getItems()) {
+                Map<String, AttributeValue> item = result.getItems().get(0);
+                    //for (Map<String, AttributeValue> item : result.getItems()) {
                         if(item.get("Longitude")!=null){
                             reportImage.setLongitude(Double.parseDouble(item.get("Longitude").getN()));
                         }
                         if(item.get("Latitude")!=null){
-                            reportImage.setLongitude(Double.parseDouble(item.get("Latitude").getN()));
+                            reportImage.setLatitude(Double.parseDouble(item.get("Latitude").getN()));
                         }
                         if(item.get("Road Hazard")!=null){
                             reportImage.setRoadHazard(Integer.parseInt(item.get("Road Hazard").getN()));
                         }
                         if (item.get("ImageURL") != null) {
                             String url = item.get("ImageURL").getS();
+                            try {
                             AmazonS3 s3Client = new AmazonS3Client(IdentityManager.getDefaultIdentityManager()
                                     .getCredentialsProvider());
                             S3Object object = s3Client.getObject(
                                     new GetObjectRequest("mobilizedconstructio-userfiles-mobilehub-516637937", url));
                             InputStream objectData = object.getObjectContent();
-                            try {
                                 reportImage.setImageURL(url);
                                 imageBitmap = BitmapFactory.decodeStream(objectData);
                             }catch (Exception e){
@@ -199,7 +200,7 @@ public class Image implements Serializable{
                             }
                         }
 
-                    }
+                    //}
 
             }
         }).start();

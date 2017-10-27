@@ -145,7 +145,7 @@ public class PreviewReportActivity extends AppCompatActivity {
 
                     mapper.save(report.reportDO);
                     File dir = getFilesDir();
-                    File file = new File(dir, report.reportDO.getUserID()+"_"+report.reportDO.getReportID());
+                    File file = new File(report.filePath);
                     file.delete();
                     Log.d(LOG_TAG, "Successfully updated");
                     startActivity(intent);
@@ -159,7 +159,9 @@ public class PreviewReportActivity extends AppCompatActivity {
 
 
     public void saveLocally(){
-        String FILENAME = report.reportDO.getUserID()+"_"+report.reportDO.getReportID();
+        File fileshandler = getFilesDir();
+        File[] files =  fileshandler.listFiles();
+        String FILENAME = report.reportDO.getUserID()+"_"+report.reportDO.getReportID()+files.length+".txt";
         ObjectOutputStream fos;
         try {
             fos = new ObjectOutputStream(openFileOutput(FILENAME, MODE_PRIVATE));
