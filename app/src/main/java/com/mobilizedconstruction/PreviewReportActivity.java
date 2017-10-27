@@ -142,11 +142,12 @@ public class PreviewReportActivity extends AppCompatActivity {
             @Override
             public void run() {
                 try {
-
                     mapper.save(report.reportDO);
-                    File dir = getFilesDir();
-                    File file = new File(report.filePath);
-                    file.delete();
+                    if(report.filePath!=null) {
+                        File dir = getFilesDir();
+                        File file = new File(report.filePath);
+                        file.delete();
+                    }
                     Log.d(LOG_TAG, "Successfully updated");
                     startActivity(intent);
                 } catch (final AmazonClientException ex) {
@@ -154,7 +155,6 @@ public class PreviewReportActivity extends AppCompatActivity {
                 }
             }
         }).start();
-
     }
 
 
