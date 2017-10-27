@@ -13,7 +13,7 @@ android {
     buildToolsVersion '26.0.2'
     defaultConfig {
         applicationId 'com.moilizedconstructionstaging'
-        minSdkVersion 23
+        minSdkVersion 22
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"
@@ -41,6 +41,7 @@ dependencies {
     implementation 'com.google.android.gms:play-services-maps:11.4.2'
     compile fileTree(include: ['*.jar'], dir: 'libs')
     compile fileTree(include: ['*.jar'], dir: 'app/libs')
+    //noinspection GradleCompatible
     compile 'com.android.support:appcompat-v7:26.+'
     compile 'com.amazonaws:aws-android-sdk-core:2.6.0'
     compile 'com.amazonaws:aws-android-sdk-cognito:2.6.0'

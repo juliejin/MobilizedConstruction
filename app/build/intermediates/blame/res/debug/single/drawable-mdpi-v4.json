@@ -80,12 +80,12 @@
         "source": "/Users/apple/.gradle/caches/transforms-1/files-1.1/aws-android-sdk-auth-ui-2.6.0.aar/5a56e3564701fa80faf4a520aa28bcde/res/drawable-mdpi/default_sign_in_logo.png"
     },
     {
-        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/drawable-mdpi-v4/notification_bg_low_pressed.9.png",
-        "source": "/Users/apple/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/d9d1b3a4c10c44de792c830dd121f5ef/res/drawable-mdpi-v4/notification_bg_low_pressed.9.png"
-    },
-    {
         "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/drawable-mdpi-v4/quantum_ic_art_track_grey600_48.png",
         "source": "/Users/apple/.gradle/caches/transforms-1/files-1.1/play-services-cast-framework-11.4.2.aar/f2956374b9ed11283df0468b854dd3cd/res/drawable-mdpi-v4/quantum_ic_art_track_grey600_48.png"
+    },
+    {
+        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/drawable-mdpi-v4/notification_bg_low_pressed.9.png",
+        "source": "/Users/apple/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/d9d1b3a4c10c44de792c830dd121f5ef/res/drawable-mdpi-v4/notification_bg_low_pressed.9.png"
     },
     {
         "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/drawable-mdpi-v4/abc_ic_commit_search_api_mtrl_alpha.png",
@@ -96,12 +96,12 @@
         "source": "/Users/apple/.gradle/caches/transforms-1/files-1.1/play-services-places-11.4.2.aar/b25eea0b11faea3c31c369b1d5014eac/res/drawable-mdpi-v4/places_ic_clear.png"
     },
     {
-        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/drawable-mdpi-v4/ic_vol_type_speaker_dark.png",
-        "source": "/Users/apple/.gradle/caches/transforms-1/files-1.1/mediarouter-v7-25.2.0.aar/0038e6998d678ab726c6365b1bdc3a27/res/drawable-mdpi-v4/ic_vol_type_speaker_dark.png"
-    },
-    {
         "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/drawable-mdpi-v4/quantum_ic_skip_previous_white_36.png",
         "source": "/Users/apple/.gradle/caches/transforms-1/files-1.1/play-services-cast-framework-11.4.2.aar/f2956374b9ed11283df0468b854dd3cd/res/drawable-mdpi-v4/quantum_ic_skip_previous_white_36.png"
+    },
+    {
+        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/drawable-mdpi-v4/ic_vol_type_speaker_dark.png",
+        "source": "/Users/apple/.gradle/caches/transforms-1/files-1.1/mediarouter-v7-25.2.0.aar/0038e6998d678ab726c6365b1bdc3a27/res/drawable-mdpi-v4/ic_vol_type_speaker_dark.png"
     },
     {
         "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/drawable-mdpi-v4/ic_audiotrack_light.png",
@@ -136,12 +136,12 @@
         "source": "/Users/apple/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/21ef70180d32f66120d4738698b4d5da/res/drawable-mdpi-v4/abc_textfield_activated_mtrl_alpha.9.png"
     },
     {
-        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/drawable-mdpi-v4/abc_ic_menu_selectall_mtrl_alpha.png",
-        "source": "/Users/apple/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/21ef70180d32f66120d4738698b4d5da/res/drawable-mdpi-v4/abc_ic_menu_selectall_mtrl_alpha.png"
-    },
-    {
         "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/drawable-mdpi-v4/ic_vol_type_speaker_group_dark.png",
         "source": "/Users/apple/.gradle/caches/transforms-1/files-1.1/mediarouter-v7-25.2.0.aar/0038e6998d678ab726c6365b1bdc3a27/res/drawable-mdpi-v4/ic_vol_type_speaker_group_dark.png"
+    },
+    {
+        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/drawable-mdpi-v4/abc_ic_menu_selectall_mtrl_alpha.png",
+        "source": "/Users/apple/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/21ef70180d32f66120d4738698b4d5da/res/drawable-mdpi-v4/abc_ic_menu_selectall_mtrl_alpha.png"
     },
     {
         "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/drawable-mdpi-v4/quantum_ic_skip_previous_grey600_36.png",
