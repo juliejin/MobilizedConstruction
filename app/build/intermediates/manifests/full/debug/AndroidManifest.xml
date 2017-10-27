@@ -120,9 +120,6 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
-        <activity
-            android:name="com.mobilizedconstruction.GetLocationActivity"
-            android:label="@string/title_activity_get_location" />
         <activity android:name="com.mobilizedconstruction.SetRoadHazardActivity" />
 
         <receiver android:name="com.google.android.gms.cast.framework.media.MediaIntentReceiver" />

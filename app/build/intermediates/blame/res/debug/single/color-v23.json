@@ -1,38 +1,38 @@
 [
     {
-        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/color-v23/abc_tint_seek_thumb.xml",
-        "source": "/Users/apple/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/21ef70180d32f66120d4738698b4d5da/res/color-v23/abc_tint_seek_thumb.xml"
+        "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/color-v23/abc_tint_switch_track.xml",
+        "source": "/Users/Michelle_Yu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/c42f1724cfb1cdcc7ba9400462a3115c/res/color-v23/abc_tint_switch_track.xml"
     },
     {
-        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/color-v23/abc_btn_colored_text_material.xml",
-        "source": "/Users/apple/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/21ef70180d32f66120d4738698b4d5da/res/color-v23/abc_btn_colored_text_material.xml"
+        "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/color-v23/abc_btn_colored_borderless_text_material.xml",
+        "source": "/Users/Michelle_Yu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/c42f1724cfb1cdcc7ba9400462a3115c/res/color-v23/abc_btn_colored_borderless_text_material.xml"
     },
     {
-        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/color-v23/abc_tint_btn_checkable.xml",
-        "source": "/Users/apple/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/21ef70180d32f66120d4738698b4d5da/res/color-v23/abc_tint_btn_checkable.xml"
+        "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/color-v23/abc_tint_spinner.xml",
+        "source": "/Users/Michelle_Yu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/c42f1724cfb1cdcc7ba9400462a3115c/res/color-v23/abc_tint_spinner.xml"
     },
     {
-        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/color-v23/abc_color_highlight_material.xml",
-        "source": "/Users/apple/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/21ef70180d32f66120d4738698b4d5da/res/color-v23/abc_color_highlight_material.xml"
+        "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/color-v23/abc_tint_btn_checkable.xml",
+        "source": "/Users/Michelle_Yu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/c42f1724cfb1cdcc7ba9400462a3115c/res/color-v23/abc_tint_btn_checkable.xml"
     },
     {
-        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/color-v23/abc_tint_default.xml",
-        "source": "/Users/apple/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/21ef70180d32f66120d4738698b4d5da/res/color-v23/abc_tint_default.xml"
+        "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/color-v23/abc_btn_colored_text_material.xml",
+        "source": "/Users/Michelle_Yu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/c42f1724cfb1cdcc7ba9400462a3115c/res/color-v23/abc_btn_colored_text_material.xml"
     },
     {
-        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/color-v23/abc_tint_edittext.xml",
-        "source": "/Users/apple/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/21ef70180d32f66120d4738698b4d5da/res/color-v23/abc_tint_edittext.xml"
+        "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/color-v23/abc_tint_edittext.xml",
+        "source": "/Users/Michelle_Yu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/c42f1724cfb1cdcc7ba9400462a3115c/res/color-v23/abc_tint_edittext.xml"
     },
     {
-        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/color-v23/abc_tint_spinner.xml",
-        "source": "/Users/apple/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/21ef70180d32f66120d4738698b4d5da/res/color-v23/abc_tint_spinner.xml"
+        "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/color-v23/abc_tint_default.xml",
+        "source": "/Users/Michelle_Yu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/c42f1724cfb1cdcc7ba9400462a3115c/res/color-v23/abc_tint_default.xml"
     },
     {
-        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/color-v23/abc_tint_switch_track.xml",
-        "source": "/Users/apple/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/21ef70180d32f66120d4738698b4d5da/res/color-v23/abc_tint_switch_track.xml"
+        "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/color-v23/abc_color_highlight_material.xml",
+        "source": "/Users/Michelle_Yu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/c42f1724cfb1cdcc7ba9400462a3115c/res/color-v23/abc_color_highlight_material.xml"
     },
     {
-        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/color-v23/abc_btn_colored_borderless_text_material.xml",
-        "source": "/Users/apple/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/21ef70180d32f66120d4738698b4d5da/res/color-v23/abc_btn_colored_borderless_text_material.xml"
+        "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/color-v23/abc_tint_seek_thumb.xml",
+        "source": "/Users/Michelle_Yu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/c42f1724cfb1cdcc7ba9400462a3115c/res/color-v23/abc_tint_seek_thumb.xml"
     }
 ]

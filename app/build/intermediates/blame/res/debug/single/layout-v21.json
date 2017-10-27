@@ -1,22 +1,22 @@
 [
     {
-        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout-v21/notification_template_icon_group.xml",
-        "source": "/Users/apple/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/d9d1b3a4c10c44de792c830dd121f5ef/res/layout-v21/notification_template_icon_group.xml"
+        "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout-v21/notification_template_custom_big.xml",
+        "source": "/Users/Michelle_Yu/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/5ee5a95c617daa31f4eb193b6bf16867/res/layout-v21/notification_template_custom_big.xml"
     },
     {
-        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout-v21/notification_template_custom_big.xml",
-        "source": "/Users/apple/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/d9d1b3a4c10c44de792c830dd121f5ef/res/layout-v21/notification_template_custom_big.xml"
+        "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout-v21/notification_action_tombstone.xml",
+        "source": "/Users/Michelle_Yu/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/5ee5a95c617daa31f4eb193b6bf16867/res/layout-v21/notification_action_tombstone.xml"
     },
     {
-        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout-v21/notification_action.xml",
-        "source": "/Users/apple/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/d9d1b3a4c10c44de792c830dd121f5ef/res/layout-v21/notification_action.xml"
+        "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout-v21/place_autocomplete_fragment.xml",
+        "source": "/Users/Michelle_Yu/.gradle/caches/transforms-1/files-1.1/play-services-places-11.4.2.aar/7d6731e0b770009e822471850456c23f/res/layout-v21/place_autocomplete_fragment.xml"
     },
     {
-        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout-v21/notification_action_tombstone.xml",
-        "source": "/Users/apple/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/d9d1b3a4c10c44de792c830dd121f5ef/res/layout-v21/notification_action_tombstone.xml"
+        "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout-v21/notification_action.xml",
+        "source": "/Users/Michelle_Yu/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/5ee5a95c617daa31f4eb193b6bf16867/res/layout-v21/notification_action.xml"
     },
     {
-        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout-v21/place_autocomplete_fragment.xml",
-        "source": "/Users/apple/.gradle/caches/transforms-1/files-1.1/play-services-places-11.4.2.aar/b25eea0b11faea3c31c369b1d5014eac/res/layout-v21/place_autocomplete_fragment.xml"
+        "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/layout-v21/notification_template_icon_group.xml",
+        "source": "/Users/Michelle_Yu/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/5ee5a95c617daa31f4eb193b6bf16867/res/layout-v21/notification_template_icon_group.xml"
     }
 ]

@@ -169,38 +169,38 @@ public class Image implements Serializable{
                     attributeNames.put("#reportID", "Report ID");
                     Map<String, AttributeValue> expressionAttributeValues =
                             new HashMap<String, AttributeValue>();
-                    String id = reportID.toString();
                     expressionAttributeValues.put(":reportID", new AttributeValue().withN(reportID.toString()));
                     ScanRequest scanRequest = new ScanRequest()
                             .withTableName("mobilizedconstructio-mobilehub-516637937-ReportImage");
                     ScanResult result = client.scan(scanRequest);
-                Map<String, AttributeValue> item = result.getItems().get(0);
-                    //for (Map<String, AttributeValue> item : result.getItems()) {
-                        if(item.get("Longitude")!=null){
-                            reportImage.setLongitude(Double.parseDouble(item.get("Longitude").getN()));
-                        }
-                        if(item.get("Latitude")!=null){
-                            reportImage.setLatitude(Double.parseDouble(item.get("Latitude").getN()));
-                        }
-                        if(item.get("Road Hazard")!=null){
-                            reportImage.setRoadHazard(Integer.parseInt(item.get("Road Hazard").getN()));
-                        }
-                        if (item.get("ImageURL") != null) {
-                            String url = item.get("ImageURL").getS();
-                            try {
-                            AmazonS3 s3Client = new AmazonS3Client(IdentityManager.getDefaultIdentityManager()
-                                    .getCredentialsProvider());
-                            S3Object object = s3Client.getObject(
-                                    new GetObjectRequest("mobilizedconstructio-userfiles-mobilehub-516637937", url));
-                            InputStream objectData = object.getObjectContent();
-                                reportImage.setImageURL(url);
-                                imageBitmap = BitmapFactory.decodeStream(objectData);
-                            }catch (Exception e){
-                                System.out.println(e.getMessage());
+                    for (Map<String, AttributeValue> item : result.getItems()) {
+                        if (Integer.parseInt(item.get("ReportID").getN()) == reportID && Integer.parseInt(item.get("Index").getN()) == index)
+                        {
+                            if(item.get("Longitude")!=null){
+                                reportImage.setLongitude(Double.parseDouble(item.get("Longitude").getN()));
+                            }
+                            if(item.get("Latitude")!=null){
+                                reportImage.setLatitude(Double.parseDouble(item.get("Latitude").getN()));
+                            }
+                            if(item.get("Road Hazard")!=null){
+                                reportImage.setRoadHazard(Integer.parseInt(item.get("Road Hazard").getN()));
+                            }
+                            if (item.get("ImageURL") != null) {
+                                String url = item.get("ImageURL").getS();
+                                try {
+                                    AmazonS3 s3Client = new AmazonS3Client(IdentityManager.getDefaultIdentityManager()
+                                            .getCredentialsProvider());
+                                    S3Object object = s3Client.getObject(
+                                            new GetObjectRequest("mobilizedconstructio-userfiles-mobilehub-516637937", url));
+                                    InputStream objectData = object.getObjectContent();
+                                    reportImage.setImageURL(url);
+                                    imageBitmap = BitmapFactory.decodeStream(objectData);
+                                }catch (Exception e){
+                                    System.out.println(e.getMessage());
+                                }
                             }
                         }
-
-                    //}
+                    }
 
             }
         }).start();
