@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.pm.PackageManager;
+import android.media.ExifInterface;
 import android.os.AsyncTask;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -12,6 +13,7 @@ import android.os.Bundle;
 import android.content.Intent;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.net.Uri;
 import android.database.Cursor;
@@ -19,8 +21,12 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.graphics.BitmapFactory;
 import android.provider.MediaStore;
+import android.widget.LinearLayout;
+import android.widget.TableRow;
 import android.widget.Toast;
 import android.graphics.Bitmap;
+import android.graphics.Matrix;
+import android.os.Environment;
 
 import com.amazonaws.ClientConfiguration;
 import com.amazonaws.mobile.auth.core.IdentityManager;
@@ -39,22 +45,37 @@ import com.amazonaws.services.s3.model.CannedAccessControlList;
 import com.amazonaws.services.s3.model.PutObjectRequest;
 import com.mobilizedconstruction.R;
 import com.mobilizedconstruction.demo.UserFilesDemoFragment;
-import com.mobilizedconstruction.model.Image;
+import com.mobilizedconstruction.model.Report;
 import com.mobilizedconstruction.model.ReportDO;
+import com.mobilizedconstruction.model.Image;
+import com.mobilizedconstruction.model.ReportImageDO;
 
 import java.io.File;
 import java.net.URI;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.concurrent.CountDownLatch;
+import java.util.Vector;
+import java.util.Date;
+import java.text.SimpleDateFormat;
 
 public class ImageUploadActivity extends AppCompatActivity {
     private static final int RESULT_LOAD_IMG = 1;
-    ReportDO report;
+    static final int REQUEST_IMAGE_CAPTURE = 2;
+    Report report;
     private String imgDecodableString;
     File imageFile;
+    private ImageButton addImageButton;
+    private ImageButton cameraButton;
+    private int display_image = -1;
+    private Vector<ImageButton> imageButtonVector;
+    private HashSet<String> decodableSet;
+    private HashMap<ImageButton, Bitmap> mapImagetoBitmap;
     Context context = this;
     private static final String LOG_TAG = ImageUploadActivity.class.getSimpleName();
     private UserFileManager userFileManager;
-
+    public static final String S3_PREFIX_UPLOADS = "uploads/";
     private final CountDownLatch userFileManagerCreatingLatch = new CountDownLatch(1);
 
     /**
@@ -70,23 +91,35 @@ public class ImageUploadActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_image_upload);
+        imageButtonVector = new Vector<ImageButton>();
+        decodableSet = new HashSet<String>();
+        mapImagetoBitmap = new HashMap<ImageButton, Bitmap>();
         Intent intent = getIntent();
-        report = (ReportDO)intent.getSerializableExtra("new_report");
+        report = (Report)intent.getSerializableExtra("new_report");
         final Button submitButton = (Button)findViewById(R.id.submitImageButton);
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                navigateToNextPage();
+                if (imageButtonVector.size() > 0)
+                {
+                    navigateToNextPage();
+                }
             }
         });
-        final ImageButton imageButton = (ImageButton)findViewById(R.id.addImageButton);
-        imageButton.setOnClickListener(new View.OnClickListener() {
+        addImageButton = (ImageButton)findViewById(R.id.addImageButton);
+        addImageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 getImage();
             }
         });
-
+        cameraButton = (ImageButton)findViewById(R.id.cameraButton);
+        cameraButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dispatchTakePictureIntent();
+            }
+        });
     }
 
     protected void getImage(){
@@ -95,8 +128,23 @@ public class ImageUploadActivity extends AppCompatActivity {
         startActivityForResult(galleryIntent, RESULT_LOAD_IMG);
     }
 
+    private void insertImage(String filePath, File imageFile, int index, Double lng, Double lat, Integer reportID){
+        Image image = new Image(filePath, imageFile, index, lng, lat, reportID);
+        report.insertImage(image);
+
+    }
+
+    private void dispatchTakePictureIntent() {
+        Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
+            startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
+        }
+    }
+
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+        final ImageView imgView = (ImageView) findViewById(R.id.imagePreview);
+        final LinearLayout imgLL = (LinearLayout) findViewById(R.id.imageLL);
         try {
             // When an Image is picked
             if (requestCode == RESULT_LOAD_IMG && resultCode == RESULT_OK
@@ -111,40 +159,173 @@ public class ImageUploadActivity extends AppCompatActivity {
                 cursor.moveToFirst();
                 int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
                 imgDecodableString = cursor.getString(columnIndex);
+                if (!decodableSet.contains(imgDecodableString))
+                {
+                    imageFile = new File(imgDecodableString);
+                    cursor.close();
+                    ExifInterface exif = new ExifInterface(imgDecodableString);
+                    float[] latLong = new float[2];
+                    float latitude = 0;
+                    float longitude = 0;
+
+//Check if Latitude and Longitude can be retrieved
+                    if(exif.getLatLong(latLong))
+                    {
+                        latitude = latLong[0];
+                        longitude = latLong[1];
+                    }
+                    else
+                    {
+                        //Fallback
+                        latitude = -1;
+                        longitude = -1;
+                    }
+                    Double long_double = (double)longitude;
+                    Double lat_double = (double)latitude;
+                    Image image = new Image(imgDecodableString, imageFile, imageButtonVector.size(), long_double, lat_double, report.reportDO.getReportID());
+                    report.insertImage(image);
+                    ImageButton imageButton = new ImageButton(context);
+                    Bitmap myBitmap = BitmapFactory
+                            .decodeFile(imgDecodableString);
+                    myBitmap = Bitmap.createScaledBitmap(myBitmap, 240, 240, true);
+                    Matrix matrix = new Matrix();
+                    matrix.postRotate(90);
+                    myBitmap = Bitmap.createBitmap(myBitmap , 0, 0, myBitmap .getWidth(), myBitmap .getHeight(), matrix, true);
+                    imageButton.setImageBitmap(myBitmap);
+                    imageButton.setLayoutParams(new TableRow.LayoutParams(240, 240));
+                    mapImagetoBitmap.put(imageButton, myBitmap);
+                    imgLL.addView(imageButton);
+                    imageButtonVector.add(imageButton);
+                    decodableSet.add(imgDecodableString);
+                    // Set the Image in ImageView after decoding the String
+                    imgView.setImageBitmap(myBitmap);
+                }
+                else
+                {
+                    Toast.makeText(this, "You have already added this file.",
+                            Toast.LENGTH_LONG).show();
+                }
+
+            }
+            else if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
+                Bundle extras = data.getExtras();
+                Bitmap myBitmap = (Bitmap) extras.get("data");
+                Uri selectedImage = data.getData();
+                String[] filePathColumn = { MediaStore.Images.Media.DATA };
+                // Get the cursor
+                Cursor cursor = getContentResolver().query(selectedImage,
+                        filePathColumn, null, null, null);
+                // Move to first row
+                cursor.moveToFirst();
+                int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
+                imgDecodableString = cursor.getString(columnIndex);
                 imageFile = new File(imgDecodableString);
-                cursor.close();
-                ImageView imgView = (ImageView) findViewById(R.id.imagePreview);
-                // Set the Image in ImageView after decoding the String
-                Bitmap myBitmap = BitmapFactory
-                        .decodeFile(imgDecodableString);
+                Image image = new Image(imgDecodableString, imageFile, imageButtonVector.size(), 0.0, 0.0, report.reportDO.getReportID());
+                report.insertImage(image);
+
                 imgView.setImageBitmap(myBitmap);
-                //bitmapIntoImageView(imageView, bitmap, MainActivity.this
-            } else {
+                ImageButton imageButton = new ImageButton(context);
+                myBitmap = Bitmap.createScaledBitmap(myBitmap, 240, 240, true);
+                imageButton.setImageBitmap(myBitmap);
+                imageButton.setLayoutParams(new TableRow.LayoutParams(240, 240));
+                mapImagetoBitmap.put(imageButton, myBitmap);
+                imgLL.addView(imageButton);
+                imageButtonVector.add(imageButton);
+                decodableSet.add(imgDecodableString);
+                // Set the Image in ImageView after decoding the String
+                imgView.setImageBitmap(myBitmap);
+                //Image image = new Image(imgDecodableString, imageFile, imageButtonVector.size(), 0.0, 0.0, report.reportDO.getReportID());
+                //report.insertImage(image);
+            }
+            else {
                 Toast.makeText(this, "You haven't picked Image",
                         Toast.LENGTH_LONG).show();
             }
         } catch (Exception e) {
-            Toast.makeText(this, "Something went wrong", Toast.LENGTH_LONG)
+            Toast.makeText(this, "Something went wrong.", Toast.LENGTH_LONG)
                     .show();
+        }
+        for (int i = 0; i < imageButtonVector.size(); i++)
+        {
+            imageButtonVector.elementAt(i).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    ImageButton imageButton = (ImageButton) view;
+                    imgView.setImageBitmap(mapImagetoBitmap.get(imageButton));
+                }
+            });
         }
     }
 
 
     protected void navigateToNextPage(){
-
-        Intent intent = new Intent(context, AddCommentActivity.class);
+        //uploadImageToAWS();
+        report.reportDO.setImageCount(imageButtonVector.size());
+        Intent intent = new Intent(this, AddCommentActivity.class);
         intent.putExtra("new_report", report);
         startActivity(intent);
     }
 
-    private void insertImage(String filePath, File imageFile, int index, Double lng, Double lat, Integer reportID){
-        Image image = new Image(filePath, imageFile, index, lng, lat, reportID);
-        report.insertImage(image);
+
+    private void uploadImageToAWS() {
+        final Context context = this.getApplicationContext();
+        new UserFileManager.Builder()
+                .withContext(context)
+                .withIdentityManager(IdentityManager.getDefaultIdentityManager())
+                .withAWSConfiguration(new AWSConfiguration(context))
+                .withS3ObjectDirPrefix(S3_PREFIX_UPLOADS)
+                .withLocalBasePath(context.getFilesDir().getAbsolutePath())
+                .build(new UserFileManager.BuilderResultHandler() {
+                    @Override
+                    public void onComplete(UserFileManager userFileManager) {
+                        ImageUploadActivity.this.userFileManager = userFileManager;
+                        userFileManagerCreatingLatch.countDown();
+                    }
+                });
+
+
+        if (ContextCompat.checkSelfPermission(context,
+                android.Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+            requestPermissions(new String[]{android.Manifest.permission.READ_EXTERNAL_STORAGE},
+                    EXTERNAL_STORAGE_PERMISSION_REQUEST_CODE);
+        }
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    userFileManagerCreatingLatch.await();
+                } catch (final InterruptedException ex) {
+                    // This thread should never be interrupted.
+                    throw new RuntimeException(ex);
+                }
+                userFileManager.uploadContent(imageFile, imgDecodableString, new ContentProgressListener() {
+                    @Override
+                    public void onSuccess(final ContentItem contentItem) {
+
+                        showUploadOk(R.string.user_files_demo_ok_message_upload_file,
+                                imageFile.getName());
+                        Intent intent = new Intent(context, AddCommentActivity.class);
+                        intent.putExtra("new_report", report);
+                        startActivity(intent);
+                    }
+
+                    @Override
+                    public void onProgressUpdate(final String fileName, final boolean isWaiting,
+                                                 final long bytesCurrent, final long bytesTotal) {
+
+                    }
+
+                    @Override
+                    public void onError(final String fileName, final Exception ex) {
+
+                        showError(R.string.user_files_browser_error_message_upload_file,
+                                ex.getMessage());
+                    }
+                });
+            }
+        }).start();
 
     }
-
-
-
 
 
     private void showError(final int resId, Object... args) {

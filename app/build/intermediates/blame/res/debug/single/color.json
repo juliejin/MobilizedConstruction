@@ -1,162 +1,194 @@
 [
     {
-        "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/color/abc_tint_seek_thumb.xml",
-        "source": "/Users/Michelle_Yu/.android/build-cache/fdad6d79036fe830024c5bdcb5533fb0396f327d/output/res/color/abc_tint_seek_thumb.xml"
-    },
-    {
-        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/color/abc_tint_spinner.xml",
-        "source": "/Users/apple/.android/build-cache/951289952ba7c5659736b04851cb8c6d1a7dada8/output/res/color/abc_tint_spinner.xml"
-    },
-    {
         "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/color/abc_btn_colored_text_material.xml",
-        "source": "/Users/Michelle_Yu/.android/build-cache/fdad6d79036fe830024c5bdcb5533fb0396f327d/output/res/color/abc_btn_colored_text_material.xml"
+        "source": "/Users/Michelle_Yu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/c42f1724cfb1cdcc7ba9400462a3115c/res/color/abc_btn_colored_text_material.xml"
     },
     {
-        "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/color/abc_search_url_text.xml",
-        "source": "/Users/Michelle_Yu/.android/build-cache/fdad6d79036fe830024c5bdcb5533fb0396f327d/output/res/color/abc_search_url_text.xml"
-    },
-    {
-        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/color/abc_tint_seek_thumb.xml",
-        "source": "/Users/apple/.android/build-cache/951289952ba7c5659736b04851cb8c6d1a7dada8/output/res/color/abc_tint_seek_thumb.xml"
-    },
-    {
-        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/color/abc_tint_edittext.xml",
-        "source": "/Users/apple/.android/build-cache/951289952ba7c5659736b04851cb8c6d1a7dada8/output/res/color/abc_tint_edittext.xml"
-    },
-    {
-        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/color/abc_search_url_text.xml",
-        "source": "/Users/apple/.android/build-cache/951289952ba7c5659736b04851cb8c6d1a7dada8/output/res/color/abc_search_url_text.xml"
-    },
-    {
-        "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/color/abc_tint_btn_checkable.xml",
-        "source": "/Users/Michelle_Yu/.android/build-cache/fdad6d79036fe830024c5bdcb5533fb0396f327d/output/res/color/abc_tint_btn_checkable.xml"
-    },
-    {
-        "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/color/abc_primary_text_material_dark.xml",
-        "source": "/Users/Michelle_Yu/.android/build-cache/fdad6d79036fe830024c5bdcb5533fb0396f327d/output/res/color/abc_primary_text_material_dark.xml"
+        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/color/common_google_signin_btn_tint.xml",
+        "source": "/Users/apple/.gradle/caches/transforms-1/files-1.1/play-services-base-11.4.2.aar/2d6ac197060a9fe8d2e339b1fbf4ed3c/res/color/common_google_signin_btn_tint.xml"
     },
     {
         "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/color/abc_primary_text_material_light.xml",
-        "source": "/Users/apple/.android/build-cache/951289952ba7c5659736b04851cb8c6d1a7dada8/output/res/color/abc_primary_text_material_light.xml"
+        "source": "/Users/apple/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/21ef70180d32f66120d4738698b4d5da/res/color/abc_primary_text_material_light.xml"
     },
     {
-        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/color/abc_secondary_text_material_dark.xml",
-        "source": "/Users/apple/.android/build-cache/951289952ba7c5659736b04851cb8c6d1a7dada8/output/res/color/abc_secondary_text_material_dark.xml"
-    },
-    {
-        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/color/abc_tint_switch_thumb.xml",
-        "source": "/Users/apple/.android/build-cache/951289952ba7c5659736b04851cb8c6d1a7dada8/output/res/color/abc_tint_switch_thumb.xml"
-    },
-    {
-        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/color/abc_btn_colored_borderless_text_material.xml",
-        "source": "/Users/apple/.android/build-cache/951289952ba7c5659736b04851cb8c6d1a7dada8/output/res/color/abc_btn_colored_borderless_text_material.xml"
-    },
-    {
-        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/color/abc_secondary_text_material_light.xml",
-        "source": "/Users/apple/.android/build-cache/951289952ba7c5659736b04851cb8c6d1a7dada8/output/res/color/abc_secondary_text_material_light.xml"
-    },
-    {
-        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/color/abc_tint_default.xml",
-        "source": "/Users/apple/.android/build-cache/951289952ba7c5659736b04851cb8c6d1a7dada8/output/res/color/abc_tint_default.xml"
+        "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/color/wallet_primary_text_holo_light.xml",
+        "source": "/Users/Michelle_Yu/.gradle/caches/transforms-1/files-1.1/play-services-wallet-11.4.2.aar/2b80374b1ec6bd057c1b809a1e58cb3e/res/color/wallet_primary_text_holo_light.xml"
     },
     {
         "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/color/abc_primary_text_disable_only_material_dark.xml",
-        "source": "/Users/Michelle_Yu/.android/build-cache/fdad6d79036fe830024c5bdcb5533fb0396f327d/output/res/color/abc_primary_text_disable_only_material_dark.xml"
+        "source": "/Users/Michelle_Yu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/c42f1724cfb1cdcc7ba9400462a3115c/res/color/abc_primary_text_disable_only_material_dark.xml"
     },
     {
         "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/color/abc_secondary_text_material_dark.xml",
-        "source": "/Users/Michelle_Yu/.android/build-cache/fdad6d79036fe830024c5bdcb5533fb0396f327d/output/res/color/abc_secondary_text_material_dark.xml"
-    },
-    {
-        "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/color/abc_tint_switch_track.xml",
-        "source": "/Users/Michelle_Yu/.android/build-cache/fdad6d79036fe830024c5bdcb5533fb0396f327d/output/res/color/abc_tint_switch_track.xml"
-    },
-    {
-        "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/color/switch_thumb_material_light.xml",
-        "source": "/Users/Michelle_Yu/.android/build-cache/fdad6d79036fe830024c5bdcb5533fb0396f327d/output/res/color/switch_thumb_material_light.xml"
+        "source": "/Users/Michelle_Yu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/c42f1724cfb1cdcc7ba9400462a3115c/res/color/abc_secondary_text_material_dark.xml"
     },
     {
         "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/color/abc_secondary_text_material_light.xml",
-        "source": "/Users/Michelle_Yu/.android/build-cache/fdad6d79036fe830024c5bdcb5533fb0396f327d/output/res/color/abc_secondary_text_material_light.xml"
-    },
-    {
-        "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/color/abc_primary_text_material_light.xml",
-        "source": "/Users/Michelle_Yu/.android/build-cache/fdad6d79036fe830024c5bdcb5533fb0396f327d/output/res/color/abc_primary_text_material_light.xml"
+        "source": "/Users/Michelle_Yu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/c42f1724cfb1cdcc7ba9400462a3115c/res/color/abc_secondary_text_material_light.xml"
     },
     {
         "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/color/abc_tint_spinner.xml",
-        "source": "/Users/Michelle_Yu/.android/build-cache/fdad6d79036fe830024c5bdcb5533fb0396f327d/output/res/color/abc_tint_spinner.xml"
+        "source": "/Users/Michelle_Yu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/c42f1724cfb1cdcc7ba9400462a3115c/res/color/abc_tint_spinner.xml"
     },
     {
-        "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/color/abc_tint_switch_thumb.xml",
-        "source": "/Users/Michelle_Yu/.android/build-cache/fdad6d79036fe830024c5bdcb5533fb0396f327d/output/res/color/abc_tint_switch_thumb.xml"
+        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/color/wallet_secondary_text_holo_dark.xml",
+        "source": "/Users/apple/.gradle/caches/transforms-1/files-1.1/play-services-wallet-11.4.2.aar/8914a173e145f71c5a6bc2f36fed566b/res/color/wallet_secondary_text_holo_dark.xml"
     },
     {
         "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/color/abc_hint_foreground_material_light.xml",
-        "source": "/Users/Michelle_Yu/.android/build-cache/fdad6d79036fe830024c5bdcb5533fb0396f327d/output/res/color/abc_hint_foreground_material_light.xml"
+        "source": "/Users/Michelle_Yu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/c42f1724cfb1cdcc7ba9400462a3115c/res/color/abc_hint_foreground_material_light.xml"
     },
     {
         "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/color/abc_primary_text_material_dark.xml",
-        "source": "/Users/apple/.android/build-cache/951289952ba7c5659736b04851cb8c6d1a7dada8/output/res/color/abc_primary_text_material_dark.xml"
+        "source": "/Users/apple/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/21ef70180d32f66120d4738698b4d5da/res/color/abc_primary_text_material_dark.xml"
     },
     {
         "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/color/abc_btn_colored_borderless_text_material.xml",
-        "source": "/Users/Michelle_Yu/.android/build-cache/fdad6d79036fe830024c5bdcb5533fb0396f327d/output/res/color/abc_btn_colored_borderless_text_material.xml"
-    },
-    {
-        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/color/abc_hint_foreground_material_dark.xml",
-        "source": "/Users/apple/.android/build-cache/951289952ba7c5659736b04851cb8c6d1a7dada8/output/res/color/abc_hint_foreground_material_dark.xml"
+        "source": "/Users/Michelle_Yu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/c42f1724cfb1cdcc7ba9400462a3115c/res/color/abc_btn_colored_borderless_text_material.xml"
     },
     {
         "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/color/switch_thumb_material_dark.xml",
-        "source": "/Users/apple/.android/build-cache/951289952ba7c5659736b04851cb8c6d1a7dada8/output/res/color/switch_thumb_material_dark.xml"
+        "source": "/Users/apple/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/21ef70180d32f66120d4738698b4d5da/res/color/switch_thumb_material_dark.xml"
     },
     {
         "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/color/abc_primary_text_disable_only_material_light.xml",
-        "source": "/Users/Michelle_Yu/.android/build-cache/fdad6d79036fe830024c5bdcb5533fb0396f327d/output/res/color/abc_primary_text_disable_only_material_light.xml"
-    },
-    {
-        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/color/abc_hint_foreground_material_light.xml",
-        "source": "/Users/apple/.android/build-cache/951289952ba7c5659736b04851cb8c6d1a7dada8/output/res/color/abc_hint_foreground_material_light.xml"
+        "source": "/Users/Michelle_Yu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/c42f1724cfb1cdcc7ba9400462a3115c/res/color/abc_primary_text_disable_only_material_light.xml"
     },
     {
         "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/color/abc_primary_text_disable_only_material_light.xml",
-        "source": "/Users/apple/.android/build-cache/951289952ba7c5659736b04851cb8c6d1a7dada8/output/res/color/abc_primary_text_disable_only_material_light.xml"
+        "source": "/Users/apple/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/21ef70180d32f66120d4738698b4d5da/res/color/abc_primary_text_disable_only_material_light.xml"
     },
     {
         "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/color/abc_hint_foreground_material_dark.xml",
-        "source": "/Users/Michelle_Yu/.android/build-cache/fdad6d79036fe830024c5bdcb5533fb0396f327d/output/res/color/abc_hint_foreground_material_dark.xml"
-    },
-    {
-        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/color/abc_btn_colored_text_material.xml",
-        "source": "/Users/apple/.android/build-cache/951289952ba7c5659736b04851cb8c6d1a7dada8/output/res/color/abc_btn_colored_text_material.xml"
+        "source": "/Users/Michelle_Yu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/c42f1724cfb1cdcc7ba9400462a3115c/res/color/abc_hint_foreground_material_dark.xml"
     },
     {
         "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/color/switch_thumb_material_dark.xml",
-        "source": "/Users/Michelle_Yu/.android/build-cache/fdad6d79036fe830024c5bdcb5533fb0396f327d/output/res/color/switch_thumb_material_dark.xml"
+        "source": "/Users/Michelle_Yu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/c42f1724cfb1cdcc7ba9400462a3115c/res/color/switch_thumb_material_dark.xml"
     },
     {
         "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/color/switch_thumb_material_light.xml",
-        "source": "/Users/apple/.android/build-cache/951289952ba7c5659736b04851cb8c6d1a7dada8/output/res/color/switch_thumb_material_light.xml"
-    },
-    {
-        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/color/abc_primary_text_disable_only_material_dark.xml",
-        "source": "/Users/apple/.android/build-cache/951289952ba7c5659736b04851cb8c6d1a7dada8/output/res/color/abc_primary_text_disable_only_material_dark.xml"
-    },
-    {
-        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/color/abc_tint_btn_checkable.xml",
-        "source": "/Users/apple/.android/build-cache/951289952ba7c5659736b04851cb8c6d1a7dada8/output/res/color/abc_tint_btn_checkable.xml"
+        "source": "/Users/apple/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/21ef70180d32f66120d4738698b4d5da/res/color/switch_thumb_material_light.xml"
     },
     {
         "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/color/abc_tint_edittext.xml",
-        "source": "/Users/Michelle_Yu/.android/build-cache/fdad6d79036fe830024c5bdcb5533fb0396f327d/output/res/color/abc_tint_edittext.xml"
-    },
-    {
-        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/color/abc_tint_switch_track.xml",
-        "source": "/Users/apple/.android/build-cache/951289952ba7c5659736b04851cb8c6d1a7dada8/output/res/color/abc_tint_switch_track.xml"
+        "source": "/Users/Michelle_Yu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/c42f1724cfb1cdcc7ba9400462a3115c/res/color/abc_tint_edittext.xml"
     },
     {
         "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/color/abc_tint_default.xml",
-        "source": "/Users/Michelle_Yu/.android/build-cache/fdad6d79036fe830024c5bdcb5533fb0396f327d/output/res/color/abc_tint_default.xml"
+        "source": "/Users/Michelle_Yu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/c42f1724cfb1cdcc7ba9400462a3115c/res/color/abc_tint_default.xml"
+    },
+    {
+        "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/color/abc_tint_seek_thumb.xml",
+        "source": "/Users/Michelle_Yu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/c42f1724cfb1cdcc7ba9400462a3115c/res/color/abc_tint_seek_thumb.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/color/wallet_primary_text_holo_light.xml",
+        "source": "/Users/apple/.gradle/caches/transforms-1/files-1.1/play-services-wallet-11.4.2.aar/8914a173e145f71c5a6bc2f36fed566b/res/color/wallet_primary_text_holo_light.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/color/abc_tint_spinner.xml",
+        "source": "/Users/apple/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/21ef70180d32f66120d4738698b4d5da/res/color/abc_tint_spinner.xml"
+    },
+    {
+        "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/color/abc_search_url_text.xml",
+        "source": "/Users/Michelle_Yu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/c42f1724cfb1cdcc7ba9400462a3115c/res/color/abc_search_url_text.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/color/abc_tint_seek_thumb.xml",
+        "source": "/Users/apple/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/21ef70180d32f66120d4738698b4d5da/res/color/abc_tint_seek_thumb.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/color/abc_tint_edittext.xml",
+        "source": "/Users/apple/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/21ef70180d32f66120d4738698b4d5da/res/color/abc_tint_edittext.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/color/abc_search_url_text.xml",
+        "source": "/Users/apple/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/21ef70180d32f66120d4738698b4d5da/res/color/abc_search_url_text.xml"
+    },
+    {
+        "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/color/abc_tint_btn_checkable.xml",
+        "source": "/Users/Michelle_Yu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/c42f1724cfb1cdcc7ba9400462a3115c/res/color/abc_tint_btn_checkable.xml"
+    },
+    {
+        "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/color/common_google_signin_btn_text_dark.xml",
+        "source": "/Users/Michelle_Yu/.gradle/caches/transforms-1/files-1.1/play-services-base-11.4.2.aar/471a66b0754930fd0cebf8a0bb25abf0/res/color/common_google_signin_btn_text_dark.xml"
+    },
+    {
+        "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/color/abc_primary_text_material_dark.xml",
+        "source": "/Users/Michelle_Yu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/c42f1724cfb1cdcc7ba9400462a3115c/res/color/abc_primary_text_material_dark.xml"
+    },
+    {
+        "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/color/common_google_signin_btn_tint.xml",
+        "source": "/Users/Michelle_Yu/.gradle/caches/transforms-1/files-1.1/play-services-base-11.4.2.aar/471a66b0754930fd0cebf8a0bb25abf0/res/color/common_google_signin_btn_tint.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/color/abc_secondary_text_material_dark.xml",
+        "source": "/Users/apple/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/21ef70180d32f66120d4738698b4d5da/res/color/abc_secondary_text_material_dark.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/color/common_google_signin_btn_text_light.xml",
+        "source": "/Users/apple/.gradle/caches/transforms-1/files-1.1/play-services-base-11.4.2.aar/2d6ac197060a9fe8d2e339b1fbf4ed3c/res/color/common_google_signin_btn_text_light.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/color/abc_btn_colored_borderless_text_material.xml",
+        "source": "/Users/apple/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/21ef70180d32f66120d4738698b4d5da/res/color/abc_btn_colored_borderless_text_material.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/color/abc_secondary_text_material_light.xml",
+        "source": "/Users/apple/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/21ef70180d32f66120d4738698b4d5da/res/color/abc_secondary_text_material_light.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/color/abc_tint_default.xml",
+        "source": "/Users/apple/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/21ef70180d32f66120d4738698b4d5da/res/color/abc_tint_default.xml"
+    },
+    {
+        "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/color/abc_tint_switch_track.xml",
+        "source": "/Users/Michelle_Yu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/c42f1724cfb1cdcc7ba9400462a3115c/res/color/abc_tint_switch_track.xml"
+    },
+    {
+        "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/color/switch_thumb_material_light.xml",
+        "source": "/Users/Michelle_Yu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/c42f1724cfb1cdcc7ba9400462a3115c/res/color/switch_thumb_material_light.xml"
+    },
+    {
+        "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/color/abc_primary_text_material_light.xml",
+        "source": "/Users/Michelle_Yu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/c42f1724cfb1cdcc7ba9400462a3115c/res/color/abc_primary_text_material_light.xml"
+    },
+    {
+        "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/color/wallet_secondary_text_holo_dark.xml",
+        "source": "/Users/Michelle_Yu/.gradle/caches/transforms-1/files-1.1/play-services-wallet-11.4.2.aar/2b80374b1ec6bd057c1b809a1e58cb3e/res/color/wallet_secondary_text_holo_dark.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/color/abc_hint_foreground_material_dark.xml",
+        "source": "/Users/apple/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/21ef70180d32f66120d4738698b4d5da/res/color/abc_hint_foreground_material_dark.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/color/abc_hint_foreground_material_light.xml",
+        "source": "/Users/apple/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/21ef70180d32f66120d4738698b4d5da/res/color/abc_hint_foreground_material_light.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/color/common_google_signin_btn_text_dark.xml",
+        "source": "/Users/apple/.gradle/caches/transforms-1/files-1.1/play-services-base-11.4.2.aar/2d6ac197060a9fe8d2e339b1fbf4ed3c/res/color/common_google_signin_btn_text_dark.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/color/abc_btn_colored_text_material.xml",
+        "source": "/Users/apple/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/21ef70180d32f66120d4738698b4d5da/res/color/abc_btn_colored_text_material.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/color/abc_primary_text_disable_only_material_dark.xml",
+        "source": "/Users/apple/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/21ef70180d32f66120d4738698b4d5da/res/color/abc_primary_text_disable_only_material_dark.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/color/abc_tint_btn_checkable.xml",
+        "source": "/Users/apple/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/21ef70180d32f66120d4738698b4d5da/res/color/abc_tint_btn_checkable.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/color/abc_tint_switch_track.xml",
+        "source": "/Users/apple/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/21ef70180d32f66120d4738698b4d5da/res/color/abc_tint_switch_track.xml"
+    },
+    {
+        "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/color/common_google_signin_btn_text_light.xml",
+        "source": "/Users/Michelle_Yu/.gradle/caches/transforms-1/files-1.1/play-services-base-11.4.2.aar/471a66b0754930fd0cebf8a0bb25abf0/res/color/common_google_signin_btn_text_light.xml"
     }
 ]

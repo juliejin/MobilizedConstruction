@@ -11,6 +11,7 @@
      http://tools.android.com/tech-docs/new-build-system/applicationid-vs-packagename
 -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.mobilizedconstruction">
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -19,7 +20,14 @@
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
+    <!--
+         The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
+         Google Maps Android API v2, but you must specify either coarse or fine
+         location permissions for the 'MyLocation' functionality. 
+    -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
         android:name=".Application"
@@ -37,10 +45,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".MainActivity"
-            android:label="Mobilied Construction"
-            android:launchMode="singleInstance" />
 
         <!-- BEGIN - APP CONTENT DELIVERY AND USER DATA STORAGE -->
 
@@ -60,6 +64,11 @@
 
         <!-- END - APP CONTENT DELIVERY AND USER DATA STORAGE -->
 
+        <uses-feature
+            android:name="android.hardware.camera"
+            android:required="true"
+            tools:ignore="WrongManifestParent" />
+
         <activity android:name=".ReportCreationActivity" />
         <activity android:name=".ReportInfoUpload" />
         <activity android:name=".RoadFeaturesActivity" />
@@ -67,7 +76,20 @@
         <activity android:name=".CreatedReportDisplayActivity" />
         <activity android:name=".PreviewReportActivity" />
         <activity android:name=".DraftedReport" />
-        <activity android:name=".ImageUploadActivity"></activity>
+        <activity android:name=".ImageUploadActivity" />
+        <!--
+             The API key for Google Maps-based APIs is defined as a string resource.
+             (See the file "res/values/google_maps_api.xml").
+             Note that the API key is linked to the encryption key used to sign the APK.
+             You need a different API key for each encryption key, including the release key that is used to
+             sign the APK for publishing.
+             You can define the keys for the debug and release targets in src/debug/ and src/release/. 
+        -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
+        <activity android:name=".SetRoadHazardActivity"></activity>
     </application>
 
 </manifest>

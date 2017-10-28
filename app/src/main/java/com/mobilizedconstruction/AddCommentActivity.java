@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.mobilizedconstruction.R;
+import com.mobilizedconstruction.model.Report;
 import com.mobilizedconstruction.model.ReportDO;
 
 import java.io.FileInputStream;
@@ -17,7 +18,7 @@ import java.io.ObjectInputStream;
 
 public class AddCommentActivity extends AppCompatActivity {
     private static final String LOG_TAG = AddCommentActivity.class.getSimpleName();
-    ReportDO report;
+    Report report;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,14 +32,14 @@ public class AddCommentActivity extends AppCompatActivity {
             }
         });
         Intent intent = getIntent();
-        report = (ReportDO)intent.getSerializableExtra("new_report");
+        report = (Report)intent.getSerializableExtra("new_report");
 
     }
 
     protected void navigateToNextPage(){
-        Intent intent = new Intent(this, RoadFeaturesActivity.class);
+        Intent intent = new Intent(this, SetRoadHazardActivity.class);
         EditText comment = (EditText) findViewById(R.id.commitText);
-        report.setComment(comment.getText().toString());
+        report.reportDO.setComment(comment.getText().toString());
         intent.putExtra("new_report", report);
         startActivity(intent);
     }

@@ -12,8 +12,13 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+/**
+ * Created by Ling Jin on 09/17/17.
+ */
+
 @DynamoDBTable(tableName = "mobilizedconstructio-mobilehub-516637937-ReportImage")
 
+//data structure that matches the database tables
 public class ReportImageDO implements Serializable{
     private Integer _reportID;
     private int _index;

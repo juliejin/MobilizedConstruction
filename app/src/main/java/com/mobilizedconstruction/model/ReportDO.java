@@ -14,6 +14,8 @@ import java.util.Map;
 import java.util.Set;
 import java.util.Vector;
 
+
+
 @DynamoDBTable(tableName = "mobilizedconstructio-mobilehub-516637937-Report")
 
 public class ReportDO implements Serializable {
@@ -24,7 +26,6 @@ public class ReportDO implements Serializable {
     private Integer _roadDirection;
     private Integer _severity;
     private String _userID;
-    private Vector<Image> reportImages;
 
     public ReportDO(){}
 
@@ -37,16 +38,9 @@ public class ReportDO implements Serializable {
         _roadDirection = roadDirection;
         _severity = severity;
         _userID = userID;
-        reportImages = new Vector<Image>();
+
     }
 
-    public void insertImage(Image image){
-        reportImages.add(image);
-    }
-
-    public Vector<Image> getImages(){
-        return reportImages;
-    }
 
     @DynamoDBHashKey(attributeName = "Report ID")
     @DynamoDBAttribute(attributeName = "Report ID")

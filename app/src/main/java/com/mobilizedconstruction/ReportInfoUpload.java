@@ -11,6 +11,8 @@ import com.amazonaws.services.dynamodbv2.model.ScanResult;
 import com.amazonaws.ClientConfiguration;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
+import com.mobilizedconstruction.model.Image;
+import com.mobilizedconstruction.model.Report;
 import com.mobilizedconstruction.model.ReportDO;
 import com.amazonaws.AmazonClientException;
 import android.util.Log;
@@ -21,6 +23,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.Vector;
 
 import static android.content.Context.*;
 
@@ -29,6 +32,8 @@ public class ReportInfoUpload extends AppCompatActivity {
     private static final String LOG_TAG = ReportInfoUpload.class.getSimpleName();
     DynamoDBMapper mapper;
     Intent intent;
+
+    //initialize a report object with default values
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,8 +64,8 @@ public class ReportInfoUpload extends AppCompatActivity {
                     }
                     Date currentDate = new Date();
                     SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
-                    final ReportDO report = new ReportDO(id,"",formatter.format(currentDate).toString(),0,0,0,user);
-
+                    final ReportDO reportDO = new ReportDO(id,"",formatter.format(currentDate).toString(),0,0,0,user);
+                    Report report = new Report(reportDO);
                     //mapper.save(report);
                     intent.putExtra("new_report",report);
                     startActivity(intent);

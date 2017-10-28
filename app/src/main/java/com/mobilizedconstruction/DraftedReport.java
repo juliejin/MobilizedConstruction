@@ -13,6 +13,7 @@ import android.widget.TableRow;
 import android.widget.TextView;
 
 import com.mobilizedconstruction.R;
+import com.mobilizedconstruction.model.Report;
 import com.mobilizedconstruction.model.ReportDO;
 import android.widget.TableRow.LayoutParams;
 import java.io.File;
@@ -31,13 +32,15 @@ public class DraftedReport extends AppCompatActivity {
         setContentView(R.layout.activity_drafted_report);
         LinearLayout draftedReports = (LinearLayout) findViewById(R.id.ll_draft);
 
-        final Vector<ReportDO> savedReports = new Vector<ReportDO>();
+        final Vector<Report> savedReports = new Vector<Report>();
         try{
             File fileshandler = getFilesDir();
             File[] files =  fileshandler.listFiles();
             for(int i=0;i<files.length;i++) {
+                files[i].getParentFile().mkdirs();
                 ObjectInputStream ois = new ObjectInputStream(openFileInput(files[i].getName()));
-                ReportDO new_report = (ReportDO) ois.readObject();
+                Report new_report = (Report) ois.readObject();
+                new_report.filePath = files[i].getPath();
                 savedReports.addElement(new_report);
                 ois.close();
             }
@@ -46,15 +49,16 @@ public class DraftedReport extends AppCompatActivity {
         }
 
         for(int i=0;i<savedReports.size();i++){
-            final ReportDO report = savedReports.get(i);
+            final Report report = savedReports.get(i);
             //row.setLayoutParams(new TableLayout.LayoutParams());
             Button reportButton = new Button(this);
-            reportButton.setText("Date Created: " + report.getDateCreated());
+            reportButton.setText("Date Created: " + report.reportDO.getDateCreated());
             reportButton.setLayoutParams(new LayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT)));
             final Intent intent = new Intent(this, PreviewReportActivity.class);
             reportButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+
                     intent.putExtra("new_report",report);
                     startActivity(intent);
                 }

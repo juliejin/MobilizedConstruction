@@ -1,3 +1,0 @@
-# view AndroidManifest.xml #generated:44
--keep class com.mobilizedconstruction.Application { <init>(...); }
-
