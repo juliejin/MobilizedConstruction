@@ -61,7 +61,6 @@
         android:icon="@mipmap/ic_launcher"
         android:label="Mobilized Construction"
         android:supportsRtl="true"
-        android:testOnly="true"
         android:theme="@style/AppTheme" >
         <activity
             android:name="com.mobilizedconstruction.SplashActivity"
