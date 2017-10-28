@@ -112,7 +112,7 @@ public class CreatedReportDisplayActivity extends AppCompatActivity {
 
         }
         if (createdReport.size() == 0) {
-            showDialog();
+           // display no report
         }
         else
         {
@@ -122,11 +122,6 @@ public class CreatedReportDisplayActivity extends AppCompatActivity {
             }
         }
     }
-
-    protected void showDialog() {
-
-    }
-
 
     protected void addNewButton(final int row_index){
         Button reportButton = new Button(this);

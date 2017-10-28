@@ -33,8 +33,6 @@ import com.mobilizedconstruction.Application;
 import com.mobilizedconstruction.ImageUploadActivity;
 import com.mobilizedconstruction.R;
 import com.mobilizedconstruction.ReportCreationActivity;
-import com.mobilizedconstruction.demo.UserFilesBrowserFragment;
-import com.mobilizedconstruction.demo.UserFilesDemoFragment;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -51,7 +49,7 @@ import static android.provider.Settings.Global.getString;
 import static android.provider.Telephony.Mms.Part.FILENAME;
 
 /**
- * Created by apple on 24/10/2017.
+ * Created by Ling Jin on 24/10/2017.
  */
 
 public class Image implements Serializable{

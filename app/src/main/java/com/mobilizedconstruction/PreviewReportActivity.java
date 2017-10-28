@@ -25,9 +25,6 @@ import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBMapper;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient;
 import com.mobilizedconstruction.R;
 import com.mobilizedconstruction.model.Report;
-import com.mobilizedconstruction.model.ReportDO;
-
-import org.w3c.dom.Text;
 
 import java.io.File;
 import java.io.ObjectOutputStream;

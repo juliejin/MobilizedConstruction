@@ -14,6 +14,8 @@ import java.util.Map;
 import java.util.Set;
 import java.util.Vector;
 
+
+
 @DynamoDBTable(tableName = "mobilizedconstructio-mobilehub-516637937-Report")
 
 public class ReportDO implements Serializable {

@@ -32,6 +32,8 @@ public class ReportInfoUpload extends AppCompatActivity {
     private static final String LOG_TAG = ReportInfoUpload.class.getSimpleName();
     DynamoDBMapper mapper;
     Intent intent;
+
+    //initialize a report object with default values
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

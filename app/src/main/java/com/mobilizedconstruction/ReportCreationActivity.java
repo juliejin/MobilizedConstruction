@@ -67,7 +67,7 @@ public class ReportCreationActivity extends Activity {
             }
         });
 
-        //
+        //navigate to locally saved page
         final Button drafted = (Button) findViewById(R.id.DraftedReportButton);
         drafted.setOnClickListener(new View.OnClickListener() {
             @Override
