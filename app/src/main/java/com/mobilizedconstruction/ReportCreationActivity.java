@@ -24,6 +24,7 @@ import com.amazonaws.mobileconnectors.cognitoidentityprovider.continuations.Mult
 import com.amazonaws.mobileconnectors.cognitoidentityprovider.handlers.AuthenticationHandler;
 import com.amazonaws.mobileconnectors.cognitoidentityprovider.handlers.GetDetailsHandler;
 
+//main page
 public class ReportCreationActivity extends Activity {
 
     private IdentityManager identityManager;
@@ -32,6 +33,7 @@ public class ReportCreationActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_report_creation);
 
+        //get user ID
         identityManager = IdentityManager.getDefaultIdentityManager();
         CognitoUserPool userPool = new CognitoUserPool(this, identityManager.getConfiguration());
         final CognitoUser user = userPool.getUser(identityManager.getCachedUserID());
@@ -46,6 +48,8 @@ public class ReportCreationActivity extends Activity {
             }
 
         });
+
+        // navigate to published report page
         final Button createdReportButton = (Button) findViewById(R.id.CreatedReportButton);
         createdReportButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,6 +58,7 @@ public class ReportCreationActivity extends Activity {
             }
         });
 
+        //navigate to sign in page
         final Button signout = (Button) findViewById((R.id.SignOut));
         signout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,6 +67,7 @@ public class ReportCreationActivity extends Activity {
             }
         });
 
+        //
         final Button drafted = (Button) findViewById(R.id.DraftedReportButton);
         drafted.setOnClickListener(new View.OnClickListener() {
             @Override

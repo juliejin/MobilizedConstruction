@@ -45,10 +45,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".MainActivity"
-            android:label="Mobilied Construction"
-            android:launchMode="singleInstance" />
 
         <!-- BEGIN - APP CONTENT DELIVERY AND USER DATA STORAGE -->
 
