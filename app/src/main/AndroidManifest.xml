@@ -37,7 +37,7 @@
         android:label="Mobilized Construction"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".SplashActivity"
+            android:name=".MainActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
             android:label="Mobilized Construction">
             <intent-filter>
