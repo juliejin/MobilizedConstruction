@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:13:1-99:12
-INJECTED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:13:1-99:12
-INJECTED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:13:1-99:12
-INJECTED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:13:1-99:12
+ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:13:1-98:12
+INJECTED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:13:1-98:12
+INJECTED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:13:1-98:12
+INJECTED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:13:1-98:12
 MERGED from [com.google.android.gms:play-services:11.4.2] /Users/apple/.gradle/caches/transforms-1/files-1.1/play-services-11.4.2.aar/db7e63cd22b04f219f71a9d688976333/AndroidManifest.xml:2:1-6:12
 MERGED from [com.google.android.gms:play-services-cast-framework:11.4.2] /Users/apple/.gradle/caches/transforms-1/files-1.1/play-services-cast-framework-11.4.2.aar/f2956374b9ed11283df0468b854dd3cd/AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.android.gms:play-services-cast:11.4.2] /Users/apple/.gradle/caches/transforms-1/files-1.1/play-services-cast-11.4.2.aar/285510ce56c8de513836658ad378f26b/AndroidManifest.xml:16:1-19:12
@@ -123,22 +123,22 @@ MERGED from [com.google.android.gms:play-services-vision-common-license:11.4.2] 
 MERGED from [com.google.android.gms:play-services-vision-license:11.4.2] /Users/apple/.gradle/caches/transforms-1/files-1.1/play-services-vision-license-11.4.2.aar/4eb65f8b8dfd1e9b6d86ad92007f4ef0/AndroidManifest.xml:2:1-6:12
 MERGED from [com.google.android.gms:play-services-wallet-license:11.4.2] /Users/apple/.gradle/caches/transforms-1/files-1.1/play-services-wallet-license-11.4.2.aar/3ebd845eae0f5c9a8ad69c90d1f43540/AndroidManifest.xml:2:1-6:12
 MERGED from [com.google.android.gms:play-services-wearable-license:11.4.2] /Users/apple/.gradle/caches/transforms-1/files-1.1/play-services-wearable-license-11.4.2.aar/0bf7b9250b821b90e982d9c70c6437d7/AndroidManifest.xml:2:1-6:12
-INJECTED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:13:1-99:12
-INJECTED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:13:1-99:12
-INJECTED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:13:1-99:12
+INJECTED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:13:1-98:12
+INJECTED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:13:1-98:12
+INJECTED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:13:1-98:12
 	package
 		ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:15:5-40
 		INJECTED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml
 		INJECTED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml
 	android:versionName
 		INJECTED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml
-		ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:13:1-99:12
+		ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:13:1-98:12
 		INJECTED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml
 	xmlns:tools
 		ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:14:5-51
 	android:versionCode
 		INJECTED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml
-		ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:13:1-99:12
+		ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:13:1-98:12
 		INJECTED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:13:11-69
@@ -233,7 +233,7 @@ ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/Andr
 	android:name
 		ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:30:22-76
 application
-ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:32:5-97:19
+ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:32:5-96:19
 MERGED from [com.google.android.gms:play-services:11.4.2] /Users/apple/.gradle/caches/transforms-1/files-1.1/play-services-11.4.2.aar/db7e63cd22b04f219f71a9d688976333/AndroidManifest.xml:5:5-20
 MERGED from [com.google.android.gms:play-services:11.4.2] /Users/apple/.gradle/caches/transforms-1/files-1.1/play-services-11.4.2.aar/db7e63cd22b04f219f71a9d688976333/AndroidManifest.xml:5:5-20
 MERGED from [com.google.android.gms:play-services-cast-framework:11.4.2] /Users/apple/.gradle/caches/transforms-1/files-1.1/play-services-cast-framework-11.4.2.aar/f2956374b9ed11283df0468b854dd3cd/AndroidManifest.xml:4:5-8:19
@@ -462,14 +462,14 @@ MERGED from [com.google.android.gms:play-services-wearable-license:11.4.2] /User
 		ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:37:9-40
 	android:name
 		ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:33:9-36
-activity#com.mobilizedconstruction.SplashActivity
+activity#com.mobilizedconstruction.MainActivity
 ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:38:9-47:20
 	android:label
 		ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:41:13-51
 	android:configChanges
 		ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:40:13-83
 	android:name
-		ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:39:13-43
+		ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:39:13-41
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
 ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:42:13-46:29
 action#android.intent.action.MAIN
@@ -480,74 +480,82 @@ category#android.intent.category.LAUNCHER
 ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:45:17-77
 	android:name
 		ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:45:27-74
-activity#com.mobilizedconstruction.MainActivity
-ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:48:9-51:51
-	android:label
-		ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:50:13-50
-	android:launchMode
-		ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:51:13-48
-	android:name
-		ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:49:13-41
 service#com.amazonaws.mobileconnectors.s3.transferutility.TransferService
-ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:64:9-66:38
+ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:60:9-62:38
 	android:enabled
-		ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:66:13-35
+		ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:62:13-35
 	android:name
-		ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:65:13-93
+		ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:61:13-93
 service#com.amazonaws.mobile.downloader.service.DownloadService
-ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:67:9-91
+ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:63:9-91
 	android:name
-		ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:67:18-88
+		ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:63:18-88
 uses-feature#android.hardware.camera
-ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:71:9-74:50
+ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:65:9-68:50
 	tools:ignore
-		ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:74:13-47
+		ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:68:13-47
 	android:required
-		ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:73:13-36
+		ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:67:13-36
 	android:name
-		ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:72:13-51
+		ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:66:13-51
 activity#com.mobilizedconstruction.ReportCreationActivity
-ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:76:9-60
+ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:70:9-60
 	android:name
-		ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:76:19-57
+		ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:70:19-57
 activity#com.mobilizedconstruction.ReportInfoUpload
-ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:77:9-54
+ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:71:9-54
 	android:name
-		ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:77:19-51
+		ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:71:19-51
 activity#com.mobilizedconstruction.RoadFeaturesActivity
-ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:78:9-58
+ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:72:9-58
 	android:name
-		ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:78:19-55
+		ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:72:19-55
 activity#com.mobilizedconstruction.AddCommentActivity
-ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:79:9-56
+ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:73:9-56
 	android:name
-		ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:79:19-53
+		ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:73:19-53
 activity#com.mobilizedconstruction.CreatedReportDisplayActivity
-ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:80:9-66
+ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:74:9-66
 	android:name
-		ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:80:19-63
+		ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:74:19-63
 activity#com.mobilizedconstruction.PreviewReportActivity
-ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:81:9-59
+ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:75:9-59
 	android:name
-		ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:81:19-56
+		ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:75:19-56
 activity#com.mobilizedconstruction.DraftedReport
-ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:82:9-51
+ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:76:9-51
 	android:name
-		ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:82:19-48
+		ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:76:19-48
 activity#com.mobilizedconstruction.ImageUploadActivity
-ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:83:9-57
+ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:77:9-57
 	android:name
-		ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:83:19-54
+		ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:77:19-54
 meta-data#com.google.android.geo.API_KEY
-ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:92:9-94:55
+ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:86:9-88:55
 	android:value
-		ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:94:13-52
+		ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:88:13-52
 	android:name
-		ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:93:13-58
+		ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:87:13-58
 activity#com.mobilizedconstruction.SetRoadHazardActivity
-ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:96:9-68
+ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:90:9-59
 	android:name
-		ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:96:19-56
+		ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:90:19-56
+activity#com.mobilizedconstruction.LoginActivity
+ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:91:9-51
+	android:name
+		ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:91:19-48
+activity#com.mobilizedconstruction.UserDataActivity
+ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:92:9-54
+	android:name
+		ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:92:19-51
+activity#com.mobilizedconstruction.CreateUserActivity
+ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:93:9-56
+	android:name
+		ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:93:19-53
+activity#com.mobilizedconstruction.DeptActivity
+ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:94:9-50
+	android:name
+		ADDED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:94:19-47
 uses-sdk
 INJECTED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml
@@ -831,7 +839,7 @@ MERGED from [com.android.support:support-compat:26.1.0] /Users/apple/.gradle/cac
 	android:name
 		ADDED from [com.android.support:appcompat-v7:26.1.0] /Users/apple/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/21ef70180d32f66120d4738698b4d5da/AndroidManifest.xml:27:13-51
 uses-permission#android.permission.READ_PHONE_STATE
-IMPLIED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:13:1-99:12 reason: com.amazonaws.mobile.auth.core has a targetSdkVersion < 4
+IMPLIED from /Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/AndroidManifest.xml:13:1-98:12 reason: com.amazonaws.mobile.auth.core has a targetSdkVersion < 4
 uses-permission#com.google.android.c2dm.permission.RECEIVE
 ADDED from [com.amazonaws:aws-android-sdk-auth-ui:2.6.0] /Users/apple/.gradle/caches/transforms-1/files-1.1/aws-android-sdk-auth-ui-2.6.0.aar/5a56e3564701fa80faf4a520aa28bcde/AndroidManifest.xml:4:5-81
 MERGED from [com.google.android.gms:play-services-gcm:11.4.2] /Users/apple/.gradle/caches/transforms-1/files-1.1/play-services-gcm-11.4.2.aar/0c06430724e6dae7ec5728baa24c9684/AndroidManifest.xml:20:5-81

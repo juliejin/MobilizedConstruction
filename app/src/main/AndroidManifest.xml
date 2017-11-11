@@ -36,7 +36,7 @@
         android:label="Mobilized Construction"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".SplashActivity"
+            android:name=".MainActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
             android:label="Mobilized Construction">
             <intent-filter>
@@ -61,9 +61,7 @@
             android:name="com.amazonaws.mobileconnectors.s3.transferutility.TransferService"
             android:enabled="true" />
         <service android:name="com.amazonaws.mobile.downloader.service.DownloadService" />
-
         <!-- END - APP CONTENT DELIVERY AND USER DATA STORAGE -->
-
         <uses-feature
             android:name="android.hardware.camera"
             android:required="true"
@@ -89,7 +87,12 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
-        <activity android:name=".SetRoadHazardActivity"></activity>
+        <activity android:name=".SetRoadHazardActivity" />
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".UserDataActivity" />
+        <activity android:name=".CreateUserActivity" />
+        <activity android:name=".DeptActivity" />
+
     </application>
 
 </manifest>

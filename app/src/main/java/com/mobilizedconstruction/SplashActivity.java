@@ -67,13 +67,13 @@ public class SplashActivity extends Activity implements StartupAuthResultHandler
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         // Touch event bypasses waiting for the splash timeout to expire.
-        IdentityManager.getDefaultIdentityManager().expireSignInTimeout();
+        //IdentityManager.getDefaultIdentityManager().expireSignInTimeout();
         return true;
     }
 
     @Override
     public void onComplete(StartupAuthResult authResult) {
-        final IdentityManager identityManager = authResult.getIdentityManager();
+        /*final IdentityManager identityManager = authResult.getIdentityManager();
 
         if (authResult.isUserSignedIn()) {
             final IdentityProvider provider = identityManager.getCurrentIdentityProvider();
@@ -96,9 +96,9 @@ public class SplashActivity extends Activity implements StartupAuthResultHandler
 
             doMandatorySignIn(identityManager);
             return;
-        }
+        }*/
 
-        this.startActivity(new Intent(this, ReportCreationActivity.class)
+        this.startActivity(new Intent(this, MainActivity.class)
                 .setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
         this.finish();
     }

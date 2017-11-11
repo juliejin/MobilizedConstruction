@@ -44,7 +44,6 @@ import com.amazonaws.services.s3.AmazonS3Client;
 import com.amazonaws.services.s3.model.CannedAccessControlList;
 import com.amazonaws.services.s3.model.PutObjectRequest;
 import com.mobilizedconstruction.R;
-import com.mobilizedconstruction.demo.UserFilesDemoFragment;
 import com.mobilizedconstruction.model.Report;
 import com.mobilizedconstruction.model.ReportDO;
 import com.mobilizedconstruction.model.Image;
@@ -286,8 +285,8 @@ public class ImageUploadActivity extends AppCompatActivity {
 
         if (ContextCompat.checkSelfPermission(context,
                 android.Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
-            requestPermissions(new String[]{android.Manifest.permission.READ_EXTERNAL_STORAGE},
-                    EXTERNAL_STORAGE_PERMISSION_REQUEST_CODE);
+           // requestPermissions(new String[]{android.Manifest.permission.READ_EXTERNAL_STORAGE},
+            //        EXTERNAL_STORAGE_PERMISSION_REQUEST_CODE);
         }
         new Thread(new Runnable() {
             @Override

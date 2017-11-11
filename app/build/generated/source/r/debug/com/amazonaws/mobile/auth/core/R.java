@@ -16,9 +16,9 @@ public final class R {
         public static final int small = 0x7f0f007e;
     }
     public static final class string {
-        public static final int sign_in_canceled_message_format = 0x7f090141;
-        public static final int sign_in_failure_dialog_title = 0x7f090142;
-        public static final int sign_in_failure_message_format = 0x7f090143;
+        public static final int sign_in_canceled_message_format = 0x7f090153;
+        public static final int sign_in_failure_dialog_title = 0x7f090154;
+        public static final int sign_in_failure_message_format = 0x7f090155;
     }
     public static final class styleable {
         public static final int[] SignInButton = { 0x7f010178, 0x7f010179, 0x7f01017a, 0x7f01017b, 0x7f01017c };

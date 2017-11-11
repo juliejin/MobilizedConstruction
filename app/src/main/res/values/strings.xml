@@ -246,6 +246,28 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_get_location">Map</string>
+    <string name="login">Login</string>
+    <string name="username">Username :</string>
+    <string name="password">Password :</string>
+    <string name="user_details">User Details</string>
+    <string name="firstname">First Name:</string>
+    <string name="lastname">Last Name:</string>
+    <string name="title_activity_create_user">CreateUserActivity</string>
+    <string name="create_user_account">Create User Account</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="Username">Username</string>
+    <string name="Password">Password</string>
+    <string name="LoginGet">Login</string>
+    <string name="LoginPost">Sign Up</string>
+    <string name="App">Login Application</string>
+    <string name="LoginStatus">Login Status</string>
+    <string name="LoginRole">Login Role</string>
+    <string name="Status">Not login</string>
+    <string name="Role">Not assigned</string>
+    <string name="method">Login Method</string>
+    <string name="Choose">Choose Method</string>
 
 
 </resources>

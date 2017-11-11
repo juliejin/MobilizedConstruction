@@ -61,9 +61,10 @@
         android:icon="@mipmap/ic_launcher"
         android:label="Mobilized Construction"
         android:supportsRtl="true"
+        android:testOnly="true"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.mobilizedconstruction.SplashActivity"
+            android:name="com.mobilizedconstruction.MainActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
             android:label="Mobilized Construction" >
             <intent-filter>
@@ -72,10 +73,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name="com.mobilizedconstruction.MainActivity"
-            android:label="Mobilied Construction"
-            android:launchMode="singleInstance" />
 
         <!-- BEGIN - APP CONTENT DELIVERY AND USER DATA STORAGE -->
 
@@ -92,9 +89,7 @@
             android:name="com.amazonaws.mobileconnectors.s3.transferutility.TransferService"
             android:enabled="true" />
         <service android:name="com.amazonaws.mobile.downloader.service.DownloadService" />
-
         <!-- END - APP CONTENT DELIVERY AND USER DATA STORAGE -->
-
         <uses-feature
             android:name="android.hardware.camera"
             android:required="true" />
@@ -120,6 +115,10 @@
             android:value="@string/google_maps_key" />
 
         <activity android:name="com.mobilizedconstruction.SetRoadHazardActivity" />
+        <activity android:name="com.mobilizedconstruction.LoginActivity" />
+        <activity android:name="com.mobilizedconstruction.UserDataActivity" />
+        <activity android:name="com.mobilizedconstruction.CreateUserActivity" />
+        <activity android:name="com.mobilizedconstruction.DeptActivity" />
 
         <receiver android:name="com.google.android.gms.cast.framework.media.MediaIntentReceiver" />
 
