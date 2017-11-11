@@ -21,4 +21,9 @@ public class Report implements Serializable
     public void insertImage(Image image){
         reportImages.add(image);
     }
+
+    public void setLocation(Double latitude, Double longitude){
+        reportDO.setLatitude(latitude);
+        reportDO.setLongitude(longitude);
+    }
 }

@@ -16,12 +16,14 @@ public class SetRoadHazardActivity extends AppCompatActivity {
     int roadHazard = -1;
     Vector<Button> buttons;
     int previousChoice = -1;
+    boolean allow_edit = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_set_road_hazard);
         Intent intent = getIntent();
         report = (Report)intent.getSerializableExtra("new_report");
+        allow_edit = getIntent().getBooleanExtra("allow_edit", false);
         buttons = new Vector<Button>();
         final Button potholes = (Button)findViewById(R.id.potholesButton);
         potholes.setBackgroundColor(Color.GRAY);
@@ -47,6 +49,12 @@ public class SetRoadHazardActivity extends AppCompatActivity {
         final Button other = (Button)findViewById((R.id.otherHazardButton));
         other.setBackgroundColor(Color.GRAY);
         buttons.add(other);
+        if (report.reportDO.getRoadHazard() != -1)
+        {
+            roadHazard = report.reportDO.getRoadHazard();
+            buttons.elementAt(roadHazard).setBackgroundColor(Color.DKGRAY);
+            previousChoice = report.reportDO.getRoadHazard();
+        }
         potholes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -147,18 +155,26 @@ public class SetRoadHazardActivity extends AppCompatActivity {
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                navigateToNextPage();
+                if(previousChoice != -1) {
+                    navigateToNextPage();
+                }
             }
         });
     }
 
     private void navigateToNextPage(){
-        for (int i = 0; i < report.reportImages.size(); i++)
+        report.reportDO.setRoadHazard(previousChoice);
+        if (allow_edit)
         {
-            report.reportImages.elementAt(i).SetRoadHazard(previousChoice);
+            Intent intent = new Intent(this, PreviewReportActivity.class);
+            intent.putExtra("new_report", report);
+            startActivity(intent);
         }
-        Intent intent = new Intent(this, RoadFeaturesActivity.class);
-        intent.putExtra("new_report", report);
-        startActivity(intent);
+        else
+        {
+            Intent intent = new Intent(this, ImageUploadActivity.class);
+            intent.putExtra("new_report", report);
+            startActivity(intent);
+        }
     }
 }

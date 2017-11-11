@@ -5,6 +5,9 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
+import android.media.ExifInterface;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -23,6 +26,8 @@ import com.amazonaws.ClientConfiguration;
 import com.amazonaws.mobile.auth.core.IdentityManager;
 import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBMapper;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient;
+import com.amazonaws.services.dynamodbv2.model.ScanRequest;
+import com.amazonaws.services.dynamodbv2.model.ScanResult;
 import com.mobilizedconstruction.R;
 import com.mobilizedconstruction.model.Report;
 
@@ -44,27 +49,69 @@ public class PreviewReportActivity extends AppCompatActivity {
         showButtons = getIntent().getBooleanExtra("showButtons", true);
         report = (Report)intent.getSerializableExtra("new_report");
         final Button publishButton = (Button)findViewById(R.id.PublishButton);
+        final Button editCategoryButton = (Button)findViewById(R.id.EditCategoryButton);
+        final Button editFeaturesButton = (Button)findViewById(R.id.EditFeaturesButton);
+        final Button editCommentButton = (Button)findViewById(R.id.EditCommentButton);
+
         publishButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                UpdateReport();
+                boolean connected = false;
+                ConnectivityManager connectivityManager = (ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
+                if(connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE).getState() == NetworkInfo.State.CONNECTED ||
+                        connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI).getState() == NetworkInfo.State.CONNECTED) {
+                    //we are connected to a network
+                    connected = true;
+                }
+                else
+                    connected = false;
+                if (connected) {
+                    UpdateReport();
+                }
+                else
+                {
+                    saveLocally();
+                }
             }
         });
-        final Button saveButton = (Button)findViewById(R.id.SaveButton);
 
-        saveButton.setOnClickListener(new View.OnClickListener() {
+        editCategoryButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                saveLocally();
+                Intent intent = new Intent(context, SetRoadHazardActivity.class);
+                intent.putExtra("new_report", report);
+                intent.putExtra("allow_edit", true);
+                startActivity(intent);
             }
         });
+
+        editFeaturesButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context, RoadFeaturesActivity.class);
+                intent.putExtra("new_report", report);
+                intent.putExtra("allow_edit", true);
+                startActivity(intent);
+            }
+        });
+
+        editCommentButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context, AddCommentActivity.class);
+                intent.putExtra("new_report", report);
+                startActivity(intent);
+            }
+        });
+
         if(showButtons == false)
         {
             publishButton.setVisibility(View.INVISIBLE);
-            saveButton.setVisibility(View.INVISIBLE);
+            editCategoryButton.setVisibility(View.INVISIBLE);
+            editFeaturesButton.setVisibility(View.INVISIBLE);
+            editCommentButton.setVisibility(View.INVISIBLE);
         }
         LinearLayout linearLayout = (LinearLayout) findViewById(R.id.preview_LL);
-        HorizontalScrollView scrollView = (HorizontalScrollView) findViewById(R.id.preview_SV);
         for (int i = 0; i < report.reportImages.size(); i++)
         {
             ImageView imageView = new ImageView(this);
@@ -80,6 +127,8 @@ public class PreviewReportActivity extends AppCompatActivity {
         }
         final TextView commentTextView = (TextView) findViewById(R.id.CommentTextView);
         commentTextView.setText(report.reportDO.getComment());
+        final TextView locationTextView = (TextView) findViewById(R.id.LocationTextView);
+        final TextView categoryTextView = (TextView) findViewById(R.id.CategoryTextView);
         final TextView featuresTextView = (TextView) findViewById(R.id.FeaturesTextView);
         String longitude = "N/A";
         String latitude = "N/A";
@@ -93,22 +142,21 @@ public class PreviewReportActivity extends AppCompatActivity {
         hazards.add("Accidents");
         hazards.add("Street Signs");
         hazards.add("Other");
-        if (report.reportImages.size() > 0)
+        hazard = hazards.elementAt(report.reportDO.getRoadHazard());
+        if (report.reportDO.getLatitude() != -1)
         {
-            hazard = hazards.elementAt(report.reportImages.elementAt(0).GetReportImage().getRoadHazard());
-            if (report.reportImages.elementAt(0).GetReportImage().getLatitude() != -1)
-            {
-                latitude = report.reportImages.elementAt(0).GetReportImage().getLatitude().toString();
-            }
-            if (report.reportImages.elementAt(0).GetReportImage().getLatitude() != -1)
-            {
-                longitude = report.reportImages.elementAt(0).GetReportImage().getLatitude().toString();
-            }
+            latitude = report.reportDO.getLatitude().toString();
         }
-        String features = "Longitude: " + longitude + '\n';
-        features = features + "Latitude: " + latitude + '\n';
-        features = features + "Road Hazard: " + hazard + '\n';
-        features = features + "Severity: " + report.reportDO.getSeverity() +'\n';
+        if (report.reportDO.getLongitude() != -1)
+        {
+            longitude = report.reportDO.getLongitude().toString();
+        }
+        String location = "Longitude: " + longitude + '\n';
+        location = location + "Latitude: " + latitude + '\n';
+        locationTextView.setText(location);
+        String road_hazard = "Road Hazard: " + hazard + '\n';
+        categoryTextView.setText(road_hazard);
+        String features = "Severity: " + report.reportDO.getSeverity() +'\n';
         String roadDirection = "";
         if (report.reportDO.getRoadDirection() == 0)
             roadDirection = "Left";
@@ -128,22 +176,30 @@ public class PreviewReportActivity extends AppCompatActivity {
                 .dynamoDBClient(dynamoDBClient)
                 .awsConfiguration(Application.awsConfiguration)
                 .build();
-
-        for (int i = 0; i < report.reportImages.size(); i++)
-        {
-            report.reportImages.elementAt(i).uploadToS3(context);
-            //report.reportImages.elementAt(i).fetchFromDB(report.reportImages.elementAt(i).GetReportImage().getReportID(),report.reportImages.elementAt(i).GetReportImage().getIndex(),context);
-        }
         final Intent intent = new Intent(this, ReportCreationActivity.class);
         new Thread(new Runnable() {
             @Override
             public void run() {
                 try {
+                    ScanRequest scanRequest = new ScanRequest()
+                            .withTableName("mobilizedconstructio-mobilehub-516637937-Report");
+                    AmazonDynamoDBClient dynamoDBClient =
+                            new AmazonDynamoDBClient(IdentityManager.getDefaultIdentityManager()
+                                    .getCredentialsProvider(), new ClientConfiguration());
+                    ScanResult result = dynamoDBClient.scan(scanRequest);
+                    Integer id = result.getCount() + 1;
+                    report.reportDO.setReportID(id);
                     mapper.save(report.reportDO);
                     if(report.filePath!=null) {
                         File dir = getFilesDir();
                         File file = new File(report.filePath);
                         file.delete();
+                    }
+                    for (int i = 0; i < report.reportImages.size(); i++)
+                    {
+                        report.reportImages.elementAt(i).setReportID(id);
+                        report.reportImages.elementAt(i).uploadToS3(context);
+                        //report.reportImages.elementAt(i).fetchFromDB(report.reportImages.elementAt(i).GetReportImage().getReportID(),report.reportImages.elementAt(i).GetReportImage().getIndex(),context);
                     }
                     Log.d(LOG_TAG, "Successfully updated");
                     startActivity(intent);

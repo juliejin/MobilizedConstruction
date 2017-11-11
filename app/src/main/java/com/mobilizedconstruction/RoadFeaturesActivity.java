@@ -17,15 +17,21 @@ import com.mobilizedconstruction.R;
 import com.mobilizedconstruction.model.Report;
 import com.mobilizedconstruction.model.ReportDO;
 
+import java.util.Vector;
+
 public class RoadFeaturesActivity extends AppCompatActivity {
     private static final String LOG_TAG = RoadFeaturesActivity.class.getSimpleName();
     protected int severity = -1;
     protected int direction = -1;
+    boolean allow_edit = false;
     Report report;
     DynamoDBMapper mapper;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_road_features);
+        Intent intent = getIntent();
+        report = (Report)intent.getSerializableExtra("new_report");
+        allow_edit = intent.getBooleanExtra("allow_edit", false);
         final Button severityButton1 = (Button) findViewById(R.id.severity1Button);
         final Button severityButton2 = (Button) findViewById(R.id.severity2Button);
         final Button severityButton3 = (Button) findViewById(R.id.severity3Button);
@@ -33,6 +39,44 @@ public class RoadFeaturesActivity extends AppCompatActivity {
         final Button rightDirectionButton = (Button) findViewById(R.id.rightDirectionButton);
         final Button bothDirectionButton = (Button) findViewById(R.id.bothDirectionButton);
         final Button nextButton = (Button) findViewById(R.id.nextButton);
+        Vector<Button> severityButtons = new Vector<Button>();
+        Vector<Button> directionButtons = new Vector<Button>();
+        severityButtons.add(severityButton1);
+        severityButtons.add(severityButton2);
+        severityButtons.add(severityButton3);
+        directionButtons.add(leftDirectionButton);
+        directionButtons.add(rightDirectionButton);
+        directionButtons.add(bothDirectionButton);
+        if(report.reportDO.getSeverity() != -1)
+        {
+            severity = report.reportDO.getSeverity();
+            for (int i = 1; i < 4; i++)
+            {
+                if (i == severity)
+                {
+                    severityButtons.elementAt(i - 1).setBackgroundResource(R.drawable.round_button_clicked_folder);
+                }
+                else
+                {
+                    severityButtons.elementAt(i - 1).setBackgroundResource(R.drawable.round_button_folder);
+                }
+            }
+        }
+        if(report.reportDO.getRoadDirection() != -1)
+        {
+            direction = report.reportDO.getRoadDirection();
+            for (int i = 0; i < 3; i++)
+            {
+                if (i == direction)
+                {
+                    directionButtons.elementAt(i).setBackgroundResource(R.drawable.round_button_clicked_folder);
+                }
+                else
+                {
+                    directionButtons.elementAt(i).setBackgroundResource(R.drawable.round_button_folder);
+                }
+            }
+        }
         severityButton1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -87,9 +131,6 @@ public class RoadFeaturesActivity extends AppCompatActivity {
                 direction = 2;
             }
         });
-
-        Intent intent = getIntent();
-        report = (Report)intent.getSerializableExtra("new_report");
         nextButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
@@ -100,18 +141,23 @@ public class RoadFeaturesActivity extends AppCompatActivity {
                     //UpdateReport();
                     navigateToPreview();
                 }
-                else
-                {
-
-                }
             }
         });
     }
 
     public void navigateToPreview(){
-        Intent intent = new Intent(this, PreviewReportActivity.class);
-        intent.putExtra("new_report", report);
-        startActivity(intent);
+        if (allow_edit)
+        {
+            Intent intent = new Intent(this, PreviewReportActivity.class);
+            intent.putExtra("new_report", report);
+            startActivity(intent);
+        }
+        else
+        {
+            Intent intent = new Intent(this, AddCommentActivity.class);
+            intent.putExtra("new_report", report);
+            startActivity(intent);
+        }
     }
 
 

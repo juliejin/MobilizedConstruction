@@ -17,7 +17,9 @@ import com.mobilizedconstruction.model.ReportDO;
 import com.amazonaws.AmazonClientException;
 import android.util.Log;
 
+import java.io.File;
 import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -50,13 +52,21 @@ public class ReportInfoUpload extends AppCompatActivity {
             @Override
             public void run() {
                 try {
-                    AmazonDynamoDBClient client =
+                    /*AmazonDynamoDBClient client =
                             new AmazonDynamoDBClient(IdentityManager.getDefaultIdentityManager()
                                     .getCredentialsProvider(), new ClientConfiguration());
                     ScanRequest scanRequest = new ScanRequest()
                             .withTableName("mobilizedconstructio-mobilehub-516637937-Report");
                     ScanResult result = client.scan(scanRequest);
-                    Integer id = result.getCount()+1;
+                    */
+                    Integer id = -1;
+                    try{
+                        File fileshandler = getFilesDir();
+                        File[] files =  fileshandler.listFiles();
+                        id = -1 * (files.length + 2);
+                    }catch (Exception ex){
+                        Log.e(LOG_TAG, "failed reading reports : " + ex.getMessage(), ex);
+                    }
                     String user = " ";
                     IdentityManager identityManager = IdentityManager.getDefaultIdentityManager();
                     if(identityManager!=null) {
@@ -64,7 +74,7 @@ public class ReportInfoUpload extends AppCompatActivity {
                     }
                     Date currentDate = new Date();
                     SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
-                    final ReportDO reportDO = new ReportDO(id,"",formatter.format(currentDate).toString(),0,0,0,user);
+                    final ReportDO reportDO = new ReportDO(id,"",formatter.format(currentDate).toString(),0,0.0, 0.0, 0, 0,0,user);
                     Report report = new Report(reportDO);
                     //mapper.save(report);
                     intent.putExtra("new_report",report);

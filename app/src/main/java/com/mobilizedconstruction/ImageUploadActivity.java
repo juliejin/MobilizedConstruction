@@ -7,6 +7,8 @@ import android.content.Context;
 import android.content.pm.PackageManager;
 import android.media.ExifInterface;
 import android.os.AsyncTask;
+import android.os.Build;
+import android.support.annotation.RequiresApi;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -44,7 +46,6 @@ import com.amazonaws.services.s3.AmazonS3Client;
 import com.amazonaws.services.s3.model.CannedAccessControlList;
 import com.amazonaws.services.s3.model.PutObjectRequest;
 import com.mobilizedconstruction.R;
-import com.mobilizedconstruction.demo.UserFilesDemoFragment;
 import com.mobilizedconstruction.model.Report;
 import com.mobilizedconstruction.model.ReportDO;
 import com.mobilizedconstruction.model.Image;
@@ -128,8 +129,8 @@ public class ImageUploadActivity extends AppCompatActivity {
         startActivityForResult(galleryIntent, RESULT_LOAD_IMG);
     }
 
-    private void insertImage(String filePath, File imageFile, int index, Double lng, Double lat, Integer reportID){
-        Image image = new Image(filePath, imageFile, index, lng, lat, reportID);
+    private void insertImage(String filePath, File imageFile, int index, Integer reportID){
+        Image image = new Image(filePath, imageFile, index, reportID);
         report.insertImage(image);
 
     }
@@ -163,26 +164,7 @@ public class ImageUploadActivity extends AppCompatActivity {
                 {
                     imageFile = new File(imgDecodableString);
                     cursor.close();
-                    ExifInterface exif = new ExifInterface(imgDecodableString);
-                    float[] latLong = new float[2];
-                    float latitude = 0;
-                    float longitude = 0;
-
-//Check if Latitude and Longitude can be retrieved
-                    if(exif.getLatLong(latLong))
-                    {
-                        latitude = latLong[0];
-                        longitude = latLong[1];
-                    }
-                    else
-                    {
-                        //Fallback
-                        latitude = -1;
-                        longitude = -1;
-                    }
-                    Double long_double = (double)longitude;
-                    Double lat_double = (double)latitude;
-                    Image image = new Image(imgDecodableString, imageFile, imageButtonVector.size(), long_double, lat_double, report.reportDO.getReportID());
+                    Image image = new Image(imgDecodableString, imageFile, imageButtonVector.size(), report.reportDO.getReportID());
                     report.insertImage(image);
                     ImageButton imageButton = new ImageButton(context);
                     Bitmap myBitmap = BitmapFactory
@@ -220,7 +202,7 @@ public class ImageUploadActivity extends AppCompatActivity {
                 int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
                 imgDecodableString = cursor.getString(columnIndex);
                 imageFile = new File(imgDecodableString);
-                Image image = new Image(imgDecodableString, imageFile, imageButtonVector.size(), 0.0, 0.0, report.reportDO.getReportID());
+                Image image = new Image(imgDecodableString, imageFile, imageButtonVector.size(), report.reportDO.getReportID());
                 report.insertImage(image);
 
                 imgView.setImageBitmap(myBitmap);
@@ -242,8 +224,10 @@ public class ImageUploadActivity extends AppCompatActivity {
                         Toast.LENGTH_LONG).show();
             }
         } catch (Exception e) {
-            Toast.makeText(this, "Something went wrong.", Toast.LENGTH_LONG)
-                    .show();
+            //Toast.makeText(this, "Something went wrong.", Toast.LENGTH_LONG)
+              //      .show();
+            Toast.makeText(this, e.getMessage(), Toast.LENGTH_LONG)
+                  .show();
         }
         for (int i = 0; i < imageButtonVector.size(); i++)
         {
@@ -261,12 +245,13 @@ public class ImageUploadActivity extends AppCompatActivity {
     protected void navigateToNextPage(){
         //uploadImageToAWS();
         report.reportDO.setImageCount(imageButtonVector.size());
-        Intent intent = new Intent(this, AddCommentActivity.class);
+        Intent intent = new Intent(this, RoadFeaturesActivity.class);
         intent.putExtra("new_report", report);
         startActivity(intent);
     }
 
 
+    @RequiresApi(api = Build.VERSION_CODES.M)
     private void uploadImageToAWS() {
         final Context context = this.getApplicationContext();
         new UserFileManager.Builder()

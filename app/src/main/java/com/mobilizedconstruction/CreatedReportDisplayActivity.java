@@ -1,7 +1,11 @@
 package com.mobilizedconstruction;
 
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.location.Location;
+import android.location.LocationManager;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -22,6 +26,7 @@ import android.widget.TextView;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.OutputStream;
+import java.text.DecimalFormat;
 import java.util.Map;
 import java.util.HashMap;
 import java.util.Vector;
@@ -34,6 +39,9 @@ import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient;
 import com.amazonaws.services.dynamodbv2.model.ScanRequest;
 import com.amazonaws.services.dynamodbv2.model.ScanResult;
 import com.amazonaws.services.dynamodbv2.model.AttributeValue;
+import com.amazonaws.services.s3.AmazonS3;
+import com.amazonaws.services.s3.AmazonS3Client;
+import com.amazonaws.services.s3.model.PutObjectRequest;
 import com.mobilizedconstruction.R;
 import com.mobilizedconstruction.model.Report;
 import com.mobilizedconstruction.model.ReportDO;
@@ -49,19 +57,18 @@ public class CreatedReportDisplayActivity extends AppCompatActivity {
     final Context context = this;
     LinearLayout linearLayout;
     Vector<Button> tableButtons;
-    Boolean scanStopped = false;
+    boolean scanFinished = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_created_report_display);
-        linearLayout = (LinearLayout)findViewById(R.id.ll);
+        linearLayout = (LinearLayout) findViewById(R.id.ll);
         createdReport = new Vector<Report>();
         tableButtons = new Vector<Button>();
         scanTable();
     }
 
-    private void scanTable(){
-
+    private void scanTable() {
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -72,8 +79,8 @@ public class CreatedReportDisplayActivity extends AppCompatActivity {
                             new AmazonDynamoDBClient(IdentityManager.getDefaultIdentityManager()
                                     .getCredentialsProvider(), new ClientConfiguration());
                     //ScanRequest scanRequest = new ScanRequest()
-                      //      .withTableName("mobilizedconstructio-mobilehub-516637937-Report");
-                    Map<String, String> attributeNames = new HashMap<String, String >();
+                    //      .withTableName("mobilizedconstructio-mobilehub-516637937-Report");
+                    Map<String, String> attributeNames = new HashMap<String, String>();
                     attributeNames.put("#userID", "User ID");
                     Map<String, AttributeValue> expressionAttributeValues =
                             new HashMap<String, AttributeValue>();
@@ -95,22 +102,32 @@ public class CreatedReportDisplayActivity extends AppCompatActivity {
                         Integer severity = Integer.valueOf(item.get("Severity").getN());
                         String date_created = item.get("Date Created").getS();
                         Integer road_direction = Integer.valueOf(item.get("Road Direction").getN());
+                        Double latitude = Double.valueOf(item.get("Latitude").getN());
+                        Double longitude = Double.valueOf(item.get("Longitude").getN());
+                        Integer road_hazard = Integer.valueOf(item.get("Road Hazard").getN());
+
                         ReportDO reportdo = new ReportDO(report_ID, comment, date_created, image_count,
-                                road_direction, severity, userID);
+                                latitude, longitude, road_direction, road_hazard, severity, userID);
                         Report report = new Report(reportdo);
                         createdReport.add(report);
                     }
                 } catch (final AmazonClientException ex) {
-                    Log.e(LOG_TAG, "Failed fetching reports : " + ex.getMessage(), ex);
+                    System.out.println(ex.getMessage());
+                } finally {
+                    scanFinished = true;
                 }
-                scanStopped = true;
             }
         }).start();
 
-        while(!scanStopped)
+        while(!scanFinished)
         {
-
+            try {
+                Thread.sleep(50);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }
+
         if (createdReport.size() == 0) {
            // display no report
         }
@@ -124,8 +141,26 @@ public class CreatedReportDisplayActivity extends AppCompatActivity {
     }
 
     protected void addNewButton(final int row_index){
+        Vector<String> hazards = new Vector<String>();
+        hazards.add("Potholes");
+        hazards.add("Speed Bumps");
+        hazards.add("Drainage");
+        hazards.add("Road Debris");
+        hazards.add("Inclement Weather");
+        hazards.add("Accidents");
+        hazards.add("Street Signs");
+        hazards.add("Other");
+
+        Double latitude = createdReport.elementAt(row_index).reportDO.getLatitude();
+        Double longitude = createdReport.elementAt(row_index).reportDO.getLongitude();
+        DecimalFormat myFormat = new DecimalFormat("0.000");
+        String latString = myFormat.format(latitude);
+        String longstring = myFormat.format(longitude);
+        String text = hazards.elementAt(createdReport.elementAt(row_index).reportDO.getRoadHazard())
+                + '\n' + " at (Latitude " + latString  +", Longitude " + longstring + ")"
+                + '\n' + "on " + createdReport.elementAt(row_index).reportDO.getDateCreated();
         Button reportButton = new Button(this);
-        reportButton.setText("Report created at " + createdReport.elementAt(row_index).reportDO.getDateCreated());
+        reportButton.setText(text);
         reportButton.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
         reportButton.setId(row_index + 1);
         reportButton.setOnClickListener(new OnClickListener() {
@@ -143,13 +178,10 @@ public class CreatedReportDisplayActivity extends AppCompatActivity {
         Report report = new Report(createdReport.elementAt(index).reportDO);
         for (int i = 0; i < report.reportDO.getImageCount(); i++)
         {
-            ReportImageDO imaged = new ReportImageDO(report.reportDO.getReportID(), index, 0.0,0.0);
+            ReportImageDO imaged = new ReportImageDO(report.reportDO.getReportID(), index);
             Image image = new Image(imaged);
             image.fetchFromDB(report.reportDO.getReportID(), i);
             Bitmap imagebit = image.getImageBitmap();
-            while(imagebit==null){
-                imagebit = image.getImageBitmap();
-            }
             OutputStream os;
             String filename = image.GetReportImage().getImageURL();
             filename = filename.replace("uploads/","");

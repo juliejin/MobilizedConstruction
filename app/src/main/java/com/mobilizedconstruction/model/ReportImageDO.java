@@ -21,19 +21,13 @@ import java.util.Set;
 //data structure that matches the database tables
 public class ReportImageDO implements Serializable{
     private Integer _reportID;
-    private int _index;
+    private Integer _index;
     private String _imageURL;
-    private Double _latitude;
-    private Double _longitude;
-    private Integer _roadHazard;
 
-    public ReportImageDO(Integer reportId, int index, Double latitude, Double longitude){
-        this._reportID = reportId;
-        this._index = index;
-        this._latitude = latitude;
-        this._longitude = longitude;
+    public ReportImageDO(int reportID, int index){
+        _reportID = reportID;
+        _index = index;
     }
-
 
     @DynamoDBHashKey(attributeName = "ReportID")
     @DynamoDBAttribute(attributeName = "ReportID")
@@ -46,11 +40,11 @@ public class ReportImageDO implements Serializable{
     }
     @DynamoDBRangeKey(attributeName = "Index")
     @DynamoDBAttribute(attributeName = "Index")
-    public int getIndex() {
+    public Integer getIndex() {
         return _index;
     }
 
-    public void setIndex(final int _index) {
+    public void setIndex(final Integer _index) {
         this._index = _index;
     }
     @DynamoDBAttribute(attributeName = "ImageURL")
@@ -60,30 +54,6 @@ public class ReportImageDO implements Serializable{
 
     public void setImageURL(final String _imageURL) {
         this._imageURL = _imageURL;
-    }
-    @DynamoDBAttribute(attributeName = "Latitude")
-    public Double getLatitude() {
-        return _latitude;
-    }
-
-    public void setLatitude(final Double _latitude) {
-        this._latitude = _latitude;
-    }
-    @DynamoDBAttribute(attributeName = "Longitude")
-    public Double getLongitude() {
-        return _longitude;
-    }
-
-    public void setLongitude(final Double _longitude) {
-        this._longitude = _longitude;
-    }
-    @DynamoDBAttribute(attributeName = "Road Hazard")
-    public Integer getRoadHazard() {
-        return _roadHazard;
-    }
-
-    public void setRoadHazard(final Integer _roadHazard) {
-        this._roadHazard = _roadHazard;
     }
 
 }

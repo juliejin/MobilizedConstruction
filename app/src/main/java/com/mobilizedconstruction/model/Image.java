@@ -66,8 +66,12 @@ public class Image implements Serializable{
         this.reportImage = image;
         this.index = image.getIndex();
         this.FilePath = image.getImageURL();
-
     }
+
+    public void setReportID(Integer id){
+        reportImage.setReportID(id);
+    }
+
 
 
     /**
@@ -81,12 +85,11 @@ public class Image implements Serializable{
         this.reportImage = image;
     }
 
-    public Image(String filePath, File imageFile, Integer index, Double lng, Double lat, Integer reportID){
+    public Image(String filePath, File imageFile, Integer index, Integer reportID){
         this.index = index;
         this.FilePath = filePath;
         this.imageFile = imageFile;
-        this.reportImage = new ReportImageDO(reportID, index, lng, lat);
-
+        this.reportImage = new ReportImageDO(reportID, index);
     }
     public void SetImageUrl(String URL){
         this.reportImage.setImageURL(URL);
@@ -96,9 +99,7 @@ public class Image implements Serializable{
 
     public void SetFilePath(String path){this.FilePath = path;}
 
-    public void SetRoadHazard(Integer roadHazard){
-        this.reportImage.setRoadHazard(roadHazard);
-    }
+
 
     public String getFilePath(){
         return FilePath;
@@ -157,9 +158,11 @@ public class Image implements Serializable{
     }
 
     public void fetchFromDB(final Integer reportID,final int index) {
+
         new Thread(new Runnable() {
             @Override
             public void run() {
+
                     AmazonDynamoDBClient client =
                             new AmazonDynamoDBClient(IdentityManager.getDefaultIdentityManager()
                                     .getCredentialsProvider(), new ClientConfiguration());
@@ -174,15 +177,7 @@ public class Image implements Serializable{
                     for (Map<String, AttributeValue> item : result.getItems()) {
                         if (Integer.parseInt(item.get("ReportID").getN()) == reportID && Integer.parseInt(item.get("Index").getN()) == index)
                         {
-                            if(item.get("Longitude")!=null){
-                                reportImage.setLongitude(Double.parseDouble(item.get("Longitude").getN()));
-                            }
-                            if(item.get("Latitude")!=null){
-                                reportImage.setLatitude(Double.parseDouble(item.get("Latitude").getN()));
-                            }
-                            if(item.get("Road Hazard")!=null){
-                                reportImage.setRoadHazard(Integer.parseInt(item.get("Road Hazard").getN()));
-                            }
+
                             if (item.get("ImageURL") != null) {
                                 String url = item.get("ImageURL").getS();
                                 try {
@@ -200,15 +195,20 @@ public class Image implements Serializable{
                         }
                     }
 
-            }
-        }).start();
+                }
 
+        }).start();
     }
 
     public Bitmap getImageBitmap(){
+        while (imageBitmap == null)
+        {
+            try {
+                Thread.sleep(50);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
         return imageBitmap;
     }
-
 }
-
-

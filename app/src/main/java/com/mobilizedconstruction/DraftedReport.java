@@ -21,6 +21,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.ObjectInputStream;
+import java.text.DecimalFormat;
 import java.util.Vector;
 
 public class DraftedReport extends AppCompatActivity {
@@ -52,7 +53,24 @@ public class DraftedReport extends AppCompatActivity {
             final Report report = savedReports.get(i);
             //row.setLayoutParams(new TableLayout.LayoutParams());
             Button reportButton = new Button(this);
-            reportButton.setText("Date Created: " + report.reportDO.getDateCreated());
+            Vector<String> hazards = new Vector<String>();
+            hazards.add("Potholes");
+            hazards.add("Speed Bumps");
+            hazards.add("Drainage");
+            hazards.add("Road Debris");
+            hazards.add("Inclement Weather");
+            hazards.add("Accidents");
+            hazards.add("Street Signs");
+            hazards.add("Other");
+            Double latitude = report.reportDO.getLatitude();
+            Double longitude = report.reportDO.getLongitude();
+            DecimalFormat myFormat = new DecimalFormat("0.000");
+            String latString = myFormat.format(latitude);
+            String longstring = myFormat.format(longitude);
+            String text = hazards.elementAt(report.reportDO.getRoadHazard()) + '\n'
+                    + "(Latitude: " + latString + ", Longitude: " + longstring + ")" + '\n'
+                    + "on " + report.reportDO.getDateCreated();
+            reportButton.setText(text);
             reportButton.setLayoutParams(new LayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT)));
             final Intent intent = new Intent(this, PreviewReportActivity.class);
             reportButton.setOnClickListener(new View.OnClickListener() {
