@@ -59,3 +59,10 @@
 				Note that your report is published only if you clicked the “Publish” button
 			Or Click “Save” button to save your report locally -> Go back to the Main Page
 				Note that your report is saved locally only if you clicked the “Save” button
+
+
+Testing:
+Run php scripts on server
+e.g. php -S 127.0.0.1:8080/user_get.php
+php -S 127.0.0.1:port/user_put.php
+Then run the project and login/signup with username
