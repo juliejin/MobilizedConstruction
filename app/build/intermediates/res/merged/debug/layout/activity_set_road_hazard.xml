@@ -7,107 +7,89 @@
     tools:context="com.mobilizedconstruction.SetRoadHazardActivity">
 
     <Button
-        android:id="@+id/potholesButton"
-        android:layout_width="120dp"
-        android:layout_height="70dp"
+        android:id="@+id/pavedPotholeButton"
+        android:layout_width="160dp"
+        android:layout_height="100dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginStart="60dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="32dp"
-        android:text="Potholes"
-        app:layout_constraintEnd_toStartOf="@+id/speedBumpsButton"
+        android:text="Paved Pothole"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintEnd_toStartOf="@+id/gravelPotholeButton"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <Button
-        android:id="@+id/speedBumpsButton"
-        android:layout_width="120dp"
-        android:layout_height="70dp"
-        android:layout_marginEnd="60dp"
+        android:id="@+id/gravelPotholeButton"
+        android:layout_width="160dp"
+        android:layout_height="100dp"
+        android:layout_marginRight="16dp"
         android:layout_marginTop="32dp"
-        android:text="Speed Bumps"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:text="Gravel Pothole"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <Button
+        android:id="@+id/floodingButton"
+        android:layout_width="160dp"
+        android:layout_height="100dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:text="Flooding"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintEnd_toStartOf="@+id/drainageButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pavedPotholeButton" />
 
     <Button
         android:id="@+id/drainageButton"
-        android:layout_width="120dp"
-        android:layout_height="70dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="60dp"
+        android:layout_width="160dp"
+        android:layout_height="100dp"
+        android:layout_marginEnd="16dp"
         android:layout_marginTop="8dp"
         android:text="Drainage"
-        app:layout_constraintEnd_toStartOf="@+id/roadDebrisButton"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/potholesButton" />
-
-    <Button
-        android:id="@+id/roadDebrisButton"
-        android:layout_width="120dp"
-        android:layout_height="70dp"
-        android:layout_marginEnd="60dp"
-        android:layout_marginTop="8dp"
-        android:text="Road Debris"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/speedBumpsButton" />
+        app:layout_constraintTop_toBottomOf="@+id/gravelPotholeButton" />
 
     <Button
-        android:id="@+id/inclementWeatherButton"
-        android:layout_width="120dp"
-        android:layout_height="70dp"
+        android:id="@+id/debrisButton"
+        android:layout_width="160dp"
+        android:layout_height="100dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginStart="60dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
-        android:text="Inclement Weather"
-        app:layout_constraintEnd_toStartOf="@+id/accidentsButton"
+        android:text="Debris"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintEnd_toStartOf="@+id/otherButton"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/floodingButton" />
+
+    <Button
+        android:id="@+id/otherButton"
+        android:layout_width="160dp"
+        android:layout_height="100dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="8dp"
+        android:text="Other"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/drainageButton" />
 
     <Button
-        android:id="@+id/accidentsButton"
-        android:layout_width="120dp"
-        android:layout_height="70dp"
-        android:layout_marginEnd="60dp"
-        android:layout_marginTop="8dp"
-        android:text="Accidents"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/roadDebrisButton" />
-
-    <Button
-        android:id="@+id/streetSignsButton"
-        android:layout_width="120dp"
-        android:layout_height="70dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="8dp"
-        android:text="Street Signs"
-        app:layout_constraintEnd_toStartOf="@+id/otherHazardButton"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inclementWeatherButton" />
-
-    <Button
-        android:id="@+id/otherHazardButton"
-        android:layout_width="120dp"
-        android:layout_height="70dp"
-        android:layout_marginEnd="60dp"
-        android:layout_marginTop="8dp"
-        android:text="Other"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/accidentsButton" />
-
-    <Button
         android:id="@+id/submitHazardButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginRight="64dp"
-        android:layout_marginStart="180dp"
-        android:layout_marginTop="8dp"
+        android:layout_width="240dp"
+        android:layout_height="80dp"
+        android:layout_marginBottom="32dp"
         android:text="Submit"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/otherHazardButton"
-        app:layout_constraintVertical_bias="0.456" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textView3"
@@ -117,7 +99,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
-        android:text="Road Hazard"
+        android:text="Select Road Hazard"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

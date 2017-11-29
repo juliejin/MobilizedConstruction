@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
-import android.media.ExifInterface;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.support.v7.app.AppCompatActivity;
@@ -14,11 +13,9 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
-import android.widget.ScrollView;
 import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.ImageView;
-import android.widget.HorizontalScrollView;
 import android.widget.Toast;
 
 import com.amazonaws.AmazonClientException;
@@ -28,7 +25,6 @@ import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBMapper;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient;
 import com.amazonaws.services.dynamodbv2.model.ScanRequest;
 import com.amazonaws.services.dynamodbv2.model.ScanResult;
-import com.mobilizedconstruction.R;
 import com.mobilizedconstruction.model.Report;
 
 import java.io.File;
@@ -36,7 +32,7 @@ import java.io.ObjectOutputStream;
 import java.util.Vector;
 
 public class PreviewReportActivity extends AppCompatActivity {
-    private static final String LOG_TAG = RoadFeaturesActivity.class.getSimpleName();
+    private static final String LOG_TAG = SetRoadDirectionActivity.class.getSimpleName();
     Report report;
     DynamoDBMapper mapper;
     Boolean showButtons = true;
@@ -52,7 +48,14 @@ public class PreviewReportActivity extends AppCompatActivity {
         final Button editCategoryButton = (Button)findViewById(R.id.EditCategoryButton);
         final Button editFeaturesButton = (Button)findViewById(R.id.EditFeaturesButton);
         final Button editCommentButton = (Button)findViewById(R.id.EditCommentButton);
-
+        if (report.reportDO.getRoadHazard() == 5)
+        {
+            editFeaturesButton.setVisibility(View.INVISIBLE);
+        }
+        else
+        {
+            editFeaturesButton.setVisibility(View.VISIBLE);
+        }
         publishButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -88,7 +91,7 @@ public class PreviewReportActivity extends AppCompatActivity {
         editFeaturesButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(context, RoadFeaturesActivity.class);
+                Intent intent = new Intent(context, SetSeverityActivity.class);
                 intent.putExtra("new_report", report);
                 intent.putExtra("allow_edit", true);
                 startActivity(intent);
@@ -134,13 +137,11 @@ public class PreviewReportActivity extends AppCompatActivity {
         String latitude = "N/A";
         String hazard = "N/A";
         Vector<String> hazards = new Vector<String>();
-        hazards.add("Potholes");
-        hazards.add("Speed Bumps");
+        hazards.add("Paved Potholes");
+        hazards.add("Gravel Pothole");
+        hazards.add("Flooding");
         hazards.add("Drainage");
-        hazards.add("Road Debris");
-        hazards.add("Inclement Weather");
-        hazards.add("Accidents");
-        hazards.add("Street Signs");
+        hazards.add("Debris");
         hazards.add("Other");
         hazard = hazards.elementAt(report.reportDO.getRoadHazard());
         if (report.reportDO.getLatitude() != -1)
@@ -156,7 +157,28 @@ public class PreviewReportActivity extends AppCompatActivity {
         locationTextView.setText(location);
         String road_hazard = "Road Hazard: " + hazard + '\n';
         categoryTextView.setText(road_hazard);
-        String features = "Severity: " + report.reportDO.getSeverity() +'\n';
+        String severity = "";
+        if (report.reportDO.getSeverity() == 0)
+        {
+            severity = "Mild";
+        }
+        else if (report.reportDO.getSeverity() == 1)
+        {
+            severity = "Moderate";
+        }
+        else if (report.reportDO.getSeverity() == 2)
+        {
+            severity = "Severe";
+        }
+        else if (report.reportDO.getSeverity() == 3)
+        {
+            severity = "Complete";
+        }
+        else
+        {
+            severity = "N/A";
+        }
+        String features = "Severity: " + severity +'\n';
         String roadDirection = "";
         if (report.reportDO.getRoadDirection() == 0)
             roadDirection = "Left";
@@ -164,6 +186,8 @@ public class PreviewReportActivity extends AppCompatActivity {
             roadDirection = "Right";
         else if (report.reportDO.getRoadDirection() == 2)
             roadDirection = "Both";
+        else
+            roadDirection = "N/A";
         features = features + "Road Direction: " + roadDirection + '\n';
         featuresTextView.setText(features);
     }

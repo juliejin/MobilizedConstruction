@@ -194,7 +194,6 @@ public class Image implements Serializable{
                             }
                         }
                     }
-
                 }
 
         }).start();

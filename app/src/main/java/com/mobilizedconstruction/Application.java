@@ -33,6 +33,7 @@ public class Application extends MultiDexApplication {
     public static AuthUIConfiguration sAuthUIConfiguration =
             new AuthUIConfiguration.Builder()
                     .userPools(true)
+                    .logoResId(R.mipmap.ic_launcher_foreground)
                     .build();
 
     @Override

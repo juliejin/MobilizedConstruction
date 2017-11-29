@@ -1,21 +1,17 @@
 package com.mobilizedconstruction;
 
-import android.*;
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.media.ExifInterface;
-import android.os.AsyncTask;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.content.Intent;
-import android.util.Log;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.net.Uri;
 import android.database.Cursor;
@@ -28,38 +24,21 @@ import android.widget.TableRow;
 import android.widget.Toast;
 import android.graphics.Bitmap;
 import android.graphics.Matrix;
-import android.os.Environment;
 
-import com.amazonaws.ClientConfiguration;
 import com.amazonaws.mobile.auth.core.IdentityManager;
 import com.amazonaws.mobile.config.AWSConfiguration;
 import com.amazonaws.mobile.content.ContentItem;
 import com.amazonaws.mobile.content.ContentProgressListener;
 import com.amazonaws.mobile.content.UserFileManager;
-import com.amazonaws.mobile.util.ImageSelectorUtils;
-import com.amazonaws.mobileconnectors.s3.transferutility.TransferListener;
-import com.amazonaws.mobileconnectors.s3.transferutility.TransferObserver;
-import com.amazonaws.mobileconnectors.s3.transferutility.TransferState;
-import com.amazonaws.mobileconnectors.s3.transferutility.TransferUtility;
-import com.amazonaws.services.s3.AmazonS3;
-import com.amazonaws.services.s3.AmazonS3Client;
-import com.amazonaws.services.s3.model.CannedAccessControlList;
-import com.amazonaws.services.s3.model.PutObjectRequest;
-import com.mobilizedconstruction.R;
 import com.mobilizedconstruction.model.Report;
-import com.mobilizedconstruction.model.ReportDO;
 import com.mobilizedconstruction.model.Image;
-import com.mobilizedconstruction.model.ReportImageDO;
 
 import java.io.File;
-import java.net.URI;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.Set;
 import java.util.concurrent.CountDownLatch;
 import java.util.Vector;
-import java.util.Date;
-import java.text.SimpleDateFormat;
 
 public class ImageUploadActivity extends AppCompatActivity {
     private static final int RESULT_LOAD_IMG = 1;
@@ -101,10 +80,7 @@ public class ImageUploadActivity extends AppCompatActivity {
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (imageButtonVector.size() > 0)
-                {
-                    navigateToNextPage();
-                }
+                navigateToNextPage();
             }
         });
         addImageButton = (ImageButton)findViewById(R.id.addImageButton);
@@ -160,19 +136,37 @@ public class ImageUploadActivity extends AppCompatActivity {
                 cursor.moveToFirst();
                 int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
                 imgDecodableString = cursor.getString(columnIndex);
+                cursor.close();
+                ImageButton imageButton = new ImageButton(context);
+                Bitmap myBitmap = BitmapFactory
+                        .decodeFile(imgDecodableString);
                 if (!decodableSet.contains(imgDecodableString))
                 {
-                    imageFile = new File(imgDecodableString);
-                    cursor.close();
+                    ExifInterface exif = null;
+                    try {
+                        imageFile = new File(imgDecodableString);
+                        exif = new ExifInterface(imageFile.getAbsolutePath());
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                    int orientation = ExifInterface.ORIENTATION_NORMAL;
+                    if (exif != null)
+                        orientation = exif.getAttributeInt(ExifInterface.TAG_ORIENTATION, ExifInterface.ORIENTATION_NORMAL);
+                    switch (orientation) {
+                        case ExifInterface.ORIENTATION_ROTATE_90:
+                            myBitmap = rotateBitmap(myBitmap, 90);
+                            break;
+                        case ExifInterface.ORIENTATION_ROTATE_180:
+                            myBitmap = rotateBitmap(myBitmap, 180);
+                            break;
+
+                        case ExifInterface.ORIENTATION_ROTATE_270:
+                            myBitmap = rotateBitmap(myBitmap, 270);
+                            break;
+                    }
                     Image image = new Image(imgDecodableString, imageFile, imageButtonVector.size(), report.reportDO.getReportID());
                     report.insertImage(image);
-                    ImageButton imageButton = new ImageButton(context);
-                    Bitmap myBitmap = BitmapFactory
-                            .decodeFile(imgDecodableString);
                     myBitmap = Bitmap.createScaledBitmap(myBitmap, 240, 240, true);
-                    Matrix matrix = new Matrix();
-                    matrix.postRotate(90);
-                    myBitmap = Bitmap.createBitmap(myBitmap , 0, 0, myBitmap .getWidth(), myBitmap .getHeight(), matrix, true);
                     imageButton.setImageBitmap(myBitmap);
                     imageButton.setLayoutParams(new TableRow.LayoutParams(240, 240));
                     mapImagetoBitmap.put(imageButton, myBitmap);
@@ -189,7 +183,7 @@ public class ImageUploadActivity extends AppCompatActivity {
                 }
 
             }
-            else if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
+            else if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK && data != null) {
                 Bundle extras = data.getExtras();
                 Bitmap myBitmap = (Bitmap) extras.get("data");
                 Uri selectedImage = data.getData();
@@ -201,10 +195,10 @@ public class ImageUploadActivity extends AppCompatActivity {
                 cursor.moveToFirst();
                 int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
                 imgDecodableString = cursor.getString(columnIndex);
+                cursor.close();
                 imageFile = new File(imgDecodableString);
                 Image image = new Image(imgDecodableString, imageFile, imageButtonVector.size(), report.reportDO.getReportID());
                 report.insertImage(image);
-
                 imgView.setImageBitmap(myBitmap);
                 ImageButton imageButton = new ImageButton(context);
                 myBitmap = Bitmap.createScaledBitmap(myBitmap, 240, 240, true);
@@ -245,8 +239,17 @@ public class ImageUploadActivity extends AppCompatActivity {
     protected void navigateToNextPage(){
         //uploadImageToAWS();
         report.reportDO.setImageCount(imageButtonVector.size());
-        Intent intent = new Intent(this, RoadFeaturesActivity.class);
-        intent.putExtra("new_report", report);
+        Intent intent;
+        if (report.reportDO.getRoadHazard() == 5)
+        {
+            intent = new Intent(this, AddCommentActivity.class);
+            intent.putExtra("new_report", report);
+        }
+        else
+        {
+            intent = new Intent(this, SetSeverityActivity.class);
+            intent.putExtra("new_report", report);
+        }
         startActivity(intent);
     }
 
@@ -325,6 +328,12 @@ public class ImageUploadActivity extends AppCompatActivity {
                 .setMessage(getString(resId, (Object[]) args))
                 .setPositiveButton(android.R.string.ok, null)
                 .show();
+    }
+
+    private static Bitmap rotateBitmap(Bitmap bitmap, int degrees) {
+        Matrix matrix = new Matrix();
+        matrix.postRotate(degrees);
+        return Bitmap.createBitmap(bitmap, 0, 0, bitmap.getWidth(), bitmap.getHeight(), matrix, true);
     }
         /*AsyncTask<String, String, String> _Task = new AsyncTask<String, String, String>() {
 

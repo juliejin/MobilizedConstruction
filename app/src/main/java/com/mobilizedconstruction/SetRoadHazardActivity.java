@@ -25,28 +25,22 @@ public class SetRoadHazardActivity extends AppCompatActivity {
         report = (Report)intent.getSerializableExtra("new_report");
         allow_edit = getIntent().getBooleanExtra("allow_edit", false);
         buttons = new Vector<Button>();
-        final Button potholes = (Button)findViewById(R.id.potholesButton);
-        potholes.setBackgroundColor(Color.GRAY);
-        buttons.add(potholes);
-        final Button speedBumps = (Button)findViewById(R.id.speedBumpsButton);
-        speedBumps.setBackgroundColor(Color.GRAY);
-        buttons.add(speedBumps);
+        final Button pavedPotholes = (Button)findViewById(R.id.pavedPotholeButton);
+        pavedPotholes.setBackgroundColor(Color.GRAY);
+        buttons.add(pavedPotholes);
+        final Button gravelPothole = (Button)findViewById(R.id.gravelPotholeButton);
+        gravelPothole.setBackgroundColor(Color.GRAY);
+        buttons.add(gravelPothole);
+        final Button flooding = (Button)findViewById(R.id.floodingButton);
+        flooding.setBackgroundColor(Color.GRAY);
+        buttons.add(flooding);
         final Button drainage = (Button)findViewById(R.id.drainageButton);
         drainage.setBackgroundColor(Color.GRAY);
         buttons.add(drainage);
-        final Button roadDebris = (Button)findViewById(R.id.roadDebrisButton);
-        roadDebris.setBackgroundColor(Color.GRAY);
-        buttons.add(roadDebris);
-        final Button weather = (Button)findViewById(R.id.inclementWeatherButton);
-        weather.setBackgroundColor(Color.GRAY);
-        buttons.add(weather);
-        final Button accidents = (Button)findViewById(R.id.accidentsButton);
-        accidents.setBackgroundColor(Color.GRAY);
-        buttons.add(accidents);
-        final Button streetSigns = (Button)findViewById(R.id.streetSignsButton);
-        streetSigns.setBackgroundColor(Color.GRAY);
-        buttons.add(streetSigns);
-        final Button other = (Button)findViewById((R.id.otherHazardButton));
+        final Button debris = (Button)findViewById(R.id.debrisButton);
+        debris.setBackgroundColor(Color.GRAY);
+        buttons.add(debris);
+        final Button other = (Button)findViewById(R.id.otherButton);
         other.setBackgroundColor(Color.GRAY);
         buttons.add(other);
         if (report.reportDO.getRoadHazard() != -1)
@@ -55,7 +49,7 @@ public class SetRoadHazardActivity extends AppCompatActivity {
             buttons.elementAt(roadHazard).setBackgroundColor(Color.DKGRAY);
             previousChoice = report.reportDO.getRoadHazard();
         }
-        potholes.setOnClickListener(new View.OnClickListener() {
+        pavedPotholes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 roadHazard = 0;
@@ -63,11 +57,11 @@ public class SetRoadHazardActivity extends AppCompatActivity {
                 {
                     buttons.elementAt(previousChoice).setBackgroundColor(Color.GRAY);
                 }
-                potholes.setBackgroundColor(Color.DKGRAY);
+                pavedPotholes.setBackgroundColor(Color.DKGRAY);
                 previousChoice = 0;
             }
         });
-        speedBumps.setOnClickListener(new View.OnClickListener() {
+        gravelPothole.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 roadHazard = 1;
@@ -75,11 +69,11 @@ public class SetRoadHazardActivity extends AppCompatActivity {
                 {
                     buttons.elementAt(previousChoice).setBackgroundColor(Color.GRAY);
                 }
-                speedBumps.setBackgroundColor(Color.DKGRAY);
+                gravelPothole.setBackgroundColor(Color.DKGRAY);
                 previousChoice = 1;
             }
         });
-        drainage.setOnClickListener(new View.OnClickListener() {
+        flooding.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 roadHazard = 2;
@@ -87,11 +81,11 @@ public class SetRoadHazardActivity extends AppCompatActivity {
                 {
                     buttons.elementAt(previousChoice).setBackgroundColor(Color.GRAY);
                 }
-                drainage.setBackgroundColor(Color.DKGRAY);
+                flooding.setBackgroundColor(Color.DKGRAY);
                 previousChoice = 2;
             }
         });
-        roadDebris.setOnClickListener(new View.OnClickListener() {
+        drainage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 roadHazard = 3;
@@ -99,11 +93,11 @@ public class SetRoadHazardActivity extends AppCompatActivity {
                 {
                     buttons.elementAt(previousChoice).setBackgroundColor(Color.GRAY);
                 }
-                roadDebris.setBackgroundColor(Color.DKGRAY);
+                drainage.setBackgroundColor(Color.DKGRAY);
                 previousChoice = 3;
             }
         });
-        weather.setOnClickListener(new View.OnClickListener() {
+        debris.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 roadHazard = 4;
@@ -111,11 +105,11 @@ public class SetRoadHazardActivity extends AppCompatActivity {
                 {
                     buttons.elementAt(previousChoice).setBackgroundColor(Color.GRAY);
                 }
-                weather.setBackgroundColor(Color.DKGRAY);
+                debris.setBackgroundColor(Color.DKGRAY);
                 previousChoice = 4;
             }
         });
-        accidents.setOnClickListener(new View.OnClickListener() {
+       other.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 roadHazard = 5;
@@ -123,32 +117,8 @@ public class SetRoadHazardActivity extends AppCompatActivity {
                 {
                     buttons.elementAt(previousChoice).setBackgroundColor(Color.GRAY);
                 }
-                accidents.setBackgroundColor(Color.DKGRAY);
-                previousChoice = 5;
-            }
-        });
-        streetSigns.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                roadHazard = 6;
-                if (previousChoice != -1)
-                {
-                    buttons.elementAt(previousChoice).setBackgroundColor(Color.GRAY);
-                }
-                streetSigns.setBackgroundColor(Color.DKGRAY);
-                previousChoice = 6;
-            }
-        });
-        other.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                roadHazard = 7;
-                if (previousChoice != -1)
-                {
-                    buttons.elementAt(previousChoice).setBackgroundColor(Color.GRAY);
-                }
                 other.setBackgroundColor(Color.DKGRAY);
-                previousChoice = 7;
+                previousChoice = 5;
             }
         });
         final Button submit = (Button)findViewById(R.id.submitHazardButton);
@@ -164,6 +134,8 @@ public class SetRoadHazardActivity extends AppCompatActivity {
 
     private void navigateToNextPage(){
         report.reportDO.setRoadHazard(previousChoice);
+        report.reportDO.setSeverity(-1);
+        report.reportDO.setRoadDirection(-1);
         if (allow_edit)
         {
             Intent intent = new Intent(this, PreviewReportActivity.class);

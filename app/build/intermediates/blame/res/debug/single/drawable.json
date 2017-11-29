@@ -4,24 +4,24 @@
         "source": "/Users/Michelle_Yu/.gradle/caches/transforms-1/files-1.1/play-services-cast-framework-11.4.2.aar/c25ed199f9d9d4aff15526776e28563c/res/drawable/cast_ic_notification_forward30.xml"
     },
     {
-        "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/drawable/abc_ic_voice_search_api_material.xml",
-        "source": "/Users/Michelle_Yu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/c42f1724cfb1cdcc7ba9400462a3115c/res/drawable/abc_ic_voice_search_api_material.xml"
-    },
-    {
         "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/drawable/cast_expanded_controller_seekbar_thumb.xml",
         "source": "/Users/Michelle_Yu/.gradle/caches/transforms-1/files-1.1/play-services-cast-framework-11.4.2.aar/c25ed199f9d9d4aff15526776e28563c/res/drawable/cast_expanded_controller_seekbar_thumb.xml"
     },
     {
-        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/drawable/cast_ic_expanded_controller_pause.xml",
-        "source": "/Users/apple/.gradle/caches/transforms-1/files-1.1/play-services-cast-framework-11.4.2.aar/f2956374b9ed11283df0468b854dd3cd/res/drawable/cast_ic_expanded_controller_pause.xml"
+        "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/drawable/abc_ic_voice_search_api_material.xml",
+        "source": "/Users/Michelle_Yu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/c42f1724cfb1cdcc7ba9400462a3115c/res/drawable/abc_ic_voice_search_api_material.xml"
+    },
+    {
+        "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/drawable/abc_ratingbar_indicator_material.xml",
+        "source": "/Users/Michelle_Yu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/c42f1724cfb1cdcc7ba9400462a3115c/res/drawable/abc_ratingbar_indicator_material.xml"
     },
     {
         "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/drawable/cast_ic_expanded_controller_play.xml",
         "source": "/Users/Michelle_Yu/.gradle/caches/transforms-1/files-1.1/play-services-cast-framework-11.4.2.aar/c25ed199f9d9d4aff15526776e28563c/res/drawable/cast_ic_expanded_controller_play.xml"
     },
     {
-        "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/drawable/abc_ratingbar_indicator_material.xml",
-        "source": "/Users/Michelle_Yu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/c42f1724cfb1cdcc7ba9400462a3115c/res/drawable/abc_ratingbar_indicator_material.xml"
+        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/drawable/cast_ic_expanded_controller_pause.xml",
+        "source": "/Users/apple/.gradle/caches/transforms-1/files-1.1/play-services-cast-framework-11.4.2.aar/f2956374b9ed11283df0468b854dd3cd/res/drawable/cast_ic_expanded_controller_pause.xml"
     },
     {
         "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/drawable/mr_group_collapse.xml",
@@ -56,24 +56,24 @@
         "source": "/Users/apple/.gradle/caches/transforms-1/files-1.1/play-services-cast-framework-11.4.2.aar/f2956374b9ed11283df0468b854dd3cd/res/drawable/cast_expanded_controller_seekbar_track.xml"
     },
     {
-        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/drawable/mr_vol_type_audiotrack_light.xml",
-        "source": "/Users/apple/.gradle/caches/transforms-1/files-1.1/mediarouter-v7-25.2.0.aar/0038e6998d678ab726c6365b1bdc3a27/res/drawable/mr_vol_type_audiotrack_light.xml"
-    },
-    {
         "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/drawable/abc_ic_go_search_api_material.xml",
         "source": "/Users/Michelle_Yu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/c42f1724cfb1cdcc7ba9400462a3115c/res/drawable/abc_ic_go_search_api_material.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/drawable/mr_vol_type_audiotrack_light.xml",
+        "source": "/Users/apple/.gradle/caches/transforms-1/files-1.1/mediarouter-v7-25.2.0.aar/0038e6998d678ab726c6365b1bdc3a27/res/drawable/mr_vol_type_audiotrack_light.xml"
     },
     {
         "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/drawable/mr_dialog_material_background_dark.xml",
         "source": "/Users/apple/.gradle/caches/transforms-1/files-1.1/mediarouter-v7-25.2.0.aar/0038e6998d678ab726c6365b1bdc3a27/res/drawable/mr_dialog_material_background_dark.xml"
     },
     {
-        "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/drawable/abc_btn_borderless_material.xml",
-        "source": "/Users/Michelle_Yu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/c42f1724cfb1cdcc7ba9400462a3115c/res/drawable/abc_btn_borderless_material.xml"
-    },
-    {
         "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/drawable/cast_expanded_controller_actionbar_bg_gradient_light.xml",
         "source": "/Users/apple/.gradle/caches/transforms-1/files-1.1/play-services-cast-framework-11.4.2.aar/f2956374b9ed11283df0468b854dd3cd/res/drawable/cast_expanded_controller_actionbar_bg_gradient_light.xml"
+    },
+    {
+        "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/drawable/abc_btn_borderless_material.xml",
+        "source": "/Users/Michelle_Yu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/c42f1724cfb1cdcc7ba9400462a3115c/res/drawable/abc_btn_borderless_material.xml"
     },
     {
         "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/drawable/abc_switch_thumb_material.xml",
@@ -84,16 +84,16 @@
         "source": "/Users/Michelle_Yu/.gradle/caches/transforms-1/files-1.1/play-services-cast-framework-11.4.2.aar/c25ed199f9d9d4aff15526776e28563c/res/drawable/cast_ic_mini_controller_play.xml"
     },
     {
-        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/drawable/cast_expanded_controller_seekbar_thumb.xml",
-        "source": "/Users/apple/.gradle/caches/transforms-1/files-1.1/play-services-cast-framework-11.4.2.aar/f2956374b9ed11283df0468b854dd3cd/res/drawable/cast_expanded_controller_seekbar_thumb.xml"
+        "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/drawable/abc_btn_check_material.xml",
+        "source": "/Users/Michelle_Yu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/c42f1724cfb1cdcc7ba9400462a3115c/res/drawable/abc_btn_check_material.xml"
     },
     {
         "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/drawable/abc_vector_test.xml",
         "source": "/Users/Michelle_Yu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/c42f1724cfb1cdcc7ba9400462a3115c/res/drawable/abc_vector_test.xml"
     },
     {
-        "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/drawable/abc_btn_check_material.xml",
-        "source": "/Users/Michelle_Yu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/c42f1724cfb1cdcc7ba9400462a3115c/res/drawable/abc_btn_check_material.xml"
+        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/drawable/cast_expanded_controller_seekbar_thumb.xml",
+        "source": "/Users/apple/.gradle/caches/transforms-1/files-1.1/play-services-cast-framework-11.4.2.aar/f2956374b9ed11283df0468b854dd3cd/res/drawable/cast_expanded_controller_seekbar_thumb.xml"
     },
     {
         "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/drawable/round_button_clicked_folder.xml",
@@ -128,12 +128,12 @@
         "source": "/Users/apple/.gradle/caches/transforms-1/files-1.1/play-services-base-11.4.2.aar/2d6ac197060a9fe8d2e339b1fbf4ed3c/res/drawable/common_google_signin_btn_icon_light_focused.xml"
     },
     {
-        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/drawable/abc_ic_ab_back_material.xml",
-        "source": "/Users/apple/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/21ef70180d32f66120d4738698b4d5da/res/drawable/abc_ic_ab_back_material.xml"
-    },
-    {
         "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/drawable/abc_item_background_holo_dark.xml",
         "source": "/Users/Michelle_Yu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/c42f1724cfb1cdcc7ba9400462a3115c/res/drawable/abc_item_background_holo_dark.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/drawable/abc_ic_ab_back_material.xml",
+        "source": "/Users/apple/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/21ef70180d32f66120d4738698b4d5da/res/drawable/abc_ic_ab_back_material.xml"
     },
     {
         "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/drawable/mr_media_play_light.xml",
@@ -172,24 +172,24 @@
         "source": "/Users/Michelle_Yu/.gradle/caches/transforms-1/files-1.1/play-services-base-11.4.2.aar/471a66b0754930fd0cebf8a0bb25abf0/res/drawable/common_google_signin_btn_icon_disabled.xml"
     },
     {
-        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/drawable/abc_ratingbar_indicator_material.xml",
-        "source": "/Users/apple/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/21ef70180d32f66120d4738698b4d5da/res/drawable/abc_ratingbar_indicator_material.xml"
-    },
-    {
         "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/drawable/abc_list_selector_background_transition_holo_light.xml",
         "source": "/Users/Michelle_Yu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/c42f1724cfb1cdcc7ba9400462a3115c/res/drawable/abc_list_selector_background_transition_holo_light.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/drawable/abc_ratingbar_indicator_material.xml",
+        "source": "/Users/apple/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/21ef70180d32f66120d4738698b4d5da/res/drawable/abc_ratingbar_indicator_material.xml"
     },
     {
         "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/drawable/cast_ic_notification_forward.xml",
         "source": "/Users/apple/.gradle/caches/transforms-1/files-1.1/play-services-cast-framework-11.4.2.aar/f2956374b9ed11283df0468b854dd3cd/res/drawable/cast_ic_notification_forward.xml"
     },
     {
-        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/drawable/cast_ic_mini_controller_play.xml",
-        "source": "/Users/apple/.gradle/caches/transforms-1/files-1.1/play-services-cast-framework-11.4.2.aar/f2956374b9ed11283df0468b854dd3cd/res/drawable/cast_ic_mini_controller_play.xml"
-    },
-    {
         "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/drawable/cast_ic_notification_disconnect.xml",
         "source": "/Users/Michelle_Yu/.gradle/caches/transforms-1/files-1.1/play-services-cast-framework-11.4.2.aar/c25ed199f9d9d4aff15526776e28563c/res/drawable/cast_ic_notification_disconnect.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/drawable/cast_ic_mini_controller_play.xml",
+        "source": "/Users/apple/.gradle/caches/transforms-1/files-1.1/play-services-cast-framework-11.4.2.aar/f2956374b9ed11283df0468b854dd3cd/res/drawable/cast_ic_mini_controller_play.xml"
     },
     {
         "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/drawable/abc_textfield_search_material.xml",
@@ -224,20 +224,20 @@
         "source": "/Users/apple/.gradle/caches/transforms-1/files-1.1/play-services-cast-framework-11.4.2.aar/f2956374b9ed11283df0468b854dd3cd/res/drawable/cast_ic_expanded_controller_skip_next.xml"
     },
     {
-        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/drawable/notification_icon_background.xml",
-        "source": "/Users/apple/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/d9d1b3a4c10c44de792c830dd121f5ef/res/drawable/notification_icon_background.xml"
-    },
-    {
-        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/drawable/abc_btn_radio_material.xml",
-        "source": "/Users/apple/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/21ef70180d32f66120d4738698b4d5da/res/drawable/abc_btn_radio_material.xml"
+        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/drawable/round_button_folder.xml",
+        "source": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/res/drawable/round_button_folder.xml"
     },
     {
         "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/drawable/common_google_signin_btn_text_disabled.xml",
         "source": "/Users/Michelle_Yu/.gradle/caches/transforms-1/files-1.1/play-services-base-11.4.2.aar/471a66b0754930fd0cebf8a0bb25abf0/res/drawable/common_google_signin_btn_text_disabled.xml"
     },
     {
-        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/drawable/round_button_folder.xml",
-        "source": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/res/drawable/round_button_folder.xml"
+        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/drawable/abc_btn_radio_material.xml",
+        "source": "/Users/apple/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/21ef70180d32f66120d4738698b4d5da/res/drawable/abc_btn_radio_material.xml"
+    },
+    {
+        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/drawable/notification_icon_background.xml",
+        "source": "/Users/apple/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/d9d1b3a4c10c44de792c830dd121f5ef/res/drawable/notification_icon_background.xml"
     },
     {
         "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/drawable/cast_ic_expanded_controller_skip_next.xml",
@@ -526,6 +526,10 @@
     {
         "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/drawable/cast_ic_notification_forward10.xml",
         "source": "/Users/apple/.gradle/caches/transforms-1/files-1.1/play-services-cast-framework-11.4.2.aar/f2956374b9ed11283df0468b854dd3cd/res/drawable/cast_ic_notification_forward10.xml"
+    },
+    {
+        "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/drawable/ic_launcher_background.xml",
+        "source": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/src/main/res/drawable/ic_launcher_background.xml"
     },
     {
         "merged": "/Users/Michelle_Yu/Documents/MobilizedConstruction/app/build/intermediates/res/merged/debug/drawable/abc_ic_search_api_material.xml",
