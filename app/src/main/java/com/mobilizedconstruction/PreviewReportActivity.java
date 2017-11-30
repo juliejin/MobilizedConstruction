@@ -27,8 +27,20 @@ import com.amazonaws.services.dynamodbv2.model.ScanRequest;
 import com.amazonaws.services.dynamodbv2.model.ScanResult;
 import com.mobilizedconstruction.model.Report;
 
+import org.apache.http.HttpResponse;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.params.BasicHttpParams;
+import org.apache.http.params.HttpConnectionParams;
+import org.apache.http.params.HttpParams;
+
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.InputStreamReader;
 import java.io.ObjectOutputStream;
+import java.net.URI;
+import java.net.URL;
 import java.util.Vector;
 
 public class PreviewReportActivity extends AppCompatActivity {
@@ -193,42 +205,42 @@ public class PreviewReportActivity extends AppCompatActivity {
     }
 
     public void UpdateReport(){
-        AmazonDynamoDBClient dynamoDBClient =
-                new AmazonDynamoDBClient(IdentityManager.getDefaultIdentityManager()
-                        .getCredentialsProvider(), new ClientConfiguration());
-        mapper = DynamoDBMapper.builder()
-                .dynamoDBClient(dynamoDBClient)
-                .awsConfiguration(Application.awsConfiguration)
-                .build();
-        final Intent intent = new Intent(this, ReportCreationActivity.class);
         new Thread(new Runnable() {
             @Override
             public void run() {
                 try {
-                    ScanRequest scanRequest = new ScanRequest()
-                            .withTableName("mobilizedconstructio-mobilehub-516637937-Report");
-                    AmazonDynamoDBClient dynamoDBClient =
-                            new AmazonDynamoDBClient(IdentityManager.getDefaultIdentityManager()
-                                    .getCredentialsProvider(), new ClientConfiguration());
-                    ScanResult result = dynamoDBClient.scan(scanRequest);
-                    Integer id = result.getCount() + 1;
+                    HttpParams httpParameters = new BasicHttpParams();
+                    HttpConnectionParams.setConnectionTimeout(httpParameters, 3000);
+                    String link = "http://192.168.0.8:2000/report_count.php";
+                    URL url = new URL(link);
+                    HttpClient client = new DefaultHttpClient();
+                    HttpGet request = new HttpGet();
+                    request.setParams(httpParameters);
+                    request.setURI(new URI(link));
+                    HttpResponse response = client.execute(request);
+                    BufferedReader in = new BufferedReader(new
+                            InputStreamReader(response.getEntity().getContent()));
+                    StringBuffer sb = new StringBuffer("");
+                    String line="";
+                    int count = 0;
+                    if((line = in.readLine()) != null) {
+                        count = Integer.parseInt(line.trim());
+                    }
+                    in.close();
+
+                    Integer id = count + 1;
                     report.reportDO.setReportID(id);
-                    mapper.save(report.reportDO);
+                    report.UploadReportToServer(context);
+
+                    //delete it if it's locally saved
                     if(report.filePath!=null) {
                         File dir = getFilesDir();
                         File file = new File(report.filePath);
                         file.delete();
                     }
-                    for (int i = 0; i < report.reportImages.size(); i++)
-                    {
-                        report.reportImages.elementAt(i).setReportID(id);
-                        report.reportImages.elementAt(i).uploadToS3(context);
-                        //report.reportImages.elementAt(i).fetchFromDB(report.reportImages.elementAt(i).GetReportImage().getReportID(),report.reportImages.elementAt(i).GetReportImage().getIndex(),context);
-                    }
                     Log.d(LOG_TAG, "Successfully updated");
-                    startActivity(intent);
-                } catch (final AmazonClientException ex) {
-                    Log.e(LOG_TAG, "Failed updateing item : " + ex.getMessage(), ex);
+                } catch (final Exception ex) {
+                    Log.e(LOG_TAG, "Failed updating item : " + ex.getMessage(), ex);
                 }
             }
         }).start();

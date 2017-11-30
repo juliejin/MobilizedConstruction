@@ -172,22 +172,8 @@ public class ReportCreationActivity extends Activity {
 
 
     void navigateToSignIn(){
-        identityManager.signOut();
-        identityManager.setUpToAuthenticate(this, new DefaultSignInResultHandler() {
-
-            @Override
-            public void onSuccess(Activity activity, IdentityProvider identityProvider) {
-                // User has signed in
-                Log.e("Success", "User signed in");
-                activity.finish();
-            }
-
-            @Override
-            public boolean onCancel(Activity activity) {
-                return false;
-            }
-        });
-        SignInActivity.startSignInActivity(this, Application.sAuthUIConfiguration);
+        final Intent intent = new Intent(this, ReportCreationActivity.class);
+        startActivity(intent);
     }
 
 

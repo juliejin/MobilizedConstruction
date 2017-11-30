@@ -7,8 +7,11 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.os.AsyncTask;
 import android.support.v4.content.ContextCompat;
+import android.util.Base64;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.ClientConfiguration;
@@ -33,16 +36,38 @@ import com.mobilizedconstruction.Application;
 import com.mobilizedconstruction.ImageUploadActivity;
 import com.mobilizedconstruction.R;
 import com.mobilizedconstruction.ReportCreationActivity;
+import com.mobilizedconstruction.SigninActivity;
 
+import org.apache.http.HttpResponse;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.params.BasicHttpParams;
+import org.apache.http.params.HttpConnectionParams;
+import org.apache.http.params.HttpParams;
+import org.json.JSONObject;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.ObjectOutputStream;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
 import java.io.Serializable;
+import java.io.UnsupportedEncodingException;
+import java.net.HttpURLConnection;
+import java.net.URI;
 import java.net.URL;
+import java.net.URLEncoder;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.CountDownLatch;
+
+import javax.net.ssl.HttpsURLConnection;
 
 import static android.content.Context.MODE_PRIVATE;
 import static android.provider.Settings.Global.getString;
@@ -60,6 +85,8 @@ public class Image implements Serializable{
     transient private Bitmap imageBitmap;
     transient private UserFileManager userFileManager;
     public static final String S3_PREFIX_UPLOADS = "uploads/";
+    ProgressDialog progressDialog ;
+    boolean check = true;
     //transient private final CountDownLatch userFileManagerCreatingLatch = new CountDownLatch(1);
 
     public Image(ReportImageDO image){
@@ -109,94 +136,55 @@ public class Image implements Serializable{
         return reportImage;
     }
 
-    //
-    public void uploadToS3(Context context) {
-        final CountDownLatch userFileManagerCreatingLatch = new CountDownLatch(1);
-        new UserFileManager.Builder()
-                .withContext(context)
-                .withIdentityManager(IdentityManager.getDefaultIdentityManager())
-                .withAWSConfiguration(new AWSConfiguration(context))
-                .withS3ObjectDirPrefix(S3_PREFIX_UPLOADS)
-                .withLocalBasePath(context.getFilesDir().getAbsolutePath())
-                .build(new UserFileManager.BuilderResultHandler() {
-                    @Override
-                    public void onComplete(UserFileManager userFileManager) {
-                        Image.this.userFileManager = userFileManager;
-                        userFileManagerCreatingLatch.countDown();
-                    }
-                });
-        AmazonDynamoDBClient dynamoDBClient =
-                new AmazonDynamoDBClient(IdentityManager.getDefaultIdentityManager()
-                        .getCredentialsProvider(), new ClientConfiguration());
-        final DynamoDBMapper mapper = DynamoDBMapper.builder()
-                .dynamoDBClient(dynamoDBClient)
-                .awsConfiguration(Application.awsConfiguration)
-                .build();
-
-        new Thread(new Runnable() {
+    public Bitmap fetchFromDB(final Integer reportID,final int index) {
+        class AsyncTaskUploadClass extends AsyncTask<Void,Void,String> {
+            Bitmap bmp;
             @Override
-            public void run() {
+            protected void onPreExecute() {
+            }
+
+            @Override
+            protected void onPostExecute(String string) {
+                byte[] imageByteArray = Base64.decode(string, Base64.DEFAULT);
+                bmp = BitmapFactory.decodeByteArray(imageByteArray, 0, imageByteArray.length);
+            }
+
+            @Override
+            protected String doInBackground(Void... params) {
                 try {
-                    userFileManagerCreatingLatch.await();
-                } catch (final InterruptedException ex) {
-                    // This thread should never be interrupted.
-                    throw new RuntimeException(ex);
-                }
-                String key = S3_PREFIX_UPLOADS+imageFile.getName();
-                SetImageUrl(key);
-                mapper.save(reportImage);
-                try {
-                    AmazonS3 s3Client = new AmazonS3Client(IdentityManager.getDefaultIdentityManager()
-                            .getCredentialsProvider());
-                    PutObjectRequest obj = new PutObjectRequest("mobilizedconstructio-userfiles-mobilehub-516637937", key, imageFile);
-                    s3Client.putObject(obj);
-                }catch (Exception e){
-                    System.out.println(e.getMessage());
+                    HttpParams httpParameters = new BasicHttpParams();
+                    HttpConnectionParams.setConnectionTimeout(httpParameters, 15000);
+                    String link = "http://192.168.0.8:5050/image_get.php?ReportID=" + reportImage.getReportID();
+                    HttpClient client = new DefaultHttpClient();
+                    HttpGet request = new HttpGet();
+                    request.setParams(httpParameters);
+                    request.setURI(new URI(link));
+                    HttpResponse response = client.execute(request);
+
+                    BufferedReader in = new BufferedReader(new
+                            InputStreamReader(response.getEntity().getContent()));
+                    StringBuffer sb = new StringBuffer("");
+                    String line = "";
+                    while ((line = in.readLine()) != null) {
+                        sb.append(line);
+                        JSONObject json_data = new JSONObject(line.trim());
+                        Integer report_ID = json_data.getInt("Report ID");
+                        Integer index = json_data.getInt("Image Index");
+                        String url = json_data.getString("ImageURL");
+                        reportImage.setImageURL(url);
+                        reportImage.setIndex(index);
+                        reportImage.setReportID(report_ID);
+                        break;
+                    }
+                    return line;
+                } catch (Exception e) {
+                    return new String("Exception: " + e.getMessage());
                 }
             }
-        }).start();
-    }
-
-    public void fetchFromDB(final Integer reportID,final int index) {
-
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-
-                    AmazonDynamoDBClient client =
-                            new AmazonDynamoDBClient(IdentityManager.getDefaultIdentityManager()
-                                    .getCredentialsProvider(), new ClientConfiguration());
-                    Map<String, String> attributeNames = new HashMap<String, String >();
-                    attributeNames.put("#reportID", "Report ID");
-                    Map<String, AttributeValue> expressionAttributeValues =
-                            new HashMap<String, AttributeValue>();
-                    expressionAttributeValues.put(":reportID", new AttributeValue().withN(reportID.toString()));
-                    ScanRequest scanRequest = new ScanRequest()
-                            .withTableName("mobilizedconstructio-mobilehub-516637937-ReportImage");
-                    ScanResult result = client.scan(scanRequest);
-                    for (Map<String, AttributeValue> item : result.getItems()) {
-                        if (Integer.parseInt(item.get("ReportID").getN()) == reportID && Integer.parseInt(item.get("Index").getN()) == index)
-                        {
-
-                            if (item.get("ImageURL") != null) {
-                                String url = item.get("ImageURL").getS();
-                                try {
-                                    AmazonS3 s3Client = new AmazonS3Client(IdentityManager.getDefaultIdentityManager()
-                                            .getCredentialsProvider());
-                                    S3Object object = s3Client.getObject(
-                                            new GetObjectRequest("mobilizedconstructio-userfiles-mobilehub-516637937", url));
-                                    InputStream objectData = object.getObjectContent();
-                                    reportImage.setImageURL(url);
-                                    imageBitmap = BitmapFactory.decodeStream(objectData);
-                                }catch (Exception e){
-                                    System.out.println(e.getMessage());
-                                }
-                            }
-                        }
-                    }
-                }
-
-        }).start();
+        }
+        AsyncTaskUploadClass AsyncTaskUploadClassOBJ = new AsyncTaskUploadClass();
+        AsyncTaskUploadClassOBJ.execute();
+        return AsyncTaskUploadClassOBJ.bmp;
     }
 
     public Bitmap getImageBitmap(){
@@ -210,4 +198,175 @@ public class Image implements Serializable{
         }
         return imageBitmap;
     }
+
+    public void ImageUploadToServer(final Context context){
+
+        ByteArrayOutputStream byteArrayOutputStreamObject ;
+
+        byteArrayOutputStreamObject = new ByteArrayOutputStream();
+
+        imageBitmap = BitmapFactory
+                .decodeFile(FilePath);
+
+        imageBitmap.compress(Bitmap.CompressFormat.JPEG, 100, byteArrayOutputStreamObject);
+
+        byte[] byteArrayVar = byteArrayOutputStreamObject.toByteArray();
+
+        final String ConvertImage = Base64.encodeToString(byteArrayVar, Base64.DEFAULT);
+
+        class AsyncTaskUploadClass extends AsyncTask<Void,Void,String> {
+
+            @Override
+            protected void onPreExecute() {
+                progressDialog = ProgressDialog.show(context,"Image is Uploading","Please Wait",false,false);
+            }
+
+            @Override
+            protected void onPostExecute(String string1) {
+                // Dismiss the progress dialog after done uploading.
+                progressDialog.dismiss();
+
+                // Printing uploading success message coming from server on android app.
+                Toast.makeText(context,string1,Toast.LENGTH_LONG).show();
+                final Intent intent = new Intent(context, ReportCreationActivity.class);
+                context.startActivity(intent);
+
+            }
+
+            @Override
+            protected String doInBackground(Void... params) {
+                try{
+                    HttpParams httpParameters = new BasicHttpParams();
+                    HttpConnectionParams.setConnectionTimeout(httpParameters, 15000);
+                   /* String link = "http://192.168.0.8:2017/image_upload.php?image_name="+imageFile.getName()
+                            +"&ReportID="+reportImage.getReportID()
+                            +"&image_index="+reportImage.getIndex() +"&image_path="+ConvertImage ;
+                    link= link.trim();
+                    URL url = new URL(link);
+                    HttpClient client = new DefaultHttpClient();
+                    HttpGet request = new HttpGet();
+                    request.setParams(httpParameters);
+                    request.setURI(new URI(link));
+                    HttpResponse response = client.execute(request);
+                    BufferedReader in = new BufferedReader(new
+                            InputStreamReader(response.getEntity().getContent()));
+                    StringBuffer sb = new StringBuffer("");
+                    String line="";
+                    while ((line = in.readLine()) != null){
+                        sb.append(line);
+                        break;
+                    }
+                    in.close();
+                    return sb.toString();*/
+                    ImageProcessClass imageProcessClass = new ImageProcessClass();
+                    HashMap<String,Object> HashMapParams = new HashMap<String,Object>();
+                    HashMapParams.put("image_name", imageFile.getName());
+                    HashMapParams.put("image_data", ConvertImage);
+                    HashMapParams.put("image_index", reportImage.getIndex());
+                    HashMapParams.put("ReportID", reportImage.getReportID());
+                    String UploadPath = "http://192.168.0.8:2017/image_upload.php";
+                    String FinalData = imageProcessClass.ImageHttpRequest(UploadPath, HashMapParams);
+
+                    return FinalData;
+                }catch(Exception e){
+                    return new String("Exception: " + e.getMessage());
+                }
+            }
+        }
+        AsyncTaskUploadClass AsyncTaskUploadClassOBJ = new AsyncTaskUploadClass();
+
+        AsyncTaskUploadClassOBJ.execute();
+    }
+
+    public class ImageProcessClass{
+
+        public String ImageHttpRequest(String requestURL,HashMap<String,Object> PData) {
+
+            StringBuilder stringBuilder = new StringBuilder();
+
+            try {
+
+                URL url;
+                HttpURLConnection httpURLConnectionObject ;
+                OutputStream OutPutStream;
+                BufferedWriter bufferedWriterObject ;
+                BufferedReader bufferedReaderObject ;
+                int RC ;
+
+                url = new URL(requestURL);
+
+                httpURLConnectionObject = (HttpURLConnection) url.openConnection();
+
+                httpURLConnectionObject.setReadTimeout(19000);
+
+                httpURLConnectionObject.setConnectTimeout(19000);
+
+                httpURLConnectionObject.setRequestMethod("POST");
+
+                httpURLConnectionObject.setDoInput(true);
+
+                httpURLConnectionObject.setDoOutput(true);
+
+                OutPutStream = httpURLConnectionObject.getOutputStream();
+
+                bufferedWriterObject = new BufferedWriter(
+
+                        new OutputStreamWriter(OutPutStream, "UTF-8"));
+
+                bufferedWriterObject.write(bufferedWriterDataFN(PData));
+
+                bufferedWriterObject.flush();
+
+                bufferedWriterObject.close();
+
+                OutPutStream.close();
+
+                RC = httpURLConnectionObject.getResponseCode();
+
+                if (RC == HttpsURLConnection.HTTP_OK) {
+
+                    bufferedReaderObject = new BufferedReader(new InputStreamReader(httpURLConnectionObject.getInputStream()));
+
+                    stringBuilder = new StringBuilder();
+
+                    String RC2;
+
+                    while ((RC2 = bufferedReaderObject.readLine()) != null){
+
+                        stringBuilder.append(RC2);
+                    }
+                }
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            return stringBuilder.toString();
+        }
+
+        private String bufferedWriterDataFN(HashMap<String, Object> HashMapParams) throws UnsupportedEncodingException {
+
+            StringBuilder stringBuilderObject;
+
+            stringBuilderObject = new StringBuilder();
+
+            for (Map.Entry<String, Object> KEY : HashMapParams.entrySet()) {
+
+                if (check)
+
+                    check = false;
+                else
+                    stringBuilderObject.append("&");
+
+                stringBuilderObject.append(URLEncoder.encode(KEY.getKey(), "UTF-8"));
+
+                stringBuilderObject.append("=");
+
+                stringBuilderObject.append(URLEncoder.encode(KEY.getValue().toString(), "UTF-8"));
+            }
+
+            return stringBuilderObject.toString();
+        }
+
+    }
+
 }

@@ -35,6 +35,7 @@ android {
     targetCompatibility = 1.7
     productFlavors {
     }
+    useLibrary 'org.apache.http.legacy'
 }
 
 dependencies {

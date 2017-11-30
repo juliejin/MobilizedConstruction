@@ -24,10 +24,12 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
@@ -58,13 +60,13 @@
         android:name="com.mobilizedconstruction.Application"
         android:allowBackup="true"
         android:debuggable="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/ic_launcher_foreground"
         android:label="Mobilized Construction"
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.mobilizedconstruction.SplashActivity"
+            android:name="com.mobilizedconstruction.MainActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
             android:label="Mobilized Construction" >
             <intent-filter>
@@ -73,10 +75,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name="com.mobilizedconstruction.MainActivity"
-            android:label="Mobilied Construction"
-            android:launchMode="singleInstance" />
 
         <!-- BEGIN - APP CONTENT DELIVERY AND USER DATA STORAGE -->
 
@@ -98,11 +96,11 @@
 
         <uses-feature
             android:name="android.hardware.camera"
-            android:required="true" />
+            android:required="false" />
 
         <activity android:name="com.mobilizedconstruction.ReportCreationActivity" />
         <activity android:name="com.mobilizedconstruction.ReportInfoUpload" />
-        <activity android:name="com.mobilizedconstruction.RoadFeaturesActivity" />
+        <activity android:name="com.mobilizedconstruction.SetRoadDirectionActivity" />
         <activity android:name="com.mobilizedconstruction.AddCommentActivity" />
         <activity android:name="com.mobilizedconstruction.CreatedReportDisplayActivity" />
         <activity android:name="com.mobilizedconstruction.PreviewReportActivity" />
@@ -121,6 +119,7 @@
             android:value="@string/google_maps_key" />
 
         <activity android:name="com.mobilizedconstruction.SetRoadHazardActivity" />
+        <activity android:name="com.mobilizedconstruction.SetSeverityActivity" />
 
         <receiver android:name="com.google.android.gms.cast.framework.media.MediaIntentReceiver" />
 

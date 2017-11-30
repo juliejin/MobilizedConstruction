@@ -64,6 +64,10 @@
         "source": "/Users/apple/.gradle/caches/transforms-1/files-1.1/mediarouter-v7-25.2.0.aar/0038e6998d678ab726c6365b1bdc3a27/res/drawable/mr_vol_type_audiotrack_light.xml"
     },
     {
+        "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/drawable/ic_launcher_background.xml",
+        "source": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/src/main/res/drawable/ic_launcher_background.xml"
+    },
+    {
         "merged": "/Users/apple/Documents/GitHub/MobilizedConstruction/app/build/intermediates/res/merged/debug/drawable/mr_dialog_material_background_dark.xml",
         "source": "/Users/apple/.gradle/caches/transforms-1/files-1.1/mediarouter-v7-25.2.0.aar/0038e6998d678ab726c6365b1bdc3a27/res/drawable/mr_dialog_material_background_dark.xml"
     },
