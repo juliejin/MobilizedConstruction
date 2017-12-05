@@ -142,13 +142,11 @@ public class CreatedReportDisplayActivity extends AppCompatActivity {
 
     protected void addNewButton(final int row_index){
         Vector<String> hazards = new Vector<String>();
-        hazards.add("Potholes");
-        hazards.add("Speed Bumps");
+        hazards.add("Paved Potholes");
+        hazards.add("Gravel Potholes");
+        hazards.add("Flooding");
         hazards.add("Drainage");
-        hazards.add("Road Debris");
-        hazards.add("Inclement Weather");
-        hazards.add("Accidents");
-        hazards.add("Street Signs");
+        hazards.add("Debris");
         hazards.add("Other");
 
         Double latitude = createdReport.elementAt(row_index).reportDO.getLatitude();

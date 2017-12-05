@@ -33,6 +33,7 @@ import com.amazonaws.mobile.content.UserFileManager;
 import com.mobilizedconstruction.model.Report;
 import com.mobilizedconstruction.model.Image;
 
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
@@ -45,13 +46,15 @@ public class ImageUploadActivity extends AppCompatActivity {
     static final int REQUEST_IMAGE_CAPTURE = 2;
     Report report;
     private String imgDecodableString;
-    File imageFile;
     private ImageButton addImageButton;
     private ImageButton cameraButton;
     private int display_image = -1;
     private Vector<ImageButton> imageButtonVector;
+    private Vector<String> decodableVector;
+    private Vector<File> imageFileVector;
     private HashSet<String> decodableSet;
     private HashMap<ImageButton, Bitmap> mapImagetoBitmap;
+    private Bitmap myBitmap;
     Context context = this;
     private static final String LOG_TAG = ImageUploadActivity.class.getSimpleName();
     private UserFileManager userFileManager;
@@ -73,6 +76,8 @@ public class ImageUploadActivity extends AppCompatActivity {
         setContentView(R.layout.activity_image_upload);
         imageButtonVector = new Vector<ImageButton>();
         decodableSet = new HashSet<String>();
+        imageFileVector = new Vector<File>();
+        decodableVector = new Vector<String>();
         mapImagetoBitmap = new HashMap<ImageButton, Bitmap>();
         Intent intent = getIntent();
         report = (Report)intent.getSerializableExtra("new_report");
@@ -81,6 +86,19 @@ public class ImageUploadActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 navigateToNextPage();
+            }
+        });
+        final Button rotateButton = (Button)findViewById(R.id.rotateButton);
+        rotateButton.setVisibility(View.INVISIBLE);
+        rotateButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(myBitmap != null)
+                {
+                    Matrix matrix = new Matrix();
+                    matrix.postRotate(90);
+                    myBitmap = Bitmap.createBitmap(myBitmap , 0, 0, myBitmap .getWidth(), myBitmap .getHeight(), matrix, true);
+                }
             }
         });
         addImageButton = (ImageButton)findViewById(R.id.addImageButton);
@@ -112,7 +130,7 @@ public class ImageUploadActivity extends AppCompatActivity {
     }
 
     private void dispatchTakePictureIntent() {
-        Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        Intent takePictureIntent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
         if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
             startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
         }
@@ -138,11 +156,12 @@ public class ImageUploadActivity extends AppCompatActivity {
                 imgDecodableString = cursor.getString(columnIndex);
                 cursor.close();
                 ImageButton imageButton = new ImageButton(context);
-                Bitmap myBitmap = BitmapFactory
+                myBitmap = BitmapFactory
                         .decodeFile(imgDecodableString);
                 if (!decodableSet.contains(imgDecodableString))
                 {
                     ExifInterface exif = null;
+                    File imageFile = null;
                     try {
                         imageFile = new File(imgDecodableString);
                         exif = new ExifInterface(imageFile.getAbsolutePath());
@@ -159,20 +178,21 @@ public class ImageUploadActivity extends AppCompatActivity {
                         case ExifInterface.ORIENTATION_ROTATE_180:
                             myBitmap = rotateBitmap(myBitmap, 180);
                             break;
-
                         case ExifInterface.ORIENTATION_ROTATE_270:
                             myBitmap = rotateBitmap(myBitmap, 270);
                             break;
                     }
-                    Image image = new Image(imgDecodableString, imageFile, imageButtonVector.size(), report.reportDO.getReportID());
-                    report.insertImage(image);
                     myBitmap = Bitmap.createScaledBitmap(myBitmap, 240, 240, true);
                     imageButton.setImageBitmap(myBitmap);
                     imageButton.setLayoutParams(new TableRow.LayoutParams(240, 240));
                     mapImagetoBitmap.put(imageButton, myBitmap);
                     imgLL.addView(imageButton);
                     imageButtonVector.add(imageButton);
+                    decodableVector.add(imgDecodableString);
+                    imageFileVector.add(imageFile);
                     decodableSet.add(imgDecodableString);
+                    Image image = new Image(imgDecodableString, imageFile, imageButtonVector.size() - 1, report.reportDO.getReportID());
+                    report.insertImage(image);
                     // Set the Image in ImageView after decoding the String
                     imgView.setImageBitmap(myBitmap);
                 }
@@ -185,29 +205,60 @@ public class ImageUploadActivity extends AppCompatActivity {
             }
             else if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK && data != null) {
                 Bundle extras = data.getExtras();
-                Bitmap myBitmap = (Bitmap) extras.get("data");
-                Uri selectedImage = data.getData();
+                myBitmap = (Bitmap) extras.get("data");
+                //Uri selectedImage = data.getData();
+                Uri selectedImage = null;
                 String[] filePathColumn = { MediaStore.Images.Media.DATA };
+                if(selectedImage == null)
+                {
+                    selectedImage = getImageUri(getApplicationContext(), myBitmap);
+                    imgDecodableString = getRealPathFromURI(selectedImage);
+                }
+                else
+                {
+                    Cursor cursor = getContentResolver().query(selectedImage,
+                            filePathColumn, null, null, null);
+                    // Move to first row
+                    cursor.moveToFirst();
+                    int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
+                    imgDecodableString = cursor.getString(columnIndex);
+                    cursor.close();
+                }
                 // Get the cursor
-                Cursor cursor = getContentResolver().query(selectedImage,
-                        filePathColumn, null, null, null);
-                // Move to first row
-                cursor.moveToFirst();
-                int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
-                imgDecodableString = cursor.getString(columnIndex);
-                cursor.close();
-                imageFile = new File(imgDecodableString);
-                Image image = new Image(imgDecodableString, imageFile, imageButtonVector.size(), report.reportDO.getReportID());
-                report.insertImage(image);
+                File imageFile = new File(imgDecodableString);
                 imgView.setImageBitmap(myBitmap);
                 ImageButton imageButton = new ImageButton(context);
+                ExifInterface exif = null;
+                try {
+                    exif = new ExifInterface(imageFile.getAbsolutePath());
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                int orientation = ExifInterface.ORIENTATION_NORMAL;
+                if (exif != null)
+                    orientation = exif.getAttributeInt(ExifInterface.TAG_ORIENTATION, ExifInterface.ORIENTATION_NORMAL);
+                switch (orientation) {
+                    case ExifInterface.ORIENTATION_ROTATE_90:
+                        myBitmap = rotateBitmap(myBitmap, 90);
+                        break;
+                    case ExifInterface.ORIENTATION_ROTATE_180:
+                        myBitmap = rotateBitmap(myBitmap, 180);
+                        break;
+                    case ExifInterface.ORIENTATION_ROTATE_270:
+                        myBitmap = rotateBitmap(myBitmap, 270);
+                        break;
+                }
                 myBitmap = Bitmap.createScaledBitmap(myBitmap, 240, 240, true);
                 imageButton.setImageBitmap(myBitmap);
                 imageButton.setLayoutParams(new TableRow.LayoutParams(240, 240));
                 mapImagetoBitmap.put(imageButton, myBitmap);
                 imgLL.addView(imageButton);
                 imageButtonVector.add(imageButton);
+                decodableVector.add(imgDecodableString);
+                imageFileVector.add(imageFile);
                 decodableSet.add(imgDecodableString);
+                Image image = new Image(imgDecodableString, imageFile, imageButtonVector.size() - 1, report.reportDO.getReportID());
+                report.insertImage(image);
                 // Set the Image in ImageView after decoding the String
                 imgView.setImageBitmap(myBitmap);
                 //Image image = new Image(imgDecodableString, imageFile, imageButtonVector.size(), 0.0, 0.0, report.reportDO.getReportID());
@@ -230,6 +281,7 @@ public class ImageUploadActivity extends AppCompatActivity {
                 public void onClick(View view) {
                     ImageButton imageButton = (ImageButton) view;
                     imgView.setImageBitmap(mapImagetoBitmap.get(imageButton));
+                    myBitmap = mapImagetoBitmap.get(imageButton);
                 }
             });
         }
@@ -254,7 +306,7 @@ public class ImageUploadActivity extends AppCompatActivity {
     }
 
 
-    @RequiresApi(api = Build.VERSION_CODES.M)
+   /* @RequiresApi(api = Build.VERSION_CODES.M)
     private void uploadImageToAWS() {
         final Context context = this.getApplicationContext();
         new UserFileManager.Builder()
@@ -314,7 +366,7 @@ public class ImageUploadActivity extends AppCompatActivity {
         }).start();
 
     }
-
+*/
 
     private void showError(final int resId, Object... args) {
         new AlertDialog.Builder(this).setIcon(android.R.drawable.ic_dialog_alert)
@@ -335,6 +387,22 @@ public class ImageUploadActivity extends AppCompatActivity {
         matrix.postRotate(degrees);
         return Bitmap.createBitmap(bitmap, 0, 0, bitmap.getWidth(), bitmap.getHeight(), matrix, true);
     }
+
+    public Uri getImageUri(Context inContext, Bitmap inImage) {
+        ByteArrayOutputStream bytes = new ByteArrayOutputStream();
+        inImage.compress(Bitmap.CompressFormat.JPEG, 100, bytes);
+        String path = MediaStore.Images.Media.insertImage(inContext.getContentResolver(), inImage, "Title", null);
+        return Uri.parse(path);
+    }
+
+    public String getRealPathFromURI(Uri uri) {
+        Cursor cursor = getContentResolver().query(uri, null, null, null, null);
+        cursor.moveToFirst();
+        int idx = cursor.getColumnIndex(MediaStore.Images.ImageColumns.DATA);
+        return cursor.getString(idx);
+    }
+
+
         /*AsyncTask<String, String, String> _Task = new AsyncTask<String, String, String>() {
 
             @Override

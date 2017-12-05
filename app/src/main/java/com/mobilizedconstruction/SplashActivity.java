@@ -61,7 +61,10 @@ public class SplashActivity extends Activity implements StartupAuthResultHandler
                 return false;
             }
         });
-        SignInActivity.startSignInActivity(this, Application.sAuthUIConfiguration);
+        this.startActivity(new Intent(this, ReportCreationActivity.class)
+                .setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
+        //SignInActivity.startSignInActivity(this, Application.sAuthUIConfiguration);
+
     }
 
     @Override
@@ -94,8 +97,8 @@ public class SplashActivity extends Activity implements StartupAuthResultHandler
                         providerAuthException.getProvider().getDisplayName()), providerAuthException);
             }
 
-            doMandatorySignIn(identityManager);
-            return;
+           // doMandatorySignIn(identityManager);
+           // return;
         }
 
         this.startActivity(new Intent(this, ReportCreationActivity.class)

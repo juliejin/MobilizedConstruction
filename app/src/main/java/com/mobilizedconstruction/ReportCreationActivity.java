@@ -14,6 +14,7 @@ import android.view.View;
 
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.ClientConfiguration;
+import com.amazonaws.auth.AWSCognitoIdentityProvider;
 import com.amazonaws.mobile.auth.core.DefaultSignInResultHandler;
 import com.amazonaws.mobile.auth.core.IdentityManager;
 import com.amazonaws.mobile.auth.core.IdentityProvider;
@@ -71,6 +72,14 @@ public class ReportCreationActivity extends Activity {
 
         //navigate to sign in page
         final Button signout = (Button) findViewById((R.id.SignOut));
+        if(identityManager.isUserSignedIn())
+        {
+            signout.setText("Sign Out");
+        }
+        else
+        {
+            signout.setText("Sign In");
+        }
         signout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

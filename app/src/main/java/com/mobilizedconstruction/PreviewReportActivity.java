@@ -122,9 +122,9 @@ public class PreviewReportActivity extends AppCompatActivity {
             Bitmap myBitmap = BitmapFactory
                     .decodeFile(report.reportImages.elementAt(i).getFilePath());
             myBitmap = Bitmap.createScaledBitmap(myBitmap, 240,240, true);
-            Matrix matrix = new Matrix();
-            matrix.postRotate(90);
-            myBitmap = Bitmap.createBitmap(myBitmap , 0, 0, myBitmap .getWidth(), myBitmap .getHeight(), matrix, true);
+            //Matrix matrix = new Matrix();
+            //matrix.postRotate(90);
+            //myBitmap = Bitmap.createBitmap(myBitmap , 0, 0, myBitmap .getWidth(), myBitmap .getHeight(), matrix, true);
             imageView.setImageBitmap(myBitmap);
             linearLayout.addView(imageView);
         }
@@ -225,7 +225,9 @@ public class PreviewReportActivity extends AppCompatActivity {
                         report.reportImages.elementAt(i).uploadToS3(context);
                         //report.reportImages.elementAt(i).fetchFromDB(report.reportImages.elementAt(i).GetReportImage().getReportID(),report.reportImages.elementAt(i).GetReportImage().getIndex(),context);
                     }
-                    Log.d(LOG_TAG, "Successfully updated");
+                    //Log.d(LOG_TAG, "Successfully updated");
+                    //Toast.makeText(context, "Successfully updated",
+                      //      Toast.LENGTH_LONG).show();
                     startActivity(intent);
                 } catch (final AmazonClientException ex) {
                     Log.e(LOG_TAG, "Failed updateing item : " + ex.getMessage(), ex);
